@@ -10,4 +10,4 @@
 
 ## Umlet διάγραμμα
 
-![Διάγραμμα περιπτώσεων χρήσης](docs\images\use_case.png)
+![Διάγραμμα περιπτώσεων χρήσης](docs/images/use_case.png)
