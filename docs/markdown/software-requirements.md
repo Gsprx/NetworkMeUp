@@ -70,11 +70,11 @@
 
 #### [ΠΧ1 Διαχείριση Εταιρικού Λογαριασμού](uc1-business-account-management.md)
 
-#### [ΠΧ2 Διαχείριση Λογαριασμού](uc2-account-management.md)
+#### [ΠΧ2 Διαχείριση Εργατικού Λογαριασμού]()
 
-#### [ΠΧ3 Διαχείριση Στοιχείων Πελάτη](uc3-client-management.md)
+#### [ΠΧ3 Επεξεργασία Αιτημάτων Εργασίας](uc3-update-job-applications.md)
 
-#### [ΠΧ4 Έκδοση κάρτας ανάληψης](uc4-debit-card-management.md)
+#### [ΠΧ4 Διαχείριση Θέσεων Εργασίας](uc4-manage-job-positions.md)
 
 #### ΠΧ5 Ανατοκισμός
 
