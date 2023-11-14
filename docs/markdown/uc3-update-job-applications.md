@@ -52,3 +52,6 @@
 
     1. Το σύστημα εμφανίζει σχετικό μήνυμα
     2. Η περίπτωση χρήσης τερματίζει.  
+
+
+## ![Activity Diagram](docs/../../images/activity-update-job-applications.png)
