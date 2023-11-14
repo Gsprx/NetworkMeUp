@@ -54,4 +54,4 @@
     2. Η περίπτωση χρήσης τερματίζει.  
 
 
-## ![Activity Diagram](docs/../../images/activity-update-job-applications.png)
+![Activity Diagram](docs/../../images/activity-update-job-applications.png)
