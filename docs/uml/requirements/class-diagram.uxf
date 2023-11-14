@@ -1,52 +1,52 @@
-<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>679</x><y>352</y><w>231</w><h>88</h></coordinates><panel_attributes>Employer
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>462</x><y>352</y><w>231</w><h>88</h></coordinates><panel_attributes>Employer
 --
 - Company_Name : String
 - Sector : String
-- Company_ID : TIN</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>352</y><w>231</w><h>99</h></coordinates><panel_attributes>Employee
+- Company_ID : TIN</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>352</y><w>231</w><h>99</h></coordinates><panel_attributes>Employee
 --
 - Name : String
 - Date_Of_Birth : Date
 - Address : String
-- Profile_Image : Image</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>679</x><y>660</y><w>231</w><h>66</h></coordinates><panel_attributes>Job
+- Profile_Image : Image</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>462</x><y>660</y><w>231</w><h>66</h></coordinates><panel_attributes>Job
 --
 - Title : String
-- Available : Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>583</y><w>231</w><h>66</h></coordinates><panel_attributes>CV
+- Available : Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>583</y><w>231</w><h>66</h></coordinates><panel_attributes>CV
 --
 - Education: Text
 - Experience: Text
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>448</x><y>792</y><w>231</w><h>55</h></coordinates><panel_attributes>Skill
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>231</x><y>792</y><w>231</w><h>55</h></coordinates><panel_attributes>Skill
 --
-- Skillset : Text</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>305</x><y>440</y><w>88</w><h>165</h></coordinates><panel_attributes>lt=-
+- Skillset : Text</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>88</x><y>440</y><w>88</w><h>165</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= 1
-manages</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>778</x><y>429</y><w>88</w><h>253</h></coordinates><panel_attributes>lt=-
+manages</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>561</x><y>429</y><w>88</w><h>253</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= 1
 manages
 
-</panel_attributes><additional_attributes>10;210;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>327</x><y>638</y><w>143</w><h>231</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;210;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>638</y><w>143</w><h>231</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= *
-has skills</panel_attributes><additional_attributes>10;10;10;180;110;180</additional_attributes></element><element><id>Relation</id><coordinates><x>668</x><y>715</y><w>209</w><h>121</h></coordinates><panel_attributes>lt=-
+has skills</panel_attributes><additional_attributes>10;10;10;180;110;180</additional_attributes></element><element><id>Relation</id><coordinates><x>451</x><y>715</y><w>209</w><h>121</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= *
 requires skills
-</panel_attributes><additional_attributes>10;80;160;80;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>965</x><y>99</y><w>231</w><h>55</h></coordinates><panel_attributes>Phone
+</panel_attributes><additional_attributes>10;80;160;80;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>748</x><y>99</y><w>231</w><h>55</h></coordinates><panel_attributes>Phone
 --
-- Number : Int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>965</x><y>0</y><w>231</w><h>55</h></coordinates><panel_attributes>Email
+- Number : Int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>748</x><y>0</y><w>231</w><h>55</h></coordinates><panel_attributes>Email
 --
-- Address : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>965</x><y>198</y><w>231</w><h>55</h></coordinates><panel_attributes>TIN
+- Address : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>748</x><y>198</y><w>231</w><h>55</h></coordinates><panel_attributes>TIN
 --
-- ID : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>448</x><y>495</y><w>231</w><h>66</h></coordinates><panel_attributes>Application
+- ID : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>231</x><y>495</y><w>231</w><h>66</h></coordinates><panel_attributes>Application
 --
 - No: Int
-- Status : Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>437</x><y>363</y><w>143</w><h>154</h></coordinates><panel_attributes>lt=-
+- Status : Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>363</y><w>143</w><h>154</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= 1
-submits</panel_attributes><additional_attributes>70;120;70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>602</x><y>550</y><w>99</w><h>176</h></coordinates><panel_attributes>lt=-
+submits</panel_attributes><additional_attributes>70;120;70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>550</y><w>99</w><h>176</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= *
-recieves</panel_attributes><additional_attributes>70;130;10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>437</x><y>22</y><w>550</w><h>143</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>480;10;330;10;330;110;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>437</x><y>121</y><w>550</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>480;10;350;10;350;40;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>877</x><y>220</y><w>110</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>121</y><w>231</w><h>66</h></coordinates><panel_attributes>Registered User
+recieves</panel_attributes><additional_attributes>70;130;10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>22</y><w>550</w><h>143</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>480;10;330;10;330;110;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>121</y><w>550</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>480;10;350;10;350;40;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>220</y><w>110</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>121</y><w>231</w><h>66</h></coordinates><panel_attributes>Registered User
 --
 - Phone_Number : Phone
-- Email_Address : Email</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>305</x><y>176</y><w>33</w><h>198</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>349</x><y>176</y><w>462</w><h>198</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;400;90;400;160</additional_attributes></element></diagram>
+- Email_Address : Email</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>88</x><y>176</y><w>33</w><h>198</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>176</y><w>462</w><h>198</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;400;90;400;160</additional_attributes></element></diagram>
