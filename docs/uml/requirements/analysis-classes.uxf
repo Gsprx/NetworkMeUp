@@ -1,76 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>220</x>
-      <y>160</y>
-      <w>130</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;boundary&gt;&gt;
-AccountUI</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>220</x>
-      <y>230</y>
-      <w>160</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;control&gt;&gt;
-AccountController</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>220</x>
-      <y>450</y>
-      <w>160</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;entity&gt;&gt;
-Account</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>440</x>
-      <y>160</y>
-      <w>130</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;boundary&gt;&gt;
-CustomerUI</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>440</x>
-      <y>230</y>
-      <w>160</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;control&gt;&gt;
-CustomerController</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>220</x>
-      <y>390</y>
-      <w>160</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;entity&gt;&gt;
-Customer</panel_attributes>
-    <additional_attributes/>
-  </element>
-</diagram>
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>60</x><y>0</y><w>130</w><h>50</h></coordinates><panel_attributes>&lt;&lt;boundary&gt;&gt;
+AccountUI</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>70</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;control&gt;&gt;
+AccountController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>180</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Registered_User</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>0</y><w>130</w><h>50</h></coordinates><panel_attributes>&lt;&lt;boundary&gt;&gt;
+ResumeUI</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>70</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;control&gt;&gt;
+ResumeController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>180</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+CV</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>70</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;control&gt;&gt;
+JobController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>0</y><w>130</w><h>50</h></coordinates><panel_attributes>&lt;&lt;boundary&gt;&gt;
+JobUI</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>180</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Job</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>250</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Employer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>320</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Employee</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>390</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Email</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>460</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Phone</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>530</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Tin</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>320</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Skill</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>250</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Application</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>250</y><w>160</w><h>50</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Skill</panel_attributes><additional_attributes></additional_attributes></element></diagram>
