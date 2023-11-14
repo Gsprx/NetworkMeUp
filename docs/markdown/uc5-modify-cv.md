@@ -44,4 +44,4 @@
 
 
 
-![Activity Diagram](docs\images\activity-modify-cv.png)
+![Activity Diagram](docs/images/activity-modify-cv.png)
