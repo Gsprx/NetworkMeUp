@@ -54,4 +54,6 @@
     2. Η περίπτωση χρήσης τερματίζει.
 
 
+## Διάγραμμα Δραστηριοτήτων
+
 ![Activity Diagram](docs/images/activity-job-research.png)

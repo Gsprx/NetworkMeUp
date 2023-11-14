@@ -91,5 +91,6 @@
     1. Η περίπτωση χρήσης τερματίζει.  
 
 
+## Διάγραμμα Δραστηριοτήτων
 
 ![Activity Diagram](docs/images/activity-manage-job-positions.png)
