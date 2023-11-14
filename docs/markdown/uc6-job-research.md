@@ -31,4 +31,4 @@
 
 
 
-## ![Activity Diagram](docs/../../images/activity-job-research.png)
+![Activity Diagram](docs\images\activity-job-research.png)

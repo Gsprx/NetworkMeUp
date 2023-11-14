@@ -91,4 +91,5 @@
     1. Η περίπτωση χρήσης τερματίζει.  
 
 
-## ![Activity Diagram](docs/../../images/activity-manage-job-positions.png)
+
+![Activity Diagram](docs\images\activity-manage-job-positions.png)
