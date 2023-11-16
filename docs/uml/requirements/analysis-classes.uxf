@@ -25,4 +25,7 @@ JobResearchUI</panel_attributes><additional_attributes></additional_attributes><
 JobResearchController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>232</y><w>128</w><h>40</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
 Job</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>344</y><w>128</w><h>40</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
 Skill</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>288</y><w>128</w><h>40</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
-CV</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+CV</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>352</x><y>400</y><w>128</w><h>40</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Availability</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>400</y><w>128</w><h>40</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Availability</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>400</y><w>128</w><h>40</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Availability</panel_attributes><additional_attributes></additional_attributes></element></diagram>
