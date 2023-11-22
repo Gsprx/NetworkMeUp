@@ -56,4 +56,4 @@
 
 ## Διάγραμμα Δραστηριοτήτων
 
-![Activity Diagram](docs/images/activity-job-research.png)
+![Activity Diagram](docs/images/activity-update-job-applications.png)
