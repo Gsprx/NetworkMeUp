@@ -1,11 +1,11 @@
-<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>616</x><y>133</y><w>147</w><h>84</h></coordinates><panel_attributes>Employer
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>616</x><y>170</y><w>147</w><h>84</h></coordinates><panel_attributes>Employer
 --
 - Company_Name : String
 - Sector : String
 - email : Email
 - phone : Phone
 - password : Password
-- tin : TIN</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>126</y><w>147</w><h>98</h></coordinates><panel_attributes>Employee
+- tin : TIN</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>163</y><w>147</w><h>98</h></coordinates><panel_attributes>Employee
 --
 - Name : String
 - Date_Of_Birth : Date
@@ -13,51 +13,51 @@
 - Profile_Image : Image
 - email : Email
 - phone : Phone
-- password : Password</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>742</x><y>364</y><w>147</w><h>42</h></coordinates><panel_attributes>Job
+- password : Password</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>742</x><y>401</y><w>147</w><h>42</h></coordinates><panel_attributes>Job
 --
 - Title : String
-- Description : Text</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>301</y><w>147</w><h>35</h></coordinates><panel_attributes>CV
+- Description : Text</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>338</y><w>147</w><h>35</h></coordinates><panel_attributes>CV
 --
 - AdditionalSkillset : Text
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>217</y><w>56</w><h>98</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>254</y><w>56</w><h>98</h></coordinates><panel_attributes>lt=-
 m1= 0..1
 m2= 1
-manages</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>679</x><y>210</y><w>105</w><h>168</h></coordinates><panel_attributes>lt=-
+manages</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>679</x><y>247</y><w>105</w><h>168</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= 1
 manages
 
-</panel_attributes><additional_attributes>120;220;120;140;10;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>385</x><y>14</y><w>147</w><h>35</h></coordinates><panel_attributes>Phone
+</panel_attributes><additional_attributes>120;220;120;140;10;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>385</x><y>51</y><w>147</w><h>35</h></coordinates><panel_attributes>Phone
 --
-- Number : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>56</y><w>147</w><h>35</h></coordinates><panel_attributes>Email
+- Number : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>93</y><w>147</w><h>35</h></coordinates><panel_attributes>Email
 --
-- Address : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>14</y><w>147</w><h>35</h></coordinates><panel_attributes>TIN
+- Address : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>51</y><w>147</w><h>35</h></coordinates><panel_attributes>TIN
 --
-- ID : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>469</x><y>245</y><w>147</w><h>42</h></coordinates><panel_attributes>Application
+- ID : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>469</x><y>282</y><w>147</w><h>42</h></coordinates><panel_attributes>Application
 --
 - ID: Integer
-- Status : Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>154</y><w>112</w><h>105</h></coordinates><panel_attributes>lt=-
+- Status : Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>191</y><w>112</w><h>105</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= 1
-submits</panel_attributes><additional_attributes>130;130;130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>280</y><w>189</w><h>126</h></coordinates><panel_attributes>lt=-
+submits</panel_attributes><additional_attributes>130;130;130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>317</y><w>189</w><h>126</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= *
-recieves</panel_attributes><additional_attributes>250;150;10;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>784</x><y>224</y><w>147</w><h>63</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+recieves</panel_attributes><additional_attributes>250;150;10;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>784</x><y>261</y><w>147</w><h>63</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Availability
 --
 - 1. Available
 - 2. Temporarily Unavailable
-- 3. Closed</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>854</x><y>280</y><w>35</w><h>98</h></coordinates><panel_attributes>lt=-
+- 3. Closed</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>854</x><y>317</y><w>35</w><h>98</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= 1
 has
 
-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>553</x><y>56</y><w>147</w><h>35</h></coordinates><panel_attributes>Password
+</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>553</x><y>93</y><w>147</w><h>35</h></coordinates><panel_attributes>Password
 --
-- Password : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>406</y><w>147</w><h>42</h></coordinates><panel_attributes>Eductation
+- Password : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>443</y><w>147</w><h>42</h></coordinates><panel_attributes>Eductation
 --
 - Description : Text
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>357</y><w>147</w><h>98</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>394</y><w>147</w><h>98</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 LevelOfStudies
 --
 1. Amatuer
@@ -65,37 +65,37 @@ LevelOfStudies
 3. High School
 4. Bachelor
 5. Master
-6. PhD</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>469</y><w>161</w><h>42</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+6. PhD</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>506</y><w>161</w><h>42</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 EducationField
 --
 *100 Most Popular Fields of Education
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>315</y><w>105</w><h>105</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>352</y><w>105</w><h>105</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= 1
-has</panel_attributes><additional_attributes>110;130;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>441</y><w>84</w><h>70</h></coordinates><panel_attributes>lt=-
+has</panel_attributes><additional_attributes>110;130;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>478</y><w>84</w><h>70</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>10;70;90;70;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>357</x><y>378</y><w>98</w><h>42</h></coordinates><panel_attributes>lt=-
+relates to</panel_attributes><additional_attributes>10;70;90;70;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>357</x><y>415</y><w>98</w><h>42</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>110;40;110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>357</x><y>539</y><w>98</w><h>42</h></coordinates><panel_attributes>lt=-
+relates to</panel_attributes><additional_attributes>110;40;110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>357</x><y>576</y><w>98</w><h>42</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>110;40;110;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>532</y><w>147</w><h>77</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+relates to</panel_attributes><additional_attributes>110;40;110;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>569</y><w>147</w><h>77</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Knowledge
 --
 1. Amateur 
 2. Intermediate 
 3. Proficiency 
-4. Naitive</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>567</y><w>147</w><h>42</h></coordinates><panel_attributes>LanguageKnowledge
+4. Naitive</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>604</y><w>147</w><h>42</h></coordinates><panel_attributes>LanguageKnowledge
 --
-- Description</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>623</y><w>161</w><h>42</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+- Description</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>217</x><y>660</y><w>161</w><h>42</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Language
 --
-*50 Most Popular Languages</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>602</y><w>84</w><h>63</h></coordinates><panel_attributes>lt=-
+*50 Most Popular Languages</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>639</y><w>84</w><h>63</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>10;60;90;60;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>189</x><y>315</y><w>322</w><h>385</h></coordinates><panel_attributes>lt=-
+relates to</panel_attributes><additional_attributes>10;60;90;60;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>189</x><y>352</y><w>322</w><h>385</h></coordinates><panel_attributes>lt=-
 m1= *
 m2= 1
 
@@ -105,10 +105,10 @@ m2= 1
 
 
 
-has</panel_attributes><additional_attributes>430;420;430;530;10;530;10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>399</y><w>252</w><h>49</h></coordinates><panel_attributes>lt=-
+has</panel_attributes><additional_attributes>430;420;430;530;10;530;10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>436</y><w>252</w><h>49</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= *
-requires</panel_attributes><additional_attributes>330;10;330;40;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>399</y><w>357</w><h>210</h></coordinates><panel_attributes>lt=-
+requires</panel_attributes><additional_attributes>330;10;330;40;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>436</y><w>357</w><h>210</h></coordinates><panel_attributes>lt=-
 m1= 1
 m2= *
 requires</panel_attributes><additional_attributes>480;10;480;270;10;270</additional_attributes></element></diagram>
