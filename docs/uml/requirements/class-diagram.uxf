@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>580</x><y>200</y><w>570</w><h>200</h></coordinates><panel_attributes>Employer
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>545</x><y>190</y><w>570</w><h>210</h></coordinates><panel_attributes>Employer
 --
 - Company_Name : String
 - Sector : String
@@ -12,7 +12,8 @@
 +SetSector( Sector: String)
 + GetSector() : String {query}
 -CreateJob(Title: Text, Description: Text, Edu : Education, Lk: LanguageKnowledge)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>230</y><w>260</w><h>270</h></coordinates><panel_attributes>Employee
+-ReviewApplications(job:Job)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>95</x><y>230</y><w>260</w><h>270</h></coordinates><panel_attributes>Employee
 --
 - Name : String
 - Date_Of_Birth : Date
@@ -30,8 +31,10 @@
 + GetAddress() : String {query}
 +SetProfile_Image( Profile_Image: Image)
 + GetProfile_Image() : Image {query}
++MatchUp() : Integer
+-ReviewJobs() : Set Job !!!!
 -CreateApplication( job: Job) 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>710</y><w>210</w><h>120</h></coordinates><panel_attributes>Job
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>865</x><y>710</y><w>210</w><h>120</h></coordinates><panel_attributes>Job
 --
 - Title : String
 - Description : Text
@@ -39,57 +42,57 @@
 +SetTitle( Title : Text )
 +GetTitle() : Title {query}
 +SetDescription( Description : Text)
-+GetDescription() : Text {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>590</y><w>270</w><h>80</h></coordinates><panel_attributes>CV
++GetDescription() : Text {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>85</x><y>590</y><w>270</w><h>80</h></coordinates><panel_attributes>CV
 --
 - AdditionalSkillset : Text
 --
 +SetAdditionalSkillset( AddiitonalSkillset : Text)
 +GetAdditionalSkillset() : Text {query}
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>490</y><w>80</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>225</x><y>490</y><w>80</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
 m1= 0..1
 m2= 1
-manages</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>390</y><w>230</w><h>340</h></coordinates><panel_attributes>lt=&lt;-&gt;
+manages</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>695</x><y>390</y><w>230</w><h>340</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1= *
 m2= 1
 manages
 
-</panel_attributes><additional_attributes>200;320;200;250;30;250;30;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>0</y><w>210</w><h>80</h></coordinates><panel_attributes>Phone
+</panel_attributes><additional_attributes>200;320;200;250;30;250;30;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>0</y><w>210</w><h>80</h></coordinates><panel_attributes>Phone
 --
 - Number : String
 --
 +SetNumber(Number : String)
-+GetNumber() : String {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>0</y><w>210</w><h>80</h></coordinates><panel_attributes>Email
++GetNumber() : String {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>225</x><y>0</y><w>210</w><h>80</h></coordinates><panel_attributes>Email
 --
 - Address : String
 --
 +SetAddress(Address : String)
-+GetAddress() : String {query} </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>90</y><w>210</w><h>80</h></coordinates><panel_attributes>TIN
++GetAddress() : String {query} </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>90</y><w>210</w><h>80</h></coordinates><panel_attributes>TIN
 --
 - ID : String
 --
 +SetID(ID : String)
-+GetID() : String {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>350</y><w>160</w><h>120</h></coordinates><panel_attributes>lt=&lt;-&gt;
++GetID() : String {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>345</x><y>350</y><w>160</w><h>120</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1= *
 m2= 1
-submits</panel_attributes><additional_attributes>130;100;130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>610</y><w>330</w><h>160</h></coordinates><panel_attributes>lt=&lt;-&gt;
+submits</panel_attributes><additional_attributes>130;100;130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>555</x><y>600</y><w>330</w><h>170</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1= 1
 m2= *
-recieves</panel_attributes><additional_attributes>310;130;10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>510</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+recieves</panel_attributes><additional_attributes>310;140;10;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>865</x><y>510</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Availability
 --
 1. Available
 2. Temporarily Unavailable
-3. Closed</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1000</x><y>590</y><w>50</w><h>140</h></coordinates><panel_attributes>lt=-&gt;
+3. Closed</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>965</x><y>590</y><w>50</w><h>140</h></coordinates><panel_attributes>lt=-&gt;
 m1= 1
 m2= 1
 has
 
-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>90</y><w>210</w><h>80</h></coordinates><panel_attributes>Password
+</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>225</x><y>90</y><w>210</w><h>80</h></coordinates><panel_attributes>Password
 --
 - Password : String
 --
 +SetPassword( Password : String)
-+ GetPassword() : String {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>760</y><w>250</w><h>120</h></coordinates><panel_attributes>Eductation
++ GetPassword() : String {query}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>305</x><y>760</y><w>250</w><h>120</h></coordinates><panel_attributes>Eductation
 --
 - Description : Text
 --
@@ -98,7 +101,7 @@ has
 #SetLevelOfStudies( los : LevelOfStudies)
 +GetLevelOfStudies() : LevelOfStudies
 #SetEducationField( edc : EducationField)
-+GetEducationField() : EducationField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>700</y><w>210</w><h>140</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
++GetEducationField() : EducationField</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>55</x><y>700</y><w>210</w><h>140</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 LevelOfStudies
 --
 1. Amatuer
@@ -106,29 +109,29 @@ LevelOfStudies
 3. High School
 4. Bachelor
 5. Master
-6. PhD</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>860</y><w>230</w><h>60</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+6. PhD</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>55</x><y>860</y><w>230</w><h>60</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 EducationField
 --
 *100 Most Popular Fields of Education
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>640</y><w>150</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>345</x><y>640</y><w>150</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
 m1= *
 m2= 1
-has</panel_attributes><additional_attributes>110;120;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>870</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+has</panel_attributes><additional_attributes>110;120;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>870</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>10;40;150;40;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>730</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+relates to</panel_attributes><additional_attributes>10;40;150;40;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>255</x><y>730</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>110;30;110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>960</y><w>130</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+relates to</panel_attributes><additional_attributes>110;30;110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>265</x><y>960</y><w>130</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>100;40;100;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>950</y><w>210</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+relates to</panel_attributes><additional_attributes>100;40;100;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>65</x><y>950</y><w>210</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Knowledge
 --
 1. Amateur 
 2. Intermediate 
 3. Proficiency 
-4. Naitive</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>1000</y><w>330</w><h>140</h></coordinates><panel_attributes>LanguageKnowledge
+4. Naitive</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>305</x><y>1000</y><w>330</w><h>140</h></coordinates><panel_attributes>LanguageKnowledge
 --
 - Description : Text
 --
@@ -137,13 +140,13 @@ Knowledge
 #SetKnowledge( level: Knowledge)
 +GetKnowledge() : Knowledge
 #SetLanguage( lng : Language)
-+GetLanguage() : Language</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>1140</y><w>230</w><h>60</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
++GetLanguage() : Language</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>55</x><y>1140</y><w>230</w><h>60</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Language
 --
-*50 Most Popular Languages</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>1130</y><w>120</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+*50 Most Popular Languages</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>1130</y><w>120</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
 m1= 1
 m2= 1
-relates to</panel_attributes><additional_attributes>10;40;90;40;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>640</y><w>460</w><h>610</h></coordinates><panel_attributes>lt=&lt;-
+relates to</panel_attributes><additional_attributes>10;40;90;40;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>15</x><y>640</y><w>460</w><h>610</h></coordinates><panel_attributes>lt=&lt;-
 m1= *
 m2= 1
 
@@ -153,13 +156,13 @@ m2= 1
 
 
 
-has</panel_attributes><additional_attributes>430;500;430;590;10;590;10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>780</y><w>340</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+has</panel_attributes><additional_attributes>430;500;430;590;10;590;10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>545</x><y>780</y><w>340</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
 m1= 1
 m2= *
-requires</panel_attributes><additional_attributes>320;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>820</y><w>450</w><h>240</h></coordinates><panel_attributes>lt=-&gt;
+requires</panel_attributes><additional_attributes>320;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>625</x><y>820</y><w>450</w><h>240</h></coordinates><panel_attributes>lt=-&gt;
 m1= 1
 m2= *
-requires</panel_attributes><additional_attributes>420;10;420;210;10;210</additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>450</y><w>210</w><h>170</h></coordinates><panel_attributes>Application
+requires</panel_attributes><additional_attributes>420;10;420;210;10;210</additional_attributes></element><element><id>UMLClass</id><coordinates><x>425</x><y>450</y><w>210</w><h>160</h></coordinates><panel_attributes>Application
 --
 - ID: Integer
 - Status : Boolean
@@ -169,5 +172,10 @@ requires</panel_attributes><additional_attributes>420;10;420;210;10;210</additio
 +GetID() : Integer {query}
 +SetStatus( Status: Boolean)
 +GetStatus() : Boolean {query}
-_+nextApplicationID() : Integer_
--MatchUp() : Integer</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+_+nextApplicationID() : Integer_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>755</x><y>50</y><w>160</w><h>100</h></coordinates><panel_attributes>NOTES:
+1)Pou tha brisketai to
+array me ola ta jobs????
+2)To match up tha ginetai 
+ston Employee???
+bg=black
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
