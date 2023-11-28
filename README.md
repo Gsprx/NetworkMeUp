@@ -11,4 +11,4 @@
 |Απόστολος Καμπούρης|p3210060|
 
 ## Software Requirements
-#### ![Απαιτήσεις Λογισμικού](docs/markdown/software-requirements.md)
+#### [Απαιτήσεις Λογισμικού](docs/markdown/software-requirements.md)
