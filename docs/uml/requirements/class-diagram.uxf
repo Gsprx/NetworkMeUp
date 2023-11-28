@@ -31,7 +31,7 @@
 + GetAddress() : String {query}
 +SetProfile_Image( Profile_Image: Image)
 + GetProfile_Image() : Image {query}
-+MatchUp(cv : CV) : Array&lt;Job&gt; 
++MatchUp(cv : CV) : Array&lt;Job&gt; {query}
 -ReviewJobs(matching_jobs : Array&lt;Job&gt;)
 -CreateApplication( job: Job) 
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>875</x><y>710</y><w>210</w><h>120</h></coordinates><panel_attributes>Job
