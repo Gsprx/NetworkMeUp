@@ -41,4 +41,10 @@ public class PasswordTest {
     public void lessThan8CharactersCheck(){
         Assert.assertThrows(InsufficientPasswordException.class, ()->{pwd.setPassword("Test12!");});
     }
+
+    @Test
+    public void validSetCheck(){
+        pwd.setPassword("12345Test123!");
+        Assert.assertEquals("12345Test123!", pwd.getPassword());
+    }
 }

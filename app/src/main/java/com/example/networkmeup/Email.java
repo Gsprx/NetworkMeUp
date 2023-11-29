@@ -4,21 +4,7 @@ public class Email {
     private String address;
 
     public Email (String address){
-
-            //Common universal email address limitations
-            String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-            Pattern pattern = Pattern.compile(emailRegex);
-
-            if (address == null){
-                throw new NullPointerException("Email address cannot be empty.");
-            }
-            if (pattern.matcher(address).matches()) {
-                this.address = address;
-                return;
-            }
-            else{
-                throw new IllegalArgumentException("Invalid email address.");
-            }
+            validateEmail(address);
     }
 
     public String getAddress() {
@@ -26,6 +12,10 @@ public class Email {
     }
 
     public void setAddress(String address) {
+        validateEmail(address);
+    }
+
+    private void validateEmail(String address){
 
         //Common universal email address limitations
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -41,6 +31,6 @@ public class Email {
         else{
             throw new IllegalArgumentException("Invalid email address.");
         }
-
     }
+
 }

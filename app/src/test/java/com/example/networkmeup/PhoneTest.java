@@ -35,4 +35,5 @@ public class PhoneTest {
     public void invalidFirstNumberCheck(){
         Assert.assertThrows(IllegalArgumentException.class, ()->{phone.setNumber("0456827587");});
     }
+
 }
