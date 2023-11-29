@@ -39,7 +39,7 @@
 + GetAddress() : String {query}
 +SetProfile_Image( Profile_Image: Image)
 + GetProfile_Image() : Image {query}
-+MatchUp(cv : CV) : Array&lt;Job&gt; {query}
++MatchUp(cv : CV) : Array&lt;Job&gt; 
 -ReviewJobs(matching_jobs : Array&lt;Job&gt;)
 -CreateApplication( job: Job) 
 <<<<<<< HEAD
