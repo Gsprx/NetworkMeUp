@@ -15,6 +15,8 @@ public class WorkExperience {
         if (desc == null){
             throw new NullPointerException("Description cannot be empty");
         }
+        this.years = years;
+        this.description = desc;
     }
 
     public int getYears() {
