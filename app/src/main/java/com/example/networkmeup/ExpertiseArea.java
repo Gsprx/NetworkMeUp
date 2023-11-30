@@ -4,6 +4,23 @@ public class ExpertiseArea {
     private String area;
 
     public ExpertiseArea(String area){
-        this.area = area;
+        validateArea(area);
+    }
+
+    public String getArea(){
+        return this.area;
+    }
+
+    public void setArea(String area){
+        validateArea(area);
+    }
+
+    private void validateArea(String area){
+        if (area != null){
+            this.area = area;
+        }
+        else{
+            throw new NullPointerException("Area cannot be empty.");
+        }
     }
 }
