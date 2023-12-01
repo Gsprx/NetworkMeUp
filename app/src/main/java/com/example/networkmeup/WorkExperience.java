@@ -47,4 +47,15 @@ public class WorkExperience {
     public ExpertiseArea getExpArea (){
         return expArea;
     }
+
+    public int compare(WorkExperience workExperience){
+        if(this.expArea.equals(workExperience.expArea)){
+            return Integer.compare(this.years, workExperience.years);
+        }
+        //return -2 if incomperable expertise areas.
+        return -2;
+    }
+    public boolean equals(WorkExperience workExperience){
+        return (this.compare(workExperience) == 0);
+    }
 }

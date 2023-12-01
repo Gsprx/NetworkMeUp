@@ -57,4 +57,16 @@ public class LanguageKnowledge {
     public void setDescription(String description) {
         validateData(description, this.language, this.lvlOfKnowledge);
     }
+
+    public int compare(LanguageKnowledge languageKnowledge){
+        if(this.language.equals(languageKnowledge.language)){
+            return Integer.compare(this.lvlOfKnowledge.ordinal(), languageKnowledge.lvlOfKnowledge.ordinal());
+        }
+        //return -2 if incomperable expertise areas.
+        return -2;
+    }
+
+    public boolean equals(LanguageKnowledge languageKnowledge){
+        return (this.compare(languageKnowledge) == 0);
+    }
 }

@@ -23,4 +23,15 @@ public class LanguageTest {
         lang.setLanguage("English");
         Assert.assertEquals("English", lang.getLanguage());
     }
+
+    @Test
+    public void equalsCheck(){
+        Language lang2 = new Language("Greek");
+        Assert.assertEquals(true, lang.equals(lang2));
+    }
+    @Test
+    public void notEqualsCheck(){
+        Language lang2 = new Language("Spanish");
+        Assert.assertEquals(false, lang.equals(lang2));
+    }
 }

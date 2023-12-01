@@ -23,4 +23,7 @@ public class ExpertiseArea {
             throw new NullPointerException("Area cannot be empty.");
         }
     }
+    public boolean equals (ExpertiseArea expertiseArea){
+        return (this.area.equals(expertiseArea.area));
+    }
 }

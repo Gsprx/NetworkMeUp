@@ -56,4 +56,16 @@ public class Education {
     public LevelOfStudies getLvlOfStudies() {
         return lvlOfStudies;
     }
+
+    //compares two education objects, return 0 if equal, -1 if this is less than the arguement, 1 if this is more than the arguement
+    public int compare(Education edu){
+        if(this.expArea.equals(edu.expArea)){
+            return Integer.compare(this.lvlOfStudies.ordinal(), edu.lvlOfStudies.ordinal());
+        }
+        //return -2 if incomperable expertise areas.
+        return -2;
+    }
+    public boolean equals(Education edu){
+        return (this.compare(edu) == 0);
+    }
 }

@@ -45,4 +45,24 @@ public class LanguageKnowledgeTest {
         langKnow.setLvlOfKnowledge(LevelOfKnowledge.Advanced);
         Assert.assertEquals(LevelOfKnowledge.Advanced, langKnow.getLvlOfKnowledge());
     }
+
+    @Test
+    public void equalsCheck(){
+        Language lang = new Language("Greek");
+        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Studying for many years", lang, LevelOfKnowledge.Naitive);
+        Assert.assertEquals(true, langKnow.equals(languageKnowledge2));
+    }
+
+    @Test
+    public void notEqualLangCheck(){
+        Language lang = new Language("English");
+        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Growing up in Greece", lang, LevelOfKnowledge.Naitive);
+        Assert.assertEquals(false, langKnow.equals(languageKnowledge2));
+    }
+    @Test
+    public void notEqualLvlOfKnowledgeCheck(){
+        Language lang = new Language("Greek");
+        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Growing up in Greece", lang, LevelOfKnowledge.Proficiency);
+        Assert.assertEquals(false, langKnow.equals(languageKnowledge2));
+    }
 }

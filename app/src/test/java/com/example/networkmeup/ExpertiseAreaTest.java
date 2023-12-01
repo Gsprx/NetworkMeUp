@@ -22,4 +22,14 @@ public class ExpertiseAreaTest {
         expArea.setArea("Test Area 2");
         Assert.assertEquals("Test Area 2", expArea.getArea());
     }
+    @Test
+    public void equalsCheck(){
+        ExpertiseArea expertiseArea2 = new ExpertiseArea("Test Area");
+        Assert.assertEquals(true, expertiseArea2.equals(expArea));
+    }
+    @Test
+    public void notEqualsCheck(){
+        ExpertiseArea expertiseArea2 = new ExpertiseArea("Test Area 2");
+        Assert.assertEquals(false, expertiseArea2.equals(expArea));
+    }
 }

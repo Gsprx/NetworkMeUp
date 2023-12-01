@@ -49,4 +49,24 @@ public class WorkExperienceTest {
     public void validExpAreaCheck(){
         Assert.assertEquals("Comp Sci", workExp.getExpArea().getArea());
     }
+    @Test
+    public void equalsCheck(){
+        ExpertiseArea expArea = new ExpertiseArea("Comp Sci");
+        WorkExperience workExperience2 = new WorkExperience(3, "Test Experience", expArea);
+        Assert.assertEquals(true, workExp.equals(workExperience2));
+    }
+
+    @Test
+    public void notEqualExpAreaCheck(){
+        ExpertiseArea expArea = new ExpertiseArea("Physics");
+        WorkExperience workExperience2 = new WorkExperience(3, "Test Experience", expArea);
+        Assert.assertEquals(false, workExp.equals(workExperience2));
+    }
+
+    @Test
+    public void notEqualYearsCheck(){
+        ExpertiseArea expArea = new ExpertiseArea("Comp Sci");
+        WorkExperience workExperience2 = new WorkExperience(2, "Test Experience", expArea);
+        Assert.assertEquals(false, workExp.equals(workExperience2));
+    }
 }

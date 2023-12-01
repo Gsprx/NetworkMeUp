@@ -20,4 +20,8 @@ public class Language {
     public void setLanguage(String language) {
         validateLang(language);
     }
+
+    public boolean equals(Language lang){
+        return (this.language.equals(lang.language));
+    }
 }

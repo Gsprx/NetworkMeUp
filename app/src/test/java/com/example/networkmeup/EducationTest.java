@@ -46,4 +46,22 @@ public class EducationTest {
         edu.setLvlOfStudies(LevelOfStudies.Master);
         Assert.assertEquals(LevelOfStudies.Master, edu.getLvlOfStudies());
     }
+    @Test
+    public void equalsCheck(){
+        ExpertiseArea expArea = new ExpertiseArea("Comp Sci");
+        Education education2 = new Education("AUEB Certification", expArea, LevelOfStudies.Bachelor);
+        Assert.assertEquals(true, edu.equals(education2));
+    }
+    @Test
+    public void notEqualExpAreaCheck(){
+        ExpertiseArea expArea = new ExpertiseArea("Alchemy");
+        Education education2 = new Education("AUEB Certification", expArea, LevelOfStudies.Bachelor);
+        Assert.assertEquals(false, edu.equals(education2));
+    }
+    @Test
+    public void notEqualLvlOfStudiesCheck(){
+        ExpertiseArea expArea = new ExpertiseArea("Comp Sci");
+        Education education2 = new Education("AUEB Certification", expArea, LevelOfStudies.Master);
+        Assert.assertEquals(false, edu.equals(education2));
+    }
 }
