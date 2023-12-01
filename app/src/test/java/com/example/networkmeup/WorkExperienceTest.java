@@ -9,28 +9,44 @@ public class WorkExperienceTest {
 
     @Before
     public void setup(){
-        workExp = new WorkExperience(3, "Test Experience");
+        ExpertiseArea expArea = new ExpertiseArea("Comp Sci");
+        workExp = new WorkExperience(3, "Test Experience", expArea);
     }
 
     @Test
     public void nullDescCheck(){
-        Assert.assertThrows(NullPointerException.class, ()->{workExp = new WorkExperience(3,null);});
+        Assert.assertThrows(NullPointerException.class, ()->{
+            workExp.setDescription(null);
+        });
+    }
+
+    @Test
+    public void nullExpAreaCheck(){
+        Assert.assertThrows(NullPointerException.class, ()->{
+            workExp.setExpArea(null);
+        });
     }
 
     @Test
     public void invalidYearsCheck(){
-        Assert.assertThrows(IllegalArgumentException.class, ()->{workExp = new WorkExperience(-1, "Test Desc1");});
+        Assert.assertThrows(IllegalArgumentException.class, ()->{
+            ExpertiseArea expArea = new ExpertiseArea("Comp Sci 2");
+            workExp.setYears(-4);
+        });
     }
 
     @Test
     public void validYearsCheck(){
-        workExp = new WorkExperience(15, "Test Experience 2");
-        Assert.assertEquals(15, workExp.getYears());
+        Assert.assertEquals(3, workExp.getYears());
     }
 
     @Test
     public void validDescCheck(){
-        workExp = new WorkExperience(15, "Test Experience 2");
-        Assert.assertEquals("Test Experience 2", workExp.getDescription());
+        Assert.assertEquals("Test Experience", workExp.getDescription());
+    }
+
+    @Test
+    public void validExpAreaCheck(){
+        Assert.assertEquals("Comp Sci", workExp.getExpArea().getArea());
     }
 }
