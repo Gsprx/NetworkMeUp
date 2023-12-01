@@ -1,19 +1,44 @@
 package com.example.networkmeup;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 public class Employee {
     private String name;
     private Date dateOfBirth;
     private String address;
-    //private BufferedImage profileImage;
+    private String profileImage; //path to image
     private Email email;
     private Phone phone;
     private Password password;
+    private CV cv;
+    private ArrayList<Application> applications;
 
     public Employee(Email email, Phone phone, Password password) {
+        validateData(email,phone,password);
+        applications = new ArrayList<>();
+        cv = new CV();
+    }
+
+    private void validateData(Email email, Phone phone, Password password){
+        if(email == null){
+            throw new NullPointerException("Email cannot be null.");
+        }
+        if(phone == null){
+            throw new NullPointerException("Phone cannot be null.");
+        }
+        if(password == null){
+            throw new NullPointerException("Password cannot be null.");
+        }
         this.email = email;
         this.phone = phone;
         this.password = password;
+    }
+
+    private void validateObject(Object obj){
+        if(obj == null){
+            throw new NullPointerException("Object cannot be null");
+        }
     }
 
     public String getName() {
@@ -21,6 +46,7 @@ public class Employee {
     }
 
     public void setName(String name) {
+        validateObject(name);
         this.name = name;
     }
 
@@ -29,6 +55,7 @@ public class Employee {
     }
 
     public void setDateOfBirth(Date dateOfBirth) {
+        validateObject(dateOfBirth);
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -37,6 +64,7 @@ public class Employee {
     }
 
     public void setAddress(String address) {
+        validateObject(address);
         this.address = address;
     }
 
@@ -45,7 +73,7 @@ public class Employee {
     }
 
     public void setEmail(Email email) {
-        this.email = email;
+        validateData(email,this.phone, this.password);
     }
 
     public Phone getPhone() {
@@ -53,7 +81,7 @@ public class Employee {
     }
 
     public void setPhone(Phone phone) {
-        this.phone = phone;
+        validateData(this.email,phone, this.password);
     }
 
     public Password getPassword() {
@@ -61,16 +89,33 @@ public class Employee {
     }
 
     public void setPassword(Password password) {
-        this.password = password;
+        validateData(this.email,this.phone, password);
     }
 
-   /* public void setProfileImage( ... ){
-        return;
+    public void setProfileImage(String imagepath){
+        validateObject(imagepath);
+        this.profileImage = imagepath;
     }
 
-    public ... getProfileImage(){
-        return;
+    public String getProfileImage(){
+        return profileImage;
     }
-    */
 
+    public ArrayList<Application> getApplications(){
+        return applications;
+    }
+
+    public void addApplication(Application appl){
+        validateObject(appl);
+        applications.add(appl);
+    }
+
+    public void setCV(CV cv){
+        validateObject(cv);
+        this.cv = cv;
+    }
+
+    public CV getCV(){
+        return cv;
+    }
 }
