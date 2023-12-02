@@ -1,6 +1,7 @@
 package com.example.networkmeup;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 enum Availability{
     Available,
@@ -83,5 +84,64 @@ public class Job {
         }
 
         return true; //sufficient in every requirement
+    }
+
+    private void validateObject(Object obj){
+        if (obj == null){
+            throw new NullPointerException("Object cannot be null");
+        }
+        return;
+    }
+
+    public void addReqEducation (Education edu){
+        validateObject(edu);
+        this.reqEducation.add(edu);
+    }
+
+    public void addReqLanguageKnowledge(LanguageKnowledge languageKnowledge){
+        validateObject(languageKnowledge);
+        this.reqLanguageKnowledge.add(languageKnowledge);
+    }
+
+    public void addReqWorkExperience(WorkExperience workExperience){
+        validateObject(workExperience);
+        this.reqWorkExperience.add(workExperience);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setAvailability(Availability availability){
+        validateObject(availability);
+        this.availability = availability;
+    }
+    public Availability getAvailability() {
+        return availability;
+    }
+
+    public ArrayList<Application> getApplications() {
+        return applications;
+    }
+
+    public void addApplication(Application application){
+        validateObject(application);
+        this.applications.add(application);
+    }
+
+    public ArrayList<Education> getReqEducation() {
+        return reqEducation;
+    }
+
+    public ArrayList<WorkExperience> getReqWorkExperience() {
+        return reqWorkExperience;
+    }
+
+    public ArrayList<LanguageKnowledge> getReqLanguageKnowledge() {
+        return reqLanguageKnowledge;
     }
 }
