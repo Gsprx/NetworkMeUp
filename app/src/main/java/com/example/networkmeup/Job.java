@@ -38,12 +38,12 @@ public class Job {
 
     public boolean acceptCV(CV cv){
 
-        for(Education reqEduaction : reqEducation){
+        for(Education reqEducation : reqEducation){
             //for each required education we do the following:
 
             boolean found = false; //if we find a matching (or greater) education becomes true, else remains false.
             for(Education applicantEducation : cv.getEducation()){
-                if (applicantEducation.compare(reqEduaction) >= 0){
+                if (applicantEducation.compare(reqEducation) >= 0){
                     found = true;
                     break;
                 }
