@@ -1,4 +1,6 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
+
+import com.example.networkmeup.domain.Email;
 
 import org.junit.Assert;
 import org.junit.Before;

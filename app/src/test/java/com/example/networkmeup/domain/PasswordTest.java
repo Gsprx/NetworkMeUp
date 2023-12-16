@@ -1,4 +1,7 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
+
+import com.example.networkmeup.domain.InsufficientPasswordException;
+import com.example.networkmeup.domain.Password;
 
 import org.junit.Assert;
 import org.junit.Before;

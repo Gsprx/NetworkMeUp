@@ -1,4 +1,7 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
+
+import com.example.networkmeup.domain.ExpertiseArea;
+import com.example.networkmeup.domain.WorkExperience;
 
 import org.junit.Assert;
 import org.junit.Before;

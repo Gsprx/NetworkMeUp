@@ -1,4 +1,4 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
 
 public class WorkExperience {
     private int years;

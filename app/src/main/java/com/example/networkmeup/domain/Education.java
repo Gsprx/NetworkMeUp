@@ -1,4 +1,4 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
 enum LevelOfStudies{
     Amateur,
     Junior_High_School,

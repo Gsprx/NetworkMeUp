@@ -1,6 +1,5 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 public class Employee {

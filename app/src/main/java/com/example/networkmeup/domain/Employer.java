@@ -1,4 +1,4 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
 
 import java.util.ArrayList;
 

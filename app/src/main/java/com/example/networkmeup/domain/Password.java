@@ -1,4 +1,4 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 public class Password {

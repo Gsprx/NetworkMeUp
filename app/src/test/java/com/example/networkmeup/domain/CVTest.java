@@ -1,4 +1,13 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
+
+import com.example.networkmeup.domain.CV;
+import com.example.networkmeup.domain.Education;
+import com.example.networkmeup.domain.ExpertiseArea;
+import com.example.networkmeup.domain.Language;
+import com.example.networkmeup.domain.LanguageKnowledge;
+import com.example.networkmeup.domain.LevelOfKnowledge;
+import com.example.networkmeup.domain.LevelOfStudies;
+import com.example.networkmeup.domain.WorkExperience;
 
 import org.junit.Assert;
 import org.junit.Before;

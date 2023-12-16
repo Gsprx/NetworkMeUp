@@ -1,8 +1,10 @@
-package com.example.networkmeup;
+package com.example.networkmeup.domain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.networkmeup.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,6 +1,4 @@
-package com.example.networkmeup;
-
-import java.util.logging.Level;
+package com.example.networkmeup.domain;
 
 enum LevelOfKnowledge{
     Amateur,
