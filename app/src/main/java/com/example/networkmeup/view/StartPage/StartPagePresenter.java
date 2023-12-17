@@ -10,4 +10,8 @@ public class StartPagePresenter {
     public void onLogin(){
         startPageView.login();
     }
+
+    public void onSignUp(){
+        startPageView.signup();
+    }
 }
