@@ -1,15 +1,5 @@
 package com.example.networkmeup.domain;
 
-import com.example.networkmeup.domain.Application;
-import com.example.networkmeup.domain.CV;
-import com.example.networkmeup.domain.Education;
-import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.domain.ExpertiseArea;
-import com.example.networkmeup.domain.LevelOfStudies;
-import com.example.networkmeup.domain.Password;
-import com.example.networkmeup.domain.Phone;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -138,6 +128,23 @@ public class EmployeeTest {
         emp.setCV(testcv);
         Assert.assertEquals("self taught", emp.getCV().getEducation().get(0).getDescription());
     }
+    @Test
+    public void validEqualsCheck(){
+        Employee emp2 = new Employee(emp.getEmail(), emp.getPhone(), new Password("ValidPaswd12!"));
+        Assert.assertEquals(true, emp.equals(emp2));
+    }
 
+    @Test
+    public void validNotEqualsCheck(){
+        Employee emp2 = new Employee(new Email("exampleEmail@email.com"), new Phone("4859285724"), emp.getPassword());
+        Assert.assertEquals(false, emp.equals(emp2));
+    }
+
+    @Test
+    public void nullEqualsCheck(){
+        Assert.assertThrows(NullPointerException.class, ()->{
+            emp.equals(null);
+        });
+    }
 
 }

@@ -1,5 +1,7 @@
 package com.example.networkmeup.domain;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.Date;
 public class Employee {
@@ -117,4 +119,13 @@ public class Employee {
     public CV getCV(){
         return cv;
     }
+
+
+    public boolean equals(Employee e) {
+        validateObject(e);
+        //we consider two employees equal if they have the same phone and or email
+        return (this.email.equals(e.getEmail()) || this.phone.equals(e.getPhone()));
+    }
 }
+
+
