@@ -46,6 +46,11 @@ public class PasswordTest {
     }
 
     @Test
+    public void moreThan24CharactersCheck(){
+        Assert.assertThrows(IllegalArgumentException.class, ()->{pwd.setPassword("Test12!Ag845^42afk14%85mFl");});
+    }
+
+    @Test
     public void validSetCheck(){
         pwd.setPassword("12345Test123!");
         Assert.assertEquals("12345Test123!", pwd.getPassword());
