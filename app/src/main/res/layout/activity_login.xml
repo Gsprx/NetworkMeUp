@@ -29,7 +29,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textLoginSelectOr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLoginSelectAccountType" />
+        app:layout_constraintTop_toBottomOf="@+id/textLoginSelectAccountType"
+        app:layout_constraintVertical_bias="0.646" />
 
     <Button
         android:id="@+id/btnLoginSelectEmployer"
@@ -42,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLoginSelectOr"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.165" />
 
     <TextView
         android:id="@+id/textLoginSelectOr"
@@ -57,5 +58,18 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintVertical_bias="0.566" />
+
+    <TextView
+        android:id="@+id/textLoginSelectAccountAs"
+        android:layout_width="191dp"
+        android:layout_height="37dp"
+        android:text="Login as:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLoginSelectEmployee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLoginSelectAccountType"
+        app:layout_constraintVertical_bias="0.724" />
 </androidx.constraintlayout.widget.ConstraintLayout>

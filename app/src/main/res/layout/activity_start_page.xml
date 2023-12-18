@@ -16,25 +16,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textStartPageMoto"
-        android:layout_width="317dp"
-        android:layout_height="68dp"
+        android:layout_width="333dp"
+        android:layout_height="67dp"
         android:layout_marginTop="58dp"
         android:text="Begin your personalized work journey today!"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textStartPageLogo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <Button
         android:id="@+id/btnStartPageLogin"

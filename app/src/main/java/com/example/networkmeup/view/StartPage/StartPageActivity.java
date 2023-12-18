@@ -20,7 +20,7 @@ public class StartPageActivity extends AppCompatActivity implements StartPageVie
         final StartPagePresenter presenter = new StartPagePresenter(this);
 
 
-
+        //Login selected in start page
         findViewById(R.id.btnStartPageLogin).setOnClickListener(
             new View.OnClickListener() {
                 @Override
@@ -32,6 +32,7 @@ public class StartPageActivity extends AppCompatActivity implements StartPageVie
 
             );
 
+        //Signup selected in start page
         findViewById(R.id.btnStartPageSignUp).setOnClickListener(
             new View.OnClickListener(){
                 @Override

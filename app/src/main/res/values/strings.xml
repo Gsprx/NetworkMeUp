@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NetworkMeUp</string>
+    <string name="ok">OK</string>
+    <string name="continue_to_login">Continue To Login Page</string>
 </resources>
