@@ -37,4 +37,8 @@ public class TIN {
             throw new IllegalArgumentException("Invalid TIN.");
         }
     }
+
+    public boolean equals(TIN tin){
+        return this.tin.equals(tin.getTin());
+    }
 }

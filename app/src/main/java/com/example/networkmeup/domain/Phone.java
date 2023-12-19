@@ -29,4 +29,8 @@ public class Phone {
     public String getNumber() {
         return number;
     }
+
+    public boolean equals(Phone phone){
+        return this.number.equals(phone.getNumber());
+    }
 }

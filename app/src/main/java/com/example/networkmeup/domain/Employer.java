@@ -97,4 +97,8 @@ public class Employer {
     public ArrayList<Job> getJobs(){
         return jobs;
     }
+
+    public boolean equals(Employer e){
+        return this.email.equals(e.getEmail()) || this.phone.equals(e.getPhone()) || this.tin.equals(e.getTin());
+    }
 }

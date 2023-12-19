@@ -33,4 +33,8 @@ public class Email {
         }
     }
 
+    public boolean equals(Email email){
+        return this.address.equals(email.getAddress());
+    }
+
 }
