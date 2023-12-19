@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.networkmeup.R;
+import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.view.Login.LoginActivity;
 import com.example.networkmeup.view.SignUp.SignUpActivity;
 
@@ -43,12 +44,12 @@ public class StartPageActivity extends AppCompatActivity implements StartPageVie
             );
 
 
-//        MEMORY INITIALIZATION METHOD
-//        if(!initialized)
-//        {
-//            new MemoryInitializer().prepareData();
-//            initialized = true;
-//        }
+        // If not already initialized, create the initial data for the app (2 employees, 1 employer with 1 job)
+        if(!initialized)
+        {
+            new MemoryInitializer().prepareData();
+            initialized = true;
+        }
 
     }
     public void login(){
