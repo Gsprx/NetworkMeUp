@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.networkmeup.R;
+import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
@@ -26,7 +27,7 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_employee);
 
-        final SignUpEmployeePresenter presenter = new SignUpEmployeePresenter(this);
+        final SignUpEmployeePresenter presenter = new SignUpEmployeePresenter(this, new EmployeeDAOMemory());
 
         findViewById(R.id.btnSignupEmployeeCreate).setOnClickListener(
             new View.OnClickListener() {

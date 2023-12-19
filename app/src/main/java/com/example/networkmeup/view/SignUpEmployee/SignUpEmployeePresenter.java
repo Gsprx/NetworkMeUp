@@ -9,13 +9,14 @@ import com.example.networkmeup.domain.Phone;
 
 public class SignUpEmployeePresenter {
     private SignUpEmployeeView signUpEmployeeView;
+    private EmployeeDAO employeeDAO;
 
-    public SignUpEmployeePresenter(SignUpEmployeeView view){
-        signUpEmployeeView = view;
+    public SignUpEmployeePresenter(SignUpEmployeeView view, EmployeeDAO employeeDAO){
+        this.signUpEmployeeView = view;
+        this.employeeDAO = employeeDAO;
     }
 
     public void onCreate(){
-        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
 
         boolean email_ok = true;
         boolean phone_ok = true;
@@ -60,7 +61,8 @@ public class SignUpEmployeePresenter {
 
             if (employeeDAO.find(employee)) {
                 signUpEmployeeView.showErrorMessage("Account Error", "An employee account already exists with the same email and/or phone number!");
-            } else {
+            }
+            else {
                 employeeDAO.save(employee);
                 signUpEmployeeView.successfullyFinishActivity("Your NetworkMeUp Employee account was created!");
 
