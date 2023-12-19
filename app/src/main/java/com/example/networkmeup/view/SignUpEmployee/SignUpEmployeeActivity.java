@@ -75,15 +75,15 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
     *
     */
     @Override
-    public Email getEmail(){
+    public Email getEmail() throws RuntimeException{
         return new Email(((EditText)findViewById(R.id.editTextSignUpEmployeeEmail)).getText().toString().trim());
     }
     @Override
-    public Phone getPhone(){
+    public Phone getPhone() throws RuntimeException{
         return new Phone(((EditText)findViewById(R.id.editTextSignUpEmployeePhone)).getText().toString().trim());
     }
     @Override
-    public Password getPassword(){
+    public Password getPassword() throws RuntimeException{
         return new Password(((EditText)findViewById(R.id.editTextSignupEmployeePassword)).getText().toString().trim());
     }
 }

@@ -16,6 +16,11 @@ public class SignUpEmployeePresenter {
 
     public void onCreate(){
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+
+        boolean email_ok = true;
+        boolean phone_ok = true;
+        boolean pwd_ok = true;
+
         Email email = null;
         Phone phone = null;
         Password password = null;
@@ -25,36 +30,44 @@ public class SignUpEmployeePresenter {
         try{
             email = signUpEmployeeView.getEmail();
         }
-        catch(Exception e){
+        catch(RuntimeException e){
             signUpEmployeeView.showErrorMessage("Error!", e.getMessage());
+            email_ok = false;
         }
 
         //check phone field
         try{
             phone = signUpEmployeeView.getPhone();
         }
-        catch(Exception e){
+        catch(RuntimeException e){
             signUpEmployeeView.showErrorMessage("Error!", e.getMessage());
+            phone_ok = false;
         }
 
         //check password field
         try{
             password = signUpEmployeeView.getPassword();
         }
-        catch(Exception e){
+        catch(RuntimeException e){
             signUpEmployeeView.showErrorMessage("Error!", e.getMessage());
+            pwd_ok = false;
         }
 
-        //create employee object and check if it exists
-        Employee employee = new Employee(email,phone,password);
+        //only create employee if all fields are valid
+        if(email_ok && phone_ok && pwd_ok) {
+            //create employee object and check if it exists
+            Employee employee = new Employee(email, phone, password);
 
-        if (employeeDAO.find(employee)){
-            signUpEmployeeView.showErrorMessage("Account Error", "An employee account already exists with the same email and/or phone number!");
+            if (employeeDAO.find(employee)) {
+                signUpEmployeeView.showErrorMessage("Account Error", "An employee account already exists with the same email and/or phone number!");
+            } else {
+                employeeDAO.save(employee);
+                signUpEmployeeView.successfullyFinishActivity("Your NetworkMeUp Employee account was created!");
+
+            }
         }
-        else{
-            employeeDAO.save(employee);
-            signUpEmployeeView.successfullyFinishActivity("Your NetworkMeUp Employee account was created!");
-
+        else {
+            signUpEmployeeView.showErrorMessage("Error!", "Fields cannot be empty!");
         }
     }
 }
