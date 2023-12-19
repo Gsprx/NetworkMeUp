@@ -2,11 +2,6 @@ package com.example.networkmeup.domain;
 
 import java.util.ArrayList;
 
-enum Availability{
-    Available,
-    Temporarily_Unavailable,
-    Closed
-}
 public class Job {
     private String title;
     private String description;

@@ -1,13 +1,5 @@
 package com.example.networkmeup.domain;
 
-enum LevelOfKnowledge{
-    Amateur,
-    Lower,
-    Advanced,
-    Proficiency,
-    Naitive
-}
-
 public class LanguageKnowledge {
     private LevelOfKnowledge lvlOfKnowledge;
     private Language language;

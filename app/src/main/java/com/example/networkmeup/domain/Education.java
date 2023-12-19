@@ -1,12 +1,4 @@
 package com.example.networkmeup.domain;
-enum LevelOfStudies{
-    Amateur,
-    Junior_High_School,
-    High_School,
-    Bachelor,
-    Master,
-    PhD
-}
 
 public class Education {
     private String description;
