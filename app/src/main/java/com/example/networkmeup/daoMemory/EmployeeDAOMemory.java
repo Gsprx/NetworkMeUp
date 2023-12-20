@@ -2,12 +2,19 @@ package com.example.networkmeup.daoMemory;
 
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.domain.Employee;
+import com.example.networkmeup.domain.Phone;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class EmployeeDAOMemory implements EmployeeDAO {
     protected static ArrayList<Employee> employees;
+
+    public EmployeeDAOMemory(){
+        if(employees==null){
+            employees = new ArrayList<>();
+        }
+    }
     @Override
     public void delete(Employee employee){
         employees.remove(employee);
@@ -15,9 +22,7 @@ public class EmployeeDAOMemory implements EmployeeDAO {
 
     @Override
     public ArrayList<Employee> getAll() {
-        ArrayList<Employee> result = new ArrayList<>();
-        result.addAll(employees);
-        return result;
+        return new ArrayList<Employee>(employees);
     }
 
     @Override

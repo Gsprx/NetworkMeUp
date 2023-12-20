@@ -78,6 +78,8 @@ public class SignUpEmployeePresenterTest {
 
     @Test
     public void testCreateExistingAccount(){
+
+        presenter = new SignUpEmployeePresenter(view, new EmployeeDAOMemory());
         //check when creating an account with any existing details in the system
         //password does not need to be unique
 
