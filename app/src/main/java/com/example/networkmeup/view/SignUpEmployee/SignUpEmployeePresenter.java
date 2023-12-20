@@ -65,11 +65,7 @@ public class SignUpEmployeePresenter {
             else {
                 employeeDAO.save(employee);
                 signUpEmployeeView.successfullyFinishActivity("Your NetworkMeUp Employee account was created!");
-
             }
-        }
-        else {
-            signUpEmployeeView.showErrorMessage("Error!", "Fields cannot be empty!");
         }
     }
 }

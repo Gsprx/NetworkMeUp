@@ -1,24 +1,8 @@
 package com.example.networkmeup.dao;
 
-import com.example.networkmeup.dao.EmployeeDAO;
-import com.example.networkmeup.dao.EmployerDAO;
-import com.example.networkmeup.domain.CV;
-import com.example.networkmeup.domain.Education;
-import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.domain.Employer;
-import com.example.networkmeup.domain.ExpertiseArea;
-import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.domain.Language;
-import com.example.networkmeup.domain.LanguageKnowledge;
-import com.example.networkmeup.domain.LevelOfKnowledge;
-import com.example.networkmeup.domain.LevelOfStudies;
-import com.example.networkmeup.domain.Password;
-import com.example.networkmeup.domain.Phone;
-import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.domain.WorkExperience;
 
-import java.util.Date;
+import com.example.networkmeup.domain.*;
+
 
 
 public abstract class Initializer {
@@ -39,7 +23,7 @@ public abstract class Initializer {
         CV cv1 = new CV();
         cv1.setEducation(new Education("Personal Studies", new ExpertiseArea("Finance"), LevelOfStudies.Amateur));
         cv1.setEducation(new Education("My personal High School education", new ExpertiseArea("General Studies"), LevelOfStudies.High_School));
-        cv1.setLanguageKnowledge(new LanguageKnowledge("Naitive language, was born in America", new Language("English"), LevelOfKnowledge.Naitive));
+        cv1.setLanguageKnowledge(new LanguageKnowledge("Naitive language, was born in America", new Language("English"), LevelOfKnowledge.Native));
         cv1.setWorkExperience(new WorkExperience(2,"Worked during my high school studies", new ExpertiseArea("Tourism")));
         cv1.setAdditionalSkillset("Have obtained teamwork experience from 4 years of professional sports");
         employee1.setCV(cv1);
@@ -51,7 +35,7 @@ public abstract class Initializer {
         CV cv2 = new CV();
         cv2.setEducation(new Education("Bachelor's Degree", new ExpertiseArea("Psychology"), LevelOfStudies.Bachelor));
         cv2.setEducation(new Education("High School expertise degree", new ExpertiseArea("Human Studies"), LevelOfStudies.High_School));
-        cv2.setLanguageKnowledge(new LanguageKnowledge("Born and raised in France", new Language("French"), LevelOfKnowledge.Naitive));
+        cv2.setLanguageKnowledge(new LanguageKnowledge("Born and raised in France", new Language("French"), LevelOfKnowledge.Native));
         cv2.setLanguageKnowledge(new LanguageKnowledge("Learned english during my bachelor's studies", new Language("English"), LevelOfKnowledge.Advanced));
 
         //add employees to DAO

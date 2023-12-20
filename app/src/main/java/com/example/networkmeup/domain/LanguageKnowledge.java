@@ -52,7 +52,7 @@ public class LanguageKnowledge {
         if(this.language.equals(languageKnowledge.language)){
             return Integer.compare(this.lvlOfKnowledge.ordinal(), languageKnowledge.lvlOfKnowledge.ordinal());
         }
-        //return -2 if incomperable expertise areas.
+        //return -2 if incomparable expertise areas.
         return -2;
     }
 

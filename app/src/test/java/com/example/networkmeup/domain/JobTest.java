@@ -1,21 +1,5 @@
 package com.example.networkmeup.domain;
 
-import com.example.networkmeup.domain.Application;
-import com.example.networkmeup.domain.Availability;
-import com.example.networkmeup.domain.CV;
-import com.example.networkmeup.domain.Education;
-import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.domain.ExpertiseArea;
-import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.domain.Language;
-import com.example.networkmeup.domain.LanguageKnowledge;
-import com.example.networkmeup.domain.LevelOfKnowledge;
-import com.example.networkmeup.domain.LevelOfStudies;
-import com.example.networkmeup.domain.Password;
-import com.example.networkmeup.domain.Phone;
-import com.example.networkmeup.domain.WorkExperience;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

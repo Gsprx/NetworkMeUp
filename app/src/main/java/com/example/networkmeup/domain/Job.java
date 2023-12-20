@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Job {
     private String title;
     private String description;
-    private Availability availability;
+    private Availability availability = Availability.Available;
     private ArrayList<Application> applications;
     private ArrayList<Education> reqEducation;
     private ArrayList<WorkExperience> reqWorkExperience;

@@ -5,5 +5,5 @@ public enum LevelOfKnowledge {
     Lower,
     Advanced,
     Proficiency,
-    Naitive
+    Native
 }

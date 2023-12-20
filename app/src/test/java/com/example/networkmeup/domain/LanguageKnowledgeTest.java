@@ -1,9 +1,5 @@
 package com.example.networkmeup.domain;
 
-import com.example.networkmeup.domain.Language;
-import com.example.networkmeup.domain.LanguageKnowledge;
-import com.example.networkmeup.domain.LevelOfKnowledge;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +10,7 @@ public class LanguageKnowledgeTest {
     @Before
     public void setup(){
         Language lang = new Language("Greek");
-        langKnow = new LanguageKnowledge("Growing up in Greece", lang, LevelOfKnowledge.Naitive);
+        langKnow = new LanguageKnowledge("Growing up in Greece", lang, LevelOfKnowledge.Native);
     }
 
     @Test
@@ -53,14 +49,14 @@ public class LanguageKnowledgeTest {
     @Test
     public void equalsCheck(){
         Language lang = new Language("Greek");
-        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Studying for many years", lang, LevelOfKnowledge.Naitive);
+        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Studying for many years", lang, LevelOfKnowledge.Native);
         Assert.assertEquals(true, langKnow.equals(languageKnowledge2));
     }
 
     @Test
     public void notEqualLangCheck(){
         Language lang = new Language("English");
-        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Growing up in Greece", lang, LevelOfKnowledge.Naitive);
+        LanguageKnowledge languageKnowledge2 = new LanguageKnowledge("Growing up in Greece", lang, LevelOfKnowledge.Native);
         Assert.assertEquals(false, langKnow.equals(languageKnowledge2));
     }
     @Test
