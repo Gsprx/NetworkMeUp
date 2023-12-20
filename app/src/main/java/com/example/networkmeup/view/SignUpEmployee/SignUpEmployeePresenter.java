@@ -60,7 +60,7 @@ public class SignUpEmployeePresenter {
             Employee employee = new Employee(email, phone, password);
 
             if (employeeDAO.find(employee)) {
-                signUpEmployeeView.showErrorMessage("Account Error", "An employee account already exists with the same email and/or phone number!");
+                signUpEmployeeView.showErrorMessage("Account Creation Error", "An employee account already exists with the same email or phone number!");
             }
             else {
                 employeeDAO.save(employee);
