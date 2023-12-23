@@ -72,7 +72,7 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
 
     /*
     *
-    *   acquire text field values
+    *   acquire text field from UI values
     *
     */
     @Override

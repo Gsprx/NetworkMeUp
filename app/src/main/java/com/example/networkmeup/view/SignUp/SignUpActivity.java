@@ -32,12 +32,12 @@ public class SignUpActivity extends AppCompatActivity implements  SignUpView{
 
         //Employer selected during signup screen
         findViewById(R.id.btnSignupSelectEmployer).setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        presenter.onEmployer();
-                    }
-                });
+        new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                presenter.onEmployer();
+            }
+        });
     }
 
 
