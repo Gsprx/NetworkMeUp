@@ -6,4 +6,119 @@
     android:layout_height="match_parent"
     tools:context=".view.SignUpEmployer.SignUpEmployerActivity">
 
+    <Button
+        android:id="@+id/btnSignupEmployerCreate"
+        android:layout_width="233dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="28dp"
+        android:text="Create Account"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPasswordHint"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:id="@+id/textPasswordHint2"
+        android:layout_width="328dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="108dp"
+        android:text="Hint: Password must be 8-24 characters long and include at least one of the following: Uppercase and lowecase letters, numbers and special characters ( !, %, @, # etc.)."
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupEmployeePassword"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <EditText
+        android:id="@+id/editTextSignupEmployerPassword"
+        android:layout_width="347dp"
+        android:layout_height="81dp"
+        android:ems="10"
+        android:hint="A strong password"
+        android:inputType="textPassword"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.713" />
+
+    <EditText
+        android:id="@+id/editTextSignUpEmployerPhone"
+        android:layout_width="219dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="36dp"
+        android:ems="10"
+        android:hint="Your phone number"
+        android:inputType="phone"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextSignUpEmployerEmail"
+        android:layout_width="343dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="37dp"
+        android:hint="Your email address "
+        android:inputType="text|textEmailAddress"
+        android:textStyle="italic"
+        app:barrierMargin="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.343" />
+
+    <TextView
+        android:id="@+id/textSignUpEmployeeEnterDetails2"
+        android:layout_width="296dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="56dp"
+        android:text="Please enter the following:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textSignupEmployeeHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSignupEmployeeHeader2"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <TextView
+        android:id="@+id/textSignupEmployeeHeader2"
+        android:layout_width="334dp"
+        android:layout_height="134dp"
+        android:text="Create a NetworkMeUp Employer Account"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <EditText
+        android:id="@+id/SignUpEmployerTIN"
+        android:layout_width="236dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="TIN"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="394dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
