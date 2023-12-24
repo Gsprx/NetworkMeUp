@@ -112,13 +112,16 @@
         app:layout_constraintVertical_bias="0.026" />
 
     <EditText
-        android:id="@+id/SignUpEmployerTIN"
+        android:id="@+id/editTextSignUpEmployerTIN"
         android:layout_width="236dp"
         android:layout_height="53dp"
-        android:layout_marginStart="32dp"
         android:ems="10"
         android:hint="TIN"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="394dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.582" />
 </androidx.constraintlayout.widget.ConstraintLayout>

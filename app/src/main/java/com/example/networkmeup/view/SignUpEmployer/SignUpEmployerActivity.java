@@ -15,9 +15,7 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.view.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.LoginEmployer.LoginEmployerActivity;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeeActivity;
 
 public class SignUpEmployerActivity extends AppCompatActivity implements SignUpEmployerView{
 
@@ -56,7 +54,7 @@ public class SignUpEmployerActivity extends AppCompatActivity implements SignUpE
 
     @Override
     public TIN getTIN() throws RuntimeException {
-        return new TIN(((EditText)findViewById(R.id.SignUpEmployerTIN)).getText().toString().trim());
+        return new TIN(((EditText)findViewById(R.id.editTextSignUpEmployerTIN)).getText().toString().trim());
     }
 
     @Override
