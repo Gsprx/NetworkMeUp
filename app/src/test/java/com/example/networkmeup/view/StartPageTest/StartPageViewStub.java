@@ -8,9 +8,6 @@ public class StartPageViewStub implements StartPageView {
     private int signupClicks;
     private StartPagePresenter presenter;
 
-    public StartPageViewStub() {
-    }
-
     public void setPresenter(StartPagePresenter presenter) {
         this.presenter = presenter;
     }
