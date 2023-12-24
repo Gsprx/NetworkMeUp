@@ -101,4 +101,7 @@ public class Employer {
     public boolean equals(Employer e){
         return this.email.equals(e.getEmail()) || this.phone.equals(e.getPhone()) || this.tin.equals(e.getTin());
     }
+    public boolean hasEmail(Email email){
+        return this.email.equals(email);
+    }
 }

@@ -101,4 +101,11 @@ public class EmployerTest {
         employer.addJob(new Job("Example Job", "This is an Example Job"));
         Assert.assertEquals("Example Job", employer.getJobs().get(0).getTitle());
     }
+    @Test
+    public void checkHasEmail(){
+        //check if different emails return false
+        Assert.assertEquals(false, employer.hasEmail(new Email("thisisthewrongemail@email.com")));
+        //check if the same email returns true
+        Assert.assertEquals(true, employer.hasEmail(new Email("employ@example.com")));
+    }
 }

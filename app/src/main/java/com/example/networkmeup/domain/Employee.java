@@ -126,6 +126,9 @@ public class Employee {
         //we consider two employees equal if they have the same phone and or email
         return (this.email.equals(e.getEmail()) || this.phone.equals(e.getPhone()));
     }
+    public boolean hasEmail(Email email){
+        return this.email.equals(email);
+    }
 }
 
 

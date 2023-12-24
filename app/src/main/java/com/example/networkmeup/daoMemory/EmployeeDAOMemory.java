@@ -1,7 +1,9 @@
 package com.example.networkmeup.daoMemory;
 
 import com.example.networkmeup.dao.EmployeeDAO;
+import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
+import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Phone;
 
 import java.lang.reflect.Array;
@@ -38,5 +40,15 @@ public class EmployeeDAOMemory implements EmployeeDAO {
             }
         }
         return false;
+    }
+
+    @Override
+    public Employee getByEmail(Email email) {
+        for(Employee e : employees){
+            if(e.hasEmail(email)){
+                return e;
+            }
+        }
+        return null;
     }
 }

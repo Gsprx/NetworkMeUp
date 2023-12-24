@@ -147,4 +147,12 @@ public class EmployeeTest {
         });
     }
 
+    @Test
+    public void checkHasEmail(){
+        //check if different emails return false
+        Assert.assertEquals(false, emp.hasEmail(new Email("thisisthewrongemail@email.com")));
+        //check if the same email returns true
+        Assert.assertEquals(true, emp.hasEmail(new Email("employ@example.com")));
+    }
+
 }
