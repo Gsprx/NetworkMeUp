@@ -98,31 +98,31 @@ public class SignUpEmployerPresenterTest {
         //password does not need to be unique
 
         //unique phone but existing email
-        view.setEmailField("john.Brown12@gmail.com");//b.be@northfreedom.com
+        view.setTinField("341423139");
+        view.setEmailField("b.be@northfreedom.com");
         view.setPhoneField("8795175834");
         view.setPasswordField("Test1234!");
-        view.setTinField("231343987");
         presenter.onCreate();
         Assert.assertEquals("Account Creation Error", view.getShowErrorMessageTitle());
         Assert.assertEquals("An employer account already exists with the same email or phone number or TIN!", view.getShowErrorMessageMsg());
 
         //unique email but existing phone
+        view.setTinField("341423139");
         view.setEmailField("random.email@yahoo.com");
         view.setPhoneField("5693311692");
         view.setPasswordField("Test1234!");
-        view.setTinField("231343789");
         presenter.onCreate();
         Assert.assertEquals("Account Creation Error", view.getShowErrorMessageTitle());
         Assert.assertEquals("An employer account already exists with the same email or phone number or TIN!", view.getShowErrorMessageMsg());
 
         //existing email and phone
+        view.setTinField("341423139");
         view.setEmailField("Company.188@gmail.com");
         view.setPhoneField("6953619405");
         view.setPasswordField("Test1234!");
-        view.setTinField("231343789");
         presenter.onCreate();
         Assert.assertEquals("Account Creation Error", view.getShowErrorMessageTitle());
-        Assert.assertEquals("An employer account already exists with the same email or phone number TIN!", view.getShowErrorMessageMsg());
+        Assert.assertEquals("An employer account already exists with the same email or phone number or TIN!", view.getShowErrorMessageMsg());
 
     }
 }

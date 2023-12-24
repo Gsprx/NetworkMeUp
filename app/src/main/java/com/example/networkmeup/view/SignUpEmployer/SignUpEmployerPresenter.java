@@ -61,6 +61,7 @@ public class SignUpEmployerPresenter {
             tin = view.getTIN();
         }
         catch(RuntimeException e){
+            System.out.println("TIN is wrong");
             view.showErrorMessage("Error!", e.getMessage());
             tin_ok = false;
         }
