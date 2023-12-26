@@ -9,81 +9,95 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class contains test cases for the SignUpEmployeePresenter class.
+ * It tests the functionality of employee sign-up scenarios.
+ */
 public class SignUpEmployeePresenterTest {
     private SignUpEmployeePresenter presenter;
     private SignUpEmployeeViewStub view;
     private Initializer dataInitializer;
 
+    /**
+     * Sets up necessary objects and data before each test case.
+     */
     @Before
     public void setup(){
         dataInitializer = new MemoryInitializer();
-        dataInitializer.prepareData();
-        view = new SignUpEmployeeViewStub();
+        dataInitializer.prepareData(); // Prepare initial data for testing
+        view = new SignUpEmployeeViewStub(); // Create a stub view for testing
     }
 
+    /**
+     * Tests the process of creating a new employee account with various scenarios.
+     */
     @Test
     public void testCreateNewAccount(){
-        //checking all possible outcomes for employee signup
 
         presenter = new SignUpEmployeePresenter(view, new EmployeeDAOMemory());
 
-        //no input, attempt to create account
+        // Test various scenarios for creating a new account
 
+        // No input provided, attempt to create an account
         presenter.onCreate();
-            //the last update to the showErrorMessage in our stub, is the password field, we can only check this at this instance
+
+        // The last update to the showErrorMessage in our stub, is the password field, we can only check this at this instance
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Password cannot be empty.", view.getShowErrorMessageMsg());
 
-        //add a weak password
+        // Add a weak password
         view.setPasswordField("Password123");
         presenter.onCreate();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Password is not strong enough.", view.getShowErrorMessageMsg());
 
-        //add a strong password
+        // Add a strong password but no phone number provided
         view.setPasswordField("Password!234");
         presenter.onCreate();
-            //password field no longer throws an exception -> theres no error message update
-            //last update to showErrorMessage happens on the phone field
-            //phone number and email are empty
+            // Password field no longer throws an exception -> theres no error message update
+            // Last update to showErrorMessage happens on the phone field
+            // Phone number and email are empty
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Phone number cannot be empty.", view.getShowErrorMessageMsg());
 
-        //add an invalid phone number
+        // Add an invalid phone number
         view.setPhoneField("124512347");
         presenter.onCreate();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Invalid phone number.", view.getShowErrorMessageMsg());
 
-        //add a valid phone number
+        // Add a valid phone number but no email provided
         view.setPhoneField("8674829405");
         presenter.onCreate();
-            //password and phone field no longer throw exceptions -> theres no error message update
-            //last update to showErrorMessage happens in the email field
-            //email field is currently empty
+            // Password and phone field no longer throw exceptions -> theres no error message update
+            // Last update to showErrorMessage happens in the email field
+            // Email field is currently empty
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Email address cannot be empty.", view.getShowErrorMessageMsg());
 
-        //add an invalid email address
+        // Add an invalid email address
         view.setEmailField("@email.com");
         presenter.onCreate();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Invalid email address.", view.getShowErrorMessageMsg());
 
-        //add a valid email address
+        // Add a valid email address, complete signup process successfully
         view.setEmailField("example@email.com");
         presenter.onCreate();
         Assert.assertEquals("Your NetworkMeUp Employee account was created!", view.getSuccessfullyFinishActivityMessage());
     }
 
+    /**
+     * Tests the scenario when attempting to create an account with existing details.
+     */
     @Test
     public void testCreateExistingAccount(){
 
         presenter = new SignUpEmployeePresenter(view, new EmployeeDAOMemory());
-        //check when creating an account with any existing details in the system
-        //password does not need to be unique
+        // Check scenarios for creating an account with existing details in the system
+        // Password does not need to be unique
 
-        //unique phone but existing email
+        // Existing email, new phone
         view.setEmailField("john.Brown12@gmail.com");
         view.setPhoneField("8795175838");
         view.setPasswordField("Test1234!");
@@ -91,7 +105,7 @@ public class SignUpEmployeePresenterTest {
         Assert.assertEquals("Account Creation Error", view.getShowErrorMessageTitle());
         Assert.assertEquals("An employee account already exists with the same email or phone number!", view.getShowErrorMessageMsg());
 
-        //unique email but existing phone
+        // New email, existing phone
         view.setEmailField("random.email@yahoo.com");
         view.setPhoneField("6977264561");
         view.setPasswordField("Test1234!");
@@ -99,7 +113,7 @@ public class SignUpEmployeePresenterTest {
         Assert.assertEquals("Account Creation Error", view.getShowErrorMessageTitle());
         Assert.assertEquals("An employee account already exists with the same email or phone number!", view.getShowErrorMessageMsg());
 
-        //existing email and phone
+        // Existing email and phone
         view.setEmailField("marygreen.188@gmail.com");
         view.setPhoneField("6953619405");
         view.setPasswordField("Test1234!");
