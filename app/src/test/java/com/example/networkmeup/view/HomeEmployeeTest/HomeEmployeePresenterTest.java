@@ -6,11 +6,19 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class contains test cases for the HomeEmployeePresenter class.
+ * It tests the functionalities related to user interactions within the HomeEmployeePresenter.
+ */
 public class HomeEmployeePresenterTest {
     private HomeEmployeePresenter presenter;
     private HomeEmployeeViewStub view;
     private String userToken;
 
+    /**
+     * Initializes the necessary objects before each test case.
+     * It sets up the presenter with a user token and a stub view.
+     */
     @Before
     public void setup(){
         userToken = "tokenTest@email.com";
@@ -18,6 +26,10 @@ public class HomeEmployeePresenterTest {
         presenter = new HomeEmployeePresenter(view, userToken);
     }
 
+    /**
+     * Tests if the onModifyCV method increases the modify CV counter
+     * and passes the correct user token to the associated view.
+     */
     @Test
     public void testModifyCVClicks(){
         for(int i = 0; i<12 ; i++){
@@ -27,6 +39,10 @@ public class HomeEmployeePresenterTest {
         Assert.assertEquals("tokenTest@email.com", view.getLastTokenPassed());
     }
 
+    /**
+     * Tests if the onSearchJobs method increases the search jobs counter
+     * and passes the correct user token to the associated view.
+     */
     @Test
     public void testSearchJobsClicks(){
         for(int i = 0; i<32 ; i++){
@@ -36,6 +52,10 @@ public class HomeEmployeePresenterTest {
         Assert.assertEquals("tokenTest@email.com", view.getLastTokenPassed());
     }
 
+    /**
+     * Tests if the onEditAccount method increases the edit account counter
+     * and passes the correct user token to the associated view.
+     */
     @Test
     public void testEditAccountClicks(){
         for(int i = 0; i<21 ; i++){
@@ -45,6 +65,10 @@ public class HomeEmployeePresenterTest {
         Assert.assertEquals("tokenTest@email.com", view.getLastTokenPassed());
     }
 
+    /**
+     * Tests if an error message is received when a null token is passed
+     * to the presenter during initialization.
+     */
     @Test
     public void nullTokenCheck(){
         presenter = new HomeEmployeePresenter(view, null);
