@@ -71,7 +71,8 @@ public class HomeEmployeePresenterTest {
      */
     @Test
     public void nullTokenCheck(){
-        presenter = new HomeEmployeePresenter(view, null);
+        Assert.assertThrows(NullPointerException.class, ()->{presenter = new HomeEmployeePresenter(view, null);});
         Assert.assertEquals("An error has occurred during login, please try again.", view.getTokenErrorMessage());
+
     }
 }

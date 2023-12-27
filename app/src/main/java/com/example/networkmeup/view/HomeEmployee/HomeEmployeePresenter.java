@@ -6,13 +6,14 @@ public class HomeEmployeePresenter {
     private String userToken;
 
     public HomeEmployeePresenter(HomeEmployeeView view, String userToken){
-        validateToken(userToken);
         this.view = view;
+        validateToken(userToken);
         this.userToken = userToken;
     }
     private void validateToken(Object obj){
         if (obj == null){
             view.showTokenErrorMessage("An error has occurred during login, please try again.");
+            throw new NullPointerException("Error! Null token.");
         }
     }
     public void onModifyCV(){
