@@ -75,15 +75,6 @@ public class HomeEmployeeViewStub implements HomeEmployeeView {
     }
 
     /**
-     * Sets the last token passed.
-     *
-     * @param token The token to set as the last passed token.
-     */
-    public void setLastTokenPassed(String token) {
-        lastTokenPassed = token;
-    }
-
-    /**
      * Retrieves the counter for modify CV actions.
      *
      * @return The number of times modify CV was invoked.
