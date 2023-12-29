@@ -43,7 +43,7 @@
             android:name=".view.Login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".domain.MainActivity"
+            android:name=".view.StartPage.StartPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
