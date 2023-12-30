@@ -36,7 +36,7 @@ public abstract class Initializer {
 
         // Education details
         cv1.setEducation(new Education("Personal Studies", new ExpertiseArea("Finance"), LevelOfStudies.Amateur));
-        cv1.setEducation(new Education("My personal High School education", new ExpertiseArea("General Studies"), LevelOfStudies.High_School));
+        cv1.setEducation(new Education("My personal High School education", new ExpertiseArea("Other"), LevelOfStudies.High_School));
 
         // Language knowledge
         cv1.setLanguageKnowledge(new LanguageKnowledge("Naitive language, was born in America", new Language("English"), LevelOfKnowledge.Native));
@@ -87,6 +87,23 @@ public abstract class Initializer {
         // Add employers to EmployerDAO
         employerDAO.save(employer1);
 
+        //Initialize Expertise Area Data to be used in the app.
+        ExpertiseArea expAr1 = new ExpertiseArea("Finance");
+        ExpertiseArea expAr2 = new ExpertiseArea("Computer Science");
+        ExpertiseArea expAr3 = new ExpertiseArea("Other");
+        ExpertiseArea expAr4 = new ExpertiseArea("Psychology");
+        ExpertiseArea expAr5 = new ExpertiseArea("Tourism");
+        ExpertiseArea expAr6 = new ExpertiseArea("Human Studies");
+        ExpertiseArea expAr7 = new ExpertiseArea("Business Management");
+
+        ExpertiseAreaDAO expertiseAreaDAO = getExpertiseAreaDAO();
+        expertiseAreaDAO.add(expAr1);
+        expertiseAreaDAO.add(expAr2);
+        expertiseAreaDAO.add(expAr3);
+        expertiseAreaDAO.add(expAr4);
+        expertiseAreaDAO.add(expAr5);
+        expertiseAreaDAO.add(expAr6);
+        expertiseAreaDAO.add(expAr7);
     }
 
     /**
@@ -102,4 +119,6 @@ public abstract class Initializer {
      * @return EmployerDAO instance
      */
     public abstract EmployerDAO getEmployerDAO();
+
+    public abstract ExpertiseAreaDAO getExpertiseAreaDAO();
 }
