@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -11,37 +11,43 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="408dp"
-        android:layout_height="146dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="1dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="408dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="4dp">
 
-        <TextView
-            android:id="@+id/textWorkExperienceDescription"
-            android:layout_width="381dp"
-            android:layout_height="59dp"
-            android:text="WorkExperienceDescription"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="74dp" />
+            <TextView
+                android:id="@+id/textWorkExperienceDescription"
+                android:layout_width="384dp"
+                android:layout_height="71dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="24dp"
+                android:text="WorkExperienceDescription"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textWorkExperienceExpArea"
-            android:layout_width="189dp"
-            android:layout_height="22dp"
-            android:text="WorkExperienceExpertiseArea"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="25dp" />
+            <TextView
+                android:id="@+id/textWorkExperienceExpArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:text="WorkExperienceExpertiseArea"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textWorkExperienceYears"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="YearsAtWork"
-            tools:layout_editor_absoluteX="290dp"
-            tools:layout_editor_absoluteY="25dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textWorkExperienceYears"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="28dp"
+                android:text="YearsAtWork"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
