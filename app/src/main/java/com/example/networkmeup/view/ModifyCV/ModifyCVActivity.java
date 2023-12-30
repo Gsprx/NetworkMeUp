@@ -17,6 +17,7 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.LanguageKnowledge;
 import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
+import com.example.networkmeup.utils.RecyclerViewAdapters.WorkExperienceRecyclerViewAdapter;
 import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 import com.example.networkmeup.view.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
 import com.example.networkmeup.view.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
@@ -58,11 +59,14 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
 
         //create recycler view adapters
         EducationRecyclerViewAdapter educationRecyclerViewAdapter = new EducationRecyclerViewAdapter(this, educationList);
+        WorkExperienceRecyclerViewAdapter workExperienceRecyclerViewAdapter = new WorkExperienceRecyclerViewAdapter(this, workExperienceList);
+
 
         //attach RecyclerView Adapters to the respective RecyclerViews
         educationRecyclerView.setAdapter(educationRecyclerViewAdapter);
         educationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        workExperienceRecyclerView.setAdapter(workExperienceRecyclerViewAdapter);
+        workExperienceRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //button listeners
         //when edit education list is pressed

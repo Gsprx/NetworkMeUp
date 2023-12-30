@@ -61,8 +61,8 @@ public class EducationRecyclerViewAdapter extends RecyclerView.Adapter<Education
         public EducationViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            this.educationExpField = itemView.findViewById(R.id.textEducationExpField);
-            this.educationDescription = itemView.findViewById(R.id.textEducationDescription);
+            this.educationExpField = itemView.findViewById(R.id.textEducationExpFieldField);
+            this.educationDescription = itemView.findViewById(R.id.textEduactionDescription);
             this.educationLvlOfStudies = itemView.findViewById(R.id.textEducationLevelOfStudies);
         }
     }
