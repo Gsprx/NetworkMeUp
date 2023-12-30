@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //When Login button is pressed
                         presenter.onLoginEmployee();
                     }
                 });
