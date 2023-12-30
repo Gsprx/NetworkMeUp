@@ -25,7 +25,7 @@ public class LoginEmployeeActivity extends AppCompatActivity implements LoginEmp
         final LoginEmployeePresenter presenter = new LoginEmployeePresenter(this, new EmployeeDAOMemory());
 
         // Find the login button by its ID and set a click listener
-        findViewById(R.id.btnLoginEmployee1).setOnClickListener(
+        findViewById(R.id.btnLoginEmployee).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
