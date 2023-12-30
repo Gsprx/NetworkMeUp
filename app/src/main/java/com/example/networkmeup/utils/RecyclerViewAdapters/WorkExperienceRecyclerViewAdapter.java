@@ -41,7 +41,7 @@ public class WorkExperienceRecyclerViewAdapter extends RecyclerView.Adapter<Work
         //set each holder's members to match the data on the Work Experience data found on the position (of the position int passed in the method)
         //for example set the WorkExperienceDescription field of the holder to the one matching the Work Experience instance in the list[position]
         holder.WorkExperienceDescription.setText(workExperiences.get(position).getDescription());
-        holder.YearsAtWork.setText(workExperiences.get(position).getYears());
+        holder.YearsAtWork.setText(String.valueOf(workExperiences.get(position).getYears()));
         holder.WorkExpField.setText(workExperiences.get(position).getExpArea().getArea());
     }
 
