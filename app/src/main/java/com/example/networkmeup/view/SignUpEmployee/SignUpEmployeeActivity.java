@@ -1,7 +1,5 @@
 package com.example.networkmeup.view.SignUpEmployee;
 
-import static androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.create;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,12 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.view.LoginEmployee.LoginEmployeeActivity;
@@ -77,7 +73,7 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
     */
     @Override
     public Email getEmail() throws RuntimeException{
-        return new Email(((EditText)findViewById(R.id.editTextSignUpEmployeeEmail)).getText().toString().trim());
+        return new Email(((EditText)findViewById(R.id.editTextLoginEmployeeEmail)).getText().toString().trim());
     }
     @Override
     public Phone getPhone() throws RuntimeException{
@@ -85,6 +81,6 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
     }
     @Override
     public Password getPassword() throws RuntimeException{
-        return new Password(((EditText)findViewById(R.id.editTextSignupEmployeePassword)).getText().toString().trim());
+        return new Password(((EditText)findViewById(R.id.editTextLoginEmployeePassword)).getText().toString().trim());
     }
 }

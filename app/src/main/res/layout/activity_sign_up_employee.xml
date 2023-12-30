@@ -8,7 +8,7 @@
     tools:context=".view.SignUpEmployee.SignUpEmployeeActivity">
 
     <TextView
-        android:id="@+id/textSignupEmployeeHeader"
+        android:id="@+id/textLoginEmployeeHeader"
         android:layout_width="334dp"
         android:layout_height="134dp"
         android:text="Create a NetworkMeUp Employee Account"
@@ -23,20 +23,20 @@
         app:layout_constraintVertical_bias="0.026" />
 
     <TextView
-        android:id="@+id/textSignUpEmployeeEnterDetails"
+        android:id="@+id/textLoginEmployeeEnterDetails"
         android:layout_width="296dp"
         android:layout_height="37dp"
         android:text="Please enter the following:"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textSignupEmployeeHeader"
+        app:layout_constraintEnd_toEndOf="@+id/textLoginEmployeeHeader"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textSignupEmployeeHeader"
-        app:layout_constraintTop_toBottomOf="@+id/textSignupEmployeeHeader"
+        app:layout_constraintStart_toStartOf="@+id/textLoginEmployeeHeader"
+        app:layout_constraintTop_toBottomOf="@+id/textLoginEmployeeHeader"
         app:layout_constraintVertical_bias="0.045" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editTextSignUpEmployeeEmail"
+        android:id="@+id/editTextLoginEmployeeEmail"
         android:layout_width="343dp"
         android:layout_height="80dp"
         android:layout_marginBottom="37dp"
@@ -68,7 +68,7 @@
         app:layout_constraintVertical_bias="0.546" />
 
     <EditText
-        android:id="@+id/editTextSignupEmployeePassword"
+        android:id="@+id/editTextLoginEmployeePassword"
         android:layout_width="347dp"
         android:layout_height="81dp"
         android:ems="10"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignupEmployeePassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLoginEmployeePassword"
         app:layout_constraintVertical_bias="0.099" />
 
     <Button

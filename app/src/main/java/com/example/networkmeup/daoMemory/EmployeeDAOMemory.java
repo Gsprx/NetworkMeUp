@@ -4,6 +4,7 @@ import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
+import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 
 import java.lang.reflect.Array;
@@ -85,5 +86,28 @@ public class EmployeeDAOMemory implements EmployeeDAO {
             }
         }
         return null;
+    }
+
+    /**
+     * Authenticates an employee based on provided email and password.
+     *
+     * @param email    The email input for authentication.
+     *                 It represents the email of the employee attempting to log in.
+     * @param password The password input for authentication.
+     *                 It represents the password of the employee attempting to log in.
+     * @return {@code true} if the provided email and password match an employee's credentials,
+     *         indicating successful authentication. Otherwise, returns {@code false}
+     *         if no match is found, signifying failed authentication.
+     */
+    @Override
+    public boolean authenticate(Email email, Password password) {
+        // Loop through the stored employees to find a match for the provided email and password
+        for (Employee employee : employees) {
+            // Check if the provided email and password match any stored employee's credentials
+            if (employee.getEmail().equals(email) && employee.getPassword().equals(password)) {
+                return true; // Authentication successful
+            }
+        }
+        return false; // No match found, authentication failed
     }
 }

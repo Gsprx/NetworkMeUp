@@ -3,6 +3,7 @@ package com.example.networkmeup.dao;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
+import com.example.networkmeup.domain.Password;
 
 import java.util.ArrayList;
 
@@ -49,4 +50,16 @@ public interface EmployeeDAO {
      */
     public Employee getByEmail(Email email);
 
+    /**
+     * Authenticates an employee based on provided email and password.
+     *
+     * @param email    The email input for authentication.
+     *                 It represents the email of the employee attempting to log in.
+     * @param password The password input for authentication.
+     *                 It represents the password of the employee attempting to log in.
+     * @return {@code true} if the provided email and password match an employee's credentials,
+     *         indicating successful authentication. Otherwise, returns {@code false}
+     *         if no match is found, signifying failed authentication.
+     */
+    public boolean authenticate(Email email, Password password);
 }

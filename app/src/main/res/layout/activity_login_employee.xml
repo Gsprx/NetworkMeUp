@@ -6,4 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".view.LoginEmployee.LoginEmployeeActivity">
 
+    <EditText
+        android:id="@+id/editTextLoginEmployeePassword"
+        android:layout_width="347dp"
+        android:layout_height="81dp"
+        android:ems="10"
+        android:hint="Your password"
+        android:inputType="textPassword"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <TextView
+        android:id="@+id/textLoginEmployeeEnterDetails"
+        android:layout_width="296dp"
+        android:layout_height="37dp"
+        android:text="Please enter the following:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textLoginEmployeeHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textLoginEmployeeHeader"
+        app:layout_constraintTop_toBottomOf="@+id/textLoginEmployeeHeader"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <TextView
+        android:id="@+id/textLoginEmployeeHeader"
+        android:layout_width="334dp"
+        android:layout_height="134dp"
+        android:text="Login to your NetworkMeUp Employee Account"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextLoginEmployeeEmail"
+        android:layout_width="343dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="37dp"
+        android:hint="Your email address "
+        android:inputType="text|textEmailAddress"
+        android:textStyle="italic"
+        app:barrierMargin="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <Button
+        android:id="@+id/btnLoginEmployee"
+        android:layout_width="233dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="28dp"
+        android:text="Login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41000003" />
 </androidx.constraintlayout.widget.ConstraintLayout>
