@@ -13,6 +13,12 @@
         android:theme="@style/Theme.NetworkMeUp"
         tools:targetApi="31">
         <activity
+            android:name=".view.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity"
             android:exported="false" />
         <activity
