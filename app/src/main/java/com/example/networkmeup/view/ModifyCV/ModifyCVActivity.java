@@ -13,8 +13,10 @@ import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Email;
+import com.example.networkmeup.domain.Employee;
+import com.example.networkmeup.domain.LanguageKnowledge;
+import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
-import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 import com.example.networkmeup.view.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
 import com.example.networkmeup.view.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
@@ -41,15 +43,18 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
 
 
         //grab recycler views
-        RecyclerView educationRecyclerView = findViewById(R.id.recyclerViewEducation);
-        RecyclerView workExperienceRecyclerView = findViewById(R.id.recyclerViewWorkExperience);
-        RecyclerView languageKnowledgeRecyclerView = findViewById(R.id.recyclerViewLanguageKnowledge);
+        RecyclerView educationRecyclerView = findViewById(R.id.recyclerViewModifyCVEducation);
+        RecyclerView workExperienceRecyclerView = findViewById(R.id.recyclerViewModifyCVWorkExperience);
+        RecyclerView languageKnowledgeRecyclerView = findViewById(R.id.recyclerViewModifyCVLanguageKnowledge);
 
         //create dao object to obtain lists' data
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
 
         //obtain current employee's cv data lists (education, work experience, language knowledge)
-        ArrayList<Education> educationList = employeeDAO.getByEmail(new Email(userEmail)).getCV().getEducation();
+        Employee currEmployee = employeeDAO.getByEmail(new Email(userEmail));
+        ArrayList<Education> educationList = currEmployee.getCV().getEducation();
+        ArrayList<WorkExperience> workExperienceList = currEmployee.getCV().getWorkExperiences();
+        ArrayList<LanguageKnowledge> langKnowledgeList = currEmployee.getCV().getLanguageKnowledge();
 
         //create recycler view adapters
         EducationRecyclerViewAdapter educationRecyclerViewAdapter = new EducationRecyclerViewAdapter(this, educationList);
