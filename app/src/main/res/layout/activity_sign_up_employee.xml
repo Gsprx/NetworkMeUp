@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.045" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editTextLoginEmployeeEmail"
+        android:id="@+id/editTextSignUpEmployeeEmail"
         android:layout_width="343dp"
         android:layout_height="80dp"
         android:layout_marginBottom="37dp"
@@ -68,7 +68,7 @@
         app:layout_constraintVertical_bias="0.546" />
 
     <EditText
-        android:id="@+id/editTextLoginEmployeePassword"
+        android:id="@+id/editTextSignUpEmployeePassword"
         android:layout_width="347dp"
         android:layout_height="81dp"
         android:ems="10"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLoginEmployeePassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpEmployeePassword"
         app:layout_constraintVertical_bias="0.099" />
 
     <Button

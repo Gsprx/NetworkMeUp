@@ -3,7 +3,6 @@ package com.example.networkmeup.view.LoginEmployee;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +25,7 @@ public class LoginEmployeeActivity extends AppCompatActivity implements LoginEmp
         final LoginEmployeePresenter presenter = new LoginEmployeePresenter(this, new EmployeeDAOMemory());
 
         // Find the login button by its ID and set a click listener
-        findViewById(R.id.btnLoginEmployee).setOnClickListener(
+        findViewById(R.id.btnLoginEmployee1).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -73,7 +73,7 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
     */
     @Override
     public Email getEmail() throws RuntimeException{
-        return new Email(((EditText)findViewById(R.id.editTextLoginEmployeeEmail)).getText().toString().trim());
+        return new Email(((EditText)findViewById(R.id.editTextSignUpEmployerEmail)).getText().toString().trim());
     }
     @Override
     public Phone getPhone() throws RuntimeException{
@@ -81,6 +81,6 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
     }
     @Override
     public Password getPassword() throws RuntimeException{
-        return new Password(((EditText)findViewById(R.id.editTextLoginEmployeePassword)).getText().toString().trim());
+        return new Password(((EditText)findViewById(R.id.editTextSignUpEmployeePassword)).getText().toString().trim());
     }
 }
