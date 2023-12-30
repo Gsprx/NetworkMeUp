@@ -3,7 +3,7 @@ package com.example.networkmeup.domain;
 /**
  * The ExpertiseArea class represents an area of expertise.
  */
-public class ExpertiseArea {
+public class ExpertiseArea implements Comparable<ExpertiseArea>{
     private String area; // String representing the expertise area
 
     /**
@@ -53,4 +53,10 @@ public class ExpertiseArea {
     public boolean equals (ExpertiseArea expertiseArea){
         return (this.area.equals(expertiseArea.area));
     }
+
+    @Override
+    public int compareTo(ExpertiseArea o) {
+        return this.area.compareTo(o.getArea());
+    }
+
 }
