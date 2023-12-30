@@ -36,7 +36,7 @@ public interface LoginEmployeeView {
     /**
      * Indicates a successful login attempt and triggers navigation to the next screen.
      *
-     * @param message A success message to be displayed on successful login.
+     * @param userToken token passed for user indexing for later pages.
      */
-    void successfullyFinishLogin(String message);
+    void successfullyFinishLogin(String userToken);
 }

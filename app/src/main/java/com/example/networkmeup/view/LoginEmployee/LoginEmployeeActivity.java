@@ -60,9 +60,10 @@ public class LoginEmployeeActivity extends AppCompatActivity implements LoginEmp
 
     // Method to proceed to the HomeEmployeeActivity after a successful login
     @Override
-    public void successfullyFinishLogin(String message) {
+    public void successfullyFinishLogin(String userToken) {
         // Create an intent to navigate to the HomeEmployeeActivity
         Intent intent = new Intent(LoginEmployeeActivity.this, HomeEmployeeActivity.class);
+        intent.putExtra("token", userToken);
         startActivity(intent);
     }
 

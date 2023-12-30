@@ -48,7 +48,8 @@ public class LoginEmployeePresenter {
 
             if (isAuthenticated) {
                 // If the employee exists, finish login successfully
-                loginEmployeeView.successfullyFinishLogin("Login successful!");
+                // pass user email as login token
+                loginEmployeeView.successfullyFinishLogin(email.getAddress());
             } else {
                 // If the employee doesn't exist, show an error message
                 loginEmployeeView.showErrorMessage("Login Error", "Invalid credentials!");
