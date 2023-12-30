@@ -65,4 +65,8 @@ public class Password {
             throw new InsufficientPasswordException("Password is not strong enough.");
         }
     }
+
+    public boolean equals(Password password){
+        return this.getPassword().equals(password.getPassword());
+    }
 }
