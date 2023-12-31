@@ -1,12 +1,16 @@
 package com.example.networkmeup.view.ModifyCVEditEducation.ChangeEducationDetails;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
@@ -15,10 +19,14 @@ import com.example.networkmeup.dao.ExpertiseAreaDAO;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
+import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
+import com.example.networkmeup.view.LoginEmployee.LoginEmployeeActivity;
+import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationActivity;
+import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeeActivity;
 
 import java.util.ArrayList;
 
-public class ChangeEducationDetailsActivity extends AppCompatActivity {
+public class ChangeEducationDetailsActivity extends AppCompatActivity implements ChangeEducationDetailsView{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +36,19 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
 
         final String userEmail;
-        final int position;
+        final int eduPosition;
         if(extras!=null){
             //obtain user token
             userEmail = extras.getString("token");
             //obtain position in list
-            position = extras.getInt("position");
+            eduPosition = extras.getInt("position");
         }
         else{
             userEmail = null;
+            eduPosition = 0;
         }
+
+        final ChangeEducationDetailsPresenter presenter = new ChangeEducationDetailsPresenter(this, userEmail);
 
         //create spinner declarations
         Spinner expFieldSpinner = findViewById(R.id.spinnerChangeEducationDetailsSelectExpField);
@@ -87,5 +98,94 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity {
             }
         });
 
+        //when delete button is pressed
+        findViewById(R.id.btnChangeEducationDetailsDelete).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //use dialog builder to create a final warning message to the user
+                        new AlertDialog.Builder(ChangeEducationDetailsActivity.this)
+                                .setCancelable(false)
+                                .setTitle("Delete Education Confirmation")
+                                .setMessage("Are you sure you want to delete this education?")
+                                .setPositiveButton("Yes",
+                                        new DialogInterface.OnClickListener(){
+                                            public void onClick (DialogInterface dialog,int id) {
+                                                presenter.onDelete(eduPosition);
+                                            }})
+                                .setNegativeButton("Cancel",
+                                        new DialogInterface.OnClickListener(){
+                                            public void onClick (DialogInterface dialog,int id) {
+                                                // do nothing
+                                            }}).create().show();
+                    }
+                }
+        );
+
+        //when save button is pressed
+        findViewById(R.id.btnChangeEducationDetailsSave).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        presenter.onSave(eduPosition);
+                    }
+                }
+        );
+
+    }
+
+    @Override
+    public String getDescription() {
+        return ((EditText)findViewById(R.id.editTextChangeEducationDetailsDescription)).getText().toString().trim();
+    }
+
+    @Override
+    public int getExpertiseArea() {
+        //get position in respective list
+        return ((Spinner)findViewById(R.id.spinnerChangeEducationDetailsSelectExpField)).getSelectedItemPosition();
+    }
+
+    @Override
+    public int getLevelOfStudies() {
+        //get position in respective enum ordinal
+        return ((Spinner)findViewById(R.id.spinnerChangeEducationDetailsSelectLevelOfStudies)).getSelectedItemPosition();
+    }
+
+    @Override
+    public void successfulDelete(String message, String userToken) {
+        new AlertDialog.Builder(ChangeEducationDetailsActivity.this)
+                .setCancelable(false)
+                .setTitle("Deletion Completed!")
+                .setMessage(message)
+
+                //return back to edit education view when pressed
+                .setPositiveButton("Return to Edit Education",
+                        new DialogInterface.OnClickListener(){
+
+                            public void onClick (DialogInterface dialog,int id) {
+
+                                Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVEditEducationActivity.class);
+                                intent.putExtra("token", userToken);
+                                startActivity(intent);
+                            }}).create().show();
+    }
+
+    @Override
+    public void successfulSave(String message, String userToken) {
+        new AlertDialog.Builder(ChangeEducationDetailsActivity.this)
+                .setCancelable(false)
+                .setTitle("Save Completed!")
+                .setMessage(message)
+
+                //return back to edit education view when pressed
+                .setPositiveButton("Return to Edit Education",
+                        new DialogInterface.OnClickListener(){
+
+                            public void onClick (DialogInterface dialog,int id) {
+
+                                Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVEditEducationActivity.class);
+                                intent.putExtra("token", userToken);
+                                startActivity(intent);
+                            }}).create().show();
     }
 }
