@@ -15,6 +15,7 @@ import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EditEducationRecyclerViewAdapter;
+import com.example.networkmeup.view.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity;
 import com.example.networkmeup.view.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
 
 import java.util.ArrayList;
@@ -54,6 +55,17 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
         });
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //btnModifyCVEditEducationAddNew
+        findViewById(R.id.btnModifyCVEditEducationAddNew).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //When Login button is pressed
+                        presenter.onAddNew();
+                    }
+                }
+        );
     }
     @Override
     public void changeEductionDetails(String userToken, int position){
@@ -63,8 +75,11 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
         startActivity(intent);
     }
 
-    //
-    // ADD A METHOD FOR EDUCATION CREATION HERE
+    @Override
+    public void addNewEducation(String userToken) {
+        Intent intent = new Intent(ModifyCVEditEducationActivity.this, AddNewEducationActivity.class);
+        intent.putExtra("token", userToken);
+        startActivity(intent);
+    }
 
-    //
 }

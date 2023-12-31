@@ -12,4 +12,8 @@ public class ModifyCVEditEducationPresenter {
     public void onItemClick(int position){
         view.changeEductionDetails(userToken, position);
     }
+
+    public void onAddNew() {
+        view.addNewEducation(userToken);
+    }
 }
