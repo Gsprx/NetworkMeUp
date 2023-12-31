@@ -8,4 +8,8 @@ public class ModifyCVEditEducationPresenter {
         this.view = view;
         this.userToken = userToken;
     }
+
+    public void onItemClick(int position){
+        view.changeEductionDetails(userToken, position);
+    }
 }

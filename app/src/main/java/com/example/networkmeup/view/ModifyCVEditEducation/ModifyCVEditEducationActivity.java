@@ -49,13 +49,13 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
             //click listener for rows in recycler view list
             @Override
             public void onItemClick(View view, int position) {
-                changeEductionDetails(userEmail, position);
+                presenter.onItemClick(position);
             }
         });
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-
+    @Override
     public void changeEductionDetails(String userToken, int position){
         Intent intent = new Intent(ModifyCVEditEducationActivity.this, ChangeEducationDetailsActivity.class);
         intent.putExtra("token", userToken);
