@@ -21,6 +21,7 @@ import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.LoginEmployee.LoginEmployeeActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeeActivity;
 
@@ -164,7 +165,7 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVEditEducationActivity.class);
+                                Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVActivity.class);
                                 intent.putExtra("token", userToken);
                                 startActivity(intent);
                             }}).create().show();
@@ -183,7 +184,7 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVEditEducationActivity.class);
+                                Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVActivity.class);
                                 intent.putExtra("token", userToken);
                                 startActivity(intent);
                             }}).create().show();
