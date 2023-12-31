@@ -6,4 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".view.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity">
 
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="342dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="32dp"
+        android:text="Add a new Education to your CV"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextAddNewEducationDescription"
+        android:layout_width="384dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="128dp"
+        android:ems="10"
+        android:hint="Enter a description"
+        android:inputType="text"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddNewEducationSelectLevelOfStudies"
+        app:layout_constraintVertical_bias="0.804" />
+
+    <Button
+        android:id="@+id/btnAddNewEducation"
+        android:layout_width="299dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="16dp"
+        android:text="Add Education"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAddNewEducationDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddNewEducationDescription"
+        app:layout_constraintVertical_bias="0.739" />
+
+    <Spinner
+        android:id="@+id/spinnerAddNewEducationSelectExpField"
+        android:layout_width="305dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView51"
+        app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="268dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="56dp"
+        android:text="Select Expertise Field:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/textView41"
+        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="303dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="Select Level of Studies:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/spinnerAddNewEducationSelectExpField"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddNewEducationSelectExpField" />
+
+    <Spinner
+        android:id="@+id/spinnerAddNewEducationSelectLevelOfStudies"
+        android:layout_width="276dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/textView61"
+        app:layout_constraintTop_toBottomOf="@+id/textView61" />
 </androidx.constraintlayout.widget.ConstraintLayout>
