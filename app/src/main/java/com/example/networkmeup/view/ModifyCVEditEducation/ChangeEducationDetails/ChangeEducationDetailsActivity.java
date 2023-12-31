@@ -160,7 +160,7 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
                 .setMessage(message)
 
                 //return back to edit education view when pressed
-                .setPositiveButton("Return to Edit Education",
+                .setPositiveButton("Return to Modify CV",
                         new DialogInterface.OnClickListener(){
 
                             public void onClick (DialogInterface dialog,int id) {
@@ -179,7 +179,7 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
                 .setMessage(message)
 
                 //return back to edit education view when pressed
-                .setPositiveButton("Return to Edit Education",
+                .setPositiveButton("Return to Modify CV",
                         new DialogInterface.OnClickListener(){
 
                             public void onClick (DialogInterface dialog,int id) {
