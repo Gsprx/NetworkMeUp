@@ -10,6 +10,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fadeScrollbars="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -26,6 +27,7 @@
                 android:layout_width="362dp"
                 android:layout_height="199dp"
                 android:layout_marginTop="28dp"
+                android:verticalScrollbarPosition="right"
                 app:layout_constraintStart_toStartOf="@+id/textModifyCVLangKnowledge"
                 app:layout_constraintTop_toBottomOf="@+id/textModifyCVLangKnowledge"
                 tools:itemCount="5" />
@@ -46,7 +48,9 @@
                 android:id="@+id/recyclerViewModifyCVEducation"
                 android:layout_width="358dp"
                 android:layout_height="187dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="40dp"
+                android:scrollbars="vertical"
+                android:verticalScrollbarPosition="right"
                 app:layout_constraintStart_toStartOf="@+id/textModifyCVEducation"
                 app:layout_constraintTop_toBottomOf="@+id/textModifyCVEducation"
                 tools:itemCount="5" />
@@ -68,7 +72,7 @@
                 android:id="@+id/textModifyCVEducation"
                 android:layout_width="257dp"
                 android:layout_height="49dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="40dp"
                 android:text="Education:"
                 android:textSize="34sp"
@@ -81,6 +85,7 @@
                 android:layout_width="362dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="33dp"
+                android:verticalScrollbarPosition="right"
                 app:layout_constraintStart_toStartOf="@+id/textModifyCVWorkExperience"
                 app:layout_constraintTop_toBottomOf="@+id/textModifyCVWorkExperience"
                 tools:itemCount="5" />
