@@ -95,7 +95,9 @@ public abstract class Initializer {
         ExpertiseArea expAr5 = new ExpertiseArea("Tourism");
         ExpertiseArea expAr6 = new ExpertiseArea("Human Studies");
         ExpertiseArea expAr7 = new ExpertiseArea("Business Management");
+        ExpertiseArea expAr8 = new ExpertiseArea("Agriculture");
 
+        //add exp area data to our database
         ExpertiseAreaDAO expertiseAreaDAO = getExpertiseAreaDAO();
         expertiseAreaDAO.add(expAr1);
         expertiseAreaDAO.add(expAr2);
@@ -104,6 +106,7 @@ public abstract class Initializer {
         expertiseAreaDAO.add(expAr5);
         expertiseAreaDAO.add(expAr6);
         expertiseAreaDAO.add(expAr7);
+        expertiseAreaDAO.add(expAr8);
     }
 
     /**
