@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ModifyCVEditEducationTest.ChangeEducationDetailsTest;
+package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditEducationTest.ChangeEducationDetailsTest;
 
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.Initializer;

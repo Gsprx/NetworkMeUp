@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.SignUpEmployerTest;
+package com.example.networkmeup.view.SignUpTest.SignUpEmployerTest;
 
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
@@ -111,7 +111,7 @@ public class SignUpEmployerViewStub implements SignUpEmployerView {
 
     /**
      * Sets the value for the TIN field.
-     * @param tinField Simulated input for Tax Identification Number
+     * @param TinField Simulated input for Tax Identification Number
      */
     public void setTinField(String TinField) {
         this.tinField = TinField;

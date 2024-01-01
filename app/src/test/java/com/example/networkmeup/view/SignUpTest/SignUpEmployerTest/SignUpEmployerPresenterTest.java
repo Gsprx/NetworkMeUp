@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.SignUpEmployerTest;
+package com.example.networkmeup.view.SignUpTest.SignUpEmployerTest;
 
 import com.example.networkmeup.dao.Initializer;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;

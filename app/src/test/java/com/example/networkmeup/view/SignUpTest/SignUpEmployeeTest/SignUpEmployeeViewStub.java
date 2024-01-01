@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.SignUpEmployeeTest;
+package com.example.networkmeup.view.SignUpTest.SignUpEmployeeTest;
 
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;

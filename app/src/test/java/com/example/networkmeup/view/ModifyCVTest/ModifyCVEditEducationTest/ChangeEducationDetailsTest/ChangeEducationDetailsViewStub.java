@@ -1,19 +1,13 @@
-package com.example.networkmeup.view.ModifyCVEditEducationTest.AddNewEducationTest;
+package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditEducationTest.ChangeEducationDetailsTest;
 
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationView;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsView;
 
-public class AddNewEducationViewStub implements AddNewEducationView {
+public class ChangeEducationDetailsViewStub implements ChangeEducationDetailsView {
     private String description;
     private int levelOfStudies;
     private int expertiseArea;
     private String lastTokenPassed;
     private String lastDialogMessage;
-    @Override
-    public void successfulAdd(String message, String userToken) {
-        lastDialogMessage = message;
-        lastTokenPassed = userToken;
-    }
-
     @Override
     public String getDescription() {
         return description;
@@ -27,6 +21,19 @@ public class AddNewEducationViewStub implements AddNewEducationView {
     @Override
     public int getLevelOfStudies() {
         return levelOfStudies;
+    }
+
+    @Override
+    public void successfulDelete(String message, String userToken) {
+        lastDialogMessage = message;
+        lastTokenPassed = userToken;
+
+    }
+
+    @Override
+    public void successfulSave(String message, String userToken) {
+        lastDialogMessage = message;
+        lastTokenPassed = userToken;
     }
 
     public String getLastTokenPassed() {
