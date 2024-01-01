@@ -22,7 +22,6 @@ public abstract class Initializer {
     public void prepareData(){
         // Remove previous data
         eraseData();
-        System.out.println("Preparing data...");
 
         // Initialize initial employees and their related data
         EmployeeDAO employeeDAO = getEmployeeDAO();

@@ -33,7 +33,6 @@ public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJo
             //obtain user token
             userEmail = extras.getString("token");
             currJob = (Job)extras.getSerializable("job");
-            System.out.println(currJob.getDescription());
         }
 
         final ShowJobDetailsPresenter presenter = new ShowJobDetailsPresenter(this, userEmail, currJob);
