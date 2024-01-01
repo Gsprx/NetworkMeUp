@@ -46,10 +46,12 @@
                 android:id="@+id/textShowJobDetailsTitle"
                 android:layout_width="294dp"
                 android:layout_height="51dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="16dp"
                 android:text="Job Title"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TextView
@@ -65,9 +67,12 @@
                 android:id="@+id/textShowJobDetailsDescription"
                 android:layout_width="294dp"
                 android:layout_height="194dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="36dp"
                 android:text="Job Description"
                 app:layout_constraintEnd_toEndOf="@+id/textShowJobDetailsTitle"
+                app:layout_constraintHorizontal_bias="0.647"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/textShowJobDetailsTitle" />
 
             <TextView
@@ -85,10 +90,12 @@
                 android:id="@+id/textShowJobDetailsAvailability"
                 android:layout_width="228dp"
                 android:layout_height="25dp"
+                android:layout_marginStart="23dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:text="Job Availability"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
                 app:layout_constraintTop_toBottomOf="@+id/textShowJobDetailsDescription" />
 
             <TextView
@@ -179,7 +186,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="336dp"
                 android:layout_height="68dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="28dp"
                 android:text="Before applying for a job, you must provide a cover letter to distinguise yourself from the rest of the applicants."
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/recyclerViewShowJobDetailsReqLangKnowledge"
@@ -189,7 +196,7 @@
                 android:id="@+id/editTextShowJobDetailsCoverLetter"
                 android:layout_width="373dp"
                 android:layout_height="83dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Write your cover letter here"
                 android:inputType="text"
