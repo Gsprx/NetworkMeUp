@@ -1,10 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The Language class represents a language entity with its name.
  * It ensures the validation and retrieval of language information.
  */
-public class Language {
+public class Language implements Serializable {
     private String language; // Represents the name of the language
 
     /**

@@ -1,10 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The LevelOfKnowledge enum represents different levels of language proficiency.
  * It defines various levels from beginner to native proficiency.
  */
-public enum LevelOfKnowledge {
+public enum LevelOfKnowledge implements Serializable {
     Amateur, // Represents a beginner or basic level of knowledge
     Lower, // Represents a lower intermediate level of knowledge
     Advanced, // Represents an advanced level of knowledge

@@ -1,4 +1,5 @@
 package com.example.networkmeup.domain;
+import java.io.Serializable;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -6,7 +7,7 @@ import java.util.regex.Matcher;
  * The Password class represents a user password with defined validation criteria.
  * It ensures that passwords meet certain requirements regarding length and complexity.
  */
-public class Password {
+public class Password implements Serializable {
     private String password;
 
     /**

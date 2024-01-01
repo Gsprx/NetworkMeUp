@@ -1,10 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The Education class represents an individual's educational background
  * including description, expertise area, and level of studies.
  */
-public class Education {
+public class Education implements Serializable {
     private String description; // Description of the education
     private ExpertiseArea expArea; // Expertise area of the education
     private LevelOfStudies lvlOfStudies; // Level of studies attained

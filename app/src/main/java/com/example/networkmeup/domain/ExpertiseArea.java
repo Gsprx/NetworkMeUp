@@ -1,9 +1,11 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The ExpertiseArea class represents an area of expertise.
  */
-public class ExpertiseArea implements Comparable<ExpertiseArea>{
+public class ExpertiseArea implements Comparable<ExpertiseArea>, Serializable {
     private String area; // String representing the expertise area
 
     /**

@@ -22,6 +22,7 @@ public abstract class Initializer {
     public void prepareData(){
         // Remove previous data
         eraseData();
+        System.out.println("Preparing data...");
 
         // Initialize initial employees and their related data
         EmployeeDAO employeeDAO = getEmployeeDAO();
@@ -35,7 +36,7 @@ public abstract class Initializer {
         CV cv1 = new CV();
 
         // Education details
-        cv1.setEducation(new Education("Personal Studies", new ExpertiseArea("Finance"), LevelOfStudies.Amateur));
+        cv1.setEducation(new Education("Personal Studies", new ExpertiseArea("Finance"), LevelOfStudies.Bachelor));
         cv1.setEducation(new Education("My personal High School education", new ExpertiseArea("Other"), LevelOfStudies.High_School));
 
         // Language knowledge
@@ -43,6 +44,7 @@ public abstract class Initializer {
 
         // Work experience
         cv1.setWorkExperience(new WorkExperience(2,"Worked during my high school studies", new ExpertiseArea("Tourism")));
+        cv1.setWorkExperience(new WorkExperience(4,"Previous full time career work", new ExpertiseArea("Finance")));
         cv1.setAdditionalSkillset("Have obtained teamwork experience from 4 years of professional sports");
         employee1.setCV(cv1);
 

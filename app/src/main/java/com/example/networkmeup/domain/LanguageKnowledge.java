@@ -1,10 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The LanguageKnowledge class represents knowledge about a particular language, including the description, language itself, and the level of knowledge.
  * It ensures validation, retrieval, and comparison of language knowledge information.
  */
-public class LanguageKnowledge {
+public class LanguageKnowledge implements Serializable {
     private LevelOfKnowledge lvlOfKnowledge; // Represents the level of knowledge about the language
     private Language language; // Represents the language
     private String description; // Describes the language knowledge

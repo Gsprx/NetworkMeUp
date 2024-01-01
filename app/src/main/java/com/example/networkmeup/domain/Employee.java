@@ -2,13 +2,14 @@ package com.example.networkmeup.domain;
 
 import androidx.annotation.Nullable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * The Employee class represents an individual working within a network and holds various personal and professional details.
  */
-public class Employee {
+public class Employee implements Serializable {
     private String name; // Employee's name
     private Date dateOfBirth; // Employee's date of birth
     private String address; // Employee's address

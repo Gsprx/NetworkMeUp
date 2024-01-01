@@ -1,10 +1,11 @@
 package com.example.networkmeup.domain;
+import java.io.Serializable;
 import java.util.regex.Pattern;
 
 /**
  * The Email class represents an email address and provides methods for validation and comparison.
  */
-public class Email {
+public class Email implements Serializable {
     private String address; // The email address string
 
     /**

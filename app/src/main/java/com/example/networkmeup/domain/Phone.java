@@ -1,4 +1,5 @@
 package com.example.networkmeup.domain;
+import java.io.Serializable;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -6,7 +7,7 @@ import java.util.regex.Matcher;
  * The Phone class represents a phone number and ensures its validity based on defined criteria.
  * It validates phone numbers to meet specific formatting requirements.
  */
-public class Phone {
+public class Phone implements Serializable {
     private String number;
 
     /**

@@ -1,10 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The WorkExperience class represents an individual's work experience.
  * It includes details such as the number of years, description, and expertise area.
  */
-public class WorkExperience {
+public class WorkExperience implements Serializable {
     private int years;
     private String description;
     private ExpertiseArea expArea;

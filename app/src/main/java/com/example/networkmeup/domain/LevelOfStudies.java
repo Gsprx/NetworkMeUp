@@ -1,10 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The LevelOfStudies enum represents various levels of educational attainment.
  * It defines different stages of academic education from lower to higher levels.
  */
-public enum LevelOfStudies {
+public enum LevelOfStudies implements Serializable {
     Amateur, // Represents a beginner or basic educational level
     Junior_High_School, // Represents completion of junior high school education
     High_School, // Represents completion of high school education

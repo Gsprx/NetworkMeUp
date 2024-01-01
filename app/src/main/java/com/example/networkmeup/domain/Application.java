@@ -1,9 +1,11 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
+
 /**
  * The Application class represents a job application submitted by an Employee.
  */
-public class Application {
+public class Application implements Serializable {
     private Employee applicant; // Represents the applicant who submitted the application
     private static Integer classCount = 0; // Keeps track of the number of Application instances
     private Integer ID; // Unique identifier for each application

@@ -1,11 +1,12 @@
 package com.example.networkmeup.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Represents a Curriculum Vitae (CV) containing information about education, work experiences, skills, and language knowledge.
  */
-public class CV {
+public class CV implements Serializable {
     private String additionalSkillset; // Additional skillset information
     private ArrayList<Education> education; // List of educational experiences
     private ArrayList<WorkExperience> workExperiences; // List of work experiences
