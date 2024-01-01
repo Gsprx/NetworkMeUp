@@ -21,13 +21,13 @@ public class ShowJobDetailsPresenter {
     public void onSendApplication() {
         String coverLetter = view.getCoverLetter();
         //reject empty cover letters
-        if (coverLetter == null && !coverLetter.equals("")){
+        if (coverLetter == null || !coverLetter.equals("")){
             view.emptyCoverLetter("Cover Letter must not be empty!");
             return;
         }
 
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
-        Employee currEmployee =employeeDAO.getByEmail(new Email(userToken));
+        Employee currEmployee = employeeDAO.getByEmail(new Email(userToken));
 
         Application application = new Application(currEmployee,coverLetter);
 

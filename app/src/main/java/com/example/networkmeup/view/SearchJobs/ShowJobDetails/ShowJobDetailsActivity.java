@@ -16,8 +16,6 @@ import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.WorkExperienceRecyclerViewAdapter;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 import com.example.networkmeup.view.SearchJobs.SearchJobsActivity;
 
 public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJobsDetailsView{
@@ -34,7 +32,8 @@ public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJo
         if(extras!=null){
             //obtain user token
             userEmail = extras.getString("token");
-            currJob = (Job) extras.getSerializable("job");
+            currJob = (Job)extras.getSerializable("job");
+            System.out.println(currJob.getDescription());
         }
 
         final ShowJobDetailsPresenter presenter = new ShowJobDetailsPresenter(this, userEmail, currJob);
@@ -53,7 +52,7 @@ public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJo
         //get recycler views as references
         RecyclerView reqEducation = findViewById(R.id.recyclerViewShowJobDetailsRequiredEducation);
         RecyclerView reqWorkExp = findViewById(R.id.recyclerViewShowJobDetailsRequiredWorkExp);
-        RecyclerView reqLangKnow = findViewById(R.id.recyclerViewShowJobDetailsReqLangKnowledge);
+        //RecyclerView reqLangKnow = findViewById(R.id.recyclerViewShowJobDetailsReqLangKnowledge);
 
         //create recycler view adapters for each
         EducationRecyclerViewAdapter eduAdapter = new EducationRecyclerViewAdapter(this, currJob.getReqEducation());
