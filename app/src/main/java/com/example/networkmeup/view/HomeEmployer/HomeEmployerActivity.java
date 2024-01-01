@@ -7,9 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.networkmeup.R;
+import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
 import com.example.networkmeup.view.ManageJobPositions.ManageJobPositionsActivity;
 import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
-import com.example.networkmeup.view.EditAccount.EditAccountActivity;
+import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
 
 public class HomeEmployerActivity extends AppCompatActivity implements HomeEmployerView {
     private String userToken; // Token (email) of the employer
@@ -68,7 +69,7 @@ public class HomeEmployerActivity extends AppCompatActivity implements HomeEmplo
 
     @Override
     public void editAccount(String userToken) {
-        Intent intent = new Intent(this, EditAccountActivity.class);
+        Intent intent = new Intent(this, EditAccountEmployerActivity.class);
         intent.putExtra("token", userToken);
         startActivity(intent);
     }
