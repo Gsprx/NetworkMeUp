@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.networkmeup.R;
-import com.example.networkmeup.view.LoginEmployee.LoginEmployeeActivity;
-import com.example.networkmeup.view.LoginEmployer.LoginEmployerActivity;
-import com.example.networkmeup.view.StartPage.StartPageActivity;
+import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
+import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
 
 public class LoginActivity extends AppCompatActivity implements LoginView{
 

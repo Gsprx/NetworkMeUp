@@ -4,11 +4,8 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.view.SignUpEmployer.SignUpEmployerPresenter;
-import com.example.networkmeup.view.SignUpEmployer.SignUpEmployerView;
-import com.example.networkmeup.view.SignUpEmployerTest.SignUpEmployerViewStub;
-import com.example.networkmeup.view.SignUpEmployer.SignUpEmployerPresenter;
-import com.example.networkmeup.view.SignUpEmployer.SignUpEmployerView;
+import com.example.networkmeup.view.SignUp.SignUpEmployer.SignUpEmployerPresenter;
+import com.example.networkmeup.view.SignUp.SignUpEmployer.SignUpEmployerView;
 
 /**
  * This class represents a stub of the View component for the Employer Sign-Up process used in testing.

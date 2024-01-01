@@ -10,10 +10,9 @@ import android.view.View;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.view.EditAccountEmployee.EditAccountEmployeeActivity;
-import com.example.networkmeup.view.LoginEmployee.LoginEmployeeActivity;
+import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.SearchJobs.SearchJobsActivity;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeeActivity;
 
 public class HomeEmployeeActivity extends AppCompatActivity implements HomeEmployeeView{
 

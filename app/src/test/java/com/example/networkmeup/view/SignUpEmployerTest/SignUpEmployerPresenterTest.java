@@ -1,12 +1,9 @@
 package com.example.networkmeup.view.SignUpEmployerTest;
 
 import com.example.networkmeup.dao.Initializer;
-import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeePresenter;
-import com.example.networkmeup.view.SignUpEmployer.SignUpEmployerPresenter;
-import com.example.networkmeup.view.SignUpEmployerTest.SignUpEmployerViewStub;
+import com.example.networkmeup.view.SignUp.SignUpEmployer.SignUpEmployerPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;

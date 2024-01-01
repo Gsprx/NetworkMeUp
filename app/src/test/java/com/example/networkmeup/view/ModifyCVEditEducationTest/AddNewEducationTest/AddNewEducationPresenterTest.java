@@ -6,7 +6,7 @@ import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.view.ModifyCVEditEducation.AddNewEducation.AddNewEducationPresenter;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;

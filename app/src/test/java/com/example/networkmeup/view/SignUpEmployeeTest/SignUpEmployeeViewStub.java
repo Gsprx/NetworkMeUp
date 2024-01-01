@@ -3,8 +3,8 @@ package com.example.networkmeup.view.SignUpEmployeeTest;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeePresenter;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeeView;
+import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeePresenter;
+import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeeView;
 
 /**
  * This class acts as a stub implementation of the SignUpEmployeeView interface for testing purposes.

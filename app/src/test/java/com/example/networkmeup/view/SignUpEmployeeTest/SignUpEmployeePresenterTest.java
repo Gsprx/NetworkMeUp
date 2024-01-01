@@ -3,7 +3,7 @@ package com.example.networkmeup.view.SignUpEmployeeTest;
 import com.example.networkmeup.dao.Initializer;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeePresenter;
+import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeePresenter;
 
 import org.junit.Assert;
 import org.junit.Before;

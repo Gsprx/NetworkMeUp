@@ -18,9 +18,9 @@ import com.example.networkmeup.domain.LanguageKnowledge;
 import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.WorkExperienceRecyclerViewAdapter;
-import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationActivity;
-import com.example.networkmeup.view.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
-import com.example.networkmeup.view.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
 
 import java.util.ArrayList;
 

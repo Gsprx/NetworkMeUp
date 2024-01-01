@@ -5,7 +5,7 @@
     android:id="@+id/btnSignupEmployeeCreateAccount"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SignUpEmployee.SignUpEmployeeActivity">
+    tools:context=".view.SignUp.SignUpEmployee.SignUpEmployeeActivity">
 
     <TextView
         android:id="@+id/textLoginEmployeeHeader"

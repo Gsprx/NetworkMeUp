@@ -13,19 +13,22 @@
         android:theme="@style/Theme.NetworkMeUp"
         tools:targetApi="31">
         <activity
-            android:name=".view.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity"
+            android:name=".view.SearchJobs.ShowJobDetails.ShowJobDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity"
+            android:name=".view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity"
+            android:name=".view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity"
+            android:name=".view.ModifyCV.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ModifyCVEditEducation.ModifyCVEditEducationActivity"
+            android:name=".view.ModifyCV.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity"
             android:exported="false" />
         <activity
             android:name=".view.EditAccountEmployee.EditAccountEmployeeActivity"
@@ -40,16 +43,16 @@
             android:name=".view.HomeEmployee.HomeEmployeeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.LoginEmployer.LoginEmployerActivity"
+            android:name=".view.Login.LoginEmployer.LoginEmployerActivity"
             android:exported="false" />
         <activity
-            android:name=".view.LoginEmployee.LoginEmployeeActivity"
+            android:name=".view.Login.LoginEmployee.LoginEmployeeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SignUpEmployer.SignUpEmployerActivity"
+            android:name=".view.SignUp.SignUpEmployer.SignUpEmployerActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SignUpEmployee.SignUpEmployeeActivity"
+            android:name=".view.SignUp.SignUpEmployee.SignUpEmployeeActivity"
             android:exported="false" />
         <activity
             android:name=".view.SignUp.SignUpActivity"

@@ -1,6 +1,6 @@
 package com.example.networkmeup.view.ModifyCVEditEducationTest.AddNewEducationTest;
 
-import com.example.networkmeup.view.ModifyCVEditEducation.AddNewEducation.AddNewEducationView;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationView;
 
 public class AddNewEducationViewStub implements AddNewEducationView {
     private String description;

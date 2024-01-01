@@ -1,6 +1,6 @@
 package com.example.networkmeup.view.ModifyCVEditEducationTest;
 
-import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationView;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationView;
 
 public class ModifyCVEditEducationViewStub implements ModifyCVEditEducationView {
     private int changeClicks;

@@ -1,6 +1,6 @@
 package com.example.networkmeup.view.ModifyCVEditEducationTest.ChangeEducationDetailsTest;
 
-import com.example.networkmeup.view.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsView;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsView;
 
 public class ChangeEducationDetailsViewStub implements ChangeEducationDetailsView {
     private String description;

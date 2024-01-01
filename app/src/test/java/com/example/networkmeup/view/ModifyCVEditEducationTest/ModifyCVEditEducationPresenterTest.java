@@ -1,6 +1,6 @@
 package com.example.networkmeup.view.ModifyCVEditEducationTest;
 
-import com.example.networkmeup.view.ModifyCVEditEducation.ModifyCVEditEducationPresenter;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;

@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.networkmeup.R;
-import com.example.networkmeup.view.Login.LoginActivity;
-import com.example.networkmeup.view.SignUpEmployee.SignUpEmployeeActivity;
-import com.example.networkmeup.view.SignUpEmployer.SignUpEmployerActivity;
-import com.example.networkmeup.view.StartPage.StartPageActivity;
+import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeeActivity;
+import com.example.networkmeup.view.SignUp.SignUpEmployer.SignUpEmployerActivity;
 
 public class SignUpActivity extends AppCompatActivity implements  SignUpView{
 
