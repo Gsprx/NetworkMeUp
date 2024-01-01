@@ -40,11 +40,14 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
 
         final ModifyCVEditEducationPresenter presenter = new ModifyCVEditEducationPresenter(this, userEmail);
 
+        //get employee data to pass to recycler view
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         Employee currEmployee = employeeDAO.getByEmail(new Email(userEmail));
         ArrayList<Education> educationList = currEmployee.getCV().getEducation();
 
+        //get recycler view reference
         RecyclerView recyclerView = findViewById(R.id.recyclerViewModifyCVEditEducation);
+        //create recycler view adapter
         EditEducationRecyclerViewAdapter adapter = new EditEducationRecyclerViewAdapter(this, educationList);
         adapter.setClickListener(new EditEducationRecyclerViewAdapter.ItemClickListener() {
             //click listener for rows in recycler view list
@@ -56,7 +59,7 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //btnModifyCVEditEducationAddNew
+        //when add new button is pressed
         findViewById(R.id.btnModifyCVEditEducationAddNew).setOnClickListener(
                 new View.OnClickListener() {
                     @Override

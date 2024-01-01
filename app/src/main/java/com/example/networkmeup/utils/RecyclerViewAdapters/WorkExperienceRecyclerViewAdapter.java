@@ -30,7 +30,7 @@ public class WorkExperienceRecyclerViewAdapter extends RecyclerView.Adapter<Work
     public WorkExperienceRecyclerViewAdapter.WorkExperienceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.recycler_view_work_experience, parent, false);
+        View view = inflater.inflate(R.layout.recycler_view_work_experience_row, parent, false);
         return new WorkExperienceRecyclerViewAdapter.WorkExperienceViewHolder(view);
 
     }
