@@ -3,6 +3,7 @@ package com.example.networkmeup.dao;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
+import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 
 import java.util.ArrayList;
@@ -49,4 +50,13 @@ public interface EmployerDAO {
      * @return The Employer object associated with the provided email, if found; otherwise null.
      */
     public Employer getByEmail(Email email);
+
+    /**
+     * Method to authenticate an employer based on provided email and password.
+     *
+     * @param email    The email of the employer for authentication.
+     * @param password The password of the employer for authentication.
+     * @return True if the provided email and password match any stored employer's credentials, false otherwise.
+     */
+    public boolean authenticate(Email email, Password password);
 }
