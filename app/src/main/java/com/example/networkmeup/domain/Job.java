@@ -1,9 +1,5 @@
 package com.example.networkmeup.domain;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,6 +7,8 @@ import java.util.ArrayList;
 /**
  * The Job class represents a job listing, containing details and requirements for a job position.
  */
+
+// class Job implements Serializable for the ability to be passed through activities using Intent.putExtra method.
 public class Job implements Serializable {
     private String title; // Title of the job
     private String description; // Description of the job
