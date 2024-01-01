@@ -65,6 +65,7 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
         //attach RecyclerView Adapters to the respective RecyclerViews
         educationRecyclerView.setAdapter(educationRecyclerViewAdapter);
         educationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         workExperienceRecyclerView.setAdapter(workExperienceRecyclerViewAdapter);
         workExperienceRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
