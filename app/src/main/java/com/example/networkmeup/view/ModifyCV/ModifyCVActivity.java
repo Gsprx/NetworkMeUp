@@ -17,6 +17,7 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.LanguageKnowledge;
 import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
+import com.example.networkmeup.utils.RecyclerViewAdapters.LanguageKnowledgeRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.WorkExperienceRecyclerViewAdapter;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
@@ -60,7 +61,7 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
         //create recycler view adapters
         EducationRecyclerViewAdapter educationRecyclerViewAdapter = new EducationRecyclerViewAdapter(this, educationList);
         WorkExperienceRecyclerViewAdapter workExperienceRecyclerViewAdapter = new WorkExperienceRecyclerViewAdapter(this, workExperienceList);
-
+        LanguageKnowledgeRecyclerViewAdapter languageKnowledgeRecyclerViewAdapter = new LanguageKnowledgeRecyclerViewAdapter(this, langKnowledgeList);
 
         //attach RecyclerView Adapters to the respective RecyclerViews
         educationRecyclerView.setAdapter(educationRecyclerViewAdapter);
@@ -68,6 +69,9 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
 
         workExperienceRecyclerView.setAdapter(workExperienceRecyclerViewAdapter);
         workExperienceRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        languageKnowledgeRecyclerView.setAdapter(languageKnowledgeRecyclerViewAdapter);
+        languageKnowledgeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //button listeners
         //when edit education list is pressed
