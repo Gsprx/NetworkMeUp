@@ -33,7 +33,8 @@ public class HomeEmployerActivity extends AppCompatActivity implements HomeEmplo
             //obtain user token
             userEmail = extras.getString("token");
         }
-        HomeEmployerPresenter presenter = new HomeEmployerPresenter(this, userToken);
+
+        HomeEmployerPresenter presenter = new HomeEmployerPresenter(this, userEmail);
 
         findViewById(R.id.btnHomeEmployerManageJobPositions).setOnClickListener(
                 new View.OnClickListener() {

@@ -19,6 +19,15 @@
             android:name=".view.ManageJobPositions.AddNewJob.AddNewJobActivity"
             android:exported="false" />
         <activity
+            android:name=".view.ManageJobPositions.ManageJobPositionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.UpdateJobApplications.UpdateJobApplicationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.EditAccountEmployer.EditAccountEmployerActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.SearchJobs.ShowJobDetails.ShowJobDetailsActivity"
             android:exported="false" />
         <activity
@@ -44,6 +53,9 @@
             android:exported="false" />
         <activity
             android:name=".view.ModifyCV.ModifyCVActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.HomeEmployer.HomeEmployerActivity"
             android:exported="false" />
         <activity
             android:name=".view.HomeEmployee.HomeEmployeeActivity"
