@@ -100,14 +100,14 @@ public abstract class Initializer {
 
         //add exp area data to our database
         ExpertiseAreaDAO expertiseAreaDAO = getExpertiseAreaDAO();
-        expertiseAreaDAO.add(expAr1);
-        expertiseAreaDAO.add(expAr2);
-        expertiseAreaDAO.add(expAr3);
-        expertiseAreaDAO.add(expAr4);
-        expertiseAreaDAO.add(expAr5);
-        expertiseAreaDAO.add(expAr6);
-        expertiseAreaDAO.add(expAr7);
-        expertiseAreaDAO.add(expAr8);
+        expertiseAreaDAO.save(expAr1);
+        expertiseAreaDAO.save(expAr2);
+        expertiseAreaDAO.save(expAr3);
+        expertiseAreaDAO.save(expAr4);
+        expertiseAreaDAO.save(expAr5);
+        expertiseAreaDAO.save(expAr6);
+        expertiseAreaDAO.save(expAr7);
+        expertiseAreaDAO.save(expAr8);
     }
 
     /**

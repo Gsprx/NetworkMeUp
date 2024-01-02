@@ -21,7 +21,7 @@ public class ExpertiseAreaDAOMemory implements ExpertiseAreaDAO {
     }
 
     @Override
-    public void add(ExpertiseArea expertiseArea) {
+    public void save(ExpertiseArea expertiseArea) {
         if (!find(expertiseArea)){
             expertiseAreas.add(expertiseArea);
             Collections.sort(expertiseAreas);

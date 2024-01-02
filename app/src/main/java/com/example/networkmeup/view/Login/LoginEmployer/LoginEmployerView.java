@@ -36,7 +36,8 @@ public interface LoginEmployerView {
     /**
      * Indicates a successful login attempt to the activity.
      *
-     * @param message Message to be displayed upon successful login.
+     * @param
+     *
      */
-    void successfullyFinishLogin(String message);
+    void successfullyFinishLogin(String userToken);
 }

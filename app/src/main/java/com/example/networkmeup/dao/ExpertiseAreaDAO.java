@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public interface ExpertiseAreaDAO {
     public ArrayList<ExpertiseArea> getAll();
-    public void add(ExpertiseArea expertiseArea);
+    public void save(ExpertiseArea expertiseArea);
     public boolean find(ExpertiseArea expertiseArea);
 }

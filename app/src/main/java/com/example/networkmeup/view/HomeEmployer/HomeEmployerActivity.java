@@ -25,9 +25,14 @@ public class HomeEmployerActivity extends AppCompatActivity implements HomeEmplo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_employer);
 
-        // Get user token from intent or SharedPreferences
-        userToken = getIntent().getStringExtra("token"); // Replace with your actual token retrieval method
+        //homepage employer activity requires a login token from the user that logged in (token = email)
+        Bundle extras = getIntent().getExtras();
 
+        String userEmail = null;
+        if(extras!=null){
+            //obtain user token
+            userEmail = extras.getString("token");
+        }
         HomeEmployerPresenter presenter = new HomeEmployerPresenter(this, userToken);
 
         findViewById(R.id.btnHomeEmployerManageJobPositions).setOnClickListener(
