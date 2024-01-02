@@ -21,7 +21,7 @@
                 android:id="@+id/textJobTitle"
                 android:layout_width="210dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Job Title"
                 android:textAlignment="textStart"
@@ -33,7 +33,7 @@
                 android:layout_width="165dp"
                 android:layout_height="26dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginEnd="8dp"
                 android:text="Job Availability"
                 android:textAlignment="textEnd"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
 
             <TextView
                 android:id="@+id/textJobDescription"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
