@@ -83,7 +83,6 @@ public class HomeEmployeeActivity extends AppCompatActivity implements HomeEmplo
     }
 
     //
-    //
     //    methods to start new activities must pass the userToken
     //    using intent.putExtra("token", userToken);
     //

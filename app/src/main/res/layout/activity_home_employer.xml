@@ -72,10 +72,12 @@
         android:id="@+id/textView3"
         android:layout_width="294dp"
         android:layout_height="37dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="44dp"
         android:text="Employer Home Page"
         android:textAlignment="center"
         android:textSize="28sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="82dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHomeEmployerTop" />
 </androidx.constraintlayout.widget.ConstraintLayout>
