@@ -29,7 +29,7 @@ public class SelectJobsRecyclerViewAdapter extends RecyclerView.Adapter<SelectJo
     public SelectJobsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.recycler_view_search_jobs_row, parent, false);
+        View view = inflater.inflate(R.layout.recycler_view_jobs_row, parent, false);
         return new SelectJobsViewHolder(view);
     }
 
