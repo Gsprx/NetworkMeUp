@@ -13,6 +13,12 @@
         android:theme="@style/Theme.NetworkMeUp"
         tools:targetApi="31">
         <activity
+            android:name=".view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ManageJobPositions.AddNewJob.AddNewJobActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.SearchJobs.ShowJobDetails.ShowJobDetailsActivity"
             android:exported="false" />
         <activity

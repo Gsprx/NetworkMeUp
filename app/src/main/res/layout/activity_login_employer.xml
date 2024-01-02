@@ -75,7 +75,9 @@
         android:fontFamily="sans-serif"
         android:text="Please enter the following:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="259dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextLoginEmployerEmail"
+        app:layout_constraintStart_toStartOf="@+id/textLoginEmployeeHeader2"
+        app:layout_constraintTop_toBottomOf="@+id/textLoginEmployeeHeader2"
+        app:layout_constraintVertical_bias="0.82" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

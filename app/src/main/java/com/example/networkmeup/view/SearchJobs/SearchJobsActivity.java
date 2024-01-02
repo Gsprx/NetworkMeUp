@@ -51,6 +51,7 @@ public class SearchJobsActivity extends AppCompatActivity implements SearchJobsV
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
     }
 
     @Override
