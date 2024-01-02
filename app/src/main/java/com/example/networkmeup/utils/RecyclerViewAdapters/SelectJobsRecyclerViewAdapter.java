@@ -14,30 +14,30 @@ import com.example.networkmeup.domain.Job;
 
 import java.util.ArrayList;
 
-public class SearchJobsRecyclerViewAdapter extends RecyclerView.Adapter<SearchJobsRecyclerViewAdapter.SearchJobsViewHolder> {
+public class SelectJobsRecyclerViewAdapter extends RecyclerView.Adapter<SelectJobsRecyclerViewAdapter.SelectJobsViewHolder> {
     private ArrayList<Job> jobs;
     private Context context;
-    private SearchJobsRecyclerViewAdapter.ItemClickListener clickListener;
+    private SelectJobsRecyclerViewAdapter.ItemClickListener clickListener;
 
-    public SearchJobsRecyclerViewAdapter(Context context, ArrayList<Job> jobs){
+    public SelectJobsRecyclerViewAdapter(Context context, ArrayList<Job> jobs){
         this.context = context;
         this.jobs = jobs;
     }
     @NonNull
     @Override
     //Creates the look for the rows in the UI recycler view
-    public SearchJobsRecyclerViewAdapter.SearchJobsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SelectJobsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_search_jobs_row, parent, false);
-        return new SearchJobsRecyclerViewAdapter.SearchJobsViewHolder(view);
+        return new SelectJobsViewHolder(view);
     }
 
     @Override
 
     //Assign(bind) the data to use for each row
     //changes the data on the recycler view based on the position of the recycler
-    public void onBindViewHolder(@NonNull SearchJobsRecyclerViewAdapter.SearchJobsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SelectJobsViewHolder holder, int position) {
         //set each holder's members to match the data on the job data found on the position (of the position int passed in the method)
         holder.jobTitle.setText(jobs.get(position).getTitle());
         holder.jobAvailability.setText(jobs.get(position).getAvailability().toString());
@@ -50,7 +50,7 @@ public class SearchJobsRecyclerViewAdapter extends RecyclerView.Adapter<SearchJo
     }
 
     //catch click events with a click listener that we set
-    public void setClickListener(SearchJobsRecyclerViewAdapter.ItemClickListener itemClickListener) {
+    public void setClickListener(SelectJobsRecyclerViewAdapter.ItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
 
@@ -59,14 +59,14 @@ public class SearchJobsRecyclerViewAdapter extends RecyclerView.Adapter<SearchJo
         void onItemClick(View view, int position);
     }
 
-    public class SearchJobsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class SelectJobsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         //this class holds the TextView items in the search_jobs_recycler_view_row layout file
 
         TextView jobTitle;
         TextView jobAvailability;
         TextView jobDescription;
 
-        public SearchJobsViewHolder(@NonNull View itemView) {
+        public SelectJobsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             itemView.setOnClickListener(this);
