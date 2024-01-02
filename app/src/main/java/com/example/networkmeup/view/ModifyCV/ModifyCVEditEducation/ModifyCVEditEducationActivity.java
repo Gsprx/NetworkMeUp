@@ -14,7 +14,7 @@ import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.utils.RecyclerViewAdapters.EditEducationRecyclerViewAdapter;
+import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEducationRecyclerViewAdapter;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
 
@@ -48,8 +48,8 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
         //get recycler view reference
         RecyclerView recyclerView = findViewById(R.id.recyclerViewModifyCVEditEducation);
         //create recycler view adapter
-        EditEducationRecyclerViewAdapter adapter = new EditEducationRecyclerViewAdapter(this, educationList);
-        adapter.setClickListener(new EditEducationRecyclerViewAdapter.ItemClickListener() {
+        SelectEducationRecyclerViewAdapter adapter = new SelectEducationRecyclerViewAdapter(this, educationList);
+        adapter.setClickListener(new SelectEducationRecyclerViewAdapter.ItemClickListener() {
             //click listener for rows in recycler view list
             @Override
             public void onItemClick(View view, int position) {

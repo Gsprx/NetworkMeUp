@@ -12,10 +12,8 @@ import android.view.View;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.utils.RecyclerViewAdapters.SearchJobsRecyclerViewAdapter;
+import com.example.networkmeup.utils.RecyclerViewAdapters.SelectJobsRecyclerViewAdapter;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 import com.example.networkmeup.view.SearchJobs.ShowJobDetails.ShowJobDetailsActivity;
 
 import java.util.ArrayList;
@@ -42,8 +40,8 @@ public class SearchJobsActivity extends AppCompatActivity implements SearchJobsV
         //get recycler view reference
         RecyclerView recyclerView = findViewById(R.id.recyclerViewSearchJobs);
         //create recycler view adapter
-        SearchJobsRecyclerViewAdapter adapter = new SearchJobsRecyclerViewAdapter(this, matchingJobs);
-        adapter.setClickListener(new SearchJobsRecyclerViewAdapter.ItemClickListener() {
+        SelectJobsRecyclerViewAdapter adapter = new SelectJobsRecyclerViewAdapter(this, matchingJobs);
+        adapter.setClickListener(new SelectJobsRecyclerViewAdapter.ItemClickListener() {
             //click listener for rows in recycler view list
             @Override
             public void onItemClick(View view, int position) {
