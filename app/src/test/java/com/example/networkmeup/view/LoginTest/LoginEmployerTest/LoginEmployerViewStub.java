@@ -14,7 +14,7 @@ public class LoginEmployerViewStub implements LoginEmployerView {
     private String passwordField; // Simulated input field for password
     private String showErrorMessageMsg; // Message to display for an error scenario
     private String showErrorMessageTitle; // Title to display for an error scenario
-    private String successfullyFinishLoginMessage; // Message to display for a successful login
+    private String successfullyFinishLoginToken;
 
     /**
      * Default constructor to initialize the LoginEmployerViewStub.
@@ -58,8 +58,8 @@ public class LoginEmployerViewStub implements LoginEmployerView {
      * Retrieves the success message to be displayed upon successful login.
      * @return Success message content
      */
-    public String getSuccessfullyFinishLoginMessage() {
-        return successfullyFinishLoginMessage;
+    public String getSuccessfullyFinishLoginToken() {
+        return successfullyFinishLoginToken;
     }
 
     /**
@@ -95,11 +95,11 @@ public class LoginEmployerViewStub implements LoginEmployerView {
 
     /**
      * Simulates displaying a success message on the user interface upon successful login.
-     * @param message Content of the success message
+     * @param userToken Content of the success message
      */
     @Override
-    public void successfullyFinishLogin(String message) {
-        this.successfullyFinishLoginMessage = message;
+    public void successfullyFinishLogin(String userToken) {
+        this.successfullyFinishLoginToken = userToken;
     }
 }
 

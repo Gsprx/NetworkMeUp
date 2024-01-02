@@ -15,7 +15,7 @@ public class LoginEmployeeViewStub implements LoginEmployeeView {
     private String passwordField;
     private String showErrorMessageMsg;
     private String showErrorMessageTitle;
-    private String successfullyFinishLoginMessage;
+    private String successfullyFinishLoginToken;
 
     /**
      * Default constructor.
@@ -78,11 +78,11 @@ public class LoginEmployeeViewStub implements LoginEmployeeView {
     /**
      * Notifies the view stub about a successful finish action with a message.
      *
-     * @param message Message to display upon successful login.
+     * @param userToken
      */
     @Override
-    public void successfullyFinishLogin(String message) {
-        this.successfullyFinishLoginMessage = message;
+    public void successfullyFinishLogin(String userToken) {
+        this.successfullyFinishLoginToken = userToken;
     }
 
     /**
@@ -122,11 +122,11 @@ public class LoginEmployeeViewStub implements LoginEmployeeView {
     }
 
     /**
-     * Getter method to retrieve the successfullyFinishLoginMessage field in the view stub.
+     * Getter method to retrieve the successfullyFinishLoginToken field in the view stub.
      *
      * @return Content of the message displayed upon successful login.
      */
-    public String getSuccessfullyFinishLoginMessage() {
-        return successfullyFinishLoginMessage;
+    public String getSuccessfullyFinishLoginToken() {
+        return successfullyFinishLoginToken;
     }
 }

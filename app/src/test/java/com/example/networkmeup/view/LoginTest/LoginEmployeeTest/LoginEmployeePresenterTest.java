@@ -37,28 +37,34 @@ public class LoginEmployeePresenterTest {
 
         // Test various scenarios for logging in
 
-        // No input provided, attempt to login
-        presenter.onLogin();
-
         // Testing scenario where both email and password are valid
-        view.setEmailField("john.doe@example.com");
+        // incorrect credentials
+        view.setEmailField("john.Brown12@gmail.com");
         view.setPasswordField("Test1234!");
         presenter.onLogin();
-        Assert.assertEquals("You have successfully logged in!", view.getSuccessfullyFinishLoginMessage());
+        Assert.assertEquals("Login Error", view.getShowErrorMessageTitle());
+        Assert.assertEquals("Invalid credentials!", view.getShowErrorMessageMsg());
+
+        // Testing scenario where both email and password are valid
+        // correct credentials
+        view.setEmailField("john.Brown12@gmail.com");
+        view.setPasswordField("JohnBrown!12");
+        presenter.onLogin();
+        Assert.assertEquals("john.Brown12@gmail.com", view.getSuccessfullyFinishLoginToken());
 
         // Testing scenario where email is empty
         view.setEmailField("");
         view.setPasswordField("Test1234!");
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
-        Assert.assertEquals("Email address cannot be empty.", view.getShowErrorMessageMsg());
+        Assert.assertEquals("Invalid email address.", view.getShowErrorMessageMsg());
 
         // Testing scenario where password is empty
         view.setEmailField("john.doe@example.com");
         view.setPasswordField("");
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
-        Assert.assertEquals("Password cannot be empty.", view.getShowErrorMessageMsg());
+        Assert.assertEquals("Password is not strong enough.", view.getShowErrorMessageMsg());
 
         // Testing scenario where email is invalid
         view.setEmailField("invalid.email");
@@ -79,7 +85,7 @@ public class LoginEmployeePresenterTest {
         view.setPasswordField("weak");
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
-        Assert.assertEquals("Invalid email address.", view.getShowErrorMessageMsg());
+        Assert.assertEquals("Password is not strong enough.", view.getShowErrorMessageMsg());
 
     }
 }

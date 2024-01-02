@@ -59,7 +59,7 @@ public class LoginEmployerPresenter {
 
             if (isAuthenticated) {
                 // If the employer exists, finish login successfully
-                view.successfullyFinishLogin("Login successful!");
+                view.successfullyFinishLogin(email.getAddress());
             } else {
                 // If the employer doesn't exist, show an error message
                 view.showErrorMessage("Login Error", "Invalid credentials!");

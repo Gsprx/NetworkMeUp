@@ -1,6 +1,5 @@
 package com.example.networkmeup.view.LoginTest.LoginEmployerTest;
 
-import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerPresenter;
@@ -34,6 +33,7 @@ public class LoginEmployerPresenterTest {
         Assert.assertEquals("Email address cannot be empty.", view.getShowErrorMessageMsg());
 
         // No password provided, attempt to login
+        view.setPasswordField(null);
         view.setEmailField("example@email.com");
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
@@ -49,19 +49,19 @@ public class LoginEmployerPresenterTest {
 
         // Valid email but incorrect password provided
         view.setEmailField("john.doe@example.com");
-        view.setPasswordField("WrongPassword");
+        view.setPasswordField("WrongPassword123!");
         presenter.onLogin();
-        Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
+        Assert.assertEquals("Login Error", view.getShowErrorMessageTitle());
         Assert.assertEquals("Invalid credentials!", view.getShowErrorMessageMsg());
 
         // Valid email and password, successfully login
-        view.setEmailField("john.doe@example.com");
-        view.setPasswordField("Test1234!");
+        view.setEmailField("b.be@northfreedom.com");
+        view.setPasswordField("UwL[;3{[fQP:");
         presenter.onLogin();
-        Assert.assertEquals("Login successful!", view.getSuccessfullyFinishLoginMessage());
+        Assert.assertEquals("b.be@northfreedom.com", view.getSuccessfullyFinishLoginToken());
 
         // Empty email and valid password
-        view.setEmailField("");
+        view.setEmailField(null);
         view.setPasswordField("Test1234!");
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
@@ -69,17 +69,17 @@ public class LoginEmployerPresenterTest {
 
         // Valid email and empty password
         view.setEmailField("john.doe@example.com");
-        view.setPasswordField("");
+        view.setPasswordField(null);
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
         Assert.assertEquals("Password cannot be empty.", view.getShowErrorMessageMsg());
 
         // Empty email and empty password
-        view.setEmailField("");
-        view.setPasswordField("");
+        view.setEmailField(null);
+        view.setPasswordField(null);
         presenter.onLogin();
         Assert.assertEquals("Error!", view.getShowErrorMessageTitle());
-        Assert.assertEquals("Email address cannot be empty.", view.getShowErrorMessageMsg());
+        Assert.assertEquals("Password cannot be empty.", view.getShowErrorMessageMsg());
     }
 }
 
