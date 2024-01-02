@@ -65,9 +65,9 @@ public class ChangeEducationDetailsPresenterTest {
         //check if the correct education was deleted (second education of user with email "john.Brown12@gmail.com")
         //by checking if the first education is exactly the same as in initialization process
 
-        //   first Education: ("Personal Studies", ExpertiseArea("Finance"), LevelOfStudies.Amateur));
+        //   first Education: ("Personal Studies", ExpertiseArea("Finance"), LevelOfStudies.Bachelor));
         Assert.assertEquals("Personal Studies", curEmployee.getCV().getEducation().get(0).getDescription());
         Assert.assertEquals("Finance", curEmployee.getCV().getEducation().get(0).getExpArea().getArea());
-        Assert.assertEquals("Amateur", curEmployee.getCV().getEducation().get(0).getLvlOfStudies().toString());
+        Assert.assertEquals("Bachelor", curEmployee.getCV().getEducation().get(0).getLvlOfStudies().toString());
     }
 }
