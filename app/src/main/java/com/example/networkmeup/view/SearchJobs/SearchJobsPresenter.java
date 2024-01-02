@@ -4,6 +4,7 @@ import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
+import com.example.networkmeup.domain.Application;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
@@ -39,10 +40,22 @@ public class SearchJobsPresenter {
                 }
             }
         }
+        //remove jobs that the user has already applied to
+        //loop through all job's applications and look for the same applicant
+        for(Job job : result){
+            for(Application application : job.getApplications()){
+                if(application.getEmployee().equals(currEmployee)){
+                    result.remove(job);
+                    break;
+                }
+            }
+        }
+
         //no matching jobs found, send message to view
         if(result.size() == 0){
             view.noJobsFound("Unfortunately there are no jobs that match with your CV. Please try again later.", userToken);
         }
+
         return result;
     }
 
