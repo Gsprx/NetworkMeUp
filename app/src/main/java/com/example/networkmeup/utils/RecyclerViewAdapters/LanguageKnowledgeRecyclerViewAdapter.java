@@ -44,7 +44,7 @@ public class LanguageKnowledgeRecyclerViewAdapter extends RecyclerView.Adapter<L
         holder.LanguageKnowledgeDescription.setText(languages.get(position).getDescription());
 
         holder.LanguageKnowledgeLvlOfknowledge.setText(languages.get(position).getLvlOfKnowledge().toString());
-        holder.LanguageKnowledgelanguage.setText(languages.get(position).getLanguage().toString());
+        holder.LanguageKnowledgelanguage.setText(languages.get(position).getLanguage().getLanguage());
     }
 
     @Override
