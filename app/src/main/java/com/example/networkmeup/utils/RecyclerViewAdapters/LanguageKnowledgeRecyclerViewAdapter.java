@@ -29,7 +29,7 @@ public class LanguageKnowledgeRecyclerViewAdapter extends RecyclerView.Adapter<L
     public LanguageKnowledgeRecyclerViewAdapter.LanguageKnowledgeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.recycler_view_education_row, parent, false);
+        View view = inflater.inflate(R.layout.recycler_view_language_knowledge_row, parent, false);
         return new LanguageKnowledgeRecyclerViewAdapter.LanguageKnowledgeViewHolder(view);
     }
 

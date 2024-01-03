@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
+import com.example.networkmeup.utils.RecyclerViewAdapters.LanguageKnowledgeRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.WorkExperienceRecyclerViewAdapter;
 import com.example.networkmeup.view.SearchJobs.SearchJobsActivity;
 
@@ -51,11 +52,12 @@ public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJo
         //get recycler views as references
         RecyclerView reqEducation = findViewById(R.id.recyclerViewShowJobDetailsRequiredEducation);
         RecyclerView reqWorkExp = findViewById(R.id.recyclerViewShowJobDetailsRequiredWorkExp);
-        //RecyclerView reqLangKnow = findViewById(R.id.recyclerViewShowJobDetailsReqLangKnowledge);
+        RecyclerView reqLangKnow = findViewById(R.id.recyclerViewShowJobDetailsReqLangKnowledge);
 
         //create recycler view adapters for each
         EducationRecyclerViewAdapter eduAdapter = new EducationRecyclerViewAdapter(this, currJob.getReqEducation());
         WorkExperienceRecyclerViewAdapter workExpAdapter = new WorkExperienceRecyclerViewAdapter(this, currJob.getReqWorkExperience());
+        LanguageKnowledgeRecyclerViewAdapter langKnowAdapter = new LanguageKnowledgeRecyclerViewAdapter(this, currJob.getReqLanguageKnowledge());
 
         //set each adapter to respective recycler views
         reqEducation.setAdapter(eduAdapter);
@@ -63,6 +65,9 @@ public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJo
 
         reqWorkExp.setAdapter(workExpAdapter);
         reqWorkExp.setLayoutManager(new LinearLayoutManager(this));
+
+        reqLangKnow.setAdapter(langKnowAdapter);
+        reqLangKnow.setLayoutManager(new LinearLayoutManager(this));
 
 
         //when send application button is clicked
