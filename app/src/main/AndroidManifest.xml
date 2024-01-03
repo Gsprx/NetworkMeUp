@@ -34,6 +34,12 @@
             android:name=".view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity"
             android:exported="false" />
         <activity
+            android:name=".view.ModifyCV.ModifyCVEditWorkExperience.AddNewWorkExperience.AddNewWorkExperienceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ModifyCV.ModifyCVEditWorkExperience.ChangeWorkExperienceDetails.ChangeWorkExperienceDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity"
             android:exported="false" />
         <activity

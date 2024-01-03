@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="296dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="308dp"
+        android:text="Select Years of working: "
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="300dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="120dp"
+        android:text="Select Expertise Field:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="335dp"
+        android:layout_height="93dp"
+        android:text="Add a new work experience to your CV"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Spinner
+        android:id="@+id/spinnerAddNewWorkExperienceSelectExpField"
+        android:layout_width="294dp"
+        android:layout_height="59dp"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <Spinner
+        android:id="@+id/spinnerAddNewWorkExperienceYearsofwork"
+        android:layout_width="301dp"
+        android:layout_height="55dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="404dp" />
+
+    <EditText
+        android:id="@+id/editTextAddNewWorkExperienceDescription"
+        android:layout_width="358dp"
+        android:layout_height="108dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Enter a descreption"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="487dp" />
+
+    <Button
+        android:id="@+id/btnAddNewWorkExperience"
+        android:layout_width="295dp"
+        android:layout_height="76dp"
+        android:text="Add Work Experience"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="618dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
