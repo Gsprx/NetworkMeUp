@@ -10,35 +10,44 @@
         android:id="@+id/recyclerViewModifyCVEditWorkExperience"
         android:layout_width="353dp"
         android:layout_height="547dp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="168dp" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModifyCVEditWorkExperienceAddNew" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="362dp"
         android:layout_height="79dp"
+        android:layout_marginTop="16dp"
         android:text="Edit Your Work Experience"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="13dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="202dp"
         android:layout_height="29dp"
+        android:layout_marginTop="24dp"
         android:text="Click on any item to change it"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewModifyCVEditWorkExperience"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <Button
         android:id="@+id/btnModifyCVEditWorkExperienceAddNew"
         android:layout_width="153dp"
         android:layout_height="61dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:text="ADD NEW"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="237dp"
-        tools:layout_editor_absoluteY="99dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView28"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 </androidx.constraintlayout.widget.ConstraintLayout>

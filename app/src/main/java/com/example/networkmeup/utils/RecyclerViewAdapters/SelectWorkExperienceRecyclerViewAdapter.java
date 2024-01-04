@@ -43,7 +43,7 @@ public class SelectWorkExperienceRecyclerViewAdapter extends RecyclerView.Adapte
 
         //for example set the workExpDescription field of the holder to the one matching the WorkExp instance in the list[position]
         holder.workExpDescription.setText(workExp.get(position).getDescription());
-        holder.workExpYears.setText(workExp.get(position).getYears());
+        holder.workExpYears.setText(Integer.toString(workExp.get(position).getYears()));
         holder.workExpExpField.setText(workExp.get(position).getExpArea().getArea());
     }
 
