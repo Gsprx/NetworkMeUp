@@ -15,6 +15,6 @@ public class ManageJobPositionsPresenter {
     }
 
     public void onItemClick(Job job){
-        view.changeJobPosition(userToken, job);
+        view.changeJobDetails(userToken, job);
     }
 }
