@@ -33,6 +33,8 @@ public class ChangeWorkExperienceDetailsPresenter {
         ExpertiseAreaDAO expertiseAreaDAO = new ExpertiseAreaDAOMemory();
         ExpertiseArea newExpertiseArea = expertiseAreaDAO.getAll().get(view.getExpertiseArea());
         updatedworkexp.setExpArea(newExpertiseArea);
+
+        updatedworkexp.setYears(view.getYearsAtWork()+1);
         //update has been completed at this point, create success dialog
         view.successfulSave("This Work Experience has been updated successfully!", userToken);
 
