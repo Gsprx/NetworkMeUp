@@ -141,7 +141,7 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
     }
 
     @Override
-    public int getYearsAtwork() {
+    public int getYearsAtWork() {
         //get position in respective enum ordinal
         return ((Spinner)findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectYearsAtWork)).getSelectedItemPosition();
     }
