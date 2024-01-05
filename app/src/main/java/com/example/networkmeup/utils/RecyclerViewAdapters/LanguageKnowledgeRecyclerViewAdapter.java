@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.networkmeup.R;
-import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.LanguageKnowledge;
 
 import java.util.ArrayList;
@@ -62,7 +61,7 @@ public class LanguageKnowledgeRecyclerViewAdapter extends RecyclerView.Adapter<L
         public LanguageKnowledgeViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            this.LanguageKnowledgelanguage = itemView.findViewById(R.id.textLanguageKnowledgeLanguuage);
+            this.LanguageKnowledgelanguage = itemView.findViewById(R.id.textLanguageKnowledgeLanguage);
             this.LanguageKnowledgeDescription = itemView.findViewById(R.id.textLanguageKnowledgeDescription);
             this.LanguageKnowledgeLvlOfknowledge = itemView.findViewById(R.id.textLanguageKnowledgeLevel);
         }

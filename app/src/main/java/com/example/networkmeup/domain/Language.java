@@ -6,7 +6,7 @@ import java.io.Serializable;
  * The Language class represents a language entity with its name.
  * It ensures the validation and retrieval of language information.
  */
-public class Language implements Serializable {
+public class Language implements Comparable<Language>, Serializable {
     private String language; // Represents the name of the language
 
     /**
@@ -54,5 +54,10 @@ public class Language implements Serializable {
      */
     public boolean equals(Language lang){
         return (this.language.equals(lang.language)); // Compares language names for equality
+    }
+
+    @Override
+    public int compareTo(Language lang) {
+        return this.language.compareTo(lang.getLanguage());
     }
 }
