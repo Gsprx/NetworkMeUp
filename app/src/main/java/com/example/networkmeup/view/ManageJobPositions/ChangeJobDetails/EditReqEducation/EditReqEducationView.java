@@ -1,7 +1,9 @@
 package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation;
 
-public interface EditReqEducationView {
-    void changeEductionDetails(String userToken, int position);
+import com.example.networkmeup.domain.Job;
 
-    void addNewEducation(String userToken);
+public interface EditReqEducationView {
+    void changeEductionDetails(String userToken, int position, Job job);
+
+    void addNewEducation(String userToken, Job job);
 }

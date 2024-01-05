@@ -69,18 +69,20 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
     }
 
     @Override
-    public void changeEductionDetails(String userToken, int position){
+    public void changeEductionDetails(String userToken, int position, Job job){
         Intent intent = new Intent(EditReqEducationActivity.this, ChangeReqEducationDetailsActivity.class);
         intent.putExtra("token", userToken);
         intent.putExtra("position", position);
+        intent.putExtra("job", job);
         startActivity(intent);
     }
 
     @Override
-    public void addNewEducation(String userToken) {
+    public void addNewEducation(String userToken, Job job) {
         Intent intent = new Intent(EditReqEducationActivity.this, ChangeReqEducationDetailsActivity.class);
         intent.putExtra("token", userToken);
         intent.putExtra("position", -1);
+        intent.putExtra("job", job);
         startActivity(intent);
     }
 }

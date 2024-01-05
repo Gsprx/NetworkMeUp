@@ -14,10 +14,10 @@ public class EditReqEducationPresenter {
     }
 
     public void onItemClick(int position) {
-        view.changeEductionDetails(userToken, position);
+        view.changeEductionDetails(userToken, position, job);
     }
 
     public void onAddNew() {
-        view.addNewEducation(userToken);
+        view.addNewEducation(userToken, job);
     }
 }
