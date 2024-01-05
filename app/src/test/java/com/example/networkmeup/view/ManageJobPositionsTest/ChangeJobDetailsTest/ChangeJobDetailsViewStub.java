@@ -12,6 +12,8 @@ public class ChangeJobDetailsViewStub implements ChangeJobDetailsView {
     private int editEducationClicks;
     private int editWorkExpClicks;
     private int editLangKnowClicks;
+    private int saveClicks;
+    private int deleteClicks;
 
     @Override
     public String getJobDescription() {
@@ -49,20 +51,28 @@ public class ChangeJobDetailsViewStub implements ChangeJobDetailsView {
         lastTokenPassed = userToken;
     }
 
+    @Override
+    public void successfulDelete(String userToken) {
+        deleteClicks++;
+        lastTokenPassed = userToken;
+    }
+
+    @Override
+    public void successfulSave(String userToken) {
+        saveClicks++;
+        lastTokenPassed = userToken;
+    }
+
+    public int getSaveClicks() {
+        return saveClicks;
+    }
+
+    public int getDeleteClicks() {
+        return deleteClicks;
+    }
+
     public String getLastTokenPassed() {
         return lastTokenPassed;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getAvailab() {
-        return availab;
     }
 
     public Job getLastJobPassed() {

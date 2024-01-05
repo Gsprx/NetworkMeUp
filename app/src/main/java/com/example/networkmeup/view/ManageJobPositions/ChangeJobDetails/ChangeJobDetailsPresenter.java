@@ -1,6 +1,10 @@
 package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails;
 
+import com.example.networkmeup.dao.EmployerDAO;
+import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Availability;
+import com.example.networkmeup.domain.Email;
+import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
 
 public class ChangeJobDetailsPresenter {
@@ -35,5 +39,22 @@ public class ChangeJobDetailsPresenter {
         currJob.setDescription(view.getJobDescription());
         currJob.setTitle(view.getJobTitle());
         currJob.setAvailability(Availability.values()[view.getAvailability()]);
+    }
+
+    public void onSave() {
+        EmployerDAO employerDAO = new EmployerDAOMemory();
+        Employer employer = employerDAO.getByEmail(new Email(userToken));
+
+        saveChanges();
+
+        employer.getJobs().add(currJob);
+        view.successfulSave(userToken);
+    }
+
+    public void onDelete() {
+        EmployerDAO employerDAO = new EmployerDAOMemory();
+        Employer employer = employerDAO.getByEmail(new Email(userToken));
+        employer.getJobs().remove(currJob);
+        view.successfulDelete(userToken);
     }
 }

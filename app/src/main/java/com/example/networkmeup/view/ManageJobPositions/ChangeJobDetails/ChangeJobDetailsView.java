@@ -9,4 +9,6 @@ public interface ChangeJobDetailsView {
     public void editEducation(Job job, String userToken);
     public void editWorkExperience(Job job, String userToken);
     public void editLangKnowledge(Job job, String userToken);
+    public void successfulDelete(String userToken);
+    public void successfulSave(String userToken);
 }

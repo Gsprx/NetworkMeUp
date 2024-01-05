@@ -1,8 +1,12 @@
 package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest;
 
+import com.example.networkmeup.daoMemory.EmployerDAOMemory;
+import com.example.networkmeup.daoMemory.MemoryInitializer;
+import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsPresenter;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +18,12 @@ public class ChangeJobDetailsPresenterTest {
     @Before
     public void setup(){
         stub = new ChangeJobDetailsViewStub();
-        presenter = new ChangeJobDetailsPresenter(stub,"token", new Job("",""));
+        presenter = new ChangeJobDetailsPresenter(stub,"b.be@northfreedom.com", new Job("",""));
+    }
+
+    @After
+    public void reloadData(){
+        new MemoryInitializer().prepareData();
     }
 
     @Test
@@ -23,7 +32,7 @@ public class ChangeJobDetailsPresenterTest {
             presenter.onEditEducation();
         }
         Assert.assertEquals(5, stub.getEditEducationClicks());
-        Assert.assertEquals("token", stub.getLastTokenPassed());
+        Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
     }
 
 
@@ -33,7 +42,7 @@ public class ChangeJobDetailsPresenterTest {
             presenter.onEditWorkExperience();
         }
         Assert.assertEquals(5, stub.getEditWorkExpClicks());
-        Assert.assertEquals("token", stub.getLastTokenPassed());
+        Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
     }
 
 
@@ -43,7 +52,32 @@ public class ChangeJobDetailsPresenterTest {
             presenter.onEditLanguageKnowledge();
         }
         Assert.assertEquals(5, stub.getEditLangKnowClicks());
-        Assert.assertEquals("token", stub.getLastTokenPassed());
+        Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
+    }
+
+    @Test
+    public void checkSaveClick(){
+        stub.setDesc("Desc 2");
+        stub.setTitle("Title 2");
+        stub.setAvailab(1);
+
+        presenter.onSave();
+
+        Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
+        Assert.assertEquals(1, stub.getSaveClicks());
+        Assert.assertEquals("Desc 2", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(1).getDescription());
+        Assert.assertEquals("Title 2", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(1).getTitle());
+        Assert.assertEquals("Temporarily_Unavailable", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(1).getAvailability().toString());
+    }
+
+    @Test
+    public void checkDeleteClick(){
+        presenter = new ChangeJobDetailsPresenter(stub, "b.be@northfreedom.com",new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
+        presenter.onDelete();
+
+        Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
+        Assert.assertEquals(1, stub.getDeleteClicks());
+        Assert.assertEquals(0, new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().size());
     }
 
     @Test
@@ -60,4 +94,5 @@ public class ChangeJobDetailsPresenterTest {
         Assert.assertEquals("Title 2", stub.getLastJobPassed().getTitle());
         Assert.assertEquals(2, stub.getLastJobPassed().getAvailability().ordinal());
     }
+
 }
