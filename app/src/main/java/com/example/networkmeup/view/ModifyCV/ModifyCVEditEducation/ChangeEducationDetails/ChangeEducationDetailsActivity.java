@@ -138,7 +138,7 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
     @Override
     public int getExpertiseArea() {
         //get position in respective list
-        return ((Spinner)findViewById(R.id.spinnerChangeReqEducationDetailsSelectExpField)).getSelectedItemPosition();
+        return ((Spinner)findViewById(R.id.spinnerChangeEducationDetailsSelectExpField)).getSelectedItemPosition();
     }
 
     @Override
