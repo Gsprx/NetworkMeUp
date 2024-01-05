@@ -12,6 +12,7 @@ import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEducationRecyclerViewAdapter;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsActivity;
 
 import java.util.ArrayList;
@@ -79,9 +80,8 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
 
     @Override
     public void addNewEducation(String userToken, Job job) {
-        Intent intent = new Intent(EditReqEducationActivity.this, ChangeReqEducationDetailsActivity.class);
+        Intent intent = new Intent(EditReqEducationActivity.this, AddNewReqEducationActivity.class);
         intent.putExtra("token", userToken);
-        intent.putExtra("position", -1);
         intent.putExtra("job", job);
         startActivity(intent);
     }

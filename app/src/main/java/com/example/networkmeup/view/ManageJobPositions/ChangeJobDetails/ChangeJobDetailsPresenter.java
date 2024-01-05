@@ -34,7 +34,7 @@ public class ChangeJobDetailsPresenter {
     }
 
     //use this method to keep the changes in the text fields made by the user
-    //after pressing an edit list button
+    //after pressing an edit list button or the save button
     private void saveChanges(){
         currJob.setDescription(view.getJobDescription());
         currJob.setTitle(view.getJobTitle());
@@ -42,12 +42,8 @@ public class ChangeJobDetailsPresenter {
     }
 
     public void onSave() {
-        EmployerDAO employerDAO = new EmployerDAOMemory();
-        Employer employer = employerDAO.getByEmail(new Email(userToken));
-
         saveChanges();
 
-        employer.getJobs().add(currJob);
         view.successfulSave(userToken);
     }
 
