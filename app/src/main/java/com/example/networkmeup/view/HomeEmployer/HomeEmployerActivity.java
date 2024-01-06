@@ -9,15 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.networkmeup.R;
+import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
-import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
-import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
 import com.example.networkmeup.view.ManageJobPositions.ManageJobPositionsActivity;
-import com.example.networkmeup.view.SignUp.SignUpActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
-import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
 
 public class HomeEmployerActivity extends AppCompatActivity implements HomeEmployerView {
     private String userToken; // Token (email) of the employer
@@ -65,12 +62,23 @@ public class HomeEmployerActivity extends AppCompatActivity implements HomeEmplo
                 }
         );
         // when back button is pressed
-        findViewById(R.id.backbuttonHomeEmployer).setOnClickListener(
+        findViewById(R.id.logoutbuttonHomeEmployer).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
-                        Intent intent = new Intent(HomeEmployerActivity.this, LoginEmployerActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
+
+                        new AlertDialog.Builder(HomeEmployerActivity.this)
+                                .setTitle("Confirm Log Out")
+                                .setMessage("Are you sure you want to log out from your account?")
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // Perform the logout process here
+                                        Intent intentDelete = new Intent(HomeEmployerActivity.this, StartPageActivity.class);
+                                        intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                                        startActivity(intentDelete);
+                                    }
+                                })
+                                .setNegativeButton(android.R.string.no, null)
+                                .show();
                     }
                 }
         );
