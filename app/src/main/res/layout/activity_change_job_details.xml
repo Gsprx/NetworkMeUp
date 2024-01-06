@@ -46,13 +46,13 @@
                 android:id="@+id/textView15"
                 android:layout_width="372dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="64dp"
                 android:text="Add a new Job"
                 android:textAlignment="center"
                 android:textSize="38sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.407"
+                app:layout_constraintHorizontal_bias="0.487"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -229,6 +229,19 @@
                 android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@+id/spinnerChangeJobDetailsAvailability"
                 app:layout_constraintStart_toStartOf="@+id/spinnerChangeJobDetailsAvailability" />
+
+            <Button
+                android:id="@+id/backbuttonChangeJobDetails"
+                android:layout_width="123dp"
+                android:layout_height="45dp"
+                android:text="BACK"
+                app:icon="@android:drawable/ic_menu_revert"
+                app:layout_constraintBottom_toTopOf="@+id/textView15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.013"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.842" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

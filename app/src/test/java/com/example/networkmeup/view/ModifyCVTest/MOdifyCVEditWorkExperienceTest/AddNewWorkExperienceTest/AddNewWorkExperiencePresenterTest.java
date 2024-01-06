@@ -49,7 +49,7 @@ public class AddNewWorkExperiencePresenterTest {
 
         Assert.assertEquals("Description Test", curEmployee.getCV().getWorkExperiences().get(2).getDescription());
         Assert.assertEquals("Agriculture", curEmployee.getCV().getWorkExperiences().get(2).getExpArea().getArea());
-        Assert.assertEquals("1", curEmployee.getCV().getWorkExperiences().get(2).getYears());
+        Assert.assertEquals(2, curEmployee.getCV().getWorkExperiences().get(2).getYears());
 
     }
 }

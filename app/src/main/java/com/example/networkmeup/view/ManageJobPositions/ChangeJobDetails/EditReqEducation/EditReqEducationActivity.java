@@ -12,8 +12,11 @@ import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEducationRecyclerViewAdapter;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 import java.util.ArrayList;
 
@@ -64,6 +67,16 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
                     public void onClick(View v) {
                         //When Login button is pressed
                         presenter.onAddNew();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonEditReqEducation).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(EditReqEducationActivity.this, ChangeJobDetailsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

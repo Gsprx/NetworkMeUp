@@ -27,10 +27,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.085" />
 
     <Button
         android:id="@+id/btnEditReqEducationAddNew"
@@ -53,4 +53,17 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewEditReqEducation"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/backbuttonEditReqEducation"
+        android:layout_width="119dp"
+        android:layout_height="50dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textView55"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

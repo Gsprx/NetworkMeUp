@@ -13,6 +13,9 @@ import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
+import com.example.networkmeup.view.Login.LoginActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class LoginEmployerActivity extends AppCompatActivity implements LoginEmployerView {
 
@@ -31,6 +34,16 @@ public class LoginEmployerActivity extends AppCompatActivity implements LoginEmp
                     public void onClick(View v) {
                         // When the login button is pressed, trigger the presenter's login method
                         presenter.onLogin();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonLoginEmployer).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(LoginEmployerActivity.this, LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

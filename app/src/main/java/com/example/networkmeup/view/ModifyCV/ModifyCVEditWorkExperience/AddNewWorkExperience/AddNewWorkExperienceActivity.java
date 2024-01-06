@@ -45,8 +45,8 @@ public class AddNewWorkExperienceActivity extends AppCompatActivity implements A
         Spinner expFieldSpinner = findViewById(R.id.spinnerAddNewWorkExperienceSelectExpField);
         Spinner yearsofworkSpinner = findViewById(R.id.spinnerAddNewWorkExperienceYearsofwork);
 
-        ArrayList<Integer> yearsofwork = new ArrayList<>();
-        ArrayList<String> expFields = new ArrayList<>();
+        ArrayList<Integer> yearsofwork = new ArrayList<Integer>();
+        ArrayList<String> expFields = new ArrayList<String>();
 
         //create spinner list for years of work
         for(int i = 0; i<= 15; i++){

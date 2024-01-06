@@ -15,6 +15,8 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpEmployeeView {
 
@@ -33,6 +35,17 @@ public class SignUpEmployeeActivity extends AppCompatActivity implements SignUpE
                     presenter.onCreate();
                 }
             }
+        );
+
+        // when back button is pressed
+        findViewById(R.id.backbuttonSignUpEmployee).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(SignUpEmployeeActivity.this, SignUpActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
         );
     }
 

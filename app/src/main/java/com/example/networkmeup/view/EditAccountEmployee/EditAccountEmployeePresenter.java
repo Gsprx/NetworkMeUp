@@ -1,15 +1,20 @@
 package com.example.networkmeup.view.EditAccountEmployee;
 
 import com.example.networkmeup.dao.EmployeeDAO;
+import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
+import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
+import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 
 public class EditAccountEmployeePresenter {
 
     private EditAccountEmployeeView EditAccountEmployee;
+
+    EmployeeDAO employeeDAO = new EmployeeDAOMemory();
 
     public EditAccountEmployeePresenter(EditAccountEmployeeActivity editAccountEmployeeActivity) {
         this.EditAccountEmployee = editAccountEmployeeActivity;
@@ -58,5 +63,9 @@ public class EditAccountEmployeePresenter {
 
         }
 
+    }
+
+    public void Delete(Employee curEmployee){
+        employeeDAO.delete(curEmployee);
     }
 }
