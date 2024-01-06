@@ -49,6 +49,12 @@
             android:name=".view.ModifyCV.ModifyCVEditWorkExperience.AddNewWorkExperience.AddNewWorkExperienceActivity"
             android:exported="false" />
         <activity
+            android:name=".view.ModifyCV.ModifyCVEditLanguageKnowledge.AddNewLanguageKnowledge.AddNewLanguageKnowledgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ModifyCV.ModifyCVEditLanguageKnowledge.ChangeLanguageKnowledgeDetails.ChangeLanguageKnowledgeDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ModifyCV.ModifyCVEditWorkExperience.ChangeWorkExperienceDetails.ChangeWorkExperienceDetailsActivity"
             android:exported="false" />
         <activity
