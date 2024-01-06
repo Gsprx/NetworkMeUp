@@ -35,6 +35,8 @@ public class ShowJobDetailsPresenter {
 
         Application application = new Application(currEmployee,coverLetter);
 
+        job.addApplication(application);
+
         jobsEmployer.getJobs().remove(job);
         jobsEmployer.addJob(job);
 
