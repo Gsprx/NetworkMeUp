@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class SearchJobsActivity extends AppCompatActivity implements SearchJobsView{
 
+    SelectJobsRecyclerViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,18 +40,24 @@ public class SearchJobsActivity extends AppCompatActivity implements SearchJobsV
 
         //get recycler view reference
         RecyclerView recyclerView = findViewById(R.id.recyclerViewSearchJobs);
-        //create recycler view adapter
-        SelectJobsRecyclerViewAdapter adapter = new SelectJobsRecyclerViewAdapter(this, matchingJobs);
-        adapter.setClickListener(new SelectJobsRecyclerViewAdapter.ItemClickListener() {
-            //click listener for rows in recycler view list
-            @Override
-            public void onItemClick(View view, int position) {
-                presenter.onItemClick(matchingJobs.get(position));
-            }
-        });
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //create recycler view adapter if null
+        if(adapter == null) {
+            adapter = new SelectJobsRecyclerViewAdapter(this, matchingJobs);
+            adapter.setClickListener(new SelectJobsRecyclerViewAdapter.ItemClickListener() {
+                //click listener for rows in recycler view list
+                @Override
+                public void onItemClick(View view, int position) {
+                    presenter.onItemClick(matchingJobs.get(position));
+                }
+            });
+            recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        }
+        //update the adapter list if it exists already
+        else{
+            adapter.updateList(matchingJobs);
+        }
 
     }
 
