@@ -57,7 +57,16 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
         tin.setText(currEmployer.getTin().getTin());
 
         final EditAccountEmployerPresenter presenter = new EditAccountEmployerPresenter(this);
-
+    // when back button is pressed
+            findViewById(R.id.backbuttonEditAccountEmployer).setOnClickListener(
+                    new View.OnClickListener(){
+                        public void onClick(View v){
+                            Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            startActivity(intent);
+                        }
+                    }
+            );
         // Save button onClick listener
         findViewById(R.id.btnEditEmployerAccountSave).setOnClickListener(new View.OnClickListener() {
             @Override
