@@ -29,9 +29,9 @@
 
     <TextView
         android:id="@+id/textView48"
-        android:layout_width="362dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="361dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="52dp"
         android:text="Edit Your Language Knowledge"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -50,5 +50,18 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnModifyCVEditLanguageKnowledgeAddNew" />
+
+    <Button
+        android:id="@+id/backbuttonModifyCVEditLanguageKnowledge"
+        android:layout_width="118dp"
+        android:layout_height="45dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textView48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

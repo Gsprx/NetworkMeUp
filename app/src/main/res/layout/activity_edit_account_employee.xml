@@ -44,13 +44,14 @@
                 android:layout_width="240dp"
                 android:layout_height="58dp"
                 android:layout_marginStart="85dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="86dp"
                 android:text="Edit your Employee Account:"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,6 +136,19 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/EditAccountEmployeePassword"
                 app:layout_constraintTop_toBottomOf="@+id/EditAccountEmployeePassword" />
+
+            <Button
+                android:id="@+id/backbuttonEditAccountEmployee"
+                android:layout_width="113dp"
+                android:layout_height="47dp"
+                android:text="BACK"
+                app:icon="@android:drawable/ic_menu_revert"
+                app:layout_constraintBottom_toTopOf="@+id/textView33"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.051"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
