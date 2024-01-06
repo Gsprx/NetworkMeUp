@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.view.EditAccountEmployee.EditAccountEmployeeActivity;
+import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.SearchJobs.SearchJobsActivity;
@@ -68,12 +69,22 @@ public class HomeEmployeeActivity extends AppCompatActivity implements HomeEmplo
                 }
         );
         // when back button is pressed
-        findViewById(R.id.backbuttonHomeEmployee).setOnClickListener(
+        findViewById(R.id.logoutbuttonHomeEmployee).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
-                        Intent intent = new Intent(HomeEmployeeActivity.this, LoginEmployeeActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
+                        new AlertDialog.Builder(HomeEmployeeActivity.this)
+                                .setTitle("Confirm Log Out")
+                                .setMessage("Are you sure you want to log out from your account?")
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // Perform the logout process here
+                                        Intent intentDelete = new Intent(HomeEmployeeActivity.this, StartPageActivity.class);
+                                        intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                                        startActivity(intentDelete);
+                                    }
+                                })
+                                .setNegativeButton(android.R.string.no, null)
+                                .show();
                     }
                 }
         );
