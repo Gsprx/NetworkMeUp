@@ -16,6 +16,7 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.utils.RecyclerViewAdapters.LanguageKnowledgeRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectLanguageKnowledgeRecyclerViewAdapter;
+import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.AddNewLanguageKnowledge.AddNewLanguageKnowledgeActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ChangeLanguageKnowledgeDetails.ChangeLanguageKnowledgeDetailsActivity;
 
@@ -57,6 +58,16 @@ public class ModifyCVEditLanguageKnowledgeActivity extends AppCompatActivity imp
 
         // Add new language knowledge button click listener
         findViewById(R.id.btnModifyCVEditLanguageKnowledgeAddNew).setOnClickListener(view -> presenter.onAddNew());
+        // when back button is pressed
+        findViewById(R.id.backbuttonModifyCVEditLanguageKnowledge).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ModifyCVEditLanguageKnowledgeActivity.this, ModifyCVActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override

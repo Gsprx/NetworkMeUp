@@ -16,6 +16,7 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectWorkExperienceRecyclerViewAdapter;
+import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.AddNewWorkExperience.AddNewWorkExperienceActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ChangeWorkExperienceDetails.ChangeWorkExperienceDetailsActivity;
 
@@ -66,6 +67,16 @@ public class ModifyCVEditWorkExperienceActivity extends AppCompatActivity implem
                     public void onClick(View v) {
                         //When Login button is pressed
                         presenter.onAddNew();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonModifyCVEditWorkExperience).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ModifyCVEditWorkExperienceActivity.this, ModifyCVActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

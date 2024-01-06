@@ -22,6 +22,7 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
 
 import java.util.ArrayList;
 

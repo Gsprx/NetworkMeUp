@@ -22,6 +22,7 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 
 import java.util.ArrayList;
 
@@ -128,6 +129,17 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
         ((EditText)findViewById(R.id.editTextChangeEducationDetailsDescription)).setText(currEmployee.getCV().getEducation().get(eduPosition).getDescription());
         expFieldSpinner.setSelection((expFields.indexOf(currEmployee.getCV().getEducation().get(eduPosition).getExpArea().getArea())));
         lvlOfStudiesSpinner.setSelection(currEmployee.getCV().getEducation().get(eduPosition).getLvlOfStudies().ordinal());
+
+        // when back button is pressed
+        findViewById(R.id.backbuttonChangeEducationDetails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ChangeEducationDetailsActivity.this, ModifyCVEditEducationActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override
