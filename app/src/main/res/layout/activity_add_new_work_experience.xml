@@ -10,24 +10,24 @@
         android:layout_width="296dp"
         android:layout_height="62dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="32dp"
         android:text="Select Years of working: "
         android:textSize="28sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddNewWorkExperienceSelectExpField" />
 
     <TextView
         android:id="@+id/textView30"
         android:layout_width="300dp"
         android:layout_height="61dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="24dp"
         android:text="Select Expertise Field:"
         android:textSize="28sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <TextView
         android:id="@+id/textView29"
@@ -46,7 +46,7 @@
         android:id="@+id/spinnerAddNewWorkExperienceSelectExpField"
         android:layout_width="294dp"
         android:layout_height="59dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
@@ -65,8 +65,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:hint="Enter a description"
         android:inputType="text"
-        android:text="Enter a descreption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerAddNewWorkExperienceYearsofwork" />
 
