@@ -109,6 +109,26 @@ public abstract class Initializer {
         expertiseAreaDAO.save(expAr6);
         expertiseAreaDAO.save(expAr7);
         expertiseAreaDAO.save(expAr8);
+
+        //Initialize Languages to be used in the app.
+        Language lang1 = new Language("English");
+        Language lang2 = new Language("French");
+        Language lang3 = new Language("Spanish");
+        Language lang4 = new Language("Greek");
+        Language lang5 = new Language("Chinese");
+        Language lang6 = new Language("Japanese");
+        Language lang7 = new Language("German");
+
+        //add languages to our database
+        LanguageDAO languageDAO = getLanguageDAO();
+        languageDAO.save(lang1);
+        languageDAO.save(lang2);
+        languageDAO.save(lang3);
+        languageDAO.save(lang4);
+        languageDAO.save(lang5);
+        languageDAO.save(lang6);
+        languageDAO.save(lang7);
+
     }
 
     /**
@@ -126,4 +146,5 @@ public abstract class Initializer {
     public abstract EmployerDAO getEmployerDAO();
 
     public abstract ExpertiseAreaDAO getExpertiseAreaDAO();
+    public abstract LanguageDAO getLanguageDAO();
 }
