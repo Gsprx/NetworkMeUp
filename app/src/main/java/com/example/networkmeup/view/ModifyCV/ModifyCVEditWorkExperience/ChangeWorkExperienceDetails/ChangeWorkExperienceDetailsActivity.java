@@ -22,6 +22,8 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
+
 import java.util.ArrayList;
 
 
@@ -127,7 +129,17 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
 
         ((EditText)findViewById(R.id.editTextChangeWorkingExperienceDetailsDescription)).setText(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getDescription());
         expFieldSpinner.setSelection((expFields.indexOf(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getExpArea().getArea())));
-        yearsatworkSpinner.setSelection(yearsatwork.indexOf(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getYears()+""));
+        yearsatworkSpinner.setSelection(yearsatwork.indexOf(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getYears()));
+        // when back button is pressed
+        findViewById(R.id.backbuttonChangeWorkExperienceDetails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ChangeWorkExperienceDetailsActivity.this, ModifyCVEditWorkExperienceActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
 
     }
 

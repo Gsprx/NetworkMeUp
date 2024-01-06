@@ -1,5 +1,6 @@
 package com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.AddNewWorkExperience;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,11 +19,13 @@ import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
 
 
 import java.util.ArrayList;
 
 public class AddNewWorkExperienceActivity extends AppCompatActivity implements AddNewWorkExperienceView {
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +100,16 @@ public class AddNewWorkExperienceActivity extends AppCompatActivity implements A
                     public void onClick(View v) {
 
                         presenter.onAdd();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonAddNewWorkExperience).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(AddNewWorkExperienceActivity.this, ModifyCVEditWorkExperienceActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

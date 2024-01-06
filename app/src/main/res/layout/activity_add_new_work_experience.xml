@@ -33,13 +33,13 @@
         android:id="@+id/textView29"
         android:layout_width="368dp"
         android:layout_height="98dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
         android:text="Add a new work experience to your CV"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,4 +82,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextAddNewWorkExperienceDescription" />
+
+    <Button
+        android:id="@+id/backbuttonAddNewWorkExperience"
+        android:layout_width="114dp"
+        android:layout_height="55dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
