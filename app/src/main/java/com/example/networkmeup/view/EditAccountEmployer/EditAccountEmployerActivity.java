@@ -18,6 +18,7 @@ import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
+import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class EditAccountEmployerActivity extends AppCompatActivity implements EditAccountEmployerView {
@@ -44,16 +45,16 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
 
         // Pre-setting data into EditText fields from the current employer details
         EditText passwd = findViewById(R.id.editTextEditAccountEmployerPassword);
-        passwd.setText(currEmployer.getPassword().toString());
+        passwd.setText(currEmployer.getPassword().getPassword());
 
         EditText phone = findViewById(R.id.editTextEditAccountEmployerPhone);
-        phone.setText(currEmployer.getPhone().toString());
+        phone.setText(currEmployer.getPhone().getNumber());
 
         EditText email = findViewById(R.id.editTextEditAccountEmployerEmail);
-        email.setText(currEmployer.getEmail().toString());
+        email.setText(currEmployer.getEmail().getAddress());
 
         EditText tin = findViewById(R.id.editTextEditAccountEmployerTIN);
-        tin.setText(currEmployer.getTin().toString());
+        tin.setText(currEmployer.getTin().getTin());
 
         final EditAccountEmployerPresenter presenter = new EditAccountEmployerPresenter(this);
 
@@ -62,6 +63,10 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
             @Override
             public void onClick(View v) {
                 presenter.onCreate();
+
+                Intent intentSave = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);
+                intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intentSave);
             }
         });
 
@@ -79,9 +84,9 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
                             public void onClick(DialogInterface dialog, int which) {
                                 // Perform the deletion process here
                                 presenter.Delete(currEmployer);
-                                Intent intent = new Intent(EditAccountEmployerActivity.this, StartPageActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                                startActivity(intent);
+                                Intent intentDelete = new Intent(EditAccountEmployerActivity.this, StartPageActivity.class);
+                                intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                                startActivity(intentDelete);
                             }
                         })
                         .setNegativeButton(android.R.string.no, null)

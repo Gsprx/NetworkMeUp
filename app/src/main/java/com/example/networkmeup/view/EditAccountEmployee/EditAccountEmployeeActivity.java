@@ -15,18 +15,15 @@ import com.example.networkmeup.R;
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.domain.Application;
-import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.utils.RecyclerViewAdapters.ApplicationRecyclerViewAdapter;
-import com.example.networkmeup.utils.RecyclerViewAdapters.SelectApplicationRecyclerViewAdapter;
-import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEducationRecyclerViewAdapter;
+import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
-import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
-import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeeActivity;
-import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeePresenter;
+import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 import java.util.ArrayList;
 
@@ -53,13 +50,13 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         currEmployee = employeeDAO.getByEmail(new Email(userEmail));
         //Preset the data
         EditText passwd = findViewById(R.id.EditAccountEmployeePassword);
-        passwd.setText(currEmployee.getPassword().toString());
+        passwd.setText(currEmployee.getPassword().getPassword());
 
         EditText phone = findViewById(R.id.EditAccountEmployeePhoneNumber);
-        phone.setText(currEmployee.getPhone().toString());
+        phone.setText(currEmployee.getPhone().getNumber());
 
         EditText email = findViewById(R.id.EditAccountEmpoyeeEmail);
-        email.setText(currEmployee.getEmail().toString());
+        email.setText(currEmployee.getEmail().getAddress());
 
 
         ArrayList<Application> ApplicationList = currEmployee.getApplications();
@@ -74,15 +71,44 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
 
         final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this);
 
-        findViewById(R.id.EditAccountEmployeebtn).setOnClickListener(
+        // Save button onClick listener
+        findViewById(R.id.btnEditEmployeeAccountSave).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //When button is pressed
                         presenter.onCreate();
+
+                        Intent intentSave = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
+                        intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intentSave);
                     }
                 }
         );
+
+        // Delete button onClick listener
+        findViewById(R.id.btnEditEmployeeAccountDelete).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Add your logic here for handling deletion
+                // For instance, you can prompt a confirmation dialog before deleting the account
+
+                new AlertDialog.Builder(EditAccountEmployeeActivity.this)
+                        .setTitle("Confirm Deletion")
+                        .setMessage("Are you sure you want to delete your account?")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Perform the deletion process here
+                                presenter.Delete(currEmployee);
+                                Intent intentDelete = new Intent(EditAccountEmployeeActivity.this, StartPageActivity.class);
+                                intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                                startActivity(intentDelete);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, null)
+                        .show();
+            }
+        });
     }
 
     @Override
