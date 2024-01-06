@@ -9,13 +9,12 @@
         android:id="@+id/textView35"
         android:layout_width="326dp"
         android:layout_height="66dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="24dp"
         android:text="Select Years of working:"
         android:textSize="28sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/spinnerChangeWorkExperienceDetailsSelectExpField"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChangeWorkExperienceDetailsSelectExpField" />
 
     <TextView
         android:id="@+id/textView34"
@@ -46,43 +45,48 @@
         android:id="@+id/spinnerChangeWorkExperienceDetailsSelectExpField"
         android:layout_width="282dp"
         android:layout_height="60dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="219dp" />
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
     <Spinner
         android:id="@+id/spinnerChangeWorkExperienceDetailsSelectYearsAtWork"
         android:layout_width="272dp"
         android:layout_height="58dp"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:layout_marginTop="29dp"
+        app:layout_constraintStart_toStartOf="@+id/textView35"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <EditText
         android:id="@+id/editTextChangeWorkingExperienceDetailsDescription"
         android:layout_width="336dp"
         android:layout_height="119dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
         android:text="Enter a Description"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="486dp" />
+        app:layout_constraintStart_toStartOf="@+id/spinnerChangeWorkExperienceDetailsSelectYearsAtWork"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChangeWorkExperienceDetailsSelectYearsAtWork" />
 
     <Button
         android:id="@+id/btnChangeWorkingExperienceDetailsDelete"
         android:layout_width="139dp"
         android:layout_height="69dp"
+        android:layout_marginTop="36dp"
         android:text="DELETE"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="639dp" />
+        app:layout_constraintStart_toStartOf="@+id/editTextChangeWorkingExperienceDetailsDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChangeWorkingExperienceDetailsDescription" />
 
     <Button
         android:id="@+id/btnChangeWorkingExperienceDetailsSave"
         android:layout_width="142dp"
         android:layout_height="67dp"
+        android:layout_marginTop="36dp"
         android:text="SAVE"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="639dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextChangeWorkingExperienceDetailsDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChangeWorkingExperienceDetailsDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

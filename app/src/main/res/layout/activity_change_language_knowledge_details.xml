@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btnChangeLanguageKnowledgeDetailsSave"
+        android:layout_width="133dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Save"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextChangeLanguageKnowledgeDetailsDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChangeLanguageKnowledgeDetailsDescription"
+        app:layout_constraintVertical_bias="0.847" />
+
+    <Button
+        android:id="@+id/btnChangeLanguageKnowledgeDetailsDelete"
+        android:layout_width="129dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="Delete"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editTextChangeLanguageKnowledgeDetailsDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChangeLanguageKnowledgeDetailsDescription"
+        app:layout_constraintVertical_bias="0.812" />
+
+    <EditText
+        android:id="@+id/editTextChangeLanguageKnowledgeDetailsDescription"
+        android:layout_width="384dp"
+        android:layout_height="108dp"
+        android:layout_marginBottom="128dp"
+        android:ems="10"
+        android:hint="Enter a description"
+        android:inputType="text"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChangeLanguageKnowledgeDetailsSelectLevelOfKnowledge"
+        app:layout_constraintVertical_bias="0.804" />
+
+    <Spinner
+        android:id="@+id/spinnerChangeLanguageKnowledgeDetailsSelectLevelOfKnowledge"
+        android:layout_width="276dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/textView42"
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="350dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="Select Level of Knowledge:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/spinnerChangeLanguageKnowledgeDetailsSelectLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChangeLanguageKnowledgeDetailsSelectLanguage" />
+
+    <Spinner
+        android:id="@+id/spinnerChangeLanguageKnowledgeDetailsSelectLanguage"
+        android:layout_width="305dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView37"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="268dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="56dp"
+        android:text="Select Language:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/textView36"
+        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="385dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="32dp"
+        android:text="Change Existing Language Knowledge Details"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

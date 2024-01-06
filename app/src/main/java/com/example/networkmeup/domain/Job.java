@@ -246,4 +246,12 @@ public class Job implements Serializable {
         validateObject(description);
         this.description = description;
     }
+
+    @Override
+    public boolean equals(Object obj){
+        Job job = (Job) obj;
+        return job.getTitle().equals(this.getTitle()) && job.getDescription().equals(this.getDescription()) &&
+                job.getReqEducation().equals(this.getReqEducation()) && job.getReqWorkExperience().equals(this.getReqWorkExperience())
+                && job.getReqLanguageKnowledge().equals(this.getReqLanguageKnowledge());
+    }
 }

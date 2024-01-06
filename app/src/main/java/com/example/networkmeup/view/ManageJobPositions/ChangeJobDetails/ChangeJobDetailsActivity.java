@@ -1,9 +1,11 @@
 package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +26,7 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqE
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.EditReqLangKnowledgeActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
 import com.example.networkmeup.view.ManageJobPositions.ManageJobPositionsActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -134,6 +137,40 @@ public class ChangeJobDetailsActivity extends AppCompatActivity implements Chang
                     }
                 }
         );
+
+        //when save button is pressed
+        findViewById(R.id.btnChangeJobDetailsSave).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //When Login button is pressed
+                        presenter.onSave();
+                    }
+                }
+        );
+        //when delete button is pressed
+        findViewById(R.id.btnChangeJobDetailsDelete).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //use dialog builder to create a final warning message to the user
+                        new AlertDialog.Builder(ChangeJobDetailsActivity.this)
+                                .setCancelable(false)
+                                .setTitle("Delete Job Confirmation")
+                                .setMessage("Are you sure you want to delete this Job?")
+                                .setPositiveButton("Yes",
+                                        new DialogInterface.OnClickListener(){
+                                            public void onClick (DialogInterface dialog,int id) {
+                                                presenter.onDelete();
+                                            }})
+                                .setNegativeButton("Cancel",
+                                        new DialogInterface.OnClickListener(){
+                                            public void onClick (DialogInterface dialog,int id) {
+                                                // do nothing
+                                            }}).create().show();
+                    }
+                }
+        );
     }
 
     @Override
@@ -173,6 +210,36 @@ public class ChangeJobDetailsActivity extends AppCompatActivity implements Chang
         intent.putExtra("token", userToken);
         intent.putExtra("job", job);
         startActivity(intent);
+    }
+
+    @Override
+    public void successfulDelete(String userToken) {
+        new AlertDialog.Builder(ChangeJobDetailsActivity.this)
+                .setCancelable(false)
+                .setTitle("Deletion Success")
+                .setMessage("Job was successfully deleted!")
+                .setPositiveButton("Return to Manage Job Positions",
+                        new DialogInterface.OnClickListener(){
+                            public void onClick (DialogInterface dialog,int id) {
+                                Intent intent = new Intent(ChangeJobDetailsActivity.this, ManageJobPositionsActivity.class);
+                                intent.putExtra("token", userToken);
+                                startActivity(intent);
+                            }}).create().show();
+    }
+
+    @Override
+    public void successfulSave(String userToken) {
+        new AlertDialog.Builder(ChangeJobDetailsActivity.this)
+                .setCancelable(false)
+                .setTitle("Save Success")
+                .setMessage("Job was successfully saved!")
+                .setPositiveButton("Return to Manage Job Positions",
+                        new DialogInterface.OnClickListener(){
+                            public void onClick (DialogInterface dialog,int id) {
+                                Intent intent = new Intent(ChangeJobDetailsActivity.this, ManageJobPositionsActivity.class);
+                                intent.putExtra("token", userToken);
+                                startActivity(intent);
+                            }}).create().show();
     }
 
 

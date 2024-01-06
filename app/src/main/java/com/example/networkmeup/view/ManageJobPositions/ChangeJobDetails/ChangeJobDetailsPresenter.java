@@ -1,6 +1,10 @@
 package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails;
 
+import com.example.networkmeup.dao.EmployerDAO;
+import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Availability;
+import com.example.networkmeup.domain.Email;
+import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
 
 public class ChangeJobDetailsPresenter {
@@ -30,10 +34,23 @@ public class ChangeJobDetailsPresenter {
     }
 
     //use this method to keep the changes in the text fields made by the user
-    //after pressing an edit list button
+    //after pressing an edit list button or the save button
     private void saveChanges(){
         currJob.setDescription(view.getJobDescription());
         currJob.setTitle(view.getJobTitle());
         currJob.setAvailability(Availability.values()[view.getAvailability()]);
+    }
+
+    public void onSave() {
+        saveChanges();
+
+        view.successfulSave(userToken);
+    }
+
+    public void onDelete() {
+        EmployerDAO employerDAO = new EmployerDAOMemory();
+        Employer employer = employerDAO.getByEmail(new Email(userToken));
+        employer.getJobs().remove(currJob);
+        view.successfulDelete(userToken);
     }
 }

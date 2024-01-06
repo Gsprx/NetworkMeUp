@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsActivity">
+
+
+    <TextView
+        android:id="@+id/textView433"
+        android:layout_width="342dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="32dp"
+        android:text="Education Details"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextChangeReqEducationDetailsDescription"
+        android:layout_width="384dp"
+        android:layout_height="108dp"
+        android:layout_marginBottom="128dp"
+        android:ems="10"
+        android:hint="Enter a description"
+        android:inputType="text"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChangeReqEducationDetailsSelectLevelOfStudies"
+        app:layout_constraintVertical_bias="0.804" />
+
+    <Button
+        android:id="@+id/btnChangeReqEducationDetailsDelete"
+        android:layout_width="129dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="Delete"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editTextChangeReqEducationDetailsDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChangeReqEducationDetailsDescription"
+        app:layout_constraintVertical_bias="0.812" />
+
+    <Button
+        android:id="@+id/btnChangeReqEducationDetailsSave"
+        android:layout_width="133dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Save"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextChangeReqEducationDetailsDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChangeReqEducationDetailsDescription"
+        app:layout_constraintVertical_bias="0.847" />
+
+    <Spinner
+        android:id="@+id/spinnerChangeReqEducationDetailsSelectExpField"
+        android:layout_width="305dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView577"
+        app:layout_constraintTop_toBottomOf="@+id/textView577" />
+
+    <TextView
+        android:id="@+id/textView577"
+        android:layout_width="268dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="56dp"
+        android:text="Select Expertise Field:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/textView433"
+        app:layout_constraintTop_toBottomOf="@+id/textView433" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="303dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="Select Level of Studies:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/spinnerChangeReqEducationDetailsSelectExpField"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChangeReqEducationDetailsSelectExpField" />
+
+    <Spinner
+        android:id="@+id/spinnerChangeReqEducationDetailsSelectLevelOfStudies"
+        android:layout_width="276dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+</androidx.constraintlayout.widget.ConstraintLayout>
