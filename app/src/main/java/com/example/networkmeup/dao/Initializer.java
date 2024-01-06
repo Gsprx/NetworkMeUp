@@ -62,6 +62,7 @@ public abstract class Initializer {
         // Language knowledge
         cv2.setLanguageKnowledge(new LanguageKnowledge("Born and raised in France", new Language("French"), LevelOfKnowledge.Native));
         cv2.setLanguageKnowledge(new LanguageKnowledge("Learned english during my bachelor's studies", new Language("English"), LevelOfKnowledge.Advanced));
+        employee2.setCV(cv2);
 
         // Add employees to EmployeeDAO
         employeeDAO.save(employee1);
