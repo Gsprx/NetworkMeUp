@@ -15,6 +15,7 @@ import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEducationRecyclerViewAdapter;
+import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
 
@@ -66,6 +67,16 @@ public class ModifyCVEditEducationActivity extends AppCompatActivity implements 
                     public void onClick(View v) {
                         //When Login button is pressed
                         presenter.onAddNew();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonModifyCVEditEducation).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ModifyCVEditEducationActivity.this, ModifyCVActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

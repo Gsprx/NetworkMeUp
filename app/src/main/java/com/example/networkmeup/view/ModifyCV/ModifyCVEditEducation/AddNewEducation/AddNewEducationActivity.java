@@ -18,6 +18,7 @@ import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
+import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 
 import java.util.ArrayList;
 
@@ -98,6 +99,16 @@ public class AddNewEducationActivity extends AppCompatActivity implements AddNew
                     public void onClick(View v) {
 
                         presenter.onAdd();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonAddNewEducation).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(AddNewEducationActivity.this, ModifyCVEditEducationActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );
