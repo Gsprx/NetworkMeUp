@@ -1,6 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:id="@+id/ScrollViewEditAccountEmployer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnEditEmployerAccountSave"
+                android:layout_width="133dp"
+                android:layout_height="74dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="Save"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextEditAccountEmployerPassword"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerPassword"
+                app:layout_constraintVertical_bias="0.847" />
+
+            <Button
+                android:id="@+id/btnEditEmployerAccountDelete"
+                android:layout_width="129dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="Delete"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/editTextEditAccountEmployerPassword"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerPassword"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <EditText
+                android:id="@+id/editTextEditAccountEmployerPassword"
+                android:layout_width="347dp"
+                android:layout_height="81dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="A strong password"
+                android:inputType="textPassword"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textEditAccountEmployerText4"
+                app:layout_constraintTop_toBottomOf="@+id/textEditAccountEmployerText4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textEditAccountEmployerText4"
+                android:layout_width="257dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
+                android:text="Password:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/editTextEditAccountEmployerTIN"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerTIN" />
+
+            <EditText
+                android:id="@+id/editTextEditAccountEmployerTIN"
+                android:layout_width="236dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="TIN"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="@+id/textEditAccountEmployerText3"
+                app:layout_constraintTop_toBottomOf="@+id/textEditAccountEmployerText3" />
+
+            <TextView
+                android:id="@+id/textEditAccountEmployerText3"
+                android:layout_width="257dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
+                android:text="TIN:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/editTextEditAccountEmployerPhone"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerPhone" />
+
+            <EditText
+                android:id="@+id/editTextEditAccountEmployerPhone"
+                android:layout_width="219dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Your phone number"
+                android:inputType="phone"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textEditAccountEmployerText2"
+                app:layout_constraintTop_toBottomOf="@+id/textEditAccountEmployerText2" />
+
+            <TextView
+                android:id="@+id/textEditAccountEmployerText2"
+                android:layout_width="257dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
+                android:text="Phone Number:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/editTextEditAccountEmployerEmail"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerEmail" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditAccountEmployerEmail"
+                android:layout_width="343dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:hint="Your email address "
+                android:inputType="text|textEmailAddress"
+                android:textStyle="italic"
+                app:barrierMargin="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textEditAccountEmployerText1"
+                app:layout_constraintTop_toBottomOf="@+id/textEditAccountEmployerText1" />
+
+            <TextView
+                android:id="@+id/textEditAccountEmployerText1"
+                android:layout_width="257dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="Email:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textEditEmployerAccountDetails"
+                app:layout_constraintTop_toBottomOf="@+id/textEditEmployerAccountDetails" />
+
+            <TextView
+                android:id="@+id/textEditEmployerAccountDetails"
+                android:layout_width="372dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="16dp"
+                android:text="Edit Employer Account Details:"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
