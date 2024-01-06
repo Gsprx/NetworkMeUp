@@ -36,9 +36,15 @@ public class ChangeJobDetailsPresenter {
     //use this method to keep the changes in the text fields made by the user
     //after pressing an edit list button or the save button
     private void saveChanges(){
+
+        Employer currEmployer = new EmployerDAOMemory().getByEmail(new Email(userToken));
+        currEmployer.getJobs().remove(currJob);
+
         currJob.setDescription(view.getJobDescription());
         currJob.setTitle(view.getJobTitle());
         currJob.setAvailability(Availability.values()[view.getAvailability()]);
+
+        currEmployer.addJob(currJob);
     }
 
     public void onSave() {

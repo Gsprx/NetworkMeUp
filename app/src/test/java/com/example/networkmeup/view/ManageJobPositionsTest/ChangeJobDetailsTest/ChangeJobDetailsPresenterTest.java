@@ -17,8 +17,9 @@ public class ChangeJobDetailsPresenterTest {
 
     @Before
     public void setup(){
+        new MemoryInitializer().prepareData();
         stub = new ChangeJobDetailsViewStub();
-        presenter = new ChangeJobDetailsPresenter(stub,"b.be@northfreedom.com", new Job("",""));
+        presenter = new ChangeJobDetailsPresenter(stub,"b.be@northfreedom.com", new Job("Finance Office - Part Time","We are hiring for our new Finance Office position at Philips. This job is part time employment, Mon-Fri 16.00-20.00"));
     }
 
     @After
@@ -28,6 +29,9 @@ public class ChangeJobDetailsPresenterTest {
 
     @Test
     public void check5EditEduClicks(){
+        stub.setDesc("Desc 1");
+        stub.setTitle("Title 1");
+        stub.setAvailab(0);
         for(int i=0;i<5;i++){
             presenter.onEditEducation();
         }
@@ -38,6 +42,9 @@ public class ChangeJobDetailsPresenterTest {
 
     @Test
     public void check5EditWorkExpClicks(){
+        stub.setDesc("Desc 1");
+        stub.setTitle("Title 1");
+        stub.setAvailab(0);
         for(int i=0;i<5;i++){
             presenter.onEditWorkExperience();
         }
@@ -48,6 +55,9 @@ public class ChangeJobDetailsPresenterTest {
 
     @Test
     public void check5EditLangKnowClicks(){
+        stub.setDesc("Desc 1");
+        stub.setTitle("Title 1");
+        stub.setAvailab(0);
         for(int i=0;i<5;i++){
             presenter.onEditLanguageKnowledge();
         }
