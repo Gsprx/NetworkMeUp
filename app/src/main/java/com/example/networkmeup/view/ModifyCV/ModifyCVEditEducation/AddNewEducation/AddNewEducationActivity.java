@@ -113,7 +113,7 @@ public class AddNewEducationActivity extends AppCompatActivity implements AddNew
                 }
         );
     }
-
+    @Override
     public void successfulAdd(String message, String userToken){
         new AlertDialog.Builder(AddNewEducationActivity.this)
                 .setCancelable(false)
