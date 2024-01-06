@@ -17,7 +17,7 @@ public class ShowJobDetailsPresenterTest {
     @Before
     public void setup(){
         stub = new ShowJobDetailsViewStub();
-        presenter = new ShowJobDetailsPresenter(stub, "john.Brown12@gmail.com", new Job("Job Title", "Job Description"));
+        presenter = new ShowJobDetailsPresenter(stub, "john.Brown12@gmail.com", new Job("Finance Office - Part Time", "We are hiring for our new Finance Office position at Philips. This job is part time employment, Mon-Fri 16.00-20.00"));
         new MemoryInitializer().prepareData();
     }
 
@@ -35,4 +35,5 @@ public class ShowJobDetailsPresenterTest {
         Assert.assertEquals("Cover Letter Test", stub.getCoverLetter());
         Assert.assertEquals("john.Brown12@gmail.com", stub.getLastTokenPassed());
     }
+
 }

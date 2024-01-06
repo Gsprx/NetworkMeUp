@@ -12,6 +12,7 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class SearchJobsPresenter {
     private SearchJobsView view;
@@ -43,11 +44,12 @@ public class SearchJobsPresenter {
         }
         //remove jobs that the user has already applied to
         //loop through all job's applications and look for the same applicant
-        for(Job job : matchingJobs){
-            for(Application application : job.getApplications()){
-                if(application.getEmployee().equals(currEmployee)){
-                    matchingJobs.remove(job);
-                    break;
+        Iterator<Job> jobIterator = matchingJobs.iterator();
+        while (jobIterator.hasNext()) {
+            Job job = jobIterator.next();
+            for (Application application : job.getApplications()) {
+                if (application.getEmployee().equals(currEmployee)) {
+                    jobIterator.remove();
                 }
             }
         }
