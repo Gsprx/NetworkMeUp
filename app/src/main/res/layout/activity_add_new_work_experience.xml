@@ -31,10 +31,11 @@
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="335dp"
-        android:layout_height="93dp"
+        android:layout_width="368dp"
+        android:layout_height="98dp"
         android:layout_marginTop="16dp"
         android:text="Add a new work experience to your CV"
+        android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
