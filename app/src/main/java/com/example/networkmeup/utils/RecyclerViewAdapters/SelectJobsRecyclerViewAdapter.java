@@ -53,6 +53,11 @@ public class SelectJobsRecyclerViewAdapter extends RecyclerView.Adapter<SelectJo
     public void setClickListener(SelectJobsRecyclerViewAdapter.ItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
+    //updated list notification to the adapter
+    public void updateList(ArrayList<Job> newList) {
+        this.jobs = newList;
+        notifyDataSetChanged();
+    }
 
     //method of this interface must be implemented by parent activity
     public interface ItemClickListener {
