@@ -32,7 +32,7 @@ public class ChangeWorkExperienceDetailsPresenterTest {
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
         stub.setExpertiseArea(0); //Agriculture
-        stub.setYearsAtWork(1); //Years At work
+        stub.setYearsAtWork(0); //Years At work
 
         presenter.onSave(1); //second work Experience to be changed
 
@@ -46,12 +46,12 @@ public class ChangeWorkExperienceDetailsPresenterTest {
 
         Assert.assertEquals("Description Test", curEmployee.getCV().getWorkExperiences().get(1).getDescription());
         Assert.assertEquals("Agriculture", curEmployee.getCV().getWorkExperiences().get(1).getExpArea().getArea());
-        Assert.assertEquals("1", curEmployee.getCV().getWorkExperiences().get(1).getYears());
+        Assert.assertEquals(1, curEmployee.getCV().getWorkExperiences().get(1).getYears());
     }
 
     @Test
     public void checkWorkExperienceDelete(){
-        presenter.onDelete(1); //second Work Experience to be deleted
+        presenter.onDelete(0); //second Work Experience to be deleted
 
         //testing view side data
         Assert.assertEquals("This Work Experience has been deleted successfully!",stub.getLastDialogMessage());

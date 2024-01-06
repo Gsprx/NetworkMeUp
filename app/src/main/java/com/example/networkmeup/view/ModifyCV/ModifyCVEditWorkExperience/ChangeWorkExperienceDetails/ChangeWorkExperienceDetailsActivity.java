@@ -53,8 +53,8 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
         Spinner expFieldSpinner = findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectExpField);
         Spinner yearsatworkSpinner = findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectYearsAtWork);
 
-        ArrayList<Integer> yearsatwork = new ArrayList<>();
-        ArrayList<String> expFields = new ArrayList<>();
+        ArrayList<Integer> yearsatwork = new ArrayList<Integer>();
+        ArrayList<String> expFields = new ArrayList<String>();
 
         //create spinner list for years at work
         for(int i = 0; i<=15; i++){

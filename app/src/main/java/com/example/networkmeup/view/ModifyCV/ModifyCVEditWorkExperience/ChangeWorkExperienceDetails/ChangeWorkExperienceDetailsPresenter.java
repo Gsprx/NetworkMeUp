@@ -44,6 +44,6 @@ public class ChangeWorkExperienceDetailsPresenter {
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         Employee currEmployee = employeeDAO.getByEmail(new Email(userToken));
         currEmployee.getCV().getWorkExperiences().remove(position);
-        view.successfulDelete("This work Experience has been deleted successfully!", userToken);
+        view.successfulDelete("This Work Experience has been deleted successfully!", userToken);
     }
 }
