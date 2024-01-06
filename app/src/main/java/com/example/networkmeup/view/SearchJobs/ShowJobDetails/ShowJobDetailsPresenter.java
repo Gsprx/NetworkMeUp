@@ -20,6 +20,7 @@ public class ShowJobDetailsPresenter {
 
     public void onSendApplication() {
         String coverLetter = view.getCoverLetter();
+        System.out.println("Cover letter: " + coverLetter);
         //reject empty cover letters
         if (coverLetter == null || coverLetter.equals("")){
             view.emptyCoverLetter("Cover Letter must not be empty!");
@@ -34,6 +35,8 @@ public class ShowJobDetailsPresenter {
         job.addApplication(application);
         currEmployee.addApplication(application);
 
+        System.out.println("Job Applications Length: " + job.getApplications().size());
+        System.out.println("Employee's Applications Length: " + job.getApplications().size());
         view.sendApplicationSuccess(userToken);
     }
 }
