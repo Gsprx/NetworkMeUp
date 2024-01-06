@@ -17,7 +17,6 @@ import com.example.networkmeup.dao.LanguageDAO;
 import com.example.networkmeup.daoMemory.LanguageDAOMemory;
 import com.example.networkmeup.domain.Language;
 import com.example.networkmeup.domain.LevelOfKnowledge;
-import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 
 import java.util.ArrayList;
@@ -50,8 +49,8 @@ public class AddNewLanguageKnowledgeActivity extends AppCompatActivity implement
         ArrayList<String> Languages = new ArrayList<>();
 
         //create spinner list for levels of studies
-        for(int i = 0; i< LevelOfStudies.values().length; i++){
-            levelsOfKnowledge.add(LevelOfStudies.values()[i].toString());
+        for(int i = 0; i< LevelOfKnowledge.values().length; i++){
+            levelsOfKnowledge.add(LevelOfKnowledge.values()[i].toString());
         }
 
         //create spinner list for exp fields
@@ -64,32 +63,10 @@ public class AddNewLanguageKnowledgeActivity extends AppCompatActivity implement
         //pass adapter to spinners and define behavior
         ArrayAdapter<String> levelsOfKnowledgeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, levelsOfKnowledge);
         lvlOfKnowledgeSpinner.setAdapter(levelsOfKnowledgeAdapter);
-        lvlOfKnowledgeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLvlOfKnowledge = levelsOfKnowledge.get(position);
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //do nothing
-            }
-        });
 
         ArrayAdapter<String> LanguagesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Languages);
         LanguageSpinner.setAdapter(LanguagesAdapter);
-        LanguageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLanguage = languages.get(position).getLanguage();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //do nothing
-            }
-        });
-
 
 
         //when add button is pressed

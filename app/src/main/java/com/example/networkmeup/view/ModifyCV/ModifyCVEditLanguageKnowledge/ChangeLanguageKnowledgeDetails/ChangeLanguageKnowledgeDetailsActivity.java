@@ -21,9 +21,7 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfKnowledge;
-import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ChangeLanguageKnowledgeDetails.ChangeLanguageKnowledgeDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -58,8 +56,8 @@ public class ChangeLanguageKnowledgeDetailsActivity extends AppCompatActivity im
         ArrayList<String> languages = new ArrayList<>();
 
         //create spinner list for levels of studies
-        for(int i = 0; i< LevelOfStudies.values().length; i++){
-            levelsOfKnowledge.add(LevelOfStudies.values()[i].toString());
+        for(int i = 0; i< LevelOfKnowledge.values().length; i++){
+            levelsOfKnowledge.add(LevelOfKnowledge.values()[i].toString());
         }
 
         //create spinner list for exp fields
@@ -128,7 +126,7 @@ public class ChangeLanguageKnowledgeDetailsActivity extends AppCompatActivity im
 
         ((EditText)findViewById(R.id.editTextChangeLanguageKnowledgeDetailsDescription)).setText(currEmployee.getCV().getEducation().get(langPosition).getDescription());
         languageSpinner.setSelection((languages.indexOf(currEmployee.getCV().getLanguageKnowledge().get(langPosition).getLanguage().getLanguage())));
-        lvlOfKnowledgeSpinner.setSelection(currEmployee.getCV().getLanguageKnowledge().get(langPosition).getLvlOfKnowledge().ordinal());
+        lvlOfKnowledgeSpinner.setSelection(langPosition);
     }
 
     @Override

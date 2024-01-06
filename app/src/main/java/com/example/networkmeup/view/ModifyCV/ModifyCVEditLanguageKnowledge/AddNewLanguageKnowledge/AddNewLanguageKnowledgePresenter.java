@@ -37,6 +37,6 @@ public class AddNewLanguageKnowledgePresenter {
         currEmployee.getCV().setLanguageKnowledge(newlanguage);
 
         //creation has been completed at this point, create success dialog
-        view.successfulAdd("Work Experience has been created successfully!", userToken);
+        view.successfulAdd("Language Knowledge has been created successfully!", userToken);
     }
 }
