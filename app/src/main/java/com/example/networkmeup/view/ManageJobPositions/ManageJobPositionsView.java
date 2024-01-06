@@ -4,5 +4,5 @@ import com.example.networkmeup.domain.Job;
 
 public interface ManageJobPositionsView {
     public void addNewJobPosition(String userToken);
-    public void changeJobPosition(String userToken, Job job);
+    public void changeJobDetails(String userToken, Job job);
 }

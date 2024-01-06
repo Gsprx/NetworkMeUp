@@ -5,6 +5,7 @@ import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Application;
+import com.example.networkmeup.domain.Availability;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
@@ -32,10 +33,10 @@ public class SearchJobsPresenter {
         //obtain all employers to access all available and temporarily not available jobs
         EmployerDAO employerDAO = new EmployerDAOMemory();
 
-        //check through all available jobs and find matches
+        //check through all available and temporarily unavailable jobs and find matches
         for(Employer employer : employerDAO.getAll()){
             for(Job job : employer.getJobs()){
-                if(job.acceptCV(currEmployee.getCV())){
+                if(job.acceptCV(currEmployee.getCV()) && (job.getAvailability().equals(Availability.Available) || job.getAvailability().equals(Availability.Temporarily_Unavailable))){
                     matchingJobs.add(job);
                 }
             }

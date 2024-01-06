@@ -56,9 +56,7 @@ public class EditAccountEmployeePresenter {
             EditAccountEmployee.getCurrEmployee().setPassword(password);
             EditAccountEmployee.getCurrEmployee().setPhone(phone);
 
-
         }
-
 
     }
 }

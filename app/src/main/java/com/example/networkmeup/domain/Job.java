@@ -237,4 +237,13 @@ public class Job implements Serializable {
         return reqLanguageKnowledge;
     }
 
+    public void setTitle(String title) {
+        validateObject(title);
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        validateObject(description);
+        this.description = description;
+    }
 }

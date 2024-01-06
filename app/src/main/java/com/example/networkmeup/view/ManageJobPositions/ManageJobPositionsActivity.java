@@ -14,13 +14,8 @@ import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEducationRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectJobsRecyclerViewAdapter;
-import com.example.networkmeup.view.ManageJobPositions.AddNewJob.AddNewJobActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.AddNewEducation.AddNewEducationActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ModifyCVEditEducationActivity;
 
 import java.util.ArrayList;
 
@@ -71,15 +66,18 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
 
     }
 
+    //start change job details activity with a new job obj
     @Override
     public void addNewJobPosition(String userToken) {
-        Intent intent = new Intent(ManageJobPositionsActivity.this, AddNewJobActivity.class);
+        Intent intent = new Intent(ManageJobPositionsActivity.this, ChangeJobDetailsActivity.class);
         intent.putExtra("token", userToken);
+        intent.putExtra("job", new Job("", ""));
         startActivity(intent);
     }
 
+    //start change job details activity with an existing job obj
     @Override
-    public void changeJobPosition(String userToken, Job job) {
+    public void changeJobDetails(String userToken, Job job) {
         Intent intent = new Intent(ManageJobPositionsActivity.this, ChangeJobDetailsActivity.class);
         intent.putExtra("token", userToken);
         intent.putExtra("job", job);

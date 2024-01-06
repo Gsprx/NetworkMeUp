@@ -13,8 +13,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.networkmeup.R;
+import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.ExpertiseAreaDAO;
+import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
+import com.example.networkmeup.domain.Email;
+import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
@@ -31,16 +35,16 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
         Bundle extras = getIntent().getExtras();
 
         final String userEmail;
-        final int eduPosition;
+        final int workExpPosition;
         if(extras!=null){
             //obtain user token
             userEmail = extras.getString("token");
             //obtain position in list
-            eduPosition = extras.getInt("position");
+            workExpPosition = extras.getInt("position");
         }
         else{
             userEmail = null;
-            eduPosition = 0;
+            workExpPosition = 0;
         }
 
         final ChangeWorkExperienceDetailsPresenter presenter = new ChangeWorkExperienceDetailsPresenter(this, userEmail);
@@ -67,6 +71,7 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
         //pass adapter to spinners and define behavior
         ArrayAdapter<Integer> yearsatworkAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, yearsatwork);
         yearsatworkSpinner.setAdapter(yearsatworkAdapter);
+
         yearsatworkSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -81,17 +86,6 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
 
         ArrayAdapter<String> expFieldsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, expFields);
         expFieldSpinner.setAdapter(expFieldsAdapter);
-        expFieldSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedExpField = expFields.get(position);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //do nothing
-            }
-        });
 
         //when delete button is pressed
         findViewById(R.id.btnChangeWorkingExperienceDetailsDelete).setOnClickListener(
@@ -106,7 +100,7 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
                                 .setPositiveButton("Yes",
                                         new DialogInterface.OnClickListener(){
                                             public void onClick (DialogInterface dialog,int id) {
-                                                presenter.onDelete(eduPosition);
+                                                presenter.onDelete(workExpPosition);
                                             }})
                                 .setNegativeButton("Cancel",
                                         new DialogInterface.OnClickListener(){
@@ -122,10 +116,18 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        presenter.onSave(eduPosition);
+                        presenter.onSave(workExpPosition);
                     }
                 }
         );
+
+        //show the existing values to spinners and edit text fields
+        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        Employee currEmployee = employeeDAO.getByEmail(new Email(userEmail));
+
+        ((EditText)findViewById(R.id.editTextChangeWorkingExperienceDetailsDescription)).setText(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getDescription());
+        expFieldSpinner.setSelection((expFields.indexOf(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getExpArea().getArea())));
+        yearsatworkSpinner.setSelection(yearsatwork.indexOf(currEmployee.getCV().getWorkExperiences().get(workExpPosition).getYears()+""));
 
     }
 

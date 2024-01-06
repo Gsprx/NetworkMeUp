@@ -13,8 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.networkmeup.R;
+import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.ExpertiseAreaDAO;
+import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
+import com.example.networkmeup.domain.Email;
+import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
@@ -81,17 +85,6 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
 
         ArrayAdapter<String> expFieldsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, expFields);
         expFieldSpinner.setAdapter(expFieldsAdapter);
-        expFieldSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedExpField = expFields.get(position);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //do nothing
-            }
-        });
 
         //when delete button is pressed
         findViewById(R.id.btnChangeEducationDetailsDelete).setOnClickListener(
@@ -127,6 +120,14 @@ public class ChangeEducationDetailsActivity extends AppCompatActivity implements
                 }
         );
 
+
+        //show the existing values to spinners and edit text fields
+        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        Employee currEmployee = employeeDAO.getByEmail(new Email(userEmail));
+
+        ((EditText)findViewById(R.id.editTextChangeEducationDetailsDescription)).setText(currEmployee.getCV().getEducation().get(eduPosition).getDescription());
+        expFieldSpinner.setSelection((expFields.indexOf(currEmployee.getCV().getEducation().get(eduPosition).getExpArea().getArea())));
+        lvlOfStudiesSpinner.setSelection(currEmployee.getCV().getEducation().get(eduPosition).getLvlOfStudies().ordinal());
     }
 
     @Override
