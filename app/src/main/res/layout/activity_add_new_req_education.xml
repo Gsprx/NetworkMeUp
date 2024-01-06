@@ -5,5 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationActivity">
+    <TextView
+        android:id="@+id/textView41666"
+        android:layout_width="342dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="76dp"
+        android:text="Add a Required Education to your Job"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/editTextAddNewReqEducationDescription"
+        android:layout_width="384dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="128dp"
+        android:ems="10"
+        android:hint="Enter a description"
+        android:inputType="text"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddNewReqEducationSelectLevelOfStudies"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnAddNewReqEducation"
+        android:layout_width="299dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="16dp"
+        android:text="Add Education"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAddNewReqEducationDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddNewReqEducationDescription"
+        app:layout_constraintVertical_bias="0.739" />
+
+    <Spinner
+        android:id="@+id/spinnerAddNewReqEducationSelectExpField"
+        android:layout_width="305dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView51"
+        app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="268dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="56dp"
+        android:text="Select Expertise Field:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/textView41666"
+        app:layout_constraintTop_toBottomOf="@+id/textView41666" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="303dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="Select Level of Studies:"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/spinnerAddNewReqEducationSelectExpField"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddNewReqEducationSelectExpField" />
+
+    <Spinner
+        android:id="@+id/spinnerAddNewReqEducationSelectLevelOfStudies"
+        android:layout_width="276dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/textView61"
+        app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+    <Button
+        android:id="@+id/backbuttonAddNewReqEducation"
+        android:layout_width="117dp"
+        android:layout_height="50dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textView41666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 </androidx.constraintlayout.widget.ConstraintLayout>
