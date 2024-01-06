@@ -70,6 +70,16 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this);
+        // when back button is pressed
+        findViewById(R.id.backbuttonEditAccountEmployee).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
 
         // Save button onClick listener
         findViewById(R.id.btnEditEmployeeAccountSave).setOnClickListener(
