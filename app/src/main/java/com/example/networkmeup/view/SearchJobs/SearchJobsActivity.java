@@ -58,6 +58,16 @@ public class SearchJobsActivity extends AppCompatActivity implements SearchJobsV
         else{
             adapter.updateList(matchingJobs);
         }
+        // when back button is pressed
+        findViewById(R.id.backbuttonSearchJobs).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(SearchJobsActivity.this, HomeEmployeeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
 
     }
 

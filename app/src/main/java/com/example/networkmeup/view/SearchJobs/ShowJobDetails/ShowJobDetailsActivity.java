@@ -94,6 +94,16 @@ public class ShowJobDetailsActivity extends AppCompatActivity implements  ShowJo
                     }
                 }
         );
+        // when back button is pressed
+        findViewById(R.id.backbuttonShowJobDetails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ShowJobDetailsActivity.this, SearchJobsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override
