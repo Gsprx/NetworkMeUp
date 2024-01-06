@@ -9,6 +9,8 @@ import android.view.View;
 import com.example.networkmeup.R;
 import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class LoginActivity extends AppCompatActivity implements LoginView{
 
@@ -36,7 +38,18 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
                         presenter.onLoginEmployer();
                     }
                 });
+        // when back button is pressed
+        findViewById(R.id.backbuttonLogin).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(LoginActivity.this, StartPageActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
+
 
 
     @Override

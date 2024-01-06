@@ -10,7 +10,7 @@
         android:id="@+id/btnSignupEmployerCreate"
         android:layout_width="233dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:text="Create Account"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -24,7 +24,7 @@
         android:id="@+id/textPasswordHint2"
         android:layout_width="328dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="96dp"
         android:text="Hint: Password must be 8-24 characters long and include at least one of the following: Uppercase and lowecase letters, numbers and special characters ( !, %, @, # etc.)."
         android:textAlignment="textStart"
         android:textSize="14sp"
@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.732" />
 
     <EditText
         android:id="@+id/editTextSignUpEmployerPhone"
@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.492" />
+        app:layout_constraintVertical_bias="0.528" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextSignUpEmployerEmail"
@@ -80,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
+        app:layout_constraintVertical_bias="0.381" />
 
     <TextView
         android:id="@+id/textSignUpEmployeeEnterDetails2"
@@ -106,10 +106,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <EditText
         android:id="@+id/editTextSignUpEmployerTIN"
@@ -123,5 +123,18 @@
         app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.601" />
+
+    <Button
+        android:id="@+id/backbuttonSignUpEmployer"
+        android:layout_width="136dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textSignupEmployeeHeader2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

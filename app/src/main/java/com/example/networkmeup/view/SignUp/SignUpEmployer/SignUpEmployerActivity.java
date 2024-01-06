@@ -16,6 +16,8 @@ import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class SignUpEmployerActivity extends AppCompatActivity implements SignUpEmployerView{
 
@@ -37,6 +39,16 @@ public class SignUpEmployerActivity extends AppCompatActivity implements SignUpE
                 }
         );
 
+        // when back button is pressed
+        findViewById(R.id.backbuttonSignUpEmployer).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(SignUpEmployerActivity.this, SignUpActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override

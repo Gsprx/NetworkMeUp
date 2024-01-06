@@ -16,9 +16,10 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <Button
         android:id="@+id/btnLoginSelectEmployee"
@@ -72,4 +73,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLoginSelectAccountType"
         app:layout_constraintVertical_bias="0.724" />
+
+    <Button
+        android:id="@+id/backbuttonLogin"
+        android:layout_width="113dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="4dp"
+        android:text="BACK"
+        android:textSize="14sp"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textLoginSelectAccountType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292" />
 </androidx.constraintlayout.widget.ConstraintLayout>
