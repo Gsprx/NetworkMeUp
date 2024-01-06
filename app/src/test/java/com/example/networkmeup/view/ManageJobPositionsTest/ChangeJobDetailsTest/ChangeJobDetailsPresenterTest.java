@@ -65,9 +65,9 @@ public class ChangeJobDetailsPresenterTest {
 
         Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
         Assert.assertEquals(1, stub.getSaveClicks());
-        Assert.assertEquals("Desc 2", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(1).getDescription());
-        Assert.assertEquals("Title 2", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(1).getTitle());
-        Assert.assertEquals("Temporarily_Unavailable", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(1).getAvailability().toString());
+        Assert.assertEquals("Desc 2", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0).getDescription());
+        Assert.assertEquals("Title 2", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0).getTitle());
+        Assert.assertEquals("Temporarily_Unavailable", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0).getAvailability().toString());
     }
 
     @Test
