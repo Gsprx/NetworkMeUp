@@ -27,6 +27,8 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqL
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
 import com.example.networkmeup.view.ManageJobPositions.ManageJobPositionsActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 import java.util.ArrayList;
 
@@ -168,6 +170,16 @@ public class ChangeJobDetailsActivity extends AppCompatActivity implements Chang
                                             public void onClick (DialogInterface dialog,int id) {
                                                 // do nothing
                                             }}).create().show();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonChangeJobDetails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ChangeJobDetailsActivity.this, ManageJobPositionsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

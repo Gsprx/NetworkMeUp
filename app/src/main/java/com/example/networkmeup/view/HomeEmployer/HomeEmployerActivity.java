@@ -14,6 +14,8 @@ import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
 import com.example.networkmeup.view.ManageJobPositions.ManageJobPositionsActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
 import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
 
@@ -59,6 +61,16 @@ public class HomeEmployerActivity extends AppCompatActivity implements HomeEmplo
                     @Override
                     public void onClick(View v) {
                         presenter.onEditAccount();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonHomeEmployer).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(HomeEmployerActivity.this, LoginEmployerActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

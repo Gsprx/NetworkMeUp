@@ -13,6 +13,8 @@ import com.example.networkmeup.view.EditAccountEmployee.EditAccountEmployeeActiv
 import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.SearchJobs.SearchJobsActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class HomeEmployeeActivity extends AppCompatActivity implements HomeEmployeeView{
 
@@ -62,6 +64,16 @@ public class HomeEmployeeActivity extends AppCompatActivity implements HomeEmplo
                     public void onClick(View v) {
                         //When Login button is pressed
                         presenter.onEditAccount();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonHomeEmployee).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(HomeEmployeeActivity.this, LoginEmployeeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );

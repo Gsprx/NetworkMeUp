@@ -15,7 +15,10 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectJobsRecyclerViewAdapter;
+import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
+import com.example.networkmeup.view.SignUp.SignUpActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 import java.util.ArrayList;
 
@@ -60,6 +63,16 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
                     @Override
                     public void onClick(View v) {
                         presenter.onAddNew();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonMangeJobPositions).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ManageJobPositionsActivity.this, HomeEmployerActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );
