@@ -3,6 +3,7 @@ package com.example.networkmeup.dao;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
+import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 
@@ -59,4 +60,6 @@ public interface EmployerDAO {
      * @return True if the provided email and password match any stored employer's credentials, false otherwise.
      */
     public boolean authenticate(Email email, Password password);
+
+    public Employer getByJob(Job job);
 }

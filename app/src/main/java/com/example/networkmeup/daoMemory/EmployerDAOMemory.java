@@ -4,6 +4,7 @@ import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
+import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.Password;
 
 import java.util.ArrayList;
@@ -102,5 +103,17 @@ public class EmployerDAOMemory implements EmployerDAO{
             }
         }
         return false; // No match found, authentication failed
+    }
+
+    @Override
+    public Employer getByJob(Job job) {
+        for(Employer employer : employers){
+            for(Job mjob : employer.getJobs()){
+                if(mjob.equals(job)){
+                    return employer;
+                }
+            }
+        }
+        return null;
     }
 }
