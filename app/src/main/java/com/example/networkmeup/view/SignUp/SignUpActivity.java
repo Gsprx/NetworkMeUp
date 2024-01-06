@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.networkmeup.R;
 import com.example.networkmeup.view.SignUp.SignUpEmployee.SignUpEmployeeActivity;
 import com.example.networkmeup.view.SignUp.SignUpEmployer.SignUpEmployerActivity;
+import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 public class SignUpActivity extends AppCompatActivity implements  SignUpView{
 
@@ -36,6 +37,17 @@ public class SignUpActivity extends AppCompatActivity implements  SignUpView{
                 presenter.onEmployer();
             }
         });
+
+        // when back button is pressed
+        findViewById(R.id.backbuttonSignUp).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(SignUpActivity.this, StartPageActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
 
