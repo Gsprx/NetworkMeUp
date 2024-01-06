@@ -119,6 +119,17 @@ public class ChangeLanguageKnowledgeDetailsActivity extends AppCompatActivity im
                 }
         );
 
+        // when back button is pressed
+        findViewById(R.id.backbuttonChangeLanguageKnowledgeDetails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ChangeLanguageKnowledgeDetailsActivity.this, ModifyCVEditLanguageKnowledgeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
+
 
         //show the existing values to spinners and edit text fields
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
