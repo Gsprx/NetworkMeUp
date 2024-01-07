@@ -29,7 +29,6 @@ import java.util.ArrayList;
 
 public class AddNewReqWorkExperienceActivity extends AppCompatActivity implements AddNewReqWorkExperienceView {
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,7 +101,7 @@ public class AddNewReqWorkExperienceActivity extends AppCompatActivity implement
 
 
         //when add button is pressed
-        findViewById(R.id.EditReqWorkExpAddNewButton).setOnClickListener(
+        findViewById(R.id.buttonAddNewReqWorkExp).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
