@@ -30,7 +30,7 @@ public class AddNewReqLangKnowledgePresenterTest {
     public void checkAddLanguageKnowledge(){
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
-        stub.setLanguage(0); //English
+        stub.setLanguage(0); //Chinese
         stub.setLevelOfKnowledge(LevelOfKnowledge.Amateur); //LevelOfKnowledge
 
         presenter.onAdd(); //new Language Knowledge to be added (second for this job)
@@ -38,7 +38,7 @@ public class AddNewReqLangKnowledgePresenterTest {
         Employer currEmployer = new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com"));
 
         //testing view side data
-        Assert.assertEquals("Required Work Experience was successfully created!", stub.getLastDialogMessage());
+        Assert.assertEquals("Required Language Knowledge was successfully created!", stub.getLastDialogMessage());
         Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
         Assert.assertEquals(true, stub.getLastPassedJob().equals(currEmployer.getJobs().get(0)));
 
@@ -49,7 +49,7 @@ public class AddNewReqLangKnowledgePresenterTest {
         //check if req Language Knowledge has the right attributes
 
         Assert.assertEquals("Description Test", currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getDescription());
-        Assert.assertEquals("English", currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getLanguage().getLanguage());
+        Assert.assertEquals("Chinese", currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getLanguage().getLanguage());
         Assert.assertEquals(LevelOfKnowledge.Amateur, currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getLvlOfKnowledge());
 
     }

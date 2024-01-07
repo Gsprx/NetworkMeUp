@@ -33,7 +33,7 @@ public class ChangeReqLangKnowledgePresenterTest {
     public void checkReqWorkExperienceUpdate(){
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
-        stub.setLanguage(0); //English
+        stub.setLanguage(0); //Chinese
         stub.setLevelOfKnowledge(LevelOfKnowledge.Amateur); //Amateur
 
         presenter.onSave(0); //first language knowledge to be changed
@@ -48,7 +48,7 @@ public class ChangeReqLangKnowledgePresenterTest {
 
         //testing database side data
         Assert.assertEquals("Description Test", curEmployer.getJobs().get(0).getReqLanguageKnowledge().get(0).getDescription());
-        Assert.assertEquals("English", curEmployer.getJobs().get(0).getReqLanguageKnowledge().get(0).getLanguage().getLanguage());
+        Assert.assertEquals("Chinese", curEmployer.getJobs().get(0).getReqLanguageKnowledge().get(0).getLanguage().getLanguage());
         Assert.assertEquals(LevelOfKnowledge.Amateur, curEmployer.getJobs().get(0).getReqLanguageKnowledge().get(0).getLvlOfKnowledge());
     }
 
@@ -60,7 +60,7 @@ public class ChangeReqLangKnowledgePresenterTest {
         Employer curEmployer = employerDAO.getByEmail(new Email("b.be@northfreedom.com"));
 
         //testing view side data
-        Assert.assertEquals("Work Experience was successfully deleted!",stub.getLastDialogMessage());
+        Assert.assertEquals("Language Knowledge was successfully deleted!",stub.getLastDialogMessage());
         Assert.assertEquals("b.be@northfreedom.com", stub.getLastTokenPassed());
         Assert.assertEquals(true, stub.getLastPassedJob().equals(curEmployer.getJobs().get(0)));
 
