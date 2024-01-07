@@ -22,7 +22,7 @@
             android:name=".view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsActivity"
+            android:name=".view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation.ChangeReqEducationActivity"
             android:exported="false" />
         <activity
             android:name=".view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.EditReqLangKnowledgeActivity"

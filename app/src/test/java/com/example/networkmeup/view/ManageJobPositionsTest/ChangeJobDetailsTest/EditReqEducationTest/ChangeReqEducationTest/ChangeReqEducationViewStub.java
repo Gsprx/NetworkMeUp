@@ -1,9 +1,9 @@
-package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqEducationTest.ChangeReqEducationDetailsTest;
+package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqEducationTest.ChangeReqEducationTest;
 
 import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsView;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation.ChangeReqEducationView;
 
-public class ChangeReqEducationDetailsViewStub implements ChangeReqEducationDetailsView {
+public class ChangeReqEducationViewStub implements ChangeReqEducationView {
     private String description;
     private int levelOfStudies;
     private int expertiseArea;

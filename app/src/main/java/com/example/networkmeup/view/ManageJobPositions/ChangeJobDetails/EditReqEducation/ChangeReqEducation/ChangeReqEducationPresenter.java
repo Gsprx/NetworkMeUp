@@ -1,17 +1,16 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails;
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation;
 
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.domain.Education;
-import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.LevelOfStudies;
 
-public class ChangeReqEducationDetailsPresenter {
-    private ChangeReqEducationDetailsView view;
+public class ChangeReqEducationPresenter {
+    private ChangeReqEducationView view;
     private String userToken;
     private Job job;
 
-    public ChangeReqEducationDetailsPresenter(ChangeReqEducationDetailsView view, String userToken, Job job) {
+    public ChangeReqEducationPresenter(ChangeReqEducationView view, String userToken, Job job) {
         this.view = view;
         this.userToken = userToken;
         this.job = job;

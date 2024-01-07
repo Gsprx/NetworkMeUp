@@ -1,34 +1,28 @@
-package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqEducationTest.ChangeReqEducationDetailsTest;
+package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqEducationTest.ChangeReqEducationTest;
 
-import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.dao.Initializer;
-import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
-import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsPresenter;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsPresenter;
-import com.example.networkmeup.view.ModifyCVTest.ModifyCVEditEducationTest.ChangeEducationDetailsTest.ChangeEducationDetailsViewStub;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation.ChangeReqEducationPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ChangeReqEducationDetailsPresenterTest {
-    private ChangeReqEducationDetailsPresenter presenter;
-    private ChangeReqEducationDetailsViewStub stub;
+public class ChangeReqEducationPresenterTest {
+    private ChangeReqEducationPresenter presenter;
+    private ChangeReqEducationViewStub stub;
     private Initializer initializer;
 
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
         initializer.prepareData();
-        stub = new ChangeReqEducationDetailsViewStub();
-        presenter = new ChangeReqEducationDetailsPresenter(stub, "b.be@northfreedom.com",
+        stub = new ChangeReqEducationViewStub();
+        presenter = new ChangeReqEducationPresenter(stub, "b.be@northfreedom.com",
                     new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 

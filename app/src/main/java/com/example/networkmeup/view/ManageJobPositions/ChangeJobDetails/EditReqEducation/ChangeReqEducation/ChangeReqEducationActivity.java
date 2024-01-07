@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails;
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,26 +13,18 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.networkmeup.R;
-import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.ExpertiseAreaDAO;
-import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.domain.Education;
-import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.EditReqEducationActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience.AddNewReqWorkExperienceActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsPresenter;
 
 import java.util.ArrayList;
 
-public class ChangeReqEducationDetailsActivity extends AppCompatActivity implements ChangeReqEducationDetailsView{
+public class ChangeReqEducationActivity extends AppCompatActivity implements ChangeReqEducationView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +50,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
             currJob = null;
         }
 
-        final ChangeReqEducationDetailsPresenter presenter = new ChangeReqEducationDetailsPresenter(this, userEmail, currJob);
+        final ChangeReqEducationPresenter presenter = new ChangeReqEducationPresenter(this, userEmail, currJob);
 
 
         //create spinner declarations
@@ -104,7 +96,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
                     @Override
                     public void onClick(View v) {
                         //use dialog builder to create a final warning message to the user
-                        new AlertDialog.Builder(ChangeReqEducationDetailsActivity.this)
+                        new AlertDialog.Builder(ChangeReqEducationActivity.this)
                                 .setCancelable(false)
                                 .setTitle("Delete Education Confirmation")
                                 .setMessage("Are you sure you want to delete this education?")
@@ -144,7 +136,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
         findViewById(R.id.backbuttonChangeReqEducationDatails).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
-                        Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, EditReqEducationActivity.class);
+                        Intent intent = new Intent(ChangeReqEducationActivity.this, EditReqEducationActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
@@ -172,7 +164,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
     @Override
     public void successfulDelete(String message, String userToken, Job job) {
-        new AlertDialog.Builder(ChangeReqEducationDetailsActivity.this)
+        new AlertDialog.Builder(ChangeReqEducationActivity.this)
                 .setCancelable(false)
                 .setTitle("Deletion Completed!")
                 .setMessage(message)
@@ -182,7 +174,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, ChangeJobDetailsActivity.class);
+                                Intent intent = new Intent(ChangeReqEducationActivity.this, ChangeJobDetailsActivity.class);
                                 intent.putExtra("token", userToken);
                                 intent.putExtra("job", job);
                                 startActivity(intent);
@@ -191,7 +183,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
     @Override
     public void successfulSave(String message, String userToken, Job job) {
-        new AlertDialog.Builder(ChangeReqEducationDetailsActivity.this)
+        new AlertDialog.Builder(ChangeReqEducationActivity.this)
                 .setCancelable(false)
                 .setTitle("Save Completed!")
                 .setMessage(message)
@@ -201,7 +193,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, ChangeJobDetailsActivity.class);
+                                Intent intent = new Intent(ChangeReqEducationActivity.this, ChangeJobDetailsActivity.class);
                                 intent.putExtra("token", userToken);
                                 intent.putExtra("job", job);
                                 startActivity(intent);
