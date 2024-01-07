@@ -15,15 +15,10 @@ import android.widget.Spinner;
 import com.example.networkmeup.R;
 import com.example.networkmeup.dao.ExpertiseAreaDAO;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
-import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsPresenter;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience.AddNewReqWorkExperienceActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
 
 import java.util.ArrayList;
@@ -53,7 +48,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
             currJob = null;
         }
 
-        final ChangeReqWorkExperienceDetailsPresenter presenter = new ChangeReqWorkExperienceDetailsPresenter(this, userEmail, currJob);
+        final ChangeReqWorkExpDetailsPresenter presenter = new ChangeReqWorkExpDetailsPresenter(this, userEmail, currJob);
 
 
         //create spinner declarations
