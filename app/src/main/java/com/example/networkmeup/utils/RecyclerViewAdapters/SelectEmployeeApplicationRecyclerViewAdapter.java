@@ -12,7 +12,7 @@ import com.example.networkmeup.R;
 import java.util.ArrayList;
 import com.example.networkmeup.domain.Application;
 
-public class SelectEmployeeApplicationRecyclerViewAdapter extends RecyclerView.Adapter<SelectEmployeeApplicationRecyclerViewAdapter.SelectApplicationViewHolder>{
+public class SelectEmployeeApplicationRecyclerViewAdapter extends RecyclerView.Adapter<SelectEmployeeApplicationRecyclerViewAdapter.SelectEmployeeApplicationViewHolder>{
 
     private ArrayList<Application> Applications;
     private Context context;
@@ -25,18 +25,18 @@ public class SelectEmployeeApplicationRecyclerViewAdapter extends RecyclerView.A
     @NonNull
     @Override
     //Creates the look for the rows in the UI recycler view
-    public SelectApplicationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SelectEmployeeApplicationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_application_employee_row, parent, false);
-        return new SelectApplicationViewHolder(view);
+        return new SelectEmployeeApplicationViewHolder(view);
         }
 
     @Override
 
     //Assign(bind) the data to use for each row
     //changes the data on the recycler view based on the position of the recycler
-    public void onBindViewHolder(@NonNull SelectApplicationViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SelectEmployeeApplicationViewHolder holder, int position) {
         //set each holder's members to match the data on the Application data found on the position (of the position int passed in the method)
 
         //for example set the Description field of the holder to the one matching the Application instance in the list[position]
@@ -60,14 +60,14 @@ public interface ItemClickListener {
     void onItemClick(View view, int position);
 }
 
-public class SelectApplicationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class SelectEmployeeApplicationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     //this class holds the TextView items in the Application_recycler_view_row layout file
 
     TextView status;
     TextView coverletter;
     TextView applicant;
 
-    public SelectApplicationViewHolder(@NonNull View itemView) {
+    public SelectEmployeeApplicationViewHolder(@NonNull View itemView) {
         super(itemView);
 
         itemView.setOnClickListener(this);
