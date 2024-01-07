@@ -19,10 +19,8 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
-import com.example.networkmeup.utils.RecyclerViewAdapters.ApplicationRecyclerViewAdapter;
-import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerActivity;
+import com.example.networkmeup.utils.RecyclerViewAdapters.EmployeeApplicationRecyclerViewAdapter;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
-import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 import java.util.ArrayList;
@@ -64,7 +62,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         //get recycler view reference
         RecyclerView recyclerView = findViewById(R.id.recyclerViewEditAccountEmployee);
         //create Adapter
-        ApplicationRecyclerViewAdapter applicationRecycler = new ApplicationRecyclerViewAdapter(this,ApplicationList);
+        EmployeeApplicationRecyclerViewAdapter applicationRecycler = new EmployeeApplicationRecyclerViewAdapter(this,ApplicationList);
         recyclerView.setAdapter(applicationRecycler);
         //Set the layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

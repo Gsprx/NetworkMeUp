@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/recyclerViewapplicationStatus"
+                android:id="@+id/textView624"
                 android:layout_width="64dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="28dp"

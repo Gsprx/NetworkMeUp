@@ -8,34 +8,35 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import com.example.networkmeup.R;
 import java.util.ArrayList;
 import com.example.networkmeup.domain.Application;
 
-public class ApplicationRecyclerViewAdapter extends RecyclerView.Adapter<ApplicationRecyclerViewAdapter.ApplicationViewHolder>{
-        ArrayList<Application> Applications;
-        Context context;
+public class SelectEmployeeApplicationRecyclerViewAdapter extends RecyclerView.Adapter<SelectEmployeeApplicationRecyclerViewAdapter.SelectApplicationViewHolder>{
 
-        public ApplicationRecyclerViewAdapter(Context context, ArrayList<Application> Applications){
-            this.context = context;
-            this.Applications = Applications;
+    private ArrayList<Application> Applications;
+    private Context context;
+    private ItemClickListener clickListener;
+
+    public SelectEmployeeApplicationRecyclerViewAdapter(Context context, ArrayList<Application> applications){
+        this.context = context;
+        this.Applications = applications;
         }
     @NonNull
     @Override
     //Creates the look for the rows in the UI recycler view
-    public ApplicationRecyclerViewAdapter.ApplicationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SelectApplicationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_application_employee_row, parent, false);
-        return new ApplicationRecyclerViewAdapter.ApplicationViewHolder(view);
+        return new SelectApplicationViewHolder(view);
         }
 
     @Override
 
     //Assign(bind) the data to use for each row
     //changes the data on the recycler view based on the position of the recycler
-    public void onBindViewHolder(@NonNull ApplicationRecyclerViewAdapter.ApplicationViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SelectApplicationViewHolder holder, int position) {
         //set each holder's members to match the data on the Application data found on the position (of the position int passed in the method)
 
         //for example set the Description field of the holder to the one matching the Application instance in the list[position]
@@ -44,25 +45,43 @@ public class ApplicationRecyclerViewAdapter extends RecyclerView.Adapter<Applica
         holder.applicant.setText(Applications.get(position).getEmployee().getName());
         }
 
-@Override
-public int getItemCount() {
+    @Override
+    public int getItemCount() {
         return Applications.size();
         }
 
-public static class ApplicationViewHolder extends RecyclerView.ViewHolder{
-    //this class holds the TextView items in the application_recycler_view_row layout file
+    //catch click events with a click listener that we set
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+        }
+
+//method of this interface must be implemented by parent activity
+public interface ItemClickListener {
+    void onItemClick(View view, int position);
+}
+
+public class SelectApplicationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    //this class holds the TextView items in the Application_recycler_view_row layout file
 
     TextView status;
     TextView coverletter;
     TextView applicant;
 
-    public ApplicationViewHolder(@NonNull View itemView) {
+    public SelectApplicationViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        this.status = itemView.findViewById(R.id.recyclerViewapplicationStatus);
+        itemView.setOnClickListener(this);
+
+        this.status = itemView.findViewById(R.id.textView624);
         this.coverletter = itemView.findViewById(R.id.textEmployeeApplicationCoverLetter);
         this.applicant = itemView.findViewById(R.id.textEmployeeApplicationJobTitle);
     }
-}
 
+    @Override
+    public void onClick(View v) {
+        if (clickListener != null) {
+            clickListener.onItemClick(v, getAdapterPosition());
+        }
+    }
+}
 }
