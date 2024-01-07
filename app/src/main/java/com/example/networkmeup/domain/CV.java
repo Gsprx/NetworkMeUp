@@ -20,6 +20,7 @@ public class CV implements Serializable {
         education = new ArrayList<>();
         workExperiences = new ArrayList<>();
         languageKnowledge = new ArrayList<>();
+        additionalSkillset = "";
     }
 
     /**
