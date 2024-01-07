@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails;
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,32 +13,22 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.networkmeup.R;
-import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.ExpertiseAreaDAO;
-import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
-import com.example.networkmeup.domain.Education;
-import com.example.networkmeup.domain.Email;
-import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.domain.LevelOfStudies;
+import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.EditReqEducationActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience.AddNewReqWorkExperienceActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsPresenter;
 
 import java.util.ArrayList;
 
-public class ChangeReqEducationDetailsActivity extends AppCompatActivity implements ChangeReqEducationDetailsView{
+public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity implements ChangeReqWorkExperienceDetailsView{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_req_education_details);
-
+        setContentView(R.layout.activity_change_req_work_experience);
 
         Bundle extras = getIntent().getExtras();
 
@@ -58,19 +48,19 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
             currJob = null;
         }
 
-        final ChangeReqEducationDetailsPresenter presenter = new ChangeReqEducationDetailsPresenter(this, userEmail, currJob);
+        final ChangeReqWorkExpDetailsPresenter presenter = new ChangeReqWorkExpDetailsPresenter(this, userEmail, currJob);
 
 
         //create spinner declarations
-        Spinner expFieldSpinner = findViewById(R.id.spinnerChangeReqEducationDetailsSelectExpField);
-        Spinner lvlOfStudiesSpinner = findViewById(R.id.spinnerChangeReqEducationDetailsSelectLevelOfStudies);
+        Spinner expFieldSpinner = findViewById(R.id.spinnerChangeReqWorkExpDetailsExpArea);
+        Spinner YearsATWork = findViewById(R.id.spinnerChangeReqWorkExpYears);
 
-        ArrayList<String> levelsOfStudies = new ArrayList<>();
-        ArrayList<String> expFields = new ArrayList<>();
+        ArrayList<Integer> YearsFields = new ArrayList<Integer>();
+        ArrayList<String> expFields = new ArrayList<String>();
 
-        //create spinner list for levels of studies
-        for(int i = 0; i< LevelOfStudies.values().length; i++){
-            levelsOfStudies.add(LevelOfStudies.values()[i].toString());
+        //create spinner list for years at work
+        for(int i = 1; i<= 15 ; i++){
+            YearsFields.add(i);
         }
 
         //create spinner list for exp fields
@@ -81,12 +71,12 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
         }
 
         //pass adapter to spinners and define behavior
-        ArrayAdapter<String> levelsOfStudiesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, levelsOfStudies);
-        lvlOfStudiesSpinner.setAdapter(levelsOfStudiesAdapter);
-        lvlOfStudiesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ArrayAdapter<Integer> YearsAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, YearsFields);
+        YearsATWork.setAdapter(YearsAdapter);
+        YearsATWork.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLvlOfStudies = levelsOfStudies.get(position);
+                Integer selectedYears = YearsFields.get(position);
             }
 
             @Override
@@ -99,15 +89,15 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
         expFieldSpinner.setAdapter(expFieldsAdapter);
 
         //when delete button is pressed
-        findViewById(R.id.btnChangeReqEducationDetailsDelete).setOnClickListener(
+        findViewById(R.id.buttonChangeReqWorkExperienceDelete).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //use dialog builder to create a final warning message to the user
-                        new AlertDialog.Builder(ChangeReqEducationDetailsActivity.this)
+                        new AlertDialog.Builder(ChangeReqWorkExperienceDetailsActivity.this)
                                 .setCancelable(false)
-                                .setTitle("Delete Education Confirmation")
-                                .setMessage("Are you sure you want to delete this education?")
+                                .setTitle("Delete Work Experience Confirmation")
+                                .setMessage("Are you sure you want to delete this Work Experience?")
                                 .setPositiveButton("Yes",
                                         new DialogInterface.OnClickListener(){
                                             public void onClick (DialogInterface dialog,int id) {
@@ -123,7 +113,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
         );
 
         //when save button is pressed
-        findViewById(R.id.btnChangeReqEducationDetailsSave).setOnClickListener(
+        findViewById(R.id.buttonChangeReqWorkExpSave).setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -134,17 +124,17 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
 
         //show the existing values to spinners and edit text fields
-        Education currEducation = currJob.getReqEducation().get(eduPosition);
+        WorkExperience currWorkExp = currJob.getReqWorkExperience().get(eduPosition);
 
-        ((EditText)findViewById(R.id.editTextChangeReqEducationDetailsDescription)).setText(currEducation.getDescription());
-        expFieldSpinner.setSelection((expFields.indexOf(currEducation.getExpArea().getArea())));
-        lvlOfStudiesSpinner.setSelection(currEducation.getLvlOfStudies().ordinal());
+        ((EditText)findViewById(R.id.editTextChangeReqWorkExperienceDescription)).setText(currWorkExp.getDescription());
+        expFieldSpinner.setSelection((expFields.indexOf(currWorkExp.getExpArea().getArea())));
+        YearsATWork.setSelection(currWorkExp.getYears());
 
         // when back button is pressed
-        findViewById(R.id.backbuttonChangeReqEducationDatails).setOnClickListener(
+        findViewById(R.id.backbuttonChangeReqWorkExp).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
-                        Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, EditReqEducationActivity.class);
+                        Intent intent = new Intent(ChangeReqWorkExperienceDetailsActivity.this, EditReqWorkExperienceActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
@@ -152,27 +142,26 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
         );
 
     }
-
     @Override
     public String getDescription() {
-        return ((EditText)findViewById(R.id.editTextChangeReqEducationDetailsDescription)).getText().toString().trim();
+        return ((EditText)findViewById(R.id.editTextChangeReqWorkExperienceDescription)).getText().toString().trim();
     }
 
     @Override
     public int getExpertiseArea() {
         //get position in respective list
-        return ((Spinner)findViewById(R.id.spinnerChangeReqEducationDetailsSelectExpField)).getSelectedItemPosition();
+        return ((Spinner)findViewById(R.id.spinnerChangeReqWorkExpDetailsExpArea)).getSelectedItemPosition();
     }
 
     @Override
-    public int getLevelOfStudies() {
+    public int getYears() {
         //get position in respective enum ordinal
-        return ((Spinner)findViewById(R.id.spinnerChangeReqEducationDetailsSelectLevelOfStudies)).getSelectedItemPosition();
+        return ((Spinner)findViewById(R.id.spinnerChangeReqWorkExpYears)).getSelectedItemPosition();
     }
 
     @Override
     public void successfulDelete(String message, String userToken, Job job) {
-        new AlertDialog.Builder(ChangeReqEducationDetailsActivity.this)
+        new AlertDialog.Builder(ChangeReqWorkExperienceDetailsActivity.this)
                 .setCancelable(false)
                 .setTitle("Deletion Completed!")
                 .setMessage(message)
@@ -182,7 +171,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, ChangeJobDetailsActivity.class);
+                                Intent intent = new Intent(ChangeReqWorkExperienceDetailsActivity.this, ChangeJobDetailsActivity.class);
                                 intent.putExtra("token", userToken);
                                 intent.putExtra("job", job);
                                 startActivity(intent);
@@ -191,7 +180,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
     @Override
     public void successfulSave(String message, String userToken, Job job) {
-        new AlertDialog.Builder(ChangeReqEducationDetailsActivity.this)
+        new AlertDialog.Builder(ChangeReqWorkExperienceDetailsActivity.this)
                 .setCancelable(false)
                 .setTitle("Save Completed!")
                 .setMessage(message)
@@ -201,7 +190,7 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, ChangeJobDetailsActivity.class);
+                                Intent intent = new Intent(ChangeReqWorkExperienceDetailsActivity.this, ChangeJobDetailsActivity.class);
                                 intent.putExtra("token", userToken);
                                 intent.putExtra("job", job);
                                 startActivity(intent);
