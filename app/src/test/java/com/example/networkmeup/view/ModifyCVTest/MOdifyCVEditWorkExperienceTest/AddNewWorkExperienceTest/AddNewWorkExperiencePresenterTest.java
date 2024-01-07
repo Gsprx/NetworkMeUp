@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ModifyCVTest.MOdifyCVEditWorkExperienceTest.AddNewWorkExperienceTest;
+package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditWorkExperienceTest.AddNewWorkExperienceTest;
 
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.Initializer;

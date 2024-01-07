@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ModifyCVTest.MOdifyCVEditWorkExperienceTest.AddNewWorkExperienceTest;
+package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditWorkExperienceTest.AddNewWorkExperienceTest;
 
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.AddNewWorkExperience.AddNewWorkExperienceView;
 
