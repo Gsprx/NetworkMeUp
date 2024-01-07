@@ -25,7 +25,7 @@ import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ModifyCV
 import java.util.ArrayList;
 
 public class AddNewWorkExperienceActivity extends AppCompatActivity implements AddNewWorkExperienceView {
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
