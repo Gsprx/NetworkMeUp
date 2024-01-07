@@ -1,5 +1,6 @@
 package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditLanguageKnowledgeTest.ChangeLanguageKnowledgeDetailsTest;
 
+import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Language;
 import com.example.networkmeup.domain.LanguageKnowledge;
 import com.example.networkmeup.domain.LevelOfKnowledge;
@@ -14,10 +15,11 @@ public class ChangeLanguageKnowledgeDetailsPresenterTest {
 
     private ChangeLanguageKnowledgeDetailsViewStub viewStub;
     private ChangeLanguageKnowledgeDetailsPresenter presenter;
-    private String userToken = "exampleUserToken";
+    private String userToken = "john.Brown12@gmail.com";
 
     @Before
     public void setUp() {
+        new MemoryInitializer().prepareData();
         viewStub = new ChangeLanguageKnowledgeDetailsViewStub();
         presenter = new ChangeLanguageKnowledgeDetailsPresenter(viewStub, userToken);
     }

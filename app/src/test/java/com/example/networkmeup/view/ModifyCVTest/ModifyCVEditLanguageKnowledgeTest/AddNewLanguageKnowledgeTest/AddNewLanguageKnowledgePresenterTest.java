@@ -4,6 +4,7 @@ import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.LanguageDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.LanguageDAOMemory;
+import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Language;
@@ -24,6 +25,7 @@ public class AddNewLanguageKnowledgePresenterTest {
 
     @Before
     public void setup() {
+        new MemoryInitializer().prepareData();
         stub = new AddNewLanguageKnowledgeViewStub();
         presenter = new AddNewLanguageKnowledgePresenter(stub, "john.Brown12@gmail.com");
     }
@@ -36,13 +38,13 @@ public class AddNewLanguageKnowledgePresenterTest {
 
         presenter.onAdd();
 
-        Assert.assertEquals("LanguageKnowledge has been created successfully!", stub.getSuccessMessage());
+        Assert.assertEquals("Language Knowledge has been created successfully!", stub.getSuccessMessage());
         Assert.assertEquals("john.Brown12@gmail.com", stub.getUserToken());
 
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         Employee curEmployee = employeeDAO.getByEmail(new Email("john.Brown12@gmail.com"));
 
-        Assert.assertEquals(1, curEmployee.getCV().getLanguageKnowledge().size());
+        Assert.assertEquals(2, curEmployee.getCV().getLanguageKnowledge().size());
 
         LanguageDAO languageDAO = new LanguageDAOMemory();
         Language language = languageDAO.getAll().get(stub.getLanguage());
@@ -55,7 +57,7 @@ public class AddNewLanguageKnowledgePresenterTest {
                 levelOfKnowledge
         );
 
-        Assert.assertEquals(addedLanguageKnowledge, curEmployee.getCV().getLanguageKnowledge().get(0));
+        Assert.assertEquals(true, curEmployee.getCV().getLanguageKnowledge().get(1).equals(addedLanguageKnowledge));
     }
 }
 

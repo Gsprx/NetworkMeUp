@@ -1,5 +1,6 @@
 package com.example.networkmeup.view.ModifyCVTest;
 
+import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.view.ModifyCV.ModifyCVPresenter;
 import com.example.networkmeup.view.ModifyCV.ModifyCVView;
 
@@ -14,35 +15,46 @@ public class ModifyCVPresenterTest {
 
     @Before
     public void setup(){
-        userToken = "test.email@email.com";
+        new MemoryInitializer().prepareData();
+        userToken = "john.Brown12@gmail.com";
         viewStub = new ModifyCVViewStub();
         presenter = new ModifyCVPresenter(viewStub, userToken);
     }
 
     @Test
     public void testEditEduClicks(){
+        viewStub.setSkillset("Test");
         for (int i = 0; i<21; i++){
             presenter.onEditEducation();
         }
         Assert.assertEquals(21, viewStub.getEditEduClicks());
-        Assert.assertEquals("test.email@email.com", viewStub.getLastTokenPassed());
+        Assert.assertEquals("john.Brown12@gmail.com", viewStub.getLastTokenPassed());
     }
 
     @Test
     public void testEditWorkExpClicks(){
+        viewStub.setSkillset("Test");
         for (int i = 0; i<5; i++){
             presenter.onEditWorkExperience();
         }
         Assert.assertEquals(5, viewStub.getEditWorkExpClicks());
-        Assert.assertEquals("test.email@email.com", viewStub.getLastTokenPassed());
+        Assert.assertEquals("john.Brown12@gmail.com", viewStub.getLastTokenPassed());
     }
 
     @Test
     public void testEditLangKnowClicks(){
+        viewStub.setSkillset("Test");
         for (int i = 0; i<9; i++){
             presenter.onEditLanguageKnowledge();
         }
         Assert.assertEquals(9, viewStub.getEditLangKnowClicks());
-        Assert.assertEquals("test.email@email.com", viewStub.getLastTokenPassed());
+        Assert.assertEquals("john.Brown12@gmail.com", viewStub.getLastTokenPassed());
+    }
+
+    @Test
+    public void checkSaveChangesToSkillset(){
+        viewStub.setSkillset("Skillset Test");
+        presenter.save();
+        Assert.assertEquals("Skillset Test", viewStub.getAdditionalSkillset());
     }
 }

@@ -7,6 +7,17 @@ public class ModifyCVViewStub implements ModifyCVView {
     private int editEduClicks;
     private int editWorkExpClicks;
     private int editLangKnowClicks;
+    private String skillset;
+
+    @Override
+    public String getAdditionalSkillset() {
+        return skillset;
+    }
+
+    public void setSkillset(String skillset) {
+        this.skillset = skillset;
+    }
+
     @Override
     public void editEducation(String userToken) {
         lastTokenPassed = userToken;
