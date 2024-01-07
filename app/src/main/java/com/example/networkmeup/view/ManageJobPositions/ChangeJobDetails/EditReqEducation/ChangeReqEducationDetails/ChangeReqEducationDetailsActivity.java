@@ -24,6 +24,9 @@ import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.EditReqEducationActivity;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience.AddNewReqWorkExperienceActivity;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsPresenter;
 
@@ -137,6 +140,16 @@ public class ChangeReqEducationDetailsActivity extends AppCompatActivity impleme
         expFieldSpinner.setSelection((expFields.indexOf(currEducation.getExpArea().getArea())));
         lvlOfStudiesSpinner.setSelection(currEducation.getLvlOfStudies().ordinal());
 
+        // when back button is pressed
+        findViewById(R.id.backbuttonChangeReqEducationDatails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ChangeReqEducationDetailsActivity.this, EditReqEducationActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
 
     }
 
