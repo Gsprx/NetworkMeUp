@@ -1,0 +1,3 @@
+package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqLangKnowledgeTest.ChangeReqLangKnowledgeTest;
+public class ChangeReqLangKnowledgeViewStub {
+}
