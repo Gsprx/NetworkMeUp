@@ -120,7 +120,9 @@
                 android:id="@+id/recyclerViewEditAccountEmployee"
                 android:layout_width="328dp"
                 android:layout_height="115dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/EditAccountEmployeePassword"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
                 app:layout_constraintTop_toBottomOf="@+id/textView40"
                 tools:itemCount="5" />
