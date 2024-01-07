@@ -65,9 +65,9 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
 
         //create spinner list for languages
         LanguageDAO languageDAO = new LanguageDAOMemory();
-        ArrayList<Language> lanuages = languageDAO.getAll();
-        for(Language language : lanuages){
-            lanuages.add(language);
+        ArrayList<Language> Languages = languageDAO.getAll();
+        for(Language language : Languages){
+            Languages.add(language);
         }
 
         //pass adapter to spinners and define behavior
