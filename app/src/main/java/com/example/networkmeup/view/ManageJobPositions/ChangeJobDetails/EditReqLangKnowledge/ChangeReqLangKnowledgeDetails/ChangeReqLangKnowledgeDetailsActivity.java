@@ -1,2 +1,4 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails;public class ChangeReqLangKnowledgeDetailsActivity {
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails;
+
+public class ChangeReqLangKnowledgeDetailsActivity {
 }
