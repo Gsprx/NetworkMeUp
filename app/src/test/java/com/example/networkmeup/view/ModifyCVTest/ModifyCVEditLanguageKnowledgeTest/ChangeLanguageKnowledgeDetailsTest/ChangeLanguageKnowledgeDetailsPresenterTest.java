@@ -1,70 +1,82 @@
 package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditLanguageKnowledgeTest.ChangeLanguageKnowledgeDetailsTest;
 
+import com.example.networkmeup.dao.EmployeeDAO;
+import com.example.networkmeup.dao.Initializer;
+import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
-import com.example.networkmeup.domain.Language;
-import com.example.networkmeup.domain.LanguageKnowledge;
+import com.example.networkmeup.domain.Email;
+import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ChangeLanguageKnowledgeDetails.ChangeLanguageKnowledgeDetailsPresenter;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ChangeLanguageKnowledgeDetails.ChangeLanguageKnowledgeDetailsView;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ChangeLanguageKnowledgeDetailsPresenterTest {
 
-    private ChangeLanguageKnowledgeDetailsViewStub viewStub;
     private ChangeLanguageKnowledgeDetailsPresenter presenter;
-    private String userToken = "john.Brown12@gmail.com";
+    private ChangeLanguageKnowledgeDetailsViewStub stub;
+    private Initializer initializer;
 
     @Before
-    public void setUp() {
-        new MemoryInitializer().prepareData();
-        viewStub = new ChangeLanguageKnowledgeDetailsViewStub();
-        presenter = new ChangeLanguageKnowledgeDetailsPresenter(viewStub, userToken);
+    public void setup() {
+        stub = new ChangeLanguageKnowledgeDetailsViewStub();
+        presenter = new ChangeLanguageKnowledgeDetailsPresenter(stub, "marygreen.188@gmail.com");
+        initializer = new MemoryInitializer();
+        initializer.prepareData();
+    }
+
+    @After
+    public void resetData(){
+        initializer = new MemoryInitializer();
+        initializer.prepareData();
     }
 
     @Test
-    public void testOnSave() {
-        // Setting up test data in the view stub
-        viewStub.setDescription("Updated Language Description");
-        viewStub.setLanguage(0); // Simulating language selection index
-        viewStub.setLevelOfKnowledge(LevelOfKnowledge.Advanced); // Simulating level of knowledge selection
+    public void checkLanguageKnowledgeUpdate() {
+        //attributes set to simulated activity widgets
+        stub.setDescription("Description Test");//Description text
+        stub.setLanguage(6); //Spanish
+        stub.setLevelOfKnowledge(LevelOfKnowledge.Amateur); //Amateur
 
-        // Adding initial language knowledge data to the stub
-        LanguageKnowledge initialLanguageKnowledge = new LanguageKnowledge("Initial Description", new Language("English"), LevelOfKnowledge.Amateur);
-        viewStub.setLevelOfKnowledge(LevelOfKnowledge.Amateur); // Setting initial level of knowledge
-        viewStub.setDescription("Initial Description"); // Setting initial description
+        presenter.onSave(1); //second language knowledge to be changed
 
-        // Simulating that the initial language knowledge is already present in the employee's CV
-        presenter.onSave(0); // Save operation for the first language knowledge position
+        //testing view side data
+        Assert.assertEquals("This language knowledge has been updated successfully!", stub.getLastSuccessfulSaveMessage());
+        Assert.assertEquals("marygreen.188@gmail.com", stub.getLastUserToken());
 
-        // Verifying the updated language knowledge in the stub after save operation
-        Assert.assertEquals("Updated Language Description", viewStub.getDescription());
-        Assert.assertEquals(0, viewStub.getLanguage()); // Assuming language index 0
-        Assert.assertEquals(LevelOfKnowledge.Advanced, viewStub.getLevelOfKnowledge());
+        //testing database side data
+        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        Employee curEmployee = employeeDAO.getByEmail(new Email("marygreen.188@gmail.com"));
 
-        // Testing successful save message and user token after onSave operation
-        Assert.assertEquals("This language knowledge has been updated successfully!", viewStub.getLastSuccessfulSaveMessage());
-        Assert.assertEquals(userToken, viewStub.getLastUserToken());
+        Assert.assertEquals("Description Test", curEmployee.getCV().getLanguageKnowledge().get(1).getDescription());
+        Assert.assertEquals("Spanish", curEmployee.getCV().getLanguageKnowledge().get(1).getLanguage().getLanguage());
+        Assert.assertEquals(LevelOfKnowledge.Amateur, curEmployee.getCV().getLanguageKnowledge().get(1).getLvlOfKnowledge());
     }
 
     @Test
-    public void testOnDelete() {
-        // Adding initial language knowledge data to the stub
-        LanguageKnowledge initialLanguageKnowledge = new LanguageKnowledge("Initial Description", new Language("English"), LevelOfKnowledge.Amateur);
-        viewStub.setLevelOfKnowledge(LevelOfKnowledge.Amateur); // Setting initial level of knowledge
-        viewStub.setDescription("Initial Description"); // Setting initial description
+    public void checkLangKnowDelete() {
+        presenter.onDelete(1); //second language knowledge to be deleted
 
-        // Simulating that the initial language knowledge is already present in the employee's CV
-        presenter.onDelete(0); // Delete operation for the first language knowledge position
+        //testing view side data
+        Assert.assertEquals("This language knowledge has been deleted successfully!", stub.getLastSuccessfulDeleteMessage());
+        Assert.assertEquals("marygreen.188@gmail.com", stub.getLastUserToken());
 
-        // Verifying the language knowledge deletion in the stub after delete operation
-        Assert.assertNull(viewStub.getDescription()); // Assuming description set to null after deletion
+        //testing database side data
+        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        Employee curEmployee = employeeDAO.getByEmail(new Email("marygreen.188@gmail.com"));
 
-        // Testing successful delete message and user token after onDelete operation
-        Assert.assertEquals("This language knowledge has been deleted successfully!", viewStub.getLastSuccessfulDeleteMessage());
-        Assert.assertEquals(userToken, viewStub.getLastUserToken());
+        //check if education was actually deleted
+        Assert.assertEquals(1, curEmployee.getCV().getEducation().size());
+
+        //check if the correct education was deleted (second education of user with email "marygreen.188@gmail.com")
+        //by checking if the first language knowledge is exactly the same as in initialization process
+
+        //   first Language Knowledge: ("Personal Studies", ExpertiseArea("Finance"), LevelOfStudies.Bachelor));
+        Assert.assertEquals("Born and raised in France", curEmployee.getCV().getLanguageKnowledge().get(0).getDescription());
+        Assert.assertEquals("French", curEmployee.getCV().getLanguageKnowledge().get(0).getLanguage().getLanguage());
+        Assert.assertEquals(LevelOfKnowledge.Native, curEmployee.getCV().getLanguageKnowledge().get(0).getLvlOfKnowledge());
     }
 }
-

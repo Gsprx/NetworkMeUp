@@ -29,7 +29,7 @@ public class AddNewWorkExperiencePresenter {
         ExpertiseArea newExpertiseArea = expertiseAreaDAO.getAll().get(view.getExpertiseArea());
 
         //create the new WorkExperience and add it to the current employee
-        WorkExperience newexp = new WorkExperience(view.getYearsAtWork(),view.getDescription(), newExpertiseArea);
+        WorkExperience newexp = new WorkExperience(view.getYearsAtWork()+1,view.getDescription(), newExpertiseArea);
         currEmployee.getCV().setWorkExperience(newexp);
 
         //creation has been completed at this point, create success dialog

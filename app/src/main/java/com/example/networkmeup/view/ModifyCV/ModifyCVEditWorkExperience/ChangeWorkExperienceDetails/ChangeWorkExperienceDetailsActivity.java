@@ -55,11 +55,11 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
         Spinner expFieldSpinner = findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectExpField);
         Spinner yearsatworkSpinner = findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectYearsAtWork);
 
-        ArrayList<Integer> yearsatwork = new ArrayList<Integer>();
-        ArrayList<String> expFields = new ArrayList<String>();
+        ArrayList<Integer> yearsatwork = new ArrayList<>();
+        ArrayList<String> expFields = new ArrayList<>();
 
         //create spinner list for years at work
-        for(int i = 0; i<=15; i++){
+        for(int i = 1; i<=15; i++){
             yearsatwork.add(i);
         }
 
@@ -71,7 +71,7 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
         }
 
         //pass adapter to spinners and define behavior
-        ArrayAdapter<Integer> yearsatworkAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, yearsatwork);
+        ArrayAdapter<Integer> yearsatworkAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, yearsatwork);
         yearsatworkSpinner.setAdapter(yearsatworkAdapter);
 
         yearsatworkSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

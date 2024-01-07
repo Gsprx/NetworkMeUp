@@ -48,11 +48,11 @@ public class AddNewWorkExperienceActivity extends AppCompatActivity implements A
         Spinner expFieldSpinner = findViewById(R.id.spinnerAddNewWorkExperienceSelectExpField);
         Spinner yearsofworkSpinner = findViewById(R.id.spinnerAddNewWorkExperienceYearsofwork);
 
-        ArrayList<Integer> yearsofwork = new ArrayList<Integer>();
-        ArrayList<String> expFields = new ArrayList<String>();
+        ArrayList<Integer> yearsofwork = new ArrayList<>();
+        ArrayList<String> expFields = new ArrayList<>();
 
         //create spinner list for years of work
-        for(int i = 0; i<= 15; i++){
+        for(int i = 1; i<= 15; i++){
             yearsofwork.add(i);
         }
 
@@ -64,7 +64,7 @@ public class AddNewWorkExperienceActivity extends AppCompatActivity implements A
         }
 
         //pass adapter to spinners and define behavior
-        ArrayAdapter<Integer> YearsatworkAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, yearsofwork);
+        ArrayAdapter<Integer> YearsatworkAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, yearsofwork);
         yearsofworkSpinner.setAdapter(YearsatworkAdapter);
         yearsofworkSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

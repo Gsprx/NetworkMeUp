@@ -17,9 +17,11 @@ import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.ExpertiseAreaDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
+import com.example.networkmeup.daoMemory.LanguageDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
+import com.example.networkmeup.domain.Language;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.ModifyCVEditLanguageKnowledgeActivity;
@@ -61,11 +63,10 @@ public class ChangeLanguageKnowledgeDetailsActivity extends AppCompatActivity im
             levelsOfKnowledge.add(LevelOfKnowledge.values()[i].toString());
         }
 
-        //create spinner list for exp fields
-        ExpertiseAreaDAO expAreaDAO = new ExpertiseAreaDAOMemory();
-        ArrayList<ExpertiseArea> expertiseAreas = expAreaDAO.getAll();
-        for(ExpertiseArea expertiseArea : expertiseAreas){
-            languages.add(expertiseArea.getArea());
+        //create spinner list for languages
+        ArrayList<Language> languagesList = new LanguageDAOMemory().getAll();
+        for(Language lang : languagesList){
+            languages.add(lang.getLanguage());
         }
 
         //pass adapter to spinners and define behavior
@@ -136,9 +137,9 @@ public class ChangeLanguageKnowledgeDetailsActivity extends AppCompatActivity im
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         Employee currEmployee = employeeDAO.getByEmail(new Email(userEmail));
 
-        ((EditText)findViewById(R.id.editTextChangeLanguageKnowledgeDetailsDescription)).setText(currEmployee.getCV().getEducation().get(langPosition).getDescription());
+        ((EditText)findViewById(R.id.editTextChangeLanguageKnowledgeDetailsDescription)).setText(currEmployee.getCV().getLanguageKnowledge().get(langPosition).getDescription());
         languageSpinner.setSelection((languages.indexOf(currEmployee.getCV().getLanguageKnowledge().get(langPosition).getLanguage().getLanguage())));
-        lvlOfKnowledgeSpinner.setSelection(langPosition);
+        lvlOfKnowledgeSpinner.setSelection(levelsOfKnowledge.indexOf(currEmployee.getCV().getLanguageKnowledge().get(langPosition).getLanguage().getLanguage()));
     }
 
     @Override

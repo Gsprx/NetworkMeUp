@@ -19,10 +19,11 @@ public class AddNewWorkExperiencePresenterTest {
 
     @Before
     public void setup(){
-        stub = new AddNewWorkExperienceViewStub();
-        presenter = new AddNewWorkExperiencePresenter(stub, "john.Brown12@gmail.com");
         initializer = new MemoryInitializer();
         initializer.prepareData();
+        stub = new AddNewWorkExperienceViewStub();
+        presenter = new AddNewWorkExperiencePresenter(stub, "john.Brown12@gmail.com");
+
     }
 
     @Test
