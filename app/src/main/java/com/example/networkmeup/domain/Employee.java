@@ -32,6 +32,8 @@ public class Employee implements Serializable {
         validateData(email,phone,password);
         applications = new ArrayList<>();
         cv = new CV();
+        name = "";
+        address = "";
     }
 
     /**

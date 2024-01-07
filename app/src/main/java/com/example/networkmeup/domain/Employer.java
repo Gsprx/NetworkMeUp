@@ -26,6 +26,8 @@ public class Employer {
     public Employer(Email email, Phone phone, Password password, TIN tin){
         validateData(email,phone,password,tin);
         jobs = new ArrayList<>();
+        companyName = "";
+        sector = "";
     }
 
     /**
