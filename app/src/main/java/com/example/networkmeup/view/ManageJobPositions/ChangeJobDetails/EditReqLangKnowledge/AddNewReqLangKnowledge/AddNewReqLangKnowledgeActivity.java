@@ -13,19 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.networkmeup.R;
-import com.example.networkmeup.dao.ExpertiseAreaDAO;
 import com.example.networkmeup.dao.LanguageDAO;
-import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.daoMemory.LanguageDAOMemory;
-import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.Language;
 import com.example.networkmeup.domain.LevelOfKnowledge;
-import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationPresenter;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.EditReqEducationActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.EditReqLangKnowledgeActivity;
 
 import java.util.ArrayList;
