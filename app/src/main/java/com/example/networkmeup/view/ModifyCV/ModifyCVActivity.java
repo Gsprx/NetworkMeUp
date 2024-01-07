@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.dao.EmployeeDAO;
@@ -74,6 +75,9 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
         languageKnowledgeRecyclerView.setAdapter(languageKnowledgeRecyclerViewAdapter);
         languageKnowledgeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //add additional skillset text to field if it exists
+        ((EditText)findViewById(R.id.editTextModifyCVAdditionalSkillset)).setText(currEmployee.getCV().getAdditionalSkillset());
+
         //button listeners
         //when edit education list is pressed
         findViewById(R.id.btnModifyCVEditEducation).setOnClickListener(
@@ -111,12 +115,18 @@ public class ModifyCVActivity extends AppCompatActivity implements ModifyCVView{
         findViewById(R.id.backbuttonModifyCV).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
+                        //save changes to additional skillset
+                        presenter.save();
                         Intent intent = new Intent(ModifyCVActivity.this, HomeEmployeeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
                 }
         );
+    }
+    @Override
+    public String getAdditionalSkillset(){
+        return ((EditText)findViewById(R.id.editTextModifyCVAdditionalSkillset)).getText().toString().trim();
     }
 
     @Override

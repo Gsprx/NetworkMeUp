@@ -148,6 +148,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/textView73"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:text="Additional Skillset:"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/recyclerViewModifyCVLanguageKnowledge"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewModifyCVLanguageKnowledge" />
+
+            <EditText
+                android:id="@+id/editTextModifyCVAdditionalSkillset"
+                android:layout_width="341dp"
+                android:layout_height="122dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Enter an Additional Skillset here..."
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView73"
+                app:layout_constraintTop_toBottomOf="@+id/textView73"
+                app:layout_constraintVertical_bias="1.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
