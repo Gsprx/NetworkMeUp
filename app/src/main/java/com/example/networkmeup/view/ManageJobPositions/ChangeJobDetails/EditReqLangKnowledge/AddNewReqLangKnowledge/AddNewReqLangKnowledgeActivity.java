@@ -50,7 +50,7 @@ public class AddNewReqLangKnowledgeActivity extends AppCompatActivity implements
         Spinner lvlOfKnowledgeSpinner = findViewById(R.id.spinnerAddNewReqLangKnowledgeSelectLevelOfKnowledge);
 
         ArrayList<String> levelsOfKnowledge = new ArrayList<>();
-        ArrayList<String> languages = new ArrayList<>();
+        ArrayList<String> languagesList = new ArrayList<>();
 
         //create spinner list for levels of knowledge
         for(int i = 0; i< LevelOfKnowledge.values().length; i++){
@@ -61,7 +61,7 @@ public class AddNewReqLangKnowledgeActivity extends AppCompatActivity implements
         LanguageDAO languageDAO = new LanguageDAOMemory();
         ArrayList<Language> Languages = languageDAO.getAll();
         for(Language language : Languages){
-            Languages.add(language);
+            languagesList.add(language.getLanguage());
         }
 
         //pass adapter to spinners and define behavior
@@ -79,12 +79,12 @@ public class AddNewReqLangKnowledgeActivity extends AppCompatActivity implements
             }
         });
 
-        ArrayAdapter<String> languagesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, languages);
+        ArrayAdapter<String> languagesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, languagesList);
         languageSpinner.setAdapter(languagesAdapter);
         languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLanguage = languages.get(position);
+                String selectedLanguage = languagesList.get(position);
             }
 
             @Override

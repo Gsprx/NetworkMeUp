@@ -56,7 +56,7 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
         Spinner lvlOfKnowledgeSpinner = findViewById(R.id.spinnerChangeReqLangKnowledgeDetailsSelectLevelOfKnowledge);
 
         ArrayList<String> levelsOfKnowledge = new ArrayList<>();
-        ArrayList<String> languages = new ArrayList<>();
+        ArrayList<String> languagesList = new ArrayList<>();
 
         //create spinner list for levels of knowledge
         for(int i = 0; i< LevelOfKnowledge.values().length; i++){
@@ -67,7 +67,7 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
         LanguageDAO languageDAO = new LanguageDAOMemory();
         ArrayList<Language> Languages = languageDAO.getAll();
         for(Language language : Languages){
-            Languages.add(language);
+            languagesList.add(language.getLanguage());
         }
 
         //pass adapter to spinners and define behavior
@@ -85,7 +85,7 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
             }
         });
 
-        ArrayAdapter<String> languagesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, languages);
+        ArrayAdapter<String> languagesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, languagesList);
         languageSpinner.setAdapter(languagesAdapter);
 
         //when delete button is pressed
@@ -127,7 +127,7 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
         LanguageKnowledge currLanguageKnowledge = currJob.getReqLanguageKnowledge().get(langPosition);
 
         ((EditText)findViewById(R.id.editTextChangeReqLangKnowledgeDetailsDescription)).setText(currLanguageKnowledge.getDescription());
-        languageSpinner.setSelection((languages.indexOf(currLanguageKnowledge.getLanguage().getLanguage())));
+        languageSpinner.setSelection((languagesList.indexOf(currLanguageKnowledge.getLanguage().getLanguage())));
         lvlOfKnowledgeSpinner.setSelection(currLanguageKnowledge.getLvlOfKnowledge().ordinal());
 
 
