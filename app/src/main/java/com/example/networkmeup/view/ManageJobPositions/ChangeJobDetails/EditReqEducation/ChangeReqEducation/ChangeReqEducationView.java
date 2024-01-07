@@ -1,8 +1,8 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails;
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation;
 
 import com.example.networkmeup.domain.Job;
 
-public interface ChangeReqEducationDetailsView {
+public interface ChangeReqEducationView {
     String getDescription();
 
     int getExpertiseArea();

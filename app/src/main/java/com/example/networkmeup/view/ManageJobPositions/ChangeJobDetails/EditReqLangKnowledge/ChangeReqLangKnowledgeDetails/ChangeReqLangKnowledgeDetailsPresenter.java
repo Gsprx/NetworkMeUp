@@ -1,13 +1,9 @@
 package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails;
 
-import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.daoMemory.LanguageDAOMemory;
-import com.example.networkmeup.domain.Education;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.LanguageKnowledge;
 import com.example.networkmeup.domain.LevelOfKnowledge;
-import com.example.networkmeup.domain.LevelOfStudies;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducationDetails.ChangeReqEducationDetailsView;
 
 public class ChangeReqLangKnowledgeDetailsPresenter {
     private ChangeReqLangKnowledgeDetailsView view;
