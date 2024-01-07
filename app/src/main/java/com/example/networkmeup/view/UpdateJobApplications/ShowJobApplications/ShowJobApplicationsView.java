@@ -4,5 +4,5 @@ import com.example.networkmeup.domain.Application;
 import com.example.networkmeup.domain.Job;
 
 public interface ShowJobApplicationsView {
-    void showApplicationDetails(String userToken, Job job, Application application);
+    void showApplicationDetails(String userToken, Job job, int position);
 }

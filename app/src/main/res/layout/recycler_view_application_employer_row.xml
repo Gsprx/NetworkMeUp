@@ -82,7 +82,7 @@
 
             <TextView
                 android:id="@+id/textEmployerApplicationApplicantEmail"
-                android:layout_width="109dp"
+                android:layout_width="wrap_content"
                 android:layout_height="29dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -131,7 +131,7 @@
             <TextView
                 android:id="@+id/textEmployerApplicationCoverLetter"
                 android:layout_width="369dp"
-                android:layout_height="195dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="8dp"
                 android:text="Employee's Cover Letter"

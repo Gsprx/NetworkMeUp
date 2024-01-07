@@ -1,6 +1,7 @@
 package com.example.networkmeup.view.UpdateJobApplications;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -44,6 +45,8 @@ public class UpdateJobApplicationsActivity extends AppCompatActivity implements 
                     presenter.onItemClick(jobsList.get(position));
                 }
             });
+        jobsRecyclerView.setAdapter(adapter);
+        jobsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     //start show job applications activity

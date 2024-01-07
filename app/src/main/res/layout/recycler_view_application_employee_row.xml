@@ -41,7 +41,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:text="Job Title"
-                app:layout_constraintEnd_toEndOf="@+id/textApplicationID"
+                app:layout_constraintEnd_toEndOf="@+id/textEmployeeApplicationID"
                 app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
             <TextView
@@ -63,11 +63,11 @@
                 android:textAlignment="textEnd"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textApplicationID"
+                app:layout_constraintEnd_toStartOf="@+id/textEmployeeApplicationID"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textApplicationID"
+                android:id="@+id/textEmployeeApplicationID"
                 android:layout_width="71dp"
                 android:layout_height="28dp"
                 android:layout_marginEnd="16dp"
@@ -121,7 +121,7 @@
                 android:text="View Job"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/textEmployeeApplicationCoverLetter"
-                app:layout_constraintEnd_toEndOf="@+id/textApplicationID"
+                app:layout_constraintEnd_toEndOf="@+id/textEmployeeApplicationID"
                 app:layout_constraintTop_toBottomOf="@+id/textEmployeeApplicationJobTitle"
                 app:layout_constraintVertical_bias="0.328" />
 

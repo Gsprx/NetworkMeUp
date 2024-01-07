@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.UpdateJobApplications.ShowJobApplications.ShowApplicationDetails.ShowApplicationDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1400dp">
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="320dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="16dp"
+                android:text="Application Details"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="ID:"
+                android:textAlignment="textEnd"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textShowApplicationDetailsID"
+                app:layout_constraintTop_toTopOf="@+id/textShowApplicationDetailsID" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsID"
+                android:layout_width="58dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="24dp"
+                android:text="Applic ID"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView69" />
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="269dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:text="Applicant's Information"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+            <TextView
+                android:id="@+id/textView75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Name:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Applicant's Name"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textView75"
+                app:layout_constraintTop_toTopOf="@+id/textView75" />
+
+            <TextView
+                android:id="@+id/textView77"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView75"
+                app:layout_constraintTop_toBottomOf="@+id/textView75" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Applicant's Email"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textView77"
+                app:layout_constraintTop_toTopOf="@+id/textView77" />
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Phone:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView77"
+                app:layout_constraintTop_toBottomOf="@+id/textView77" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Applicant's Phone"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textView79"
+                app:layout_constraintTop_toTopOf="@+id/textView79" />
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Home Address:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView79"
+                app:layout_constraintTop_toBottomOf="@+id/textView79" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsAddress"
+                android:layout_width="253dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="4dp"
+                android:text="Applicant's Address"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textView81"
+                app:layout_constraintTop_toTopOf="@+id/textView81" />
+
+            <TextView
+                android:id="@+id/textView83"
+                android:layout_width="170dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="32dp"
+                android:text="Applicant's CV"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView74"
+                app:layout_constraintTop_toBottomOf="@+id/textShowApplicationDetailsAddress" />
+
+            <TextView
+                android:id="@+id/textView84"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Education"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView83" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewShowApplicationDetailsEducation"
+                android:layout_width="364dp"
+                android:layout_height="223dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textView84"
+                app:layout_constraintTop_toBottomOf="@+id/textView84"
+                tools:itemCount="3" />
+
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Work Experience"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/recyclerViewShowApplicationDetailsEducation"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewShowApplicationDetailsEducation" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewShowApplicationDetailsWorkExp"
+                android:layout_width="364dp"
+                android:layout_height="262dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerViewShowApplicationDetailsEducation"
+                app:layout_constraintStart_toStartOf="@+id/textView86"
+                app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Language Knowledge"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/recyclerViewShowApplicationDetailsWorkExp"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewShowApplicationDetailsWorkExp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewShowApplicationDetailsLangKnow"
+                android:layout_width="363dp"
+                android:layout_height="223dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerViewShowApplicationDetailsWorkExp"
+                app:layout_constraintStart_toStartOf="@+id/textView87"
+                app:layout_constraintTop_toBottomOf="@+id/textView87" />
+
+            <TextView
+                android:id="@+id/textView88"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Additional Skillset"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/recyclerViewShowApplicationDetailsLangKnow"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewShowApplicationDetailsLangKnow" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsSkillset"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Applicant's Additional Skillset"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView88"
+                app:layout_constraintTop_toBottomOf="@+id/textView88" />
+
+            <TextView
+                android:id="@+id/textView90"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="36dp"
+                android:text="Applicant's Cover Letter"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textShowApplicationDetailsSkillset" />
+
+            <TextView
+                android:id="@+id/textShowApplicationDetailsCoverLetter"
+                android:layout_width="342dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Applicant's Cover Letter"
+                app:layout_constraintEnd_toEndOf="@+id/textShowApplicationDetailsSkillset"
+                app:layout_constraintHorizontal_bias="0.944"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView90" />
+
+            <Button
+                android:id="@+id/btnShowApplicationDetailsAccept"
+                android:layout_width="341dp"
+                android:layout_height="81dp"
+                android:layout_marginTop="52dp"
+                android:background="#673AB7"
+                android:backgroundTint="#673AB7"
+                android:text="Accept Applicant"
+                android:textColor="#4CAF50"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textShowApplicationDetailsCoverLetter" />
+
+            <Button
+                android:id="@+id/btnShowApplicationDetailsReject"
+                android:layout_width="341dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="52dp"
+                android:background="#673AB7"
+                android:text="Reject Applicant"
+                android:textColor="#F44336"
+                android:textSize="34sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="@+id/btnShowApplicationDetailsAccept"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/btnShowApplicationDetailsAccept"
+                app:layout_constraintTop_toBottomOf="@+id/btnShowApplicationDetailsAccept" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

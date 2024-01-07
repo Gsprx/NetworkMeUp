@@ -14,7 +14,7 @@ public class ShowJobApplicationsPresenter {
         this.job = job;
     }
 
-    public void onItemClick(Application application){
-        view.showApplicationDetails(userToken,job,application);
+    public void onItemClick(int position){
+        view.showApplicationDetails(userToken,job,position);
     }
 }

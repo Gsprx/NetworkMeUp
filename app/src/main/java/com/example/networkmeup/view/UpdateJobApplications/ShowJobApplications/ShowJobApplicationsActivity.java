@@ -1,6 +1,7 @@
 package com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,7 +13,6 @@ import com.example.networkmeup.domain.Application;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEmployerApplicationRecyclerViewAdapter;
 import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowApplicationDetails.ShowApplicationDetailsActivity;
-import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
 
 import java.util.ArrayList;
 
@@ -49,16 +49,18 @@ public class ShowJobApplicationsActivity extends AppCompatActivity implements Sh
             //click listener for rows in recycler view list
             @Override
             public void onItemClick(View view, int position) {
-                presenter.onItemClick(currApplications.get(position));
+                presenter.onItemClick(position);
             }
         });
+        applicationRecyclerView.setAdapter(adapter);
+        applicationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
     @Override
-    public void showApplicationDetails(String userToken, Job job, Application application){
+    public void showApplicationDetails(String userToken, Job job, int position){
         Intent intent = new Intent(ShowJobApplicationsActivity.this, ShowApplicationDetailsActivity.class);
         intent.putExtra("token", userToken);
         intent.putExtra("job", job);
-        intent.putExtra("application", application);
+        intent.putExtra("position", position);
         startActivity(intent);
     }
 }
