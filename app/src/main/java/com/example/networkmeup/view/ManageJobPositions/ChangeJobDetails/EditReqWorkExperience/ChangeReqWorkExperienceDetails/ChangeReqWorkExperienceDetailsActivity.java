@@ -48,7 +48,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
             currJob = null;
         }
 
-        final ChangeReqWorkExpDetailsPresenter presenter = new ChangeReqWorkExpDetailsPresenter(this, userEmail, currJob);
+        final ChangeReqWorkExperienceDetailsPresenter presenter = new ChangeReqWorkExperienceDetailsPresenter(this, userEmail, currJob);
 
 
         //create spinner declarations

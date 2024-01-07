@@ -5,12 +5,12 @@ import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.WorkExperience;
 
-public class ChangeReqWorkExpDetailsPresenter {
+public class ChangeReqWorkExperienceDetailsPresenter {
     private ChangeReqWorkExperienceDetailsView view;
     private String userToken;
     private Job job;
 
-    public ChangeReqWorkExpDetailsPresenter(ChangeReqWorkExperienceDetailsView view, String userToken, Job job) {
+    public ChangeReqWorkExperienceDetailsPresenter(ChangeReqWorkExperienceDetailsView view, String userToken, Job job) {
         this.view = view;
         this.userToken = userToken;
         this.job = job;

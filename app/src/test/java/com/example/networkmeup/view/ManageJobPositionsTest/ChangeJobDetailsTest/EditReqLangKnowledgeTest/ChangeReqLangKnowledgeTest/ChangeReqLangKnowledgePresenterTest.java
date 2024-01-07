@@ -8,8 +8,6 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails.ChangeReqLangKnowledgeDetailsPresenter;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails.ChangeReqWorkExpDetailsPresenter;
-import com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqWorkExperienceTest.ChangeReqWorkExpTest.ChangeReqWorkExpViewStub;
 
 import org.junit.Assert;
 import org.junit.Before;

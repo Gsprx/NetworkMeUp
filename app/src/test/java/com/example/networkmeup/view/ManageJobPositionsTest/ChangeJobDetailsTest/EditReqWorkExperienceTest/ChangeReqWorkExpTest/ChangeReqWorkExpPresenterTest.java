@@ -6,16 +6,14 @@ import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employer;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.ChangeReqEducation.ChangeReqEducationPresenter;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails.ChangeReqWorkExpDetailsPresenter;
-import com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqEducationTest.ChangeReqEducationTest.ChangeReqEducationViewStub;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails.ChangeReqWorkExperienceDetailsPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ChangeReqWorkExpPresenterTest {
-    private ChangeReqWorkExpDetailsPresenter presenter;
+    private ChangeReqWorkExperienceDetailsPresenter presenter;
     private ChangeReqWorkExpViewStub stub;
     private Initializer initializer;
 
@@ -24,7 +22,7 @@ public class ChangeReqWorkExpPresenterTest {
         initializer = new MemoryInitializer();
         initializer.prepareData();
         stub = new ChangeReqWorkExpViewStub();
-        presenter = new ChangeReqWorkExpDetailsPresenter(stub, "b.be@northfreedom.com",
+        presenter = new ChangeReqWorkExperienceDetailsPresenter(stub, "b.be@northfreedom.com",
                 new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
