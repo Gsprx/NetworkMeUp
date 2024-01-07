@@ -72,7 +72,7 @@ public class SelectEmployeeApplicationViewHolder extends RecyclerView.ViewHolder
 
         itemView.setOnClickListener(this);
 
-        this.status = itemView.findViewById(R.id.textView624);
+        this.status = itemView.findViewById(R.id.textEmployeeApplicationStatus);
         this.coverletter = itemView.findViewById(R.id.textEmployeeApplicationCoverLetter);
         this.applicant = itemView.findViewById(R.id.textEmployeeApplicationJobTitle);
     }

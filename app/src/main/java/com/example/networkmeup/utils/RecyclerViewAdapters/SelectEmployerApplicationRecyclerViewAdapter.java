@@ -1,5 +1,6 @@
 package com.example.networkmeup.utils.RecyclerViewAdapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +15,14 @@ import com.example.networkmeup.domain.Application;
 
 import java.util.ArrayList;
 
-public class SelectEmployerApplicationRecyclerViewAdapter {
-    private ArrayList<Application> Applications;
+public class SelectEmployerApplicationRecyclerViewAdapter extends RecyclerView.Adapter<SelectEmployerApplicationRecyclerViewAdapter.SelectEmployerApplicationViewHolder>{
+    private ArrayList<Application> applications;
     private Context context;
     private SelectEmployerApplicationRecyclerViewAdapter.ItemClickListener clickListener;
 
     public SelectEmployerApplicationRecyclerViewAdapter(Context context, ArrayList<Application> applications){
         this.context = context;
-        this.Applications = applications;
+        this.applications = applications;
     }
     @NonNull
     @Override
@@ -40,19 +41,22 @@ public class SelectEmployerApplicationRecyclerViewAdapter {
     public void onBindViewHolder(@NonNull SelectEmployerApplicationRecyclerViewAdapter.SelectEmployerApplicationViewHolder holder, int position) {
         //set each holder's members to match the data on the Application data found on the position (of the position int passed in the method)
 
-        //for example set the Description field of the holder to the one matching the Application instance in the list[position]
-        holder.status.setText(Boolean.toString(Applications.get(position).getStatus()));
-        holder.coverletter.setText(Applications.get(position).getCoverLetter());
-        holder.applicant.setText(Applications.get(position).getEmployee().getName());
+        Application currApplication = applications.get(position);
+
+        holder.appID.setText(String.valueOf(currApplication.getID()));
+        holder.applicantName.setText(currApplication.getEmployee().getName());
+        holder.applicantEmail.setText(currApplication.getEmployee().getEmail().getAddress());
+        holder.applicantPhone.setText(currApplication.getEmployee().getPhone().getNumber());
+        holder.coverLetter.setText(currApplication.getCoverLetter());
     }
 
     @Override
     public int getItemCount() {
-        return Applications.size();
+        return applications.size();
     }
 
     //catch click events with a click listener that we set
-    public void setClickListener(SelectEmployeeApplicationRecyclerViewAdapter.ItemClickListener itemClickListener) {
+    public void setClickListener(SelectEmployerApplicationRecyclerViewAdapter.ItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
 
@@ -64,18 +68,22 @@ public class SelectEmployerApplicationRecyclerViewAdapter {
     public class SelectEmployerApplicationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         //this class holds the TextView items in the Application_recycler_view_row layout file
 
-        TextView status;
-        TextView coverletter;
-        TextView applicant;
+        TextView appID;
+        TextView coverLetter;
+        TextView applicantName;
+        TextView applicantEmail;
+        TextView applicantPhone;
 
         public SelectEmployerApplicationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             itemView.setOnClickListener(this);
 
-            this.status = itemView.findViewById(R.id.textView624);
-            this.coverletter = itemView.findViewById(R.id.textEmployeeApplicationCoverLetter);
-            this.applicant = itemView.findViewById(R.id.textEmployeeApplicationJobTitle);
+            this.appID = itemView.findViewById(R.id.textEmployerApplicationID);
+            this.coverLetter = itemView.findViewById(R.id.textEmployerApplicationCoverLetter);
+            this.applicantName = itemView.findViewById(R.id.textEmployerApplicationApplicantName);
+            this.applicantEmail = itemView.findViewById(R.id.textEmployerApplicationApplicantEmail);
+            this.applicantPhone = itemView.findViewById(R.id.textEmployerApplicationApplicantPhone);
         }
 
         @Override
