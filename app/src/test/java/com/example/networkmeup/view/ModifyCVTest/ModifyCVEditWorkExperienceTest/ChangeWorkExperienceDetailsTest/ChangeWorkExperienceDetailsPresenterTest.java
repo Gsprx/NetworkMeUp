@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ModifyCVTest.MOdifyCVEditWorkExperienceTest.ChangeWorkExperienceDetailsTest;
+package com.example.networkmeup.view.ModifyCVTest.ModifyCVEditWorkExperienceTest.ChangeWorkExperienceDetailsTest;
 
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.dao.Initializer;
@@ -6,9 +6,7 @@ import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails.ChangeEducationDetailsPresenter;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ChangeWorkExperienceDetails.ChangeWorkExperienceDetailsPresenter;
-import com.example.networkmeup.view.ModifyCVTest.ModifyCVEditEducationTest.ChangeEducationDetailsTest.ChangeEducationDetailsViewStub;
 
 import org.junit.Assert;
 import org.junit.Before;
