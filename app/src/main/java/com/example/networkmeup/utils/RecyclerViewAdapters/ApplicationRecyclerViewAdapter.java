@@ -27,7 +27,7 @@ public class ApplicationRecyclerViewAdapter extends RecyclerView.Adapter<Applica
     public ApplicationRecyclerViewAdapter.ApplicationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //this method creates the look for the rows that we specified
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.recycler_view_application_row, parent, false);
+        View view = inflater.inflate(R.layout.recycler_view_application_employee_row, parent, false);
         return new ApplicationRecyclerViewAdapter.ApplicationViewHolder(view);
         }
 
@@ -60,8 +60,8 @@ public static class ApplicationViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
 
         this.status = itemView.findViewById(R.id.recyclerViewapplicationStatus);
-        this.coverletter = itemView.findViewById(R.id.Coverageletterapplication);
-        this.applicant = itemView.findViewById(R.id.EmployeeApplicationinfo);
+        this.coverletter = itemView.findViewById(R.id.textEmployeeApplicationCoverLetter);
+        this.applicant = itemView.findViewById(R.id.textEmployeeApplicationJobTitle);
     }
 }
 
