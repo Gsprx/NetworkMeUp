@@ -36,10 +36,10 @@ public class AddNewLanguageKnowledgePresenterTest {
     }
 
     @Test
-    public void checkAddEducation(){
+    public void checkAddLangKnow(){
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
-        stub.setLanguage(0); //English
+        stub.setLanguage(0); //Chinese
         stub.setLevelOfKnowledge(LevelOfKnowledge.Amateur); //Amateur
 
         presenter.onAdd(); //new language knowledge to be added
@@ -52,14 +52,14 @@ public class AddNewLanguageKnowledgePresenterTest {
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         Employee curEmployee = employeeDAO.getByEmail(new Email("john.Brown12@gmail.com"));
 
-        //check if education was actually added
-        Assert.assertEquals(3, curEmployee.getCV().getEducation().size());
+        //check if lang know was actually added
+        Assert.assertEquals(2, curEmployee.getCV().getLanguageKnowledge().size());
 
-        //check if education has the right attributes
+        //check if lang know has the right attributes
 
-        Assert.assertEquals("Description Test", curEmployee.getCV().getEducation().get(2).getDescription());
-        Assert.assertEquals("Agriculture", curEmployee.getCV().getEducation().get(2).getExpArea().getArea());
-        Assert.assertEquals("Junior_High_School", curEmployee.getCV().getEducation().get(2).getLvlOfStudies().toString());
+        Assert.assertEquals("Description Test", curEmployee.getCV().getLanguageKnowledge().get(1).getDescription());
+        Assert.assertEquals("Chinese", curEmployee.getCV().getLanguageKnowledge().get(1).getLanguage().getLanguage());
+        Assert.assertEquals("Amateur", curEmployee.getCV().getLanguageKnowledge().get(1).getLvlOfKnowledge().toString());
 
     }
 }

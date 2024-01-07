@@ -69,7 +69,7 @@ public class ChangeLanguageKnowledgeDetailsPresenterTest {
         Employee curEmployee = employeeDAO.getByEmail(new Email("marygreen.188@gmail.com"));
 
         //check if education was actually deleted
-        Assert.assertEquals(1, curEmployee.getCV().getEducation().size());
+        Assert.assertEquals(1, curEmployee.getCV().getLanguageKnowledge().size());
 
         //check if the correct education was deleted (second education of user with email "marygreen.188@gmail.com")
         //by checking if the first language knowledge is exactly the same as in initialization process
