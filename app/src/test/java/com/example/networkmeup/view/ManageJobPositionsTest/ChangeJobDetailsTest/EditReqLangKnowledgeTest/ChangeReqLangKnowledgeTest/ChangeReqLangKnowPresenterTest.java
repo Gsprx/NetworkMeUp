@@ -13,16 +13,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ChangeReqLangKnowledgePresenterTest {
+public class ChangeReqLangKnowPresenterTest {
     private ChangeReqLangKnowledgeDetailsPresenter presenter;
-    private ChangeReqLangKnowledgeViewStub stub;
+    private ChangeReqLangKnowViewStub stub;
     private Initializer initializer;
 
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
         initializer.prepareData();
-        stub = new ChangeReqLangKnowledgeViewStub();
+        stub = new ChangeReqLangKnowViewStub();
         presenter = new ChangeReqLangKnowledgeDetailsPresenter(stub, "b.be@northfreedom.com",
                 new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }

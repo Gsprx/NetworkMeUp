@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqLangKnowledgeTest.AddNewReqLangKnowledgeTest;
+package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqLangKnowledgeTest.AddNewReqLangKnowTest;
 
 import com.example.networkmeup.dao.Initializer;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
@@ -7,22 +7,20 @@ import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge.AddNewReqLangKnowledgePresenter;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience.AddNewReqWorkExperiencePresenter;
-import com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqWorkExperienceTest.AddNewReqWorkExperienceTest.AddNewReqWorkExpViewStub;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AddNewReqLangKnowledgePresenterTest {
+public class AddNewReqLangKnowPresenterTest {
     private AddNewReqLangKnowledgePresenter presenter;
-    private AddNewReqLangKnowledgeViewStub stub;
+    private AddNewReqLangKnowViewStub stub;
     private Initializer initializer;
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
         initializer.prepareData();
-        stub = new AddNewReqLangKnowledgeViewStub();
+        stub = new AddNewReqLangKnowViewStub();
         presenter = new AddNewReqLangKnowledgePresenter(stub, "b.be@northfreedom.com", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 

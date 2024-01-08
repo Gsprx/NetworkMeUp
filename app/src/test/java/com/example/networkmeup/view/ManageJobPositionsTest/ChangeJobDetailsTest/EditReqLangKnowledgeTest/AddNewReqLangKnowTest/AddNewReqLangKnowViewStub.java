@@ -1,10 +1,10 @@
-package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqLangKnowledgeTest.AddNewReqLangKnowledgeTest;
+package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqLangKnowledgeTest.AddNewReqLangKnowTest;
 
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge.AddNewReqLangKnowledgeView;
 
-public class AddNewReqLangKnowledgeViewStub implements AddNewReqLangKnowledgeView {
+public class AddNewReqLangKnowViewStub implements AddNewReqLangKnowledgeView {
     private String description;
     private LevelOfKnowledge levelOfKnowledge;
     private int language;

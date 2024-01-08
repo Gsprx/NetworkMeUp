@@ -4,7 +4,7 @@ import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails.ChangeReqLangKnowledgeDetailsView;
 
-public class ChangeReqLangKnowledgeViewStub implements ChangeReqLangKnowledgeDetailsView {
+public class ChangeReqLangKnowViewStub implements ChangeReqLangKnowledgeDetailsView {
     private String description;
     private LevelOfKnowledge levelOfKnowledge;
     private int language;
