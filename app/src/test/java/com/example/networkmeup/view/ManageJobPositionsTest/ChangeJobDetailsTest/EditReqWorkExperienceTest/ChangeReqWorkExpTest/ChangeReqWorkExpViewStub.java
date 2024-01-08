@@ -1,9 +1,9 @@
 package com.example.networkmeup.view.ManageJobPositionsTest.ChangeJobDetailsTest.EditReqWorkExperienceTest.ChangeReqWorkExpTest;
 
 import com.example.networkmeup.domain.Job;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails.ChangeReqWorkExperienceDetailsView;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails.ChangeReqWorkExpDetailsView;
 
-public class ChangeReqWorkExpViewStub implements ChangeReqWorkExperienceDetailsView {
+public class ChangeReqWorkExpViewStub implements ChangeReqWorkExpDetailsView {
     private String description;
     private int Years;
     private int expertiseArea;

@@ -1,4 +1,4 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails;
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqW
 
 import java.util.ArrayList;
 
-public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity implements ChangeReqWorkExperienceDetailsView{
+public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implements ChangeReqWorkExpDetailsView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
             currJob = null;
         }
 
-        final ChangeReqWorkExperienceDetailsPresenter presenter = new ChangeReqWorkExperienceDetailsPresenter(this, userEmail, currJob);
+        final ChangeReqWorkExpDetailsPresenter presenter = new ChangeReqWorkExpDetailsPresenter(this, userEmail, currJob);
 
 
         //create spinner declarations
@@ -94,7 +94,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
                     @Override
                     public void onClick(View v) {
                         //use dialog builder to create a final warning message to the user
-                        new AlertDialog.Builder(ChangeReqWorkExperienceDetailsActivity.this)
+                        new AlertDialog.Builder(ChangeReqWorkExpDetailsActivity.this)
                                 .setCancelable(false)
                                 .setTitle("Delete Work Experience Confirmation")
                                 .setMessage("Are you sure you want to delete this Work Experience?")
@@ -134,7 +134,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
         findViewById(R.id.backbuttonChangeReqWorkExp).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
-                        Intent intent = new Intent(ChangeReqWorkExperienceDetailsActivity.this, EditReqWorkExperienceActivity.class);
+                        Intent intent = new Intent(ChangeReqWorkExpDetailsActivity.this, EditReqWorkExperienceActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
@@ -161,7 +161,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
 
     @Override
     public void successfulDelete(String message, String userToken, Job job) {
-        new AlertDialog.Builder(ChangeReqWorkExperienceDetailsActivity.this)
+        new AlertDialog.Builder(ChangeReqWorkExpDetailsActivity.this)
                 .setCancelable(false)
                 .setTitle("Deletion Completed!")
                 .setMessage(message)
@@ -171,7 +171,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeReqWorkExperienceDetailsActivity.this, ChangeJobDetailsActivity.class);
+                                Intent intent = new Intent(ChangeReqWorkExpDetailsActivity.this, ChangeJobDetailsActivity.class);
                                 intent.putExtra("token", userToken);
                                 intent.putExtra("job", job);
                                 startActivity(intent);
@@ -180,7 +180,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
 
     @Override
     public void successfulSave(String message, String userToken, Job job) {
-        new AlertDialog.Builder(ChangeReqWorkExperienceDetailsActivity.this)
+        new AlertDialog.Builder(ChangeReqWorkExpDetailsActivity.this)
                 .setCancelable(false)
                 .setTitle("Save Completed!")
                 .setMessage(message)
@@ -190,7 +190,7 @@ public class ChangeReqWorkExperienceDetailsActivity extends AppCompatActivity im
 
                             public void onClick (DialogInterface dialog,int id) {
 
-                                Intent intent = new Intent(ChangeReqWorkExperienceDetailsActivity.this, ChangeJobDetailsActivity.class);
+                                Intent intent = new Intent(ChangeReqWorkExpDetailsActivity.this, ChangeJobDetailsActivity.class);
                                 intent.putExtra("token", userToken);
                                 intent.putExtra("job", job);
                                 startActivity(intent);

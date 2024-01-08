@@ -1,8 +1,8 @@
-package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails;
+package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails;
 
 import com.example.networkmeup.domain.Job;
 
-public interface ChangeReqWorkExperienceDetailsView {
+public interface ChangeReqWorkExpDetailsView {
     String getDescription();
 
     int getExpertiseArea();

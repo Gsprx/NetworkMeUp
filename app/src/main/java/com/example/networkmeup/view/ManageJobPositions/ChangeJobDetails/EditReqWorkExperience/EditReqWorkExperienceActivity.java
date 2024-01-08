@@ -15,7 +15,7 @@ import com.example.networkmeup.domain.WorkExperience;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectWorkExperienceRecyclerViewAdapter;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
 import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience.AddNewReqWorkExperienceActivity;
-import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExperienceDetails.ChangeReqWorkExperienceDetailsActivity;
+import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails.ChangeReqWorkExpDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -82,7 +82,7 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
 
     @Override
     public void changeWorkExperienceDetails(String userToken, int position, Job job){
-        Intent intent = new Intent(EditReqWorkExperienceActivity.this, ChangeReqWorkExperienceDetailsActivity.class);
+        Intent intent = new Intent(EditReqWorkExperienceActivity.this, ChangeReqWorkExpDetailsActivity.class);
         intent.putExtra("token", userToken);
         intent.putExtra("position", position);
         intent.putExtra("job", job);
