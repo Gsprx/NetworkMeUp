@@ -19,16 +19,35 @@ public class EditAccountEmployerPresenter {
     }
 
     public void onCreate() {
+        boolean companyname_ok = true;
+        boolean sector_ok = true;
         boolean email_ok = true;
         boolean phone_ok = true;
         boolean tin_ok = true;
         boolean pwd_ok = true;
 
+        String companyName = null;
+        String sector = null;
         Email email = null;
         Phone phone = null;
         TIN tin = null;
         Password password = null;
 
+        //check company name field
+        try {
+            companyName = EditAccountEmployer.getCompanyName();
+        } catch (RuntimeException e) {
+            EditAccountEmployer.showErrorMessage("Error!", e.getMessage());
+            companyname_ok = false;
+        }
+
+        //check sector field
+        try {
+            sector = EditAccountEmployer.getSector();
+        } catch (RuntimeException e) {
+            EditAccountEmployer.showErrorMessage("Error!", e.getMessage());
+            sector_ok = false;
+        }
 
         //check email field
         try {
@@ -63,8 +82,10 @@ public class EditAccountEmployerPresenter {
         }
 
         //only update employee if all fields are valid
-        if (email_ok && phone_ok && pwd_ok) {
+        if (companyname_ok && sector_ok && email_ok && phone_ok && pwd_ok) {
 
+            EditAccountEmployer.getCurrEmployer().setCompanyName(companyName);
+            EditAccountEmployer.getCurrEmployer().setSector(sector);
             EditAccountEmployer.getCurrEmployer().setEmail(email);
             EditAccountEmployer.getCurrEmployer().setPassword(password);
             EditAccountEmployer.getCurrEmployer().setPhone(phone);
