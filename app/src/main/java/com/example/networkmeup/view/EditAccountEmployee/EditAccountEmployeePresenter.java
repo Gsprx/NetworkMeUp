@@ -16,7 +16,7 @@ public class EditAccountEmployeePresenter {
 
     EmployeeDAO employeeDAO = new EmployeeDAOMemory();
 
-    public EditAccountEmployeePresenter(EditAccountEmployeeActivity editAccountEmployeeActivity) {
+    public EditAccountEmployeePresenter(EditAccountEmployeeView editAccountEmployeeActivity) {
         this.EditAccountEmployee = editAccountEmployeeActivity;
     }
 
