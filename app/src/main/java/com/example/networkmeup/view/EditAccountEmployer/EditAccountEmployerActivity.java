@@ -62,7 +62,7 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
         EditText tin = findViewById(R.id.editTextEditAccountEmployerTIN);
         tin.setText(currEmployer.getTin().getTin());
 
-        final EditAccountEmployerPresenter presenter = new EditAccountEmployerPresenter(this);
+        final EditAccountEmployerPresenter presenter = new EditAccountEmployerPresenter(userEmail, this);
     // when back button is pressed
             findViewById(R.id.backbuttonEditAccountEmployer).setOnClickListener(
                     new View.OnClickListener(){
@@ -77,7 +77,7 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
         findViewById(R.id.btnEditEmployerAccountSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.onCreate();
+                presenter.Save();
 
                 Intent intentSave = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);
                 intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -98,7 +98,7 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 // Perform the deletion process here
-                                presenter.Delete(currEmployer);
+                                presenter.Delete();
                                 Intent intentDelete = new Intent(EditAccountEmployerActivity.this, StartPageActivity.class);
                                 intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                                 startActivity(intentDelete);
