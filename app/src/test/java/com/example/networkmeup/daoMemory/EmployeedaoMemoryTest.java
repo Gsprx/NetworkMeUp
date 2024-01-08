@@ -1,4 +1,5 @@
 package com.example.networkmeup.daoMemory;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -81,8 +82,7 @@ public class EmployeedaoMemoryTest {
         // Retrieve the employee by email
         Employee retrievedEmployee = employeeDAO.getByEmail(new Email("john.Brown12@gmail.com"));
         // Check if the retrieved employee is the same as the saved employee
-        assertEquals(employee, retrievedEmployee);
-
+        Assert.assertTrue(employee.equals(retrievedEmployee));
         // Try to retrieve a non-existent employee by email
         Employee nonExistentEmployee = employeeDAO.getByEmail(new Email("nonexistent@example.com"));
 

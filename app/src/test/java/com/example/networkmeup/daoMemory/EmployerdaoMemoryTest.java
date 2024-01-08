@@ -68,7 +68,7 @@ public class EmployerdaoMemoryTest {
         assertTrue(employerDAO.find(employer));
 
         // Create another employer not saved in the DAO
-        Employer nonExistentEmployer = new Employer(new Email("kysss@s.com"), new Phone("5693311674"), new Password("UwL[;3{[fQP:"), new TIN("12345678"));
+        Employer nonExistentEmployer = new Employer(new Email("kysss@s.com"), new Phone("5693311674"), new Password("UwL[;3{[fQP:"), new TIN("123456787"));
 
         // Check if the non-existent employer is not in the DAO
         assertFalse(employerDAO.find(nonExistentEmployer));
