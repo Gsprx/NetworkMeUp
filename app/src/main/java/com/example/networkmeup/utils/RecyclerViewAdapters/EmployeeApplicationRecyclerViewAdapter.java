@@ -11,7 +11,12 @@ import android.view.ViewGroup;
 
 import com.example.networkmeup.R;
 import java.util.ArrayList;
+
+import com.example.networkmeup.dao.EmployerDAO;
+import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Application;
+import com.example.networkmeup.domain.Employer;
+import com.example.networkmeup.domain.Job;
 
 public class EmployeeApplicationRecyclerViewAdapter extends RecyclerView.Adapter<EmployeeApplicationRecyclerViewAdapter.EmployeeApplicationViewHolder>{
         ArrayList<Application> Applications;
@@ -37,11 +42,23 @@ public class EmployeeApplicationRecyclerViewAdapter extends RecyclerView.Adapter
     //changes the data on the recycler view based on the position of the recycler
     public void onBindViewHolder(@NonNull EmployeeApplicationRecyclerViewAdapter.EmployeeApplicationViewHolder holder, int position) {
         //set each holder's members to match the data on the Application data found on the position (of the position int passed in the method)
-
+        Application  application = Applications.get(position);
         //for example set the Description field of the holder to the one matching the Application instance in the list[position]
-        holder.status.setText(Boolean.toString(Applications.get(position).getStatus()));
-        holder.coverLetter.setText(Applications.get(position).getCoverLetter());
-        holder.applicant.setText(Applications.get(position).getEmployee().getName());
+        holder.status.setText(Boolean.toString(application.getStatus()));
+        holder.coverLetter.setText(application.getCoverLetter());
+        holder.applicant.setText(application.getEmployee().getName());
+        for (Employer emp:new EmployerDAOMemory().getAll()){
+            for(Job job:emp.getJobs()){
+                for(Application app: job.getApplications()){
+                    if(app.equals(application)){
+                        holder.company.setText(emp.getCompanyName());
+                        holder.sector.setText(emp.getSector());
+                    }
+
+                }
+            }
+        }
+
         }
 
 @Override
@@ -55,6 +72,8 @@ public static class EmployeeApplicationViewHolder extends RecyclerView.ViewHolde
     TextView status;
     TextView coverLetter;
     TextView applicant;
+    TextView sector;
+    TextView company;
 
     public EmployeeApplicationViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -62,6 +81,8 @@ public static class EmployeeApplicationViewHolder extends RecyclerView.ViewHolde
         this.status = itemView.findViewById(R.id.textView624);
         this.coverLetter = itemView.findViewById(R.id.textEmployeeApplicationCoverLetter);
         this.applicant = itemView.findViewById(R.id.textEmployeeApplicationJobTitle);
+        this.company = itemView.findViewById(R.id.textViewEmployeeApplicationCompanyNameFill);
+        this.sector = itemView.findViewById(R.id.textViewEmployeeApplicationCompanyNameFill);
     }
 }
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -38,14 +39,13 @@ public class ShowApplicationsEmployeeActivity extends AppCompatActivity implemen
         final ShowApplicationsPresenter presenter = new ShowApplicationsPresenter(this,userEmail);
         //get employee data to pass to recycler view
         ArrayList<Application> ApplicationList = presenter.getApplications();
-
         //get recycler view reference
         RecyclerView recyclerView = findViewById(R.id.recyclerViewEditAccountEmployee);
-
 
         //create Adapter
         EmployeeApplicationRecyclerViewAdapter applicationRecycler = new EmployeeApplicationRecyclerViewAdapter(this,ApplicationList);
         recyclerView.setAdapter(applicationRecycler);
+
         //Set the layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

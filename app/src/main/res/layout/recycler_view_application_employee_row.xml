@@ -24,7 +24,7 @@
                 android:layout_width="64dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="28dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="8dp"
                 android:text="Status:"
                 android:textAlignment="textEnd"
                 android:textSize="16sp"
@@ -32,7 +32,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textEmployeeApplicationStatus"
                 app:layout_constraintTop_toBottomOf="@+id/textEmployeeApplicationCoverLetter"
-                app:layout_constraintVertical_bias="0.009" />
+                app:layout_constraintVertical_bias="0.231" />
 
             <TextView
                 android:id="@+id/textEmployeeApplicationJobTitle"
@@ -48,7 +48,7 @@
                 android:id="@+id/textEmployeeApplicationCoverLetter"
                 android:layout_width="383dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="64dp"
                 android:text="Coverage Letter"
                 app:layout_constraintEnd_toEndOf="@+id/textEmployeeApplicationJobTitle"
                 app:layout_constraintTop_toBottomOf="@+id/textView63" />
@@ -84,13 +84,14 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView624"
                 app:layout_constraintEnd_toEndOf="@+id/textEmployeeApplicationCoverLetter"
-                app:layout_constraintTop_toBottomOf="@+id/textEmployeeApplicationCoverLetter" />
+                app:layout_constraintTop_toBottomOf="@+id/textEmployeeApplicationCoverLetter"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/textView62"
                 android:layout_width="91dp"
                 android:layout_height="17dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="16dp"
                 android:text="Job's Title:"
                 android:textAlignment="textEnd"
                 android:textStyle="bold"
@@ -104,7 +105,7 @@
                 android:layout_width="107dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="72dp"
+                android:layout_marginTop="128dp"
                 android:layout_marginEnd="284dp"
                 android:text="Cover Letter:"
                 android:textStyle="bold"
@@ -112,6 +113,47 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView62" />
+
+            <TextView
+                android:id="@+id/textViewApplicationEmployeeCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Company Name:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView62" />
+
+            <TextView
+                android:id="@+id/textViewEmployeeApplicationCompanyNameFill"
+                android:layout_width="61dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="184dp"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="@+id/textEmployeeApplicationJobTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textEmployeeApplicationJobTitle" />
+
+            <TextView
+                android:id="@+id/textViewApplicationCompanySector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="Sector:"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textViewApplicationEmployeeCompany"
+                app:layout_constraintTop_toBottomOf="@+id/textViewApplicationEmployeeCompany" />
+
+            <TextView
+                android:id="@+id/textViewEmployeeApplicationSectorFill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/textViewEmployeeApplicationCompanyNameFill"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmployeeApplicationCompanyNameFill" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
