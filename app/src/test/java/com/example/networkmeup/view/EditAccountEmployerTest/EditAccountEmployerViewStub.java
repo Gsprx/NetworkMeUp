@@ -15,6 +15,8 @@ public class EditAccountEmployerViewStub implements EditAccountEmployerView {
     private String tokenErrorMessage; // Stores the error message related to the user token
     private String lastTokenPassed; // Stores the last token passed
     private Employer currEmployer;
+    private String companynameField; // Simulated input field for company name
+    private String sectorField; // Simulated input field for sector
     private String emailField; // Simulated input field for email address
     private String phoneField; // Simulated input field for phone number
     private String passwordField; // Simulated input field for password
@@ -54,6 +56,26 @@ public class EditAccountEmployerViewStub implements EditAccountEmployerView {
      */
     public String getLastTokenPassed() {
         return lastTokenPassed;
+    }
+
+    /**
+     * Retrieves the company name information entered.
+     * @return String object representing the entered company name
+     * @throws RuntimeException when an invalid email format is detected
+     */
+    @Override
+    public String getCompanyName() throws RuntimeException {
+        return new String(companynameField);
+    }
+
+    /**
+     * Retrieves the sector information entered.
+     * @return String object representing the entered sector
+     * @throws RuntimeException when an invalid email format is detected
+     */
+    @Override
+    public String getSector() throws RuntimeException {
+        return new String(sectorField);
     }
 
     /**
