@@ -13,14 +13,17 @@ import com.example.networkmeup.domain.Phone;
 public class EditAccountEmployeePresenter {
 
     private EditAccountEmployeeView EditAccountEmployee;
+    private Employee currEmployee;
 
-    EmployeeDAO employeeDAO = new EmployeeDAOMemory();
-
-    public EditAccountEmployeePresenter(EditAccountEmployeeView editAccountEmployeeActivity) {
+    public EditAccountEmployeePresenter(EditAccountEmployeeView editAccountEmployeeActivity,String userEmail) {
         this.EditAccountEmployee = editAccountEmployeeActivity;
+        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        currEmployee = employeeDAO.getByEmail(new Email(userEmail));
+
     }
 
-    public void onCreate() {
+    public void Save() {
+
         boolean email_ok = true;
         boolean phone_ok = true;
         boolean pwd_ok = true;
@@ -57,15 +60,17 @@ public class EditAccountEmployeePresenter {
         //only update employee if all fields are valid
         if (email_ok && phone_ok && pwd_ok) {
 
-            EditAccountEmployee.getCurrEmployee().setEmail(email);
-            EditAccountEmployee.getCurrEmployee().setPassword(password);
-            EditAccountEmployee.getCurrEmployee().setPhone(phone);
+            currEmployee.setEmail(email);
+            currEmployee.setPassword(password);
+            currEmployee.setPhone(phone);
 
         }
 
     }
 
-    public void Delete(Employee curEmployee){
-        employeeDAO.delete(curEmployee);
+    public void Delete(){
+        EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        employeeDAO.delete(currEmployee);
     }
+
 }

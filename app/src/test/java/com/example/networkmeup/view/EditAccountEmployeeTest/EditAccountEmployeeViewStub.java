@@ -107,11 +107,6 @@ public class EditAccountEmployeeViewStub implements EditAccountEmployeeView {
         this.successfullyFinishActivityMessage = message;
     }
 
-    @Override
-    public Employee getCurrEmployee() {
-        return null;
-    }
-
     /**
      * Setter method for setting the email field in the view stub.
      *

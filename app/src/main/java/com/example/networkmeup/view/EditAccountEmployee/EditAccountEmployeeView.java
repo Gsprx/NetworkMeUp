@@ -13,9 +13,6 @@ public interface EditAccountEmployeeView {
     public Phone getPhoneNumber() throws  RuntimeException;
     public void showErrorMessage(String title, String message);
     public void successfullyFinishActivity(String message);
-
-    public Employee getCurrEmployee();
-
     String getAddress() throws RuntimeException;
 
     String getName() throws RuntimeException;

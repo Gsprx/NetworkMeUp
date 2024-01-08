@@ -59,7 +59,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         name.setText(currEmployee.getAddress());
 
 
-        final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this);
+        final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this, userEmail);
         // when back button is pressed
         findViewById(R.id.backbuttonEditAccountEmployee).setOnClickListener(
                 new View.OnClickListener(){
@@ -87,7 +87,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                     @Override
                     public void onClick(View v) {
                         //When button is pressed
-                        presenter.onCreate();
+                        presenter.Save();
 
                         Intent intentSave = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
                         intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -109,7 +109,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 // Perform the deletion process here
-                                presenter.Delete(currEmployee);
+                                presenter.Delete();
                                 Intent intentDelete = new Intent(EditAccountEmployeeActivity.this, StartPageActivity.class);
                                 intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                                 startActivity(intentDelete);
@@ -147,11 +147,6 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                                 Intent intent = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
                                 startActivity(intent);
                             }}).create().show();
-    }
-
-    @Override
-    public Employee getCurrEmployee(){
-        return this.currEmployee;
     }
 
     @Override
