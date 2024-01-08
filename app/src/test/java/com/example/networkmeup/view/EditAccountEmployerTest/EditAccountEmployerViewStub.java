@@ -7,11 +7,12 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployeePresenter;
+import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerPresenter;
+import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerPresenter;
 import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerView;
 
 public class EditAccountEmployerViewStub implements EditAccountEmployerView {
-    private EditAccountEmployeePresenter presenter; // Presenter instance associated with this view stub
+    private EditAccountEmployerPresenter presenter; // Presenter instance associated with this view stub
     private String tokenErrorMessage; // Stores the error message related to the user token
     private String lastTokenPassed; // Stores the last token passed
     private Employer currEmployer;
@@ -32,11 +33,11 @@ public class EditAccountEmployerViewStub implements EditAccountEmployerView {
     public EditAccountEmployerViewStub(){
     }
 
-    public void setPresenter(EditAccountEmployeePresenter presenter){
+    public void setPresenter(EditAccountEmployerPresenter presenter){
         this.presenter = presenter;
     }
 
-    public EditAccountEmployeePresenter getPresenter(){
+    public EditAccountEmployerPresenter getPresenter(){
         return this.presenter;
     }
 
