@@ -17,7 +17,8 @@ public interface EditAccountEmployerView {
 
     public Phone getPhoneNumber() throws  RuntimeException;
     public void showErrorMessage(String title, String message);
-    public void successfullyFinishActivity(String message);
+    // Method to handle successful account change
+    void successfullyFinishActivity(String message, String userToken);
 
     public Employer getCurrEmployer();
 }

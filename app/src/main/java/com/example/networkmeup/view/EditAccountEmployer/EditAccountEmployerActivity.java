@@ -17,7 +17,6 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 
@@ -77,11 +76,21 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
         findViewById(R.id.btnEditEmployerAccountSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.Save();
-
-                Intent intentSave = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);
-                intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(intentSave);
+                new AlertDialog.Builder(EditAccountEmployerActivity.this)
+                        .setCancelable(false)
+                        .setTitle("Save Account Details Confirmation")
+                        .setMessage("Are you sure you want to change your account details?")
+                        .setPositiveButton("Yes",
+                                new DialogInterface.OnClickListener(){
+                                    public void onClick (DialogInterface dialog,int id) {
+                                        //pass the work to the presenter
+                                        presenter.Save();
+                                    }})
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener(){
+                                    public void onClick (DialogInterface dialog,int id) {
+                                        //do nothing
+                                    }}).create().show();
             }
         });
 
@@ -114,7 +123,7 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
     @Override
     public void showErrorMessage(String title, String message) {
         new AlertDialog.Builder(EditAccountEmployerActivity.this)
-                .setCancelable(true)
+                .setCancelable(false)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(R.string.ok, null).create().show();
@@ -122,14 +131,15 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
 
     // Method to handle successful account change
     @Override
-    public void successfullyFinishActivity(String message) {
+    public void successfullyFinishActivity(String message, String userToken) {
         new AlertDialog.Builder(EditAccountEmployerActivity.this)
                 .setCancelable(false)
                 .setTitle("Account Successfully Changed!")
                 .setMessage(message)
-                .setPositiveButton(R.string.continue_to_home_page, new DialogInterface.OnClickListener() {
+                .setPositiveButton("Back to home page", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployeeActivity.class);
+                        Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);
+                        intent.putExtra("token", userToken);
                         startActivity(intent);
                     }
                 }).create().show();
