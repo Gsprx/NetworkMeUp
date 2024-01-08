@@ -1,5 +1,6 @@
 package com.example.networkmeup.view.EditAccountEmployerTest;
 
+import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
@@ -19,6 +20,7 @@ public class EditAccountEmployerPresenterTest {
 
     @Before
     public void setUp() {
+        new MemoryInitializer().prepareData();
         viewStub = new EditAccountEmployerViewStub();
         presenter = new EditAccountEmployerPresenter(viewStub);
     }
@@ -26,10 +28,12 @@ public class EditAccountEmployerPresenterTest {
     @Test
     public void testOnCreate_AllFieldsValid() {
         // Simulate valid input in the fields
-        viewStub.setEmailField("validemail@example.com");
-        viewStub.setPhoneField("1234567890");
-        viewStub.setPasswordField("password123@");
-        viewStub.setTinField("123456789");
+        viewStub.setCompanyNameField("");
+        viewStub.setSectorField("");
+        viewStub.setEmailField("b.be@northfreedom.com");
+        viewStub.setPhoneField("5693311692");
+        viewStub.setPasswordField("UwL[;3{[fQP:");
+        viewStub.setTinField("000001010");
 
         presenter.onCreate();
 
@@ -39,21 +43,30 @@ public class EditAccountEmployerPresenterTest {
 
         // Assert that employer information is updated properly when all fields are valid
         Employer updatedEmployer = viewStub.getCurrEmployer();
+        String companyname = updatedEmployer.getCompanyName();
+        String sector = updatedEmployer.getSector();
         Email email = updatedEmployer.getEmail();
         Phone phone = updatedEmployer.getPhone();
         Password password = updatedEmployer.getPassword();
         TIN tin = updatedEmployer.getTin();
 
-        Assert.assertEquals("validemail@example.com", email.getAddress());
-        Assert.assertEquals("1234567890", phone.getNumber());
-        Assert.assertEquals("password123@", password.getPassword());
-        Assert.assertEquals("123456789", tin.getTin());
+        Assert.assertEquals("", companyname);
+        Assert.assertEquals("", sector);
+        Assert.assertEquals("b.be@northfreedom.com", email.getAddress());
+        Assert.assertEquals("5693311692", phone.getNumber());
+        Assert.assertEquals("UwL[;3{[fQP:", password.getPassword());
+        Assert.assertEquals("000001010", tin.getTin());
     }
 
     @Test
     public void testOnCreate_InvalidEmail() {
         // Simulate invalid email input
+        viewStub.setCompanyNameField("");
+        viewStub.setSectorField("");
         viewStub.setEmailField("invalid_email");
+        viewStub.setPhoneField("5693311692");
+        viewStub.setPasswordField("UwL[;3{[fQP:");
+        viewStub.setTinField("000001010");
 
         presenter.onCreate();
 
@@ -70,7 +83,12 @@ public class EditAccountEmployerPresenterTest {
     @Test
     public void testOnCreate_PasswordFieldError() {
         // Simulate invalid password input
-        viewStub.setPasswordField("pass"); // Invalid password length
+        viewStub.setCompanyNameField("");
+        viewStub.setSectorField("");
+        viewStub.setEmailField("b.be@northfreedom.com");
+        viewStub.setPhoneField("5693311692");
+        viewStub.setPasswordField("pass");
+        viewStub.setTinField("000001010");
 
         presenter.onCreate();
 
@@ -79,6 +97,6 @@ public class EditAccountEmployerPresenterTest {
         Assert.assertNotNull(viewStub.getShowErrorMessageTitle());
 
         // Assert that employer information is not updated due to invalid password
-        //Assert.assertNull(viewStub.getCurrEmployer());
+        Assert.assertNotNull(viewStub.getCurrEmployer());
     }
 }
