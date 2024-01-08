@@ -21,6 +21,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditAccountEmployerSector"
+                android:layout_width="343dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:hint="Your sector "
+                android:inputType="text|textEmailAddress"
+                android:textStyle="italic"
+                app:barrierMargin="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textEditAccountEmployerText6"
+                app:layout_constraintTop_toBottomOf="@+id/textEditAccountEmployerText6" />
+
+            <TextView
+                android:id="@+id/textEditAccountEmployerText6"
+                android:layout_width="257dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
+                android:text="Sector:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/editTextEditAccountEmployerCompanyName"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerCompanyName" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditAccountEmployerCompanyName"
+                android:layout_width="343dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:hint="Your company name "
+                android:inputType="text|textEmailAddress"
+                android:textStyle="italic"
+                app:barrierMargin="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textEditAccountEmployerText5"
+                app:layout_constraintTop_toBottomOf="@+id/textEditAccountEmployerText5" />
+
+            <TextView
+                android:id="@+id/textEditAccountEmployerText5"
+                android:layout_width="257dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="Company Name:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textEditEmployerAccountDetails"
+                app:layout_constraintTop_toBottomOf="@+id/textEditEmployerAccountDetails" />
+
             <Button
                 android:id="@+id/btnEditEmployerAccountSave"
                 android:layout_width="133dp"
@@ -139,19 +186,18 @@
                 android:id="@+id/textEditAccountEmployerText1"
                 android:layout_width="257dp"
                 android:layout_height="49dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:text="Email:"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textEditEmployerAccountDetails"
-                app:layout_constraintTop_toBottomOf="@+id/textEditEmployerAccountDetails" />
+                app:layout_constraintStart_toStartOf="@+id/editTextEditAccountEmployerSector"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditAccountEmployerSector" />
 
             <TextView
                 android:id="@+id/textEditEmployerAccountDetails"
                 android:layout_width="372dp"
                 android:layout_height="90dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="52dp"
                 android:text="Edit Employer Account Details:"
                 android:textAlignment="center"
                 android:textSize="34sp"
