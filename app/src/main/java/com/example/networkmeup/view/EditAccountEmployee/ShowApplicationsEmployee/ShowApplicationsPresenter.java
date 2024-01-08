@@ -7,14 +7,14 @@ import com.example.networkmeup.domain.Employee;
 
 import java.util.ArrayList;
 
-public class ShowApplicationPresenter {
+public class ShowApplicationsPresenter {
     private String userEmail;
     private ShowApplicationsEmployeeView view;
-    public ShowApplicationPresenter(ShowApplicationsEmployeeActivity showApplicationsEmployeeActivity, String userEmail){
-
+    private Employee emp;
+    public ShowApplicationsPresenter(ShowApplicationsEmployeeActivity showApplicationsEmployeeActivity, String userEmail){
+        emp = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
     }
     public ArrayList<Application> getApplications(){
-        Employee emp = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
         ArrayList<Application> applications = emp.getApplications();
         return applications;
     }

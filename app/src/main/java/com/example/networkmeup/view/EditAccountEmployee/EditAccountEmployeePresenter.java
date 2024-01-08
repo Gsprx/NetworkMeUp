@@ -63,7 +63,8 @@ public class EditAccountEmployeePresenter {
             currEmployee.setEmail(email);
             currEmployee.setPassword(password);
             currEmployee.setPhone(phone);
-
+            currEmployee.setName(EditAccountEmployee.getName());
+            currEmployee.setAddress(EditAccountEmployee.getAddress());
         }
 
     }
