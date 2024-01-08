@@ -64,7 +64,7 @@ public class EmployeedaoMemoryTest {
         assertTrue(employeeDAO.find(employee));
 
         // Create another employee not saved in the DAO
-        Employee nonExistentEmployee = new Employee( new Email("alice@example.com"), new Phone("6987840184"),new Password("password123!"));
+        Employee nonExistentEmployee = new Employee( new Email("alice@example.com"), new Phone("6987840184"),new Password("Password123!"));
 
         // Check if the non-existent employee is not in the DAO
         assertFalse(employeeDAO.find(nonExistentEmployee));
@@ -101,7 +101,7 @@ public class EmployeedaoMemoryTest {
         assertTrue(employeeDAO.authenticate(new Email("john.Brown12@gmail.com"), new Password("JohnBrown!12")));
 
         // Authenticate with incorrect password
-        //assertFalse(employeeDAO.authenticate(new Email("john.Brown12@gmail.com"), new Password("wrongpassword")));
+        assertFalse(employeeDAO.authenticate(new Email("john.Brown12@gmail.com"), new Password("wrongpassworD12!")));
 
         // Authenticate with incorrect email
         assertFalse(employeeDAO.authenticate(new Email("nonexistent@example.com"), new Password("JohnBrown!12")));

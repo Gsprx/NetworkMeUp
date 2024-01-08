@@ -18,8 +18,8 @@ public class EmployerdaoMemoryTest {
     @Before
     public void setUp() {
         // Initialize the EmployerDAOMemory before each test
-        MemoryInitializer mem = new MemoryInitializer();
-        mem.prepareData();
+      //  MemoryInitializer mem = new MemoryInitializer();
+        //mem.prepareData();
         employerDAO = new EmployerDAOMemory();
     }
 
@@ -68,7 +68,7 @@ public class EmployerdaoMemoryTest {
         assertTrue(employerDAO.find(employer));
 
         // Create another employer not saved in the DAO
-        Employer nonExistentEmployer = new Employer(new Email("kysss.com"), new Phone("56933116743"), new Password("UwL[;3{[fQP:"), new TIN("000010101"));
+        Employer nonExistentEmployer = new Employer(new Email("kysss@s.com"), new Phone("5693311674"), new Password("UwL[;3{[fQP:"), new TIN("12345678"));
 
         // Check if the non-existent employer is not in the DAO
         assertFalse(employerDAO.find(nonExistentEmployer));
@@ -107,7 +107,7 @@ public class EmployerdaoMemoryTest {
         assertTrue(employerDAO.authenticate(new Email("b.be@northfreedom.com"), new Password("UwL[;3{[fQP:")));
 
         // Authenticate with incorrect password
-        assertFalse(employerDAO.authenticate(new Email("b.be@northfreedom.com"), new Password("wrongpassword")));
+        assertFalse(employerDAO.authenticate(new Email("b.be@northfreedom.com"), new Password("Wrongpassword!12")));
 
         // Authenticate with incorrect email
         assertFalse(employerDAO.authenticate(new Email("nonexistent@example.com"), new Password("UwL[;3{[fQP:")));
