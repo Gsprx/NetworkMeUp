@@ -7,8 +7,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEditAccountEmployee"
-        android:layout_width="340dp"
-        android:layout_height="235dp"
+        android:layout_width="341dp"
+        android:layout_height="243dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -21,7 +21,7 @@
         android:layout_width="195dp"
         android:layout_height="59dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="64dp"
         android:text="Employee Applications:"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -32,7 +32,7 @@
     <Button
         android:id="@+id/backbuttonShowApplicationsEmployee"
         android:layout_width="112dp"
-        android:layout_height="41dp"
+        android:layout_height="51dp"
         android:text="BACK"
         app:icon="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toTopOf="@+id/textView69"

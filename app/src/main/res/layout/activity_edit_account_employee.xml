@@ -21,23 +21,28 @@
                 android:id="@+id/btnEditEmployeeAccountSave"
                 android:layout_width="133dp"
                 android:layout_height="74dp"
-                android:layout_marginTop="92dp"
+                android:layout_marginTop="152dp"
                 android:text="Save"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/recyclerViewEditAccountEmployee"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewEditAccountEmployee" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnAEditEmployeeAccountApplications" />
 
             <Button
                 android:id="@+id/btnEditEmployeeAccountDelete"
                 android:layout_width="129dp"
                 android:layout_height="72dp"
-                android:layout_marginTop="96dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="68dp"
                 android:text="Delete"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/recyclerViewEditAccountEmployee"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewEditAccountEmployee" />
+                app:layout_constraintEnd_toStartOf="@+id/btnEditEmployeeAccountSave"
+                app:layout_constraintHorizontal_bias="0.189"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAEditEmployeeAccountApplications" />
 
             <TextView
                 android:id="@+id/textView33"
@@ -116,29 +121,6 @@
                 app:layout_constraintStart_toStartOf="@+id/textView39"
                 app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewEditAccountEmployee"
-                android:layout_width="328dp"
-                android:layout_height="115dp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintEnd_toEndOf="@+id/EditAccountEmployeePassword"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView40"
-                app:layout_constraintTop_toBottomOf="@+id/textView40"
-                tools:itemCount="5" />
-
-            <TextView
-                android:id="@+id/textView40"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Employee Applications:"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/EditAccountEmployeePassword"
-                app:layout_constraintTop_toBottomOf="@+id/EditAccountEmployeePassword" />
-
             <Button
                 android:id="@+id/backbuttonEditAccountEmployee"
                 android:layout_width="113dp"
@@ -151,6 +133,67 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/btnAEditEmployeeAccountApplications"
+                android:layout_width="247dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="280dp"
+                android:text="APPLICATION ARCHIVE"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EditAccountEmployeePassword" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="117dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="24dp"
+                android:text="Name:"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.115"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EditAccountEmployeePassword" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="326dp"
+                android:layout_height="56dp"
+                android:hint="Name"
+                app:layout_constraintBottom_toTopOf="@+id/btnAEditEmployeeAccountApplications"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.368"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView71"
+                app:layout_constraintVertical_bias="0.066" />
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="86dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="16dp"
+                android:text="Address:"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.096"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="328dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Address"
+                app:layout_constraintEnd_toEndOf="@+id/textInputEditText"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView74"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
