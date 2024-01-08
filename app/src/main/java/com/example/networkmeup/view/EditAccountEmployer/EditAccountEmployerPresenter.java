@@ -71,6 +71,8 @@ public class EditAccountEmployerPresenter {
             employer.setPhone(phone);
             employer.setTin(tin);
 
+            EditAccountEmployer.successfullyFinishActivity("Account details successfully changed!", userToken);
+
         }
 
     }

@@ -13,7 +13,6 @@ import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerView;
 
 public class EditAccountEmployerViewStub implements EditAccountEmployerView {
     private EditAccountEmployerPresenter presenter; // Presenter instance associated with this view stub
-    private String tokenErrorMessage; // Stores the error message related to the user token
     private String lastTokenPassed; // Stores the last token passed
     private Employer currEmployer;
     private String companynameField; // Simulated input field for company name
@@ -39,15 +38,6 @@ public class EditAccountEmployerViewStub implements EditAccountEmployerView {
 
     public EditAccountEmployerPresenter getPresenter(){
         return this.presenter;
-    }
-
-    /**
-     * Retrieves the recorded token error message.
-     *
-     * @return The token error message stored in the stub.
-     */
-    public String getTokenErrorMessage() {
-        return tokenErrorMessage;
     }
 
     /**
@@ -189,8 +179,9 @@ public class EditAccountEmployerViewStub implements EditAccountEmployerView {
      * @param message Content of the success message
      */
     @Override
-    public void successfullyFinishActivity(String message) {
+    public void successfullyFinishActivity(String message, String userToken) {
         this.successfullyFinishActivityMessage = message;
+        this.lastTokenPassed = userToken;
     }
 
     /**

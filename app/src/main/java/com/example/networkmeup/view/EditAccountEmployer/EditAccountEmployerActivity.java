@@ -17,7 +17,6 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 
@@ -114,7 +113,7 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
     @Override
     public void showErrorMessage(String title, String message) {
         new AlertDialog.Builder(EditAccountEmployerActivity.this)
-                .setCancelable(true)
+                .setCancelable(false)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(R.string.ok, null).create().show();
@@ -122,14 +121,15 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
 
     // Method to handle successful account change
     @Override
-    public void successfullyFinishActivity(String message) {
+    public void successfullyFinishActivity(String message, String userToken) {
         new AlertDialog.Builder(EditAccountEmployerActivity.this)
                 .setCancelable(false)
                 .setTitle("Account Successfully Changed!")
                 .setMessage(message)
                 .setPositiveButton(R.string.continue_to_home_page, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployeeActivity.class);
+                        Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);
+                        intent.putExtra("token", userToken);
                         startActivity(intent);
                     }
                 }).create().show();
