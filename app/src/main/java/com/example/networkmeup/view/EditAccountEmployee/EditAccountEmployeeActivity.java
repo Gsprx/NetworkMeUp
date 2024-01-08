@@ -2,8 +2,6 @@ package com.example.networkmeup.view.EditAccountEmployee;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,17 +12,13 @@ import android.widget.EditText;
 import com.example.networkmeup.R;
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
-import com.example.networkmeup.domain.Application;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
-import com.example.networkmeup.utils.RecyclerViewAdapters.EmployeeApplicationRecyclerViewAdapter;
 import com.example.networkmeup.view.EditAccountEmployee.ShowApplicationsEmployee.ShowApplicationsEmployeeActivity;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
-
-import java.util.ArrayList;
 
 public class EditAccountEmployeeActivity extends AppCompatActivity implements EditAccountEmployeeView {
 
@@ -173,5 +167,14 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
     @Override
     public Phone getPhoneNumber() throws RuntimeException {
         return new Phone(((EditText)findViewById(R.id.EditAccountEmployeePhoneNumber)).getText().toString().trim());
+    }
+    @Override
+    public String getAddress() throws RuntimeException{
+        return ((EditText)findViewById(R.id.EditAccountEmployeeAddress)).getText().toString().trim();
+    }
+
+    @Override
+    public String getName() throws RuntimeException{
+        return ((EditText)findViewById(R.id.EditAccountEmployeeName)).getText().toString().trim();
     }
 }

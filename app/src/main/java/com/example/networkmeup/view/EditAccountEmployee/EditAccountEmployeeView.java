@@ -15,4 +15,8 @@ public interface EditAccountEmployeeView {
     public void successfullyFinishActivity(String message);
 
     public Employee getCurrEmployee();
+
+    String getAddress() throws RuntimeException;
+
+    String getName() throws RuntimeException;
 }
