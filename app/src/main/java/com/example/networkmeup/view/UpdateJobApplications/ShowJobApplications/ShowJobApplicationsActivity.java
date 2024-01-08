@@ -13,6 +13,7 @@ import com.example.networkmeup.domain.Application;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectEmployerApplicationRecyclerViewAdapter;
 import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowApplicationDetails.ShowApplicationDetailsActivity;
+import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
 
 import java.util.ArrayList;
 
@@ -54,6 +55,17 @@ public class ShowJobApplicationsActivity extends AppCompatActivity implements Sh
         });
         applicationRecyclerView.setAdapter(adapter);
         applicationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // when back button is pressed
+        findViewById(R.id.backbuttonShowJobApplications).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ShowJobApplicationsActivity.this, UpdateJobApplicationsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
     @Override
     public void showApplicationDetails(String userToken, Job job, int position){

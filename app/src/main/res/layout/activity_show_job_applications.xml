@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".view.UpdateJobApplications.ShowJobApplications.ShowJobApplicationsActivity">
 
+    <Button
+        android:id="@+id/backbuttonShowJobApplications"
+        android:layout_width="129dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView65"
         android:layout_width="292dp"
         android:layout_height="88dp"
-        android:layout_marginTop="16dp"
         android:text="Manage this Job's Applications"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -18,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/backbuttonShowJobApplications" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewShowJobApplications"
@@ -35,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:text="Click on any application to view more details about it"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
