@@ -20,6 +20,7 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EmployeeApplicationRecyclerViewAdapter;
+import com.example.networkmeup.view.EditAccountEmployee.ShowApplicationsEmployee.ShowApplicationsEmployeeActivity;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 
@@ -46,6 +47,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         //get employee data to pass to recycler view
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         currEmployee = employeeDAO.getByEmail(new Email(userEmail));
+
         //Preset the data
         EditText passwd = findViewById(R.id.EditAccountEmployeePassword);
         passwd.setText(currEmployee.getPassword().getPassword());
@@ -56,16 +58,12 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         EditText email = findViewById(R.id.EditAccountEmpoyeeEmail);
         email.setText(currEmployee.getEmail().getAddress());
 
+        EditText name = findViewById(R.id.EditAccountEmployeeName);
+        name.setText(currEmployee.getName());
 
-        ArrayList<Application> ApplicationList = currEmployee.getApplications();
+        EditText address = findViewById(R.id.EditAccountEmployeeAddress);
+        name.setText(currEmployee.getAddress());
 
-        //get recycler view reference
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewEditAccountEmployee);
-        //create Adapter
-        EmployeeApplicationRecyclerViewAdapter applicationRecycler = new EmployeeApplicationRecyclerViewAdapter(this,ApplicationList);
-        recyclerView.setAdapter(applicationRecycler);
-        //Set the layout manager
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this);
         // when back button is pressed
@@ -73,6 +71,16 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                 new View.OnClickListener(){
                     public void onClick(View v){
                         Intent intent = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
+        // when Show Applications button is pressed
+        findViewById(R.id.btnAEditEmployeeAccountApplications).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(EditAccountEmployeeActivity.this, ShowApplicationsEmployeeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
