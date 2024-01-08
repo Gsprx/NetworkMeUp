@@ -69,7 +69,7 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
                 }
         );
         // when back button is pressed
-        findViewById(R.id.backbuttonEditReqWorkExperience).setOnClickListener(
+        findViewById(R.id.backbuttonEditReqWorkExp).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
                         Intent intent = new Intent(EditReqWorkExperienceActivity.this, ChangeJobDetailsActivity.class);

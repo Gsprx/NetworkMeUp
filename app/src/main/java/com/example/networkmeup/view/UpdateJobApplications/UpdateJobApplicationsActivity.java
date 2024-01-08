@@ -13,6 +13,7 @@ import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.SelectJobsRecyclerViewAdapter;
+import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowJobApplicationsActivity;
 
 import java.util.ArrayList;
@@ -47,6 +48,17 @@ public class UpdateJobApplicationsActivity extends AppCompatActivity implements 
             });
         jobsRecyclerView.setAdapter(adapter);
         jobsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // when back button is pressed
+        findViewById(R.id.backbuttonUpdateJobApplications).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(UpdateJobApplicationsActivity.this, HomeEmployerActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     //start show job applications activity
