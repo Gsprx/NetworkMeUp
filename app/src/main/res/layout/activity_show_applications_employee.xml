@@ -7,8 +7,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEditAccountEmployee"
-        android:layout_width="341dp"
-        android:layout_height="243dp"
+        android:layout_width="371dp"
+        android:layout_height="340dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
