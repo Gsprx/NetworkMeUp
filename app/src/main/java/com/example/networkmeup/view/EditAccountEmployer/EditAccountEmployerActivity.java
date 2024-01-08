@@ -44,6 +44,12 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
         currEmployer = employerDAO.getByEmail(new Email(userEmail));
 
         // Pre-setting data into EditText fields from the current employer details
+        EditText cmpname = findViewById(R.id.editTextEditAccountEmployerCompanyName);
+        cmpname.setText(currEmployer.getCompanyName());
+
+        EditText sct = findViewById(R.id.editTextEditAccountEmployerSector);
+        sct.setText(currEmployer.getSector());
+
         EditText passwd = findViewById(R.id.editTextEditAccountEmployerPassword);
         passwd.setText(currEmployer.getPassword().getPassword());
 
@@ -133,6 +139,16 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
     @Override
     public Employer getCurrEmployer() {
         return this.currEmployer;
+    }
+
+    @Override
+    public String getCompanyName() throws RuntimeException {
+        return new String(((EditText) findViewById(R.id.editTextEditAccountEmployerCompanyName)).getText().toString().trim());
+    }
+
+    @Override
+    public String getSector() throws RuntimeException {
+        return new String(((EditText) findViewById(R.id.editTextEditAccountEmployerSector)).getText().toString().trim());
     }
 
     @Override
