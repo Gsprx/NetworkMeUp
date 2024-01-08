@@ -21,7 +21,7 @@ public class AddNewReqWorkExperiencePresenter {
 
     public void onAdd() {
         ExpertiseArea newExpArea = new ExpertiseAreaDAOMemory().getAll().get(view.getExpertiseArea());
-        job.addReqWorkExperience(new WorkExperience(view.getYears(),view.getDescription(), newExpArea));
+        job.addReqWorkExperience(new WorkExperience(view.getYears()+1,view.getDescription(), newExpArea));
 
         view.successfulAdd("Required Work Experience was successfully created!", userToken, job);
     }

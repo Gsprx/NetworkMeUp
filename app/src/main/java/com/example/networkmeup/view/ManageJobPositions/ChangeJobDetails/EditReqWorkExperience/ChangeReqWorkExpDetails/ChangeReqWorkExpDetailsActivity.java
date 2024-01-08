@@ -128,7 +128,7 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
 
         ((EditText)findViewById(R.id.editTextChangeReqWorkExperienceDescription)).setText(currWorkExp.getDescription());
         expFieldSpinner.setSelection((expFields.indexOf(currWorkExp.getExpArea().getArea())));
-        YearsATWork.setSelection(currWorkExp.getYears());
+        YearsATWork.setSelection(YearsFields.indexOf(currWorkExp.getYears()));
 
         // when back button is pressed
         findViewById(R.id.backbuttonChangeReqWorkExp).setOnClickListener(

@@ -19,7 +19,7 @@ public class ChangeReqWorkExpDetailsPresenter {
     public void onSave(int position){
         WorkExperience updatedWorkExp = job.getReqWorkExperience().get(position);
 
-        updatedWorkExp.setYears(view.getYears());
+        updatedWorkExp.setYears(view.getYears()+1);
         updatedWorkExp.setDescription(view.getDescription());
         updatedWorkExp.setExpArea(new ExpertiseAreaDAOMemory().getAll().get(view.getExpertiseArea()));
 
