@@ -10,7 +10,7 @@ import com.example.networkmeup.domain.TIN;
 import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployeePresenter;
 import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerView;
 
-public class EditAccountEmployeeViewStub implements EditAccountEmployerView {
+public class EditAccountEmployerViewStub implements EditAccountEmployerView {
     private EditAccountEmployeePresenter presenter; // Presenter instance associated with this view stub
     private String tokenErrorMessage; // Stores the error message related to the user token
     private String lastTokenPassed; // Stores the last token passed
@@ -29,7 +29,7 @@ public class EditAccountEmployeeViewStub implements EditAccountEmployerView {
     /**
      * Default constructor to initialize the SignUpEmployerViewStub.
      */
-    public EditAccountEmployeeViewStub(){
+    public EditAccountEmployerViewStub(){
     }
 
     public void setPresenter(EditAccountEmployeePresenter presenter){
