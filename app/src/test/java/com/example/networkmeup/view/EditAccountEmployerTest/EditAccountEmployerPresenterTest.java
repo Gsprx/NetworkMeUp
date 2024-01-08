@@ -6,7 +6,7 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployerPresenter;
+import com.example.networkmeup.view.EditAccountEmployer.EditAccountEmployeePresenter;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,14 +15,14 @@ import org.junit.Assert;
 
 public class EditAccountEmployerPresenterTest {
 
-    private EditAccountEmployerPresenter presenter;
-    private EditAccountEmployerViewStub viewStub;
+    private EditAccountEmployeePresenter presenter;
+    private EditAccountEmployeeViewStub viewStub;
 
     @Before
     public void setUp() {
         new MemoryInitializer().prepareData();
-        viewStub = new EditAccountEmployerViewStub();
-        presenter = new EditAccountEmployerPresenter(viewStub);
+        viewStub = new EditAccountEmployeeViewStub();
+        presenter = new EditAccountEmployeePresenter(viewStub);
     }
 
     @Test

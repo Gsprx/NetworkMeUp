@@ -7,14 +7,14 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-public class EditAccountEmployerPresenter {
+public class EditAccountEmployeePresenter {
 
     private EditAccountEmployerView EditAccountEmployer;
 
     // Fetching employer data from DAO
     EmployerDAO employerDAO = new EmployerDAOMemory();
 
-    public EditAccountEmployerPresenter(EditAccountEmployerView editAccountEmployerView){
+    public EditAccountEmployeePresenter(EditAccountEmployerView editAccountEmployerView){
         this.EditAccountEmployer = editAccountEmployerView;
     }
 

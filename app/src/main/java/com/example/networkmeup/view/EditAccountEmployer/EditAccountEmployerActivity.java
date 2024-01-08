@@ -62,7 +62,7 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
         EditText tin = findViewById(R.id.editTextEditAccountEmployerTIN);
         tin.setText(currEmployer.getTin().getTin());
 
-        final EditAccountEmployerPresenter presenter = new EditAccountEmployerPresenter(this);
+        final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this);
     // when back button is pressed
             findViewById(R.id.backbuttonEditAccountEmployer).setOnClickListener(
                     new View.OnClickListener(){
