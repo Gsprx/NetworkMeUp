@@ -14,8 +14,8 @@ public class EditAccountEmployerPresenter {
     // Fetching employer data from DAO
     EmployerDAO employerDAO = new EmployerDAOMemory();
 
-    public EditAccountEmployerPresenter(EditAccountEmployerActivity editAccountEmployerActivity) {
-        this.EditAccountEmployer = editAccountEmployerActivity;
+    public EditAccountEmployerPresenter(EditAccountEmployerView editAccountEmployerView){
+        this.EditAccountEmployer = editAccountEmployerView;
     }
 
     public void onCreate() {
