@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/backbuttonUpdateJobApplications"
+        android:layout_width="129dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:text="BACK"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/textView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView59"
         android:layout_width="349dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:text="Manage Your Jobs' Applications"
         android:textAlignment="center"
@@ -18,13 +31,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/backbuttonUpdateJobApplications" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewUpdateJobApplications"
         android:layout_width="389dp"
         android:layout_height="513dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView60"
@@ -35,7 +48,7 @@
         android:layout_width="256dp"
         android:layout_height="19dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="32dp"
         android:text="Click on any job to view its applications"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
