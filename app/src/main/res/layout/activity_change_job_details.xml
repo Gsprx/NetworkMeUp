@@ -47,7 +47,7 @@
                 android:layout_width="372dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="64dp"
-                android:text="Add a new Job"
+                android:text="Change this Job"
                 android:textAlignment="center"
                 android:textSize="38sp"
                 android:textStyle="bold"
