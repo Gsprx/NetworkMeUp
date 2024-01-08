@@ -125,6 +125,22 @@ public class EditAccountEmployerViewStub implements EditAccountEmployerView {
     }
 
     /**
+     * Sets the value for the company name field.
+     * @param companyNameField Simulated input for email address
+     */
+    public void setCompanyNameField(String companyNameField) {
+        this.companynameField = companyNameField;
+    }
+
+    /**
+     * Sets the value for the sector field.
+     * @param sectorField Simulated input for email address
+     */
+    public void setSectorField(String sectorField) {
+        this.sectorField = sectorField;
+    }
+
+    /**
      * Sets the value for the email field.
      * @param emailField Simulated input for email address
      */
