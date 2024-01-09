@@ -61,4 +61,14 @@ public class TINTest {
         tin.setTin("000001010");
         Assert.assertEquals("000001010", tin.getTin());
     }
+
+    @Test
+    public void testEquals() {
+        // Creating Phone objects with different tins
+        TIN tin1 = new TIN("000001010");
+        TIN tin2 = new TIN("000001010");
+
+        // Checking equality between tin objects
+        Assert.assertTrue(tin1.equals(tin2)); // tin1 not equals tin2
+    }
 }
