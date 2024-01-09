@@ -7,11 +7,11 @@ import com.example.networkmeup.domain.Employee;
 
 import java.util.ArrayList;
 
-public class ShowApplicationsPresenter {
+public class ShowApplicationsEmployeePresenter {
     private String userEmail;
     private ShowApplicationsEmployeeView view;
     private Employee emp;
-    public ShowApplicationsPresenter(ShowApplicationsEmployeeActivity showApplicationsEmployeeActivity, String userEmail){
+    public ShowApplicationsEmployeePresenter(ShowApplicationsEmployeeActivity showApplicationsEmployeeActivity, String userEmail){
         emp = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
     }
     public ArrayList<Application> getApplications(){

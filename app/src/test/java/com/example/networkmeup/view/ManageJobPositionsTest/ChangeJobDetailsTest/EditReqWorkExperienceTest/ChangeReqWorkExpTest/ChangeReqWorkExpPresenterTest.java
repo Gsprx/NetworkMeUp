@@ -31,7 +31,7 @@ public class ChangeReqWorkExpPresenterTest {
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
         stub.setExpertiseArea(0); //Agriculture
-        stub.setYears(1); //years
+        stub.setYears(0); //years 1
 
         presenter.onSave(0); //first work experience to be changed
 

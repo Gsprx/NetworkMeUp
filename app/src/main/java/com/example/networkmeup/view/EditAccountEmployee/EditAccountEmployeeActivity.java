@@ -74,9 +74,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         findViewById(R.id.btnAEditEmployeeAccountApplications).setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
-                        Intent intent = new Intent(EditAccountEmployeeActivity.this, ShowApplicationsEmployeeActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
+                        presenter.ApplicationArchive();
                     }
                 }
         );
@@ -89,9 +87,6 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                         //When button is pressed
                         presenter.Save();
 
-                        Intent intentSave = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
-                        intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intentSave);
                     }
                 }
         );
@@ -132,7 +127,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
 
     @Override
     //after a successful change, return to start page
-    public void successfullyFinishActivity(String message) {
+    public void successfullySaved(String message) {
         new AlertDialog.Builder(EditAccountEmployeeActivity.this)
                 .setCancelable(false)
                 .setTitle("Account Successfully Changed!")
@@ -143,9 +138,9 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                         new DialogInterface.OnClickListener(){
 
                             public void onClick (DialogInterface dialog,int id) {
-
-                                Intent intent = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
-                                startActivity(intent);
+                                Intent intentSave = new Intent(EditAccountEmployeeActivity.this, HomeEmployeeActivity.class);
+                                intentSave.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                                startActivity(intentSave);
                             }}).create().show();
     }
 
@@ -171,5 +166,12 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
     @Override
     public String getName() throws RuntimeException{
         return ((EditText)findViewById(R.id.EditAccountEmployeeName)).getText().toString().trim();
+    }
+
+    @Override
+    public void ApplicationArchive(String userEmail) {
+        Intent intentArchive = new Intent(EditAccountEmployeeActivity.this, ShowApplicationsEmployeeActivity.class);
+        intentArchive.putExtra("token", userEmail);
+        startActivity(intentArchive);
     }
 }

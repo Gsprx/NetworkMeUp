@@ -1,25 +1,21 @@
 package com.example.networkmeup.view.EditAccountEmployee;
 
 import com.example.networkmeup.dao.EmployeeDAO;
-import com.example.networkmeup.dao.EmployerDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
-import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
-import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 
 public class EditAccountEmployeePresenter {
 
-    private EditAccountEmployeeView EditAccountEmployee;
-    private Employee currEmployee;
+    private EditAccountEmployeeView view;
+    private String userEmail;
 
     public EditAccountEmployeePresenter(EditAccountEmployeeView editAccountEmployeeActivity,String userEmail) {
-        this.EditAccountEmployee = editAccountEmployeeActivity;
+        this.view = editAccountEmployeeActivity;
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
-        currEmployee = employeeDAO.getByEmail(new Email(userEmail));
-
+        this.userEmail = userEmail;
     }
 
     public void Save() {
@@ -35,43 +31,49 @@ public class EditAccountEmployeePresenter {
 
         //check email field
         try {
-            email = EditAccountEmployee.getEmail();
+            email = view.getEmail();
         } catch (RuntimeException e) {
-            EditAccountEmployee.showErrorMessage("Error!", e.getMessage());
+            view.showErrorMessage("Error!", e.getMessage());
             email_ok = false;
         }
 
         //check phone field
         try {
-            phone = EditAccountEmployee.getPhoneNumber();
+            phone = view.getPhoneNumber();
         } catch (RuntimeException e) {
-            EditAccountEmployee.showErrorMessage("Error!", e.getMessage());
+            view.showErrorMessage("Error!", e.getMessage());
             phone_ok = false;
         }
 
         //check password field
         try {
-            password = EditAccountEmployee.getPassword();
+            password = view.getPassword();
         } catch (RuntimeException e) {
-            EditAccountEmployee.showErrorMessage("Error!", e.getMessage());
+            view.showErrorMessage("Error!", e.getMessage());
             pwd_ok = false;
         }
 
         //only update employee if all fields are valid
         if (email_ok && phone_ok && pwd_ok) {
 
+            Employee currEmployee = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
             currEmployee.setEmail(email);
             currEmployee.setPassword(password);
             currEmployee.setPhone(phone);
-            currEmployee.setName(EditAccountEmployee.getName());
-            currEmployee.setAddress(EditAccountEmployee.getAddress());
+            currEmployee.setName(view.getName());
+            currEmployee.setAddress(view.getAddress());
+            view.successfullySaved("Account changes were successfully saved!");
         }
 
     }
 
     public void Delete(){
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
+        Employee currEmployee = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
         employeeDAO.delete(currEmployee);
     }
 
+    public void ApplicationArchive() {
+        view.ApplicationArchive(userEmail);
+    }
 }

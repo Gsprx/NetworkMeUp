@@ -10,6 +10,7 @@ import com.example.networkmeup.view.EditAccountEmployee.EditAccountEmployeeView;
 public class EditAccountEmployeeViewStub implements EditAccountEmployeeView {
 
     private EditAccountEmployeePresenter presenter;
+    private String lastTokenPassed;
     private String emailField;
     private String phoneField;
     private String passwordField;
@@ -77,12 +78,21 @@ public class EditAccountEmployeeViewStub implements EditAccountEmployeeView {
     }
     @Override
     public String getAddress() throws RuntimeException{
-        return new String();
+        return AddressField;
     }
 
     @Override
     public String getName() throws RuntimeException{
-        return new String();
+        return nameField;
+    }
+
+    @Override
+    public void ApplicationArchive(String userEmail) {
+        lastTokenPassed = userEmail;
+    }
+
+    public String getLastTokenPassed() {
+        return lastTokenPassed;
     }
 
     /**
@@ -103,7 +113,7 @@ public class EditAccountEmployeeViewStub implements EditAccountEmployeeView {
      * @param message Message to display upon successful completion.
      */
     @Override
-    public void successfullyFinishActivity(String message) {
+    public void successfullySaved(String message) {
         this.successfullyFinishActivityMessage = message;
     }
 

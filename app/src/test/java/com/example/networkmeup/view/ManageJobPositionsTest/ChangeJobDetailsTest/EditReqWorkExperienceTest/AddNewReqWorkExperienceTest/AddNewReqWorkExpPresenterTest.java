@@ -28,7 +28,7 @@ public class AddNewReqWorkExpPresenterTest {
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
         stub.setExpertiseArea(0); //Agriculture
-        stub.setYears(1); //Years
+        stub.setYears(0); //Years 1
 
         presenter.onAdd(); //new Work experience to be added (second for this job)
 

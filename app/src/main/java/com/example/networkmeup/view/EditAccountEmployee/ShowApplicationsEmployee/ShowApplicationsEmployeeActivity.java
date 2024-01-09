@@ -7,9 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Application;
@@ -36,7 +33,7 @@ public class ShowApplicationsEmployeeActivity extends AppCompatActivity implemen
             userEmail = null;
         }
 
-        final ShowApplicationsPresenter presenter = new ShowApplicationsPresenter(this,userEmail);
+        final ShowApplicationsEmployeePresenter presenter = new ShowApplicationsEmployeePresenter(this,userEmail);
         //get employee data to pass to recycler view
         ArrayList<Application> ApplicationList = presenter.getApplications();
         //get recycler view reference
