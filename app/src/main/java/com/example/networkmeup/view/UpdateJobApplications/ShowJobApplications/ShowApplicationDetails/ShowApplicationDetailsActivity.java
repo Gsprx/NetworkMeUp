@@ -18,6 +18,8 @@ import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.utils.RecyclerViewAdapters.EducationRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.LanguageKnowledgeRecyclerViewAdapter;
 import com.example.networkmeup.utils.RecyclerViewAdapters.WorkExperienceRecyclerViewAdapter;
+import com.example.networkmeup.view.EditAccountEmployee.EditAccountEmployeeActivity;
+import com.example.networkmeup.view.EditAccountEmployee.ShowApplicationsEmployee.ShowApplicationsEmployeeActivity;
 import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowJobApplicationsActivity;
 import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
 
@@ -127,6 +129,16 @@ public class ShowApplicationDetailsActivity extends AppCompatActivity implements
                                             public void onClick (DialogInterface dialog,int id) {
                                                 //do nothing
                                             }}).create().show();
+                    }
+                }
+        );
+        // when back button is pressed
+        findViewById(R.id.backbuttonShowApplicationDetails).setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Intent intent = new Intent(ShowApplicationDetailsActivity.this, ShowJobApplicationsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
                     }
                 }
         );
