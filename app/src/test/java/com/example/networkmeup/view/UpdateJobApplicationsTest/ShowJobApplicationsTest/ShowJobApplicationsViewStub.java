@@ -1,17 +1,21 @@
 package com.example.networkmeup.view.UpdateJobApplicationsTest.ShowJobApplicationsTest;
 
+import com.example.networkmeup.domain.Application;
 import com.example.networkmeup.domain.Job;
+import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowJobApplicationsPresenter;
 import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowJobApplicationsView;
+
+import java.util.ArrayList;
 
 public class ShowJobApplicationsViewStub implements ShowJobApplicationsView {
     private String lastPassedToken;
     private Job lastPassedJob;
-    private int lastPassedPosition;
+    private Application lastPassedApplication;
     @Override
-    public void showApplicationDetails(String userToken, Job job, int position) {
+    public void showApplicationDetails(String userToken, Job job, Application application) {
         lastPassedToken = userToken;
         lastPassedJob = job;
-        lastPassedPosition = position;
+        lastPassedApplication = application;
     }
 
     public Job getLastPassedJob() {
@@ -22,7 +26,7 @@ public class ShowJobApplicationsViewStub implements ShowJobApplicationsView {
         return lastPassedToken;
     }
 
-    public int getLastPassedPosition() {
-        return lastPassedPosition;
+    public Application getLastPassedApplication() {
+        return lastPassedApplication;
     }
 }

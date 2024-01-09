@@ -4,6 +4,7 @@ import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
 import com.example.networkmeup.daoMemory.EmployerDAOMemory;
 import com.example.networkmeup.domain.Application;
+import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
@@ -13,26 +14,25 @@ public class ShowApplicationDetailsPresenter {
     private ShowApplicationDetailsView view;
     private String userToken;
     private Job job;
-    private int position;
+    private Application application;
 
-    public ShowApplicationDetailsPresenter(ShowApplicationDetailsView view, String userToken, Job job, int position) {
+    public ShowApplicationDetailsPresenter(ShowApplicationDetailsView view, String userToken, Job job, Application application) {
         this.view = view;
         this.userToken = userToken;
         this.job = job;
-        this.position = position;
+        this.application = application;
     }
 
     private void updateEmployer(){
         //update employers static list's original reference
-        Employer currEmployer = new EmployerDAOMemory().getByJob(job);
+        Employer currEmployer = new EmployerDAOMemory().getByEmail(new Email(userToken));
+        job.addApplication(application);
         currEmployer.getJobs().remove(job);
         currEmployer.addJob(job);
     }
     public void onAccept() {
         //change the application status
-        Application application = job.getApplications().get(position);
         application.setStatus(true);
-        job.getApplications().remove(position);
 
         updateEmployer();
 
@@ -41,9 +41,7 @@ public class ShowApplicationDetailsPresenter {
 
     public void onReject() {
         //change the application status
-        Application application = job.getApplications().get(position);
         application.setStatus(false);
-        job.getApplications().remove(position);
 
         updateEmployer();
 

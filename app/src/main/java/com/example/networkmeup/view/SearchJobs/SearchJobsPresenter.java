@@ -38,21 +38,21 @@ public class SearchJobsPresenter {
         for(Employer employer : employerDAO.getAll()){
             for(Job job : employer.getJobs()){
                 if(job.acceptCV(currEmployee.getCV()) && (job.getAvailability().equals(Availability.Available) || job.getAvailability().equals(Availability.Temporarily_Unavailable))){
-                    matchingJobs.add(job);
+                    //ignore jobs that the user has already applied to
+                    boolean applied = false;
+                    for (Application application : job.getApplications()) {
+                        if (application.getEmployee().equals(currEmployee) == true){
+                            applied = true;
+                        }
+                    }
+                    //if we found an application with the employee in it, we ignore the job, else add it
+                    if(applied == false){
+                        matchingJobs.add(job);
+                    }
                 }
             }
         }
-        //remove jobs that the user has already applied to
-        //loop through all job's applications and look for the same applicant
-        Iterator<Job> jobIterator = matchingJobs.iterator();
-        while (jobIterator.hasNext()) {
-            Job job = jobIterator.next();
-            for (Application application : job.getApplications()) {
-                if (application.getEmployee().equals(currEmployee)) {
-                    jobIterator.remove();
-                }
-            }
-        }
+
 
         //no matching jobs found, send message to view
         if(matchingJobs.size() == 0){

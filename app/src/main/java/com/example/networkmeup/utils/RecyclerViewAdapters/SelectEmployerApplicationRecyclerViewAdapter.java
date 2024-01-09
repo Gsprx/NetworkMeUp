@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.networkmeup.R;
 import com.example.networkmeup.domain.Application;
+import com.example.networkmeup.domain.Job;
 
 import java.util.ArrayList;
 
@@ -58,6 +59,10 @@ public class SelectEmployerApplicationRecyclerViewAdapter extends RecyclerView.A
     //catch click events with a click listener that we set
     public void setClickListener(SelectEmployerApplicationRecyclerViewAdapter.ItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
+    }
+    public void updateList(ArrayList<Application> newList) {
+        this.applications= newList;
+        notifyDataSetChanged();
     }
 
     //method of this interface must be implemented by parent activity

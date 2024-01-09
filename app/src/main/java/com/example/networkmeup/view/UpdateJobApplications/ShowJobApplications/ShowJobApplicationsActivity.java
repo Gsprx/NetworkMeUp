@@ -18,7 +18,7 @@ import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsA
 import java.util.ArrayList;
 
 public class ShowJobApplicationsActivity extends AppCompatActivity implements ShowJobApplicationsView {
-
+    SelectEmployerApplicationRecyclerViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,21 +40,26 @@ public class ShowJobApplicationsActivity extends AppCompatActivity implements Sh
 
         final ShowJobApplicationsPresenter presenter = new ShowJobApplicationsPresenter(this, userEmail, currJob);
 
-        ArrayList<Application> currApplications = currJob.getApplications();
+        ArrayList<Application> pendingApplications = presenter.getPendingApplications();
 
-        RecyclerView applicationRecyclerView = findViewById(R.id.recyclerViewShowJobApplications);
+        if(adapter == null) {
+            RecyclerView applicationRecyclerView = findViewById(R.id.recyclerViewShowJobApplications);
 
-        SelectEmployerApplicationRecyclerViewAdapter adapter = new SelectEmployerApplicationRecyclerViewAdapter(this, currApplications);
+            adapter = new SelectEmployerApplicationRecyclerViewAdapter(this, pendingApplications);
 
-        adapter.setClickListener(new SelectEmployerApplicationRecyclerViewAdapter.ItemClickListener() {
-            //click listener for rows in recycler view list
-            @Override
-            public void onItemClick(View view, int position) {
-                presenter.onItemClick(position);
-            }
-        });
-        applicationRecyclerView.setAdapter(adapter);
-        applicationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            adapter.setClickListener(new SelectEmployerApplicationRecyclerViewAdapter.ItemClickListener() {
+                //click listener for rows in recycler view list
+                @Override
+                public void onItemClick(View view, int position) {
+                    presenter.onItemClick(pendingApplications.get(position));
+                }
+            });
+            applicationRecyclerView.setAdapter(adapter);
+            applicationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        }
+        else{
+            adapter.updateList(pendingApplications);
+        }
 
         // when back button is pressed
         findViewById(R.id.backbuttonShowJobApplications).setOnClickListener(
@@ -68,11 +73,11 @@ public class ShowJobApplicationsActivity extends AppCompatActivity implements Sh
         );
     }
     @Override
-    public void showApplicationDetails(String userToken, Job job, int position){
+    public void showApplicationDetails(String userToken, Job job, Application application){
         Intent intent = new Intent(ShowJobApplicationsActivity.this, ShowApplicationDetailsActivity.class);
         intent.putExtra("token", userToken);
         intent.putExtra("job", job);
-        intent.putExtra("position", position);
+        intent.putExtra("application", application);
         startActivity(intent);
     }
 }

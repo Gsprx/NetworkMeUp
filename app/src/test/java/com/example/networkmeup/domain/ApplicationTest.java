@@ -42,6 +42,7 @@ public class ApplicationTest {
     public void validStatusCheck(){
         app.setStatus(true);
         Assert.assertEquals(true, app.getStatus());
+        Assert.assertEquals(true, app.getAnswered());
     }
 
     // Ensures that setID method sets the ID of the Application correctly.

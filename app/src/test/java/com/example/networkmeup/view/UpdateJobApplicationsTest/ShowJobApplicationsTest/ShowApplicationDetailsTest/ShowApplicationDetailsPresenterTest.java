@@ -25,9 +25,22 @@ public class ShowApplicationDetailsPresenterTest {
     @Before
     public void setup(){
         new MemoryInitializer().prepareData();
+
+        //setup and add a mock application
+        Employer employer = new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com"));
+        Job job = employer.getJobs().get(0);
+
+        Employee employee = new EmployeeDAOMemory().getByEmail(new Email("john.Brown12@gmail.com"));
+
+        Application application = new Application(employee,"Cover Letter");
+
+        job.addApplication(application);
+
+        employee.addApplication(application);
+        //create stub and presenter
         stub = new ShowApplicationDetailsViewStub();
         presenter = new ShowApplicationDetailsPresenter(stub,"b.be@northfreedom.com",
-                new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0),0);
+                new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0),new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0).getApplications().get(0));
     }
     @After
     public void resetData(){
@@ -41,13 +54,7 @@ public class ShowApplicationDetailsPresenterTest {
 
         Employee employee = new EmployeeDAOMemory().getByEmail(new Email("john.Brown12@gmail.com"));
 
-        Application application = new Application(employee,"Cover Letter");
-
-
-        job.addApplication(application);
-        employee.addApplication(application);
-
-        presenter = new ShowApplicationDetailsPresenter(stub,"b.be@northfreedom.com", job,0);
+        presenter = new ShowApplicationDetailsPresenter(stub,"b.be@northfreedom.com", job,job.getApplications().get(0));
         presenter.onReject();
 
         Assert.assertEquals("b.be@northfreedom.com", stub.getLastPassedToken());
@@ -62,13 +69,7 @@ public class ShowApplicationDetailsPresenterTest {
 
         Employee employee = new EmployeeDAOMemory().getByEmail(new Email("john.Brown12@gmail.com"));
 
-        Application application = new Application(employee,"Cover Letter");
-
-
-        job.addApplication(application);
-        employee.addApplication(application);
-
-        presenter = new ShowApplicationDetailsPresenter(stub,"b.be@northfreedom.com", job,0);
+        presenter = new ShowApplicationDetailsPresenter(stub,"b.be@northfreedom.com", job,job.getApplications().get(0));
         presenter.onAccept();
 
         employee = new EmployeeDAOMemory().getByEmail(new Email("john.Brown12@gmail.com"));

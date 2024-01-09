@@ -31,22 +31,19 @@ public class ShowApplicationDetailsActivity extends AppCompatActivity implements
 
         String userEmail;
         Job currJob;
-        int applicationPosition;
+        Application application;
         if(extras!=null){
             //obtain user token
             userEmail = extras.getString("token");
             currJob = (Job) extras.getSerializable("job");
-            applicationPosition = extras.getInt("position");
+            application = (Application) extras.getSerializable("application");
         }
         else{
             userEmail = null;
             currJob = null;
-            applicationPosition = -1;
+            application = null;
         }
-        final ShowApplicationDetailsPresenter presenter = new ShowApplicationDetailsPresenter(this,userEmail,currJob,applicationPosition);
-
-        //get application reference
-        Application application = currJob.getApplications().get(applicationPosition);
+        final ShowApplicationDetailsPresenter presenter = new ShowApplicationDetailsPresenter(this,userEmail,currJob,application);
 
         //get applicant reference
         Employee applicant = application.getEmployee();

@@ -3,6 +3,7 @@ package com.example.networkmeup.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * The Job class represents a job listing, containing details and requirements for a job position.
@@ -210,6 +211,8 @@ public class Job implements Serializable {
      */
     public void addApplication(Application application){
         validateObject(application);
+        //replace an existing old application with a newer one if two applications have the same id
+        applications.removeIf(appl -> Objects.equals(appl.getID(), application.getID()));
         this.applications.add(application);
     }
 

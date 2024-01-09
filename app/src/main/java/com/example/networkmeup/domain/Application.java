@@ -10,6 +10,7 @@ public class Application implements Serializable {
     private static Integer classCount = 0; // Keeps track of the number of Application instances
     private Integer ID; // Unique identifier for each application
     private boolean status; // Indicates the status of the application (accepted/rejected)
+    private boolean answered; //Indicates if the application has been answered by the employer
     private String coverLetter; // The cover letter submitted with the application
 
 
@@ -24,6 +25,7 @@ public class Application implements Serializable {
         this.coverLetter = coverLetter;
         classCount++; // Increment the count of Application instances
         this.ID = classCount; // Assign a unique ID to the application
+        this.answered = false;
     }
 
     /**
@@ -55,6 +57,10 @@ public class Application implements Serializable {
      */
     public void setStatus(boolean status) {
         this.status = status;
+        this.answered = true;
+    }
+    public boolean getAnswered(){
+        return this.answered;
     }
 
     /**
