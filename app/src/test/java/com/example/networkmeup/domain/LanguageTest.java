@@ -57,4 +57,17 @@ public class LanguageTest {
         Language lang2 = new Language("Spanish");
         Assert.assertEquals(false, lang.equals(lang2));
     }
+
+    @Test
+    public void testCompareTo() {
+        // Creating Language objects with different language names
+        Language lang1 = new Language("English");
+        Language lang2 = new Language("Spanish");
+        Language lang3 = new Language("English");
+
+        // Checking comparisons between Language objects
+        Assert.assertTrue(lang1.compareTo(lang2) < 0); // "English" < "Spanish"
+        Assert.assertTrue(lang2.compareTo(lang1) > 0); // "Spanish" > "English"
+        Assert.assertEquals(0, lang1.compareTo(lang3)); // "English" = "English"
+    }
 }
