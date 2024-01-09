@@ -18,7 +18,7 @@ public class LanguageDaoMemoryTest {
 
     @Test
     public void testSaveAndFindLanguage() {
-        Language language = new Language("English");
+        Language language = new Language("Barbarian");
         assertFalse("Language should not be found before saving", languageDao.find(language));
 
         languageDao.save(language);
@@ -27,16 +27,17 @@ public class LanguageDaoMemoryTest {
 
     @Test
     public void testGetAll() {
-        Language english = new Language("English");
-        Language spanish = new Language("Spanish");
+        Language gibberish = new Language("Gibberish");
+        Language mandarin = new Language("Mandarin");
 
-        languageDao.save(english);
-        languageDao.save(spanish);
+        languageDao.save(gibberish);
+        languageDao.save(mandarin);
 
         ArrayList<Language> languages = languageDao.getAll();
-        assertEquals("There should be 2 languages in the list", 2, languages.size());
-        assertTrue("List should contain English", languages.contains(english));
-        assertTrue("List should contain Spanish", languages.contains(spanish));
+        // There should be 3 languages on the list after the previous add and the previous test
+        assertEquals("There should be 3 languages in the list", 3, languages.size());
+        assertTrue("List should contain Gibberish", languages.contains(gibberish));
+        assertTrue("List should contain Mandarin", languages.contains(mandarin));
     }
 
     @Test
