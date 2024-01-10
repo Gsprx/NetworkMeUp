@@ -37,6 +37,7 @@ public class EmployerdaoMemoryTest {
 
         // Check if the saved employer is in the list
         Assert.assertTrue(allEmployers.contains(employer));
+        employerDAO.delete(employer);
     }
 
     @Test
@@ -55,6 +56,7 @@ public class EmployerdaoMemoryTest {
 
         // Check if the deleted employer is not in the list
         Assert.assertFalse(allEmployers.contains(employer));
+        employerDAO.delete(employer);
     }
 
     @Test
@@ -66,13 +68,14 @@ public class EmployerdaoMemoryTest {
         employerDAO.save(employer);
 
         // Check if the employer exists in the DAO
-        //Assert.assertTrue(employerDAO.find(employer));
+        Assert.assertTrue(employerDAO.find(employer));
+        employerDAO.delete(employer);
 
         // Create another employer not saved in the DAO
-        Employer nonExistentEmployer = new Employer(new Email("kysss@s.com"), new Phone("5693311674"), new Password("UwL[;3{[fQP:"), new TIN(""));
+        Employer nonExistentEmployer = new Employer(new Email("kysss@s.com"), new Phone("5693311674"), new Password("UwL[;3{[fQP:"), new TIN("000001010"));
 
         // Check if the non-existent employer is not in the DAO
-       // Assert.assertFalse(employerDAO.find(nonExistentEmployer));
+        Assert.assertFalse(employerDAO.find(nonExistentEmployer));
     }
 
     @Test
@@ -88,6 +91,7 @@ public class EmployerdaoMemoryTest {
 
         // Check if the retrieved employer is the same as the saved employer
         Assert.assertTrue(employer.equals(retrievedEmployer));
+        employerDAO.delete(employer);
 
         // Try to retrieve a non-existent employer by email
         Employer nonExistentEmployer = employerDAO.getByEmail(new Email("nonexistent@example.com"));
@@ -112,6 +116,7 @@ public class EmployerdaoMemoryTest {
 
         // Authenticate with incorrect email
         Assert.assertFalse(employerDAO.authenticate(new Email("nonexistent@example.com"), new Password("UwL[;3{[fQP:")));
+        employerDAO.delete(employer);
     }
 
     @Test
@@ -137,5 +142,6 @@ public class EmployerdaoMemoryTest {
 
         // Check if the result is null for a non-existent job
         Assert.assertNull(nonExistentEmployer);
+        employerDAO.delete(employer);
     }
 }
