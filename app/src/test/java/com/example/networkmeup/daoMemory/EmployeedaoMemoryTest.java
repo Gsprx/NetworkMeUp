@@ -33,6 +33,7 @@ public class EmployeedaoMemoryTest {
 
         // Check if the saved employee is in the list
         assertTrue(allEmployees.contains(employee));
+        employeeDAO.delete(employee);
     }
 
     @Test
@@ -69,6 +70,7 @@ public class EmployeedaoMemoryTest {
 
         // Check if the non-existent employee is not in the DAO
         assertFalse(employeeDAO.find(nonExistentEmployee));
+        employeeDAO.delete(employee);
     }
 
     @Test
@@ -88,6 +90,7 @@ public class EmployeedaoMemoryTest {
 
         // Check if the result is null for a non-existent employee
         assertNull(nonExistentEmployee);
+        employeeDAO.delete(employee);
     }
 
     @Test
@@ -105,5 +108,6 @@ public class EmployeedaoMemoryTest {
 
         // Authenticate with incorrect email
         assertFalse(employeeDAO.authenticate(new Email("nonexistent@example.com"), new Password("JohnBrown!12")));
+        employeeDAO.delete(employee);
     }
 }

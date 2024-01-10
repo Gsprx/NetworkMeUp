@@ -75,4 +75,24 @@ public class EmailTest {
     public void invalidCharacterAfterDotCheck(){
         Assert.assertThrows(IllegalArgumentException.class, ()->{email.setAddress("example@email.c0m");});
     }
+
+    @Test
+    public void testEqualsSameAddress() {
+        // Create two Email objects with the same address
+        Email email1 = new Email("test@example.com");
+        Email email2 = new Email("test@example.com");
+
+        // Check if both Email objects are considered equal
+        Assert.assertTrue(email1.equals(email2));
+    }
+
+    @Test
+    public void testEqualsDifferentAddress() {
+        // Create two Email objects with different addresses
+        Email email1 = new Email("test1@example.com");
+        Email email2 = new Email("test2@example.com");
+
+        // Check if both Email objects are not considered equal
+        Assert.assertFalse(email1.equals(email2));
+    }
 }

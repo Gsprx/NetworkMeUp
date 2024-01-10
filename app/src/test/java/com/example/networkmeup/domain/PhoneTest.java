@@ -62,4 +62,16 @@ public class PhoneTest {
         Assert.assertThrows(IllegalArgumentException.class, ()->{phone.setNumber("0456827587");});
     }
 
+    @Test
+    public void testEquals() {
+        // Creating Phone objects with different phone numbers
+        Phone phone1 = new Phone("6987654321");
+        Phone phone2 = new Phone("6912345678");
+        Phone phone3 = new Phone("6987654321");
+
+        // Checking equality between Phone objects
+        Assert.assertTrue(phone1.equals(phone3)); // Phone1 equals Phone3
+        Assert.assertFalse(phone1.equals(phone2)); // Phone1 not equals Phone2
+    }
+
 }

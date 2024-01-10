@@ -55,4 +55,17 @@ public class ExpertiseAreaTest {
         ExpertiseArea expertiseArea2 = new ExpertiseArea("Test Area 2");
         Assert.assertEquals(false, expertiseArea2.equals(expArea));
     }
+
+    @Test
+    public void testCompareTo() {
+        // Create ExpertiseArea objects with different areas of expertise
+        ExpertiseArea area1 = new ExpertiseArea("Programming");
+        ExpertiseArea area2 = new ExpertiseArea("Networking");
+        ExpertiseArea area3 = new ExpertiseArea("Programming");
+
+        // Check comparisons between ExpertiseArea objects
+        Assert.assertTrue(area1.compareTo(area2) > 0); // "Programming" > "Networking"
+        Assert.assertTrue(area2.compareTo(area1) < 0); // "Networking" < "Programming"
+        Assert.assertEquals(0, area1.compareTo(area3)); // "Programming" = "Programming"
+    }
 }

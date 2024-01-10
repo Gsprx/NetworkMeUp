@@ -166,8 +166,23 @@ public class EmployerTest {
     @Test
     public void checkHasEmail(){
         //check if different emails return false
-        Assert.assertEquals(false, employer.hasEmail(new Email("thisisthewrongemail@email.com")));
+        Assert.assertFalse(employer.hasEmail(new Email("thisisthewrongemail@email.com")));
         //check if the same email returns true
-        Assert.assertEquals(true, employer.hasEmail(new Email("employ@example.com")));
+        Assert.assertTrue(employer.hasEmail(new Email("employ@example.com")));
     }
+
+    @Test
+    public void testEqualsSameTIN() {
+        // Create two Employer objects with the same Tax Identification Number (TIN)
+        TIN tin = new TIN("000001010");
+        Employer employer1 = new Employer(new Email("test1@example.com"), new Phone("6998765432"), new Password("passworD123!"), tin);
+        Employer employer2 = new Employer(new Email("test2@example.com"), new Phone("6912345678"), new Password("pass123@S"), tin);
+
+        // Check if both Employer objects are considered equal based on TIN
+        Assert.assertTrue(employer1.equals(employer2));
+    }
+
+
+
+
 }
