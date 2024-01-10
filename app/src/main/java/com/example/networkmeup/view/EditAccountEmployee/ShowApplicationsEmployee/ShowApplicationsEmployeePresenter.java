@@ -11,8 +11,8 @@ public class ShowApplicationsEmployeePresenter {
     private String userEmail;
     private ShowApplicationsEmployeeView view;
     private Employee emp;
-    public ShowApplicationsEmployeePresenter(ShowApplicationsEmployeeActivity showApplicationsEmployeeActivity, String userEmail){
-        emp = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
+    public ShowApplicationsEmployeePresenter(ShowApplicationsEmployeeView showApplicationsEmployeeActivity, String userEmail){
+        this.emp = new EmployeeDAOMemory().getByEmail(new Email(userEmail));
     }
     public ArrayList<Application> getApplications(){
         ArrayList<Application> applications = emp.getApplications();
