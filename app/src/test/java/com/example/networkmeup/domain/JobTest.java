@@ -212,4 +212,38 @@ public class JobTest {
         });
     }
 
+    @Test
+    public void testSetTitle() {
+        Job job = new Job("Software Developer", "Develop software applications");
+
+        job.setTitle("Senior Software Developer");
+
+        Assert.assertEquals("Senior Software Developer", job.getTitle());
+    }
+
+    @Test
+    public void testSetDescription() {
+        Job job = new Job("Software Engineer", "Design and develop software systems");
+
+        job.setDescription("Develop and maintain software systems");
+
+        Assert.assertEquals("Develop and maintain software systems", job.getDescription());
+    }
+
+    @Test
+    public void testEquals() {
+        // Creating two job objects with identical title and description
+        Job job1 = new Job("Software Developer", "Develop software applications");
+        Job job2 = new Job("Software Developer", "Develop software applications");
+
+        // Creating another job object with different title and description
+        Job job3 = new Job("Senior Software Developer", "Develop software applications extensively");
+
+        // Testing equality of job1 and job2 (should be equal)
+        Assert.assertTrue(job1.equals(job2));
+
+        // Testing inequality of job1 and job3 (should not be equal)
+        Assert.assertFalse(job1.equals(job3));
+    }
+
 }

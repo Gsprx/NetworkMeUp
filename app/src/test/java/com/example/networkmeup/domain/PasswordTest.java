@@ -86,4 +86,16 @@ public class PasswordTest {
         pwd.setPassword("12345Test123!");
         Assert.assertEquals("12345Test123!", pwd.getPassword());
     }
+
+    @Test
+    public void testEquals() {
+        // Creating Password objects with different password strings
+        Password pass1 = new Password("SecurePassword123!");
+        Password pass2 = new Password("AnotherPassword456!");
+        Password pass3 = new Password("SecurePassword123!");
+
+        // Checking equality between Password objects
+        Assert.assertTrue(pass1.equals(pass3)); // Pass1 equals Pass3
+        Assert.assertFalse(pass1.equals(pass2)); // Pass1 not equals Pass2
+    }
 }
