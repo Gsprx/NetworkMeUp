@@ -23,8 +23,16 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqW
 
 import java.util.ArrayList;
 
+/**
+ * This class represents an activity where the details of a required work experience can be changed.
+ * It extends AppCompatActivity and implements ChangeReqWorkExpDetailsView.
+ */
 public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implements ChangeReqWorkExpDetailsView {
 
+    /**
+     * Called when the activity is starting.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +56,8 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
             currJob = null;
         }
 
+        // Initialize presenter
         final ChangeReqWorkExpDetailsPresenter presenter = new ChangeReqWorkExpDetailsPresenter(this, userEmail, currJob);
-
 
         //create spinner declarations
         Spinner expFieldSpinner = findViewById(R.id.spinnerChangeReqWorkExpDetailsExpArea);
@@ -74,11 +82,22 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
         ArrayAdapter<Integer> YearsAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, YearsFields);
         YearsATWork.setAdapter(YearsAdapter);
         YearsATWork.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Callback method to be invoked when an item in this view has been selected.
+             * @param parent The AdapterView where the selection happened
+             * @param view The view within the AdapterView that was clicked
+             * @param position The position of the view in the adapter
+             * @param id The row id of the item that is selected
+             */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Integer selectedYears = YearsFields.get(position);
             }
 
+            /**
+             * Callback method to be invoked when the selection disappears from this view.
+             * @param parent The AdapterView that now contains no selected item.
+             */
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 //do nothing
@@ -91,6 +110,10 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
         //when delete button is pressed
         findViewById(R.id.buttonChangeReqWorkExperienceDelete).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the delete button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
                         //use dialog builder to create a final warning message to the user
@@ -115,6 +138,10 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
         //when save button is pressed
         findViewById(R.id.buttonChangeReqWorkExpSave).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the save button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
                         presenter.onSave(eduPosition);
@@ -133,6 +160,10 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
         // when back button is pressed
         findViewById(R.id.backbuttonChangeReqWorkExp).setOnClickListener(
                 new View.OnClickListener(){
+                    /**
+                     * Called when the back button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     public void onClick(View v){
                         Intent intent = new Intent(ChangeReqWorkExpDetailsActivity.this, EditReqWorkExperienceActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -142,23 +173,43 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
         );
 
     }
+
+    /**
+     * This method gets the description entered by the user in the EditText field.
+     * @return The description entered by the user.
+     */
     @Override
     public String getDescription() {
         return ((EditText)findViewById(R.id.editTextChangeReqWorkExperienceDescription)).getText().toString().trim();
     }
 
+    /**
+     * This method gets the selected expertise area from the spinner.
+     * @return The position of the selected expertise area in the spinner.
+     */
     @Override
     public int getExpertiseArea() {
         //get position in respective list
         return ((Spinner)findViewById(R.id.spinnerChangeReqWorkExpDetailsExpArea)).getSelectedItemPosition();
     }
 
+    /**
+     * This method gets the selected number of years from the spinner.
+     * @return The position of the selected number of years in the spinner.
+     */
     @Override
     public int getYears() {
         //get position in respective enum ordinal
         return ((Spinner)findViewById(R.id.spinnerChangeReqWorkExpYears)).getSelectedItemPosition();
     }
 
+    /**
+     * This method is called when a required work experience is successfully deleted.
+     * It shows an alert dialog with a success message and an option to return to the Change Job Details activity.
+     * @param message The success message to be displayed.
+     * @param userToken The token of the user.
+     * @param job The job object.
+     */
     @Override
     public void successfulDelete(String message, String userToken, Job job) {
         new AlertDialog.Builder(ChangeReqWorkExpDetailsActivity.this)
@@ -178,6 +229,13 @@ public class ChangeReqWorkExpDetailsActivity extends AppCompatActivity implement
                             }}).create().show();
     }
 
+    /**
+     * This method is called when a required work experience is successfully saved.
+     * It shows an alert dialog with a success message and an option to return to the Change Job Details activity.
+     * @param message The success message to be displayed.
+     * @param userToken The token of the user.
+     * @param job The job object.
+     */
     @Override
     public void successfulSave(String message, String userToken, Job job) {
         new AlertDialog.Builder(ChangeReqWorkExpDetailsActivity.this)

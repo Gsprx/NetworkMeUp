@@ -18,8 +18,18 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqE
 
 import java.util.ArrayList;
 
+/**
+ * The EditReqEducationActivity class extends AppCompatActivity and implements the EditReqEducationView interface.
+ * This class is responsible for managing the editing of required education details.
+ */
 public class EditReqEducationActivity extends AppCompatActivity implements EditReqEducationView{
 
+    /**
+     * This method is called when the activity is starting. It is where most initialization happens.
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +49,9 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
             currJob = null;
         }
 
+        /**
+         * Create a new instance of EditReqEducationPresenter with the current activity, user email, current job.
+         */
         final EditReqEducationPresenter presenter = new EditReqEducationPresenter(this, userEmail,currJob);
 
         //get job data to pass to recycler view
@@ -49,7 +62,11 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
         //create recycler view adapter
         SelectEducationRecyclerViewAdapter adapter = new SelectEducationRecyclerViewAdapter(this, reqEducationList);
         adapter.setClickListener(new SelectEducationRecyclerViewAdapter.ItemClickListener() {
-            //click listener for rows in recycler view list
+            /**
+             * Called when a row in the recycler view list has been clicked.
+             * @param view The view that was clicked.
+             * @param position The position of the view in the list.
+             */
             @Override
             public void onItemClick(View view, int position) {
                 presenter.onItemClick(position);
@@ -61,9 +78,12 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
         //when add new button is pressed
         findViewById(R.id.btnEditReqEducationAddNew).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the Add New button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
-                        //When Login button is pressed
                         presenter.onAddNew();
                     }
                 }
@@ -71,6 +91,10 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
         // when back button is pressed
         findViewById(R.id.backbuttonEditReqEducation).setOnClickListener(
                 new View.OnClickListener(){
+                    /**
+                     * Called when the Back button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     public void onClick(View v){
                         Intent intent = new Intent(EditReqEducationActivity.this, ChangeJobDetailsActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -80,6 +104,12 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
         );
     }
 
+    /**
+     * Method to change education details.
+     * @param userToken User token to be passed to next activity.
+     * @param position The position of the education in the list.
+     * @param job Job object to be passed after being updated.
+     */
     @Override
     public void changeEductionDetails(String userToken, int position, Job job){
         Intent intent = new Intent(EditReqEducationActivity.this, ChangeReqEducationActivity.class);
@@ -89,6 +119,11 @@ public class EditReqEducationActivity extends AppCompatActivity implements EditR
         startActivity(intent);
     }
 
+    /**
+     * Method to add new education.
+     * @param userToken User token to be passed to next activity.
+     * @param job Job object to be passed after being updated.
+     */
     @Override
     public void addNewEducation(String userToken, Job job) {
         Intent intent = new Intent(EditReqEducationActivity.this, AddNewReqEducationActivity.class);

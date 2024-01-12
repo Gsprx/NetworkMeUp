@@ -19,10 +19,26 @@ import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.view.EditAccountEmployee.ShowApplicationsEmployee.ShowApplicationsEmployeeActivity;
 import com.example.networkmeup.view.HomeEmployee.HomeEmployeeActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
-
+/**
+ * Activity class for editing an employee's account.
+ * <p>
+ * This class provides a user interface for editing details of an employee account,
+ * such as email, password, phone number, name, and address.
+ * It handles user interactions and communicates with the Presenter for processing.
+ * </p>
+ */
 public class EditAccountEmployeeActivity extends AppCompatActivity implements EditAccountEmployeeView {
 
     private Employee currEmployee;
+    /**
+     * Initializes the activity.
+     * <p>
+     * This method sets up the user interface and initializes the presenter and view components.
+     * It also sets onClick listeners for various buttons like Save, Delete, and Show Applications.
+     * </p>
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     *                           this Bundle contains the data it most recently supplied.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +131,12 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
             }
         });
     }
-
+    /**
+     * Displays an error message in a dialog.
+     *
+     * @param title   The title of the dialog.
+     * @param message The message to be displayed in the dialog.
+     */
     @Override
     public void showErrorMessage(String title, String message) {
         new AlertDialog.Builder(EditAccountEmployeeActivity.this)
@@ -124,7 +145,14 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
                 .setMessage(message)
                 .setPositiveButton(R.string.ok, null).create().show();
     }
-
+    /**
+     * Handles successful save operations.
+     * <p>
+     * This method is called after successful account modifications, showing a confirmation dialog
+     * and redirecting to the home page.
+     * </p>
+     * @param message The message to be displayed upon successful save.
+     */
     @Override
     //after a successful change, return to start page
     public void successfullySaved(String message) {

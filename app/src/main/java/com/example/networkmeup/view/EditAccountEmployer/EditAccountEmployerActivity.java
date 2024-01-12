@@ -20,10 +20,25 @@ import com.example.networkmeup.domain.TIN;
 import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 
+/**
+ * Activity for editing an employer's account details.
+ * <p>
+ * This class extends AppCompatActivity and implements the EditAccountEmployerView interface.
+ * It handles user interactions for editing and deleting an employer's account details.
+ * </p>
+ */
 public class EditAccountEmployerActivity extends AppCompatActivity implements EditAccountEmployerView {
 
     private Employer currEmployer;
-
+    /**
+     * Initializes the activity.
+     * <p>
+     * This method is called when the activity is starting. It sets the content view
+     * and initializes UI components and event listeners for the edit and delete actions.
+     * </p>
+     * @param savedInstanceState If the activity is being re-initialized after previously being
+     *                           shut down, this Bundle contains the data it most recently supplied.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,6 +135,11 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
     }
 
     // Method to show error message in an AlertDialog
+    /**
+     * Shows an error message in a dialog.
+     * @param title   Title of the error message.
+     * @param message Content of the error message.
+     */
     @Override
     public void showErrorMessage(String title, String message) {
         new AlertDialog.Builder(EditAccountEmployerActivity.this)
@@ -128,7 +148,11 @@ public class EditAccountEmployerActivity extends AppCompatActivity implements Ed
                 .setMessage(message)
                 .setPositiveButton(R.string.ok, null).create().show();
     }
-
+    /**
+     * Handles the successful completion of account changes.
+     * @param message   The success message to be shown to the user.
+     * @param userToken The user token that identifies the employer.
+     */
     // Method to handle successful account change
     @Override
     public void successfullyFinishActivity(String message, String userToken) {

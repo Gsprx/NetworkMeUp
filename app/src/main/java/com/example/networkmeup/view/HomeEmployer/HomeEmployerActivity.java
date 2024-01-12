@@ -15,10 +15,27 @@ import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
 import com.example.networkmeup.view.ManageJobPositions.ManageJobPositionsActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
 import com.example.networkmeup.view.UpdateJobApplications.UpdateJobApplicationsActivity;
-
+/**
+ * Activity representing the home screen for employers.
+ * <p>
+ * This class is an activity that serves as the main interface for employers after they log in.
+ * It allows employers to manage job positions, update job applications, edit their account,
+ * and log out. It interacts with a presenter to handle these actions.
+ * </p>
+ */
 public class HomeEmployerActivity extends AppCompatActivity implements HomeEmployerView {
     private String userToken; // Token (email) of the employer
-
+    /**
+     * Called when the activity is starting.
+     * <p>
+     * This method initializes the activity, sets the content view, and retrieves the user token.
+     * It sets up click listeners for different actions and interacts with the HomeEmployerPresenter
+     * for handling these actions.
+     * </p>
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down
+     *                           then this Bundle contains the data it most recently supplied. Otherwise, it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,28 +100,61 @@ public class HomeEmployerActivity extends AppCompatActivity implements HomeEmplo
                 }
         );
     }
-
+    /**
+     * Navigates to the ManageJobPositionsActivity.
+     * <p>
+     * This method is called to navigate the employer to the ManageJobPositionsActivity,
+     * passing along the user token.
+     * </p>
+     *
+     * @param userToken The token (email) of the employer, used for identification in subsequent activities.
+     */
     @Override
     public void manageJobPositions(String userToken) {
         Intent intent = new Intent(this, ManageJobPositionsActivity.class);
         intent.putExtra("token", userToken);
         startActivity(intent);
     }
-
+    /**
+     * Navigates to the UpdateJobApplicationsActivity.
+     * <p>
+     * This method is called to navigate the employer to the UpdateJobApplicationsActivity,
+     * passing along the user token.
+     * </p>
+     *
+     * @param userToken The token (email) of the employer, used for identification in subsequent activities.
+     */
     @Override
     public void updateJobApplications(String userToken) {
         Intent intent = new Intent(this, UpdateJobApplicationsActivity.class);
         intent.putExtra("token", userToken);
         startActivity(intent);
     }
-
+    /**
+     * Navigates to the EditAccountEmployerActivity.
+     *
+     * <p>
+     * This method is called to navigate the employer to the EditAccountEmployerActivity,
+     * passing along the user token. It allows employers to edit their account information.
+     * </p>
+     *
+     * @param userToken The token (email) of the employer, used for identification in subsequent activities.
+     */
     @Override
     public void editAccount(String userToken) {
         Intent intent = new Intent(this, EditAccountEmployerActivity.class);
         intent.putExtra("token", userToken);
         startActivity(intent);
     }
-
+    /**
+     * Displays an error message if there is an issue with the user token.
+     * <p>
+     * This method is called to show an error dialog when there is a problem with the user's login token.
+     * It navigates the user back to the login screen for re-authentication if necessary.
+     * </p>
+     *
+     * @param errorMessage The error message to be displayed.
+     */
     @Override
     public void showTokenErrorMessage(String errorMessage) {
         new AlertDialog.Builder(HomeEmployerActivity.this)

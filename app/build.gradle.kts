@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.dsl.decorator.SupportedPropertyType.Collection.List.type
+
 plugins {
     id("com.android.application")
 }
@@ -14,6 +16,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -28,11 +31,12 @@ android {
     }
 }
 
-dependencies {
 
+dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(files("C:\\Users\\Gaspar\\AppData\\Local\\Android\\Sdk\\platforms\\android-34/android.jar"))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
