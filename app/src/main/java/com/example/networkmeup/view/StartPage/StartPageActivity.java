@@ -11,8 +11,21 @@ import com.example.networkmeup.daoMemory.MemoryInitializer;
 import com.example.networkmeup.view.Login.LoginActivity;
 import com.example.networkmeup.view.SignUp.SignUpActivity;
 
+/**
+ * StartPageActivity is the initial screen of the application that offers options to either log in or sign up.
+ * It is responsible for the user interface related to the start page.
+ */
 public class StartPageActivity extends AppCompatActivity implements StartPageView {
+
     private static boolean initialized = false;
+
+    /**
+     * Called when the activity is starting. This method is where the initial setup for the activity is done,
+     * such as creating the view and binding data to lists.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     *                           then this Bundle contains the data it most recently supplied. Otherwise, it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,39 +33,52 @@ public class StartPageActivity extends AppCompatActivity implements StartPageVie
 
         final StartPagePresenter presenter = new StartPagePresenter(this);
 
-        // If not already initialized, create the initial data for the app (2 employees, 1 employer with 1 job)
-        if(!initialized)
-        {
+        // Initialize the memory with default data if not already done
+        if (!initialized) {
             new MemoryInitializer().prepareData();
             initialized = true;
         }
 
-
-        //Login selected in start page
-        findViewById(R.id.btnStartPageLogin).setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //When Login button is pressed
-                    presenter.onLogin();
-                }
-            });
-
-        //Signup selected in start page
-        findViewById(R.id.btnStartPageSignUp).setOnClickListener(
-            new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    presenter.onSignUp();
-                }
-            });
+        setupButtonListeners(presenter);
     }
-    public void login(){
+
+    /**
+     * Sets up listeners for the Login and Sign Up buttons.
+     *
+     * @param presenter The presenter associated with this view.
+     */
+    private void setupButtonListeners(final StartPagePresenter presenter) {
+        findViewById(R.id.btnStartPageLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onLogin();
+            }
+        });
+
+        findViewById(R.id.btnStartPageSignUp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onSignUp();
+            }
+        });
+    }
+
+    /**
+     * Initiates the login process by starting the LoginActivity.
+     * This method is called when the user chooses to log in.
+     */
+    @Override
+    public void login() {
         Intent intent = new Intent(StartPageActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 
-    public void signup(){
+    /**
+     * Initiates the sign-up process by starting the SignUpActivity.
+     * This method is called when the user chooses to sign up.
+     */
+    @Override
+    public void signup() {
         Intent intent = new Intent(StartPageActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
