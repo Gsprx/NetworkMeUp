@@ -11,10 +11,24 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the ChangeJobDetailsPresenter class.
+ */
 public class ChangeJobDetailsPresenterTest {
+
+    /**
+     * The presenter to be tested.
+     */
     private ChangeJobDetailsPresenter presenter;
+    /**
+     * The stub of the view to be used in testing.
+     */
     private ChangeJobDetailsViewStub stub;
 
+
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         new MemoryInitializer().prepareData();
@@ -22,11 +36,19 @@ public class ChangeJobDetailsPresenterTest {
         presenter = new ChangeJobDetailsPresenter(stub,"b.be@northfreedom.com", new Job("Finance Office - Part Time","We are hiring for our new Finance Office position at Philips. This job is part time employment, Mon-Fri 16.00-20.00"));
     }
 
+
+    /**
+     * Resets  the test environment after each test.
+     */
     @After
     public void reloadData(){
         new MemoryInitializer().prepareData();
     }
 
+
+    /**
+     * Tests the response of the presenter to multiple change education clicks.
+     */
     @Test
     public void check5EditEduClicks(){
         stub.setDesc("Desc 1");
@@ -40,6 +62,9 @@ public class ChangeJobDetailsPresenterTest {
     }
 
 
+    /**
+     * Tests the response of the presenter to multiple add new work experience clicks.
+     */
     @Test
     public void check5EditWorkExpClicks(){
         stub.setDesc("Desc 1");

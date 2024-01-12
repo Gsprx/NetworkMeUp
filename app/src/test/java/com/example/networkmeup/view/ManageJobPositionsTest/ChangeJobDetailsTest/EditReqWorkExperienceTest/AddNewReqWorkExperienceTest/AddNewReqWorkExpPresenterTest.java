@@ -11,10 +11,26 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the AddNewReqWorkExpPresenter class.
+ */
 public class AddNewReqWorkExpPresenterTest {
+    /**
+     * The presenter to be tested.
+     */
     private AddNewReqWorkExperiencePresenter presenter;
+    /**
+     * The stub of the view to be used in testing.
+     */
     private AddNewReqWorkExpViewStub stub;
+    /**
+     * The initializer for the test data.
+     */
     private Initializer initializer;
+
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
@@ -23,8 +39,11 @@ public class AddNewReqWorkExpPresenterTest {
         presenter = new AddNewReqWorkExperiencePresenter(stub, "b.be@northfreedom.com", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
+    /**
+     * Tests the addition of a new work experience requirement.
+     */
     @Test
-    public void checkAddEducation(){
+    public void checkAddRewWorkExperience(){
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
         stub.setExpertiseArea(0); //Agriculture

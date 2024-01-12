@@ -9,18 +9,34 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the EditReqLangKnowledgePresenter class.
+ */
 public class EditReqLangKnowledgePresenterTest {
+    /**
+     * The stub of the view to be used in testing.
+     */
     private EditReqLangKnowledgeViewStub stub;
+
+    /**
+     * The presenter to be tested.
+     */
     private EditReqLangKnowledgePresenter presenter;
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         stub = new EditReqLangKnowledgeViewStub();
         presenter = new EditReqLangKnowledgePresenter(stub, "testToken@email.com", new Job("Title", "Description"));
     }
 
+    /**
+     * Tests the response of the presenter to multiple change lang knowledge clicks.
+     */
     @Test
-    public void check10ChangeEduClicks(){
+    public void check10ChangeLangKnowClicks(){
         for(int i = 0; i<10; i++){
             presenter.onItemClick(i);
         }
@@ -31,8 +47,11 @@ public class EditReqLangKnowledgePresenterTest {
         Assert.assertEquals("Description", stub.getLastJobPassed().getDescription());
     }
 
+    /**
+     * Tests the response of the presenter to multiple add new lang knowledge clicks.
+     */
     @Test
-    public void check7AddNewEduClicks(){
+    public void check7AddNewLangKnowClicks(){
         for(int i = 0; i<7; i++){
             presenter.onAddNew();
         }
@@ -42,3 +61,4 @@ public class EditReqLangKnowledgePresenterTest {
         Assert.assertEquals("Description", stub.getLastJobPassed().getDescription());
     }
 }
+

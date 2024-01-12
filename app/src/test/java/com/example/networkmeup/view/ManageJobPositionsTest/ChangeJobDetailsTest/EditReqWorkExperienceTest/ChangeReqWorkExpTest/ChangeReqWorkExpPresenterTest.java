@@ -12,11 +12,28 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the ChangeReqWorkExpPresenter class.
+ */
 public class ChangeReqWorkExpPresenterTest {
+
+    /**
+    * The presenter to be tested.
+    */
     private ChangeReqWorkExpDetailsPresenter presenter;
+
+    /**
+     * The stub of the view to be used in testing.
+     */
     private ChangeReqWorkExpViewStub stub;
+    /**
+     * The initializer for the test data.
+     */
     private Initializer initializer;
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
@@ -26,6 +43,9 @@ public class ChangeReqWorkExpPresenterTest {
                 new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
+    /**
+     * Tests the update of a work experience requirement.
+     */
     @Test
     public void checkReqWorkExperienceUpdate(){
         //attributes set to simulated activity widgets
@@ -49,6 +69,10 @@ public class ChangeReqWorkExpPresenterTest {
         Assert.assertEquals(1, curEmployer.getJobs().get(0).getReqWorkExperience().get(0).getYears());
     }
 
+
+    /**
+     * Tests the deletion of a work experience requirement.
+     */
     @Test
     public void checkReqWorkExperienceDelete(){
         presenter.onDelete(0); //first work Experience to be deleted

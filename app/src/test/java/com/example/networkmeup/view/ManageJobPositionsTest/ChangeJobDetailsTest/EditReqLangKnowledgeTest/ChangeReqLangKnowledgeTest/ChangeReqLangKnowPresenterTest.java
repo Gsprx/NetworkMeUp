@@ -13,11 +13,28 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the ChangeReqLangKnowledgeDetailsPresenter class.
+ */
 public class ChangeReqLangKnowPresenterTest {
+    /**
+     * The presenter to be tested.
+     */
     private ChangeReqLangKnowledgeDetailsPresenter presenter;
+
+    /**
+     * The stub of the view to be used in testing.
+     */
     private ChangeReqLangKnowViewStub stub;
+
+    /**
+     * The initializer for the test data.
+     */
     private Initializer initializer;
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
@@ -27,8 +44,11 @@ public class ChangeReqLangKnowPresenterTest {
                 new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
+    /**
+     * Tests the update of a language knowledge requirement.
+     */
     @Test
-    public void checkReqWorkExperienceUpdate(){
+    public void checkReqLangKnowledgeUpdate(){
         //attributes set to simulated activity widgets
         stub.setDescription("Description Test");//Description text
         stub.setLanguage(0); //Chinese
@@ -50,6 +70,9 @@ public class ChangeReqLangKnowPresenterTest {
         Assert.assertEquals(LevelOfKnowledge.Amateur, curEmployer.getJobs().get(0).getReqLanguageKnowledge().get(0).getLvlOfKnowledge());
     }
 
+    /**
+     * Tests the deletion of a language knowledge requirement.
+     */
     @Test
     public void checkReqLangKnowledgeDelete(){
         presenter.onDelete(0); //first language knowledge to be deleted
@@ -67,3 +90,4 @@ public class ChangeReqLangKnowPresenterTest {
         Assert.assertEquals(0, curEmployer.getJobs().get(0).getReqLanguageKnowledge().size());
     }
 }
+

@@ -16,10 +16,28 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the AddNewReqEducationPresenter class.
+ */
 public class AddNewReqEducationPresenterTest {
+    /**
+     * The presenter to be tested.
+     */
     private AddNewReqEducationPresenter presenter;
+
+    /**
+     * The stub of the view to be used in testing.
+     */
     private AddNewReqEducationViewStub stub;
+
+    /**
+     * The initializer for the test data.
+     */
     private Initializer initializer;
+
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
@@ -28,6 +46,9 @@ public class AddNewReqEducationPresenterTest {
         presenter = new AddNewReqEducationPresenter(stub, "b.be@northfreedom.com", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
+    /**
+     * Tests the addition of a new education requirement.
+     */
     @Test
     public void checkAddEducation(){
         //attributes set to simulated activity widgets
@@ -53,6 +74,5 @@ public class AddNewReqEducationPresenterTest {
         Assert.assertEquals("Description Test", currEmployer.getJobs().get(0).getReqEducation().get(1).getDescription());
         Assert.assertEquals("Agriculture", currEmployer.getJobs().get(0).getReqEducation().get(1).getExpArea().getArea());
         Assert.assertEquals("Junior_High_School", currEmployer.getJobs().get(0).getReqEducation().get(1).getLvlOfStudies().toString());
-
     }
 }
