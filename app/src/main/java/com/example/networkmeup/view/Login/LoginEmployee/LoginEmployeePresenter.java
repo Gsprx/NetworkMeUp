@@ -3,17 +3,39 @@ package com.example.networkmeup.view.Login.LoginEmployee;
 import com.example.networkmeup.dao.EmployeeDAO;
 import com.example.networkmeup.domain.Email;
 import com.example.networkmeup.domain.Password;
-
+/**
+ * Presenter for handling the login logic of an employee.
+ * <p>
+ * This class is responsible for processing the login logic for employees. It interacts with
+ * the LoginEmployeeView for UI-related operations and EmployeeDAO for data access and authentication.
+ * </p>
+ */
 public class LoginEmployeePresenter {
     private final LoginEmployeeView loginEmployeeView;
     private final EmployeeDAO employeeDAO;
-
+    /**
+     * Constructs a LoginEmployeePresenter with a specified view and data access object.
+     * <p>
+     * This constructor initializes the presenter with a view for UI interactions and an
+     * EmployeeDAO for handling data operations related to employee authentication.
+     * </p>
+     *
+     * @param view The view associated with this presenter, typically an activity that implements LoginEmployeeView.
+     * @param employeeDAO The data access object for employee-related operations.
+     */
     // Constructor initializing the presenter with a view and an EmployeeDAO instance
     public LoginEmployeePresenter(LoginEmployeeView view, EmployeeDAO employeeDAO) {
         this.loginEmployeeView = view;
         this.employeeDAO = employeeDAO;
     }
-
+    /**
+     * Handles the login process when the login button is clicked.
+     * <p>
+     * This method is invoked to process the employee login. It validates email and password inputs,
+     * communicates with the EmployeeDAO for authentication, and navigates the flow based on the
+     * authentication result.
+     * </p>
+     */
     // Method triggered when the login button is clicked
     public void onLogin() {
         boolean email_ok = true;

@@ -18,9 +18,21 @@ import com.example.networkmeup.domain.TIN;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
 import com.example.networkmeup.view.SignUp.SignUpActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
-
+/**
+ * Activity for employer sign-up in the NetworkMeUp application.
+ * <p>
+ * This activity provides the user interface for new employers to sign up. It interacts with
+ * {@link SignUpEmployerPresenter} to handle the business logic of sign-up.
+ * </p>
+ */
 public class SignUpEmployerActivity extends AppCompatActivity implements SignUpEmployerView{
-
+    /**
+     * Initializes the activity. This method sets up the layout and initializes event listeners.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being
+     *                           shut down, this Bundle contains the data most recently supplied in onSaveInstanceState(Bundle),
+     *                           otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,25 +62,54 @@ public class SignUpEmployerActivity extends AppCompatActivity implements SignUpE
                 }
         );
     }
-
+    /**
+     * Retrieves the entered email from the input field.
+     *
+     * @return An {@link Email} object containing the entered email.
+     * @throws RuntimeException if there is an issue in fetching the email.
+     */
     @Override
     public Email getEmail() throws RuntimeException{
         return new Email(((EditText)findViewById(R.id.editTextSignUpEmployerEmail)).getText().toString().trim());
     }
+    /**
+     * Retrieves the entered phone number from the input field.
+     *
+     * @return A {@link Phone} object containing the entered phone number.
+     * @throws RuntimeException if there is an issue in fetching the phone number.
+     */
     @Override
     public Phone getPhone() throws RuntimeException{
         return new Phone(((EditText)findViewById(R.id.editTextSignUpEmployerPhone)).getText().toString().trim());
     }
+    /**
+     * Retrieves the entered password from the input field.
+     *
+     less
+     Copy code
+     * @return A {@link Password} object containing the entered password.
+     * @throws RuntimeException if there is an issue in fetching the password.
+     */
     @Override
     public Password getPassword() throws RuntimeException{
         return new Password(((EditText)findViewById(R.id.editTextSignupEmployerPassword)).getText().toString().trim());
     }
-
+    /**
+     * Retrieves the entered Tax Identification Number (TIN) from the input field.
+     *
+     * @return A {@link TIN} object containing the entered TIN.
+     * @throws RuntimeException if there is an issue in fetching the TIN.
+     */
     @Override
     public TIN getTIN() throws RuntimeException {
         return new TIN(((EditText)findViewById(R.id.editTextSignUpEmployerTIN)).getText().toString().trim());
     }
-
+    /**
+     * Displays an error message in a dialog.
+     *
+     * @param title   The title of the error message.
+     * @param message The detailed error message.
+     */
     @Override
     public void showErrorMessage(String title, String message) {
         new AlertDialog.Builder(SignUpEmployerActivity.this)
@@ -77,7 +118,11 @@ public class SignUpEmployerActivity extends AppCompatActivity implements SignUpE
                 .setMessage(message)
                 .setPositiveButton(R.string.ok, null).create().show();
     }
-
+    /**
+     * Handles the process after successful sign-up, showing a success message and redirecting to the login page.
+     *
+     * @param message The success message to be displayed.
+     */
     @Override
     //after a successful signup, return to start page
     public void successfullyFinishActivity(String message) {
