@@ -26,7 +26,7 @@ public class UpdateJobApplicationsPresenter {
      * Opens the job applications associated with the selected job.
      *
      * @param job The Job object representing the details of the selected job.
-     * @return void
+     *
      */
     public void onItemClick(Job job){
         view.showJobApplications(userToken, job);

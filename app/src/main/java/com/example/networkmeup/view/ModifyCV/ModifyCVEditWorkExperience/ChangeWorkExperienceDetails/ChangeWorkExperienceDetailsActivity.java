@@ -186,8 +186,7 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
      * Displays a dialog indicating successful deletion of work experience and navigates
      * the user back to the Modify CV screen.
      *
-     * @param
-
+     *
      * @param message   The message to be displayed in the dialog.
      * @param userToken The user token used to identify the current user.
      */
