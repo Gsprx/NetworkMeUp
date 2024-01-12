@@ -15,9 +15,22 @@ import com.example.networkmeup.utils.RecyclerViewAdapters.EmployeeApplicationRec
 import com.example.networkmeup.view.EditAccountEmployee.EditAccountEmployeeActivity;
 
 import java.util.ArrayList;
-
+/**
+ * Activity class for showing applications associated with an employee.
+ * <p>
+ * This class is responsible for rendering the UI that displays a list of applications
+ * linked to a specific employee. It utilizes a RecyclerView to show these applications.
+ * </p>
+ */
 public class ShowApplicationsEmployeeActivity extends AppCompatActivity implements ShowApplicationsEmployeeView{
     private Employee currEmployee;
+    /**
+     * Called when the activity is starting. This is where most initialization should go.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being
+     *                           shut down then this Bundle contains the data it most recently
+     *                           supplied in onSaveInstanceState(Bundle).
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
