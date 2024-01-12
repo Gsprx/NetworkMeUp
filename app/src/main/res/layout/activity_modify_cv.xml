@@ -27,7 +27,9 @@
                 android:layout_width="362dp"
                 android:layout_height="199dp"
                 android:layout_marginTop="28dp"
+                android:layout_marginEnd="25dp"
                 android:verticalScrollbarPosition="right"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textModifyCVLangKnowledge"
                 app:layout_constraintTop_toBottomOf="@+id/textModifyCVLangKnowledge"
                 tools:itemCount="5" />
@@ -49,8 +51,10 @@
                 android:layout_width="358dp"
                 android:layout_height="187dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="29dp"
                 android:scrollbars="vertical"
                 android:verticalScrollbarPosition="right"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textModifyCVEducation"
                 app:layout_constraintTop_toBottomOf="@+id/textModifyCVEducation"
                 tools:itemCount="5" />
@@ -86,7 +90,9 @@
                 android:layout_width="362dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="33dp"
+                android:layout_marginEnd="25dp"
                 android:verticalScrollbarPosition="right"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textModifyCVWorkExperience"
                 app:layout_constraintTop_toBottomOf="@+id/textModifyCVWorkExperience"
                 tools:itemCount="5" />
@@ -162,14 +168,16 @@
 
             <EditText
                 android:id="@+id/editTextModifyCVAdditionalSkillset"
-                android:layout_width="341dp"
-                android:layout_height="122dp"
+                android:layout_width="342dp"
+                android:layout_height="92dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="46dp"
                 android:layout_marginBottom="16dp"
                 android:ems="10"
                 android:hint="Enter an Additional Skillset here..."
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView73"
                 app:layout_constraintTop_toBottomOf="@+id/textView73"
                 app:layout_constraintVertical_bias="1.0" />

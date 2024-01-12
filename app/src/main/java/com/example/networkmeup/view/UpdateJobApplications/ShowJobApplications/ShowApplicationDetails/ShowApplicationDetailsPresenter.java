@@ -47,8 +47,7 @@ public class ShowApplicationDetailsPresenter {
 
         //update employees static list's original reference
         Employee applicant = new EmployeeDAOMemory().getByEmail(application.getEmployee().getEmail());
-
-
+        applicant.addApplication(application);
     }
 
     /**
