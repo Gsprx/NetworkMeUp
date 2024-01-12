@@ -1,0 +1,111 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChangeReqWorkExpDetailsView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails</a>
+</div>
+
+<h1>Coverage Summary for Class: ChangeReqWorkExpDetailsView (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ChangeReqWorkExpDetailsView</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;/**
+&nbsp; * This interface represents the view for changing the details of a required work experience.
+&nbsp; * It contains methods that need to be implemented by any class that serves as a view for changing the details of a required work experience.
+&nbsp; */
+&nbsp;public interface ChangeReqWorkExpDetailsView {
+&nbsp;    /**
+&nbsp;     * This method gets the description entered by the user.
+&nbsp;     * @return The description entered by the user.
+&nbsp;     */
+&nbsp;    String getDescription();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method gets the selected expertise area from the spinner.
+&nbsp;     * @return The position of the selected expertise area in the spinner.
+&nbsp;     */
+&nbsp;    int getExpertiseArea();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method gets the selected number of years from the spinner.
+&nbsp;     * @return The position of the selected number of years in the spinner.
+&nbsp;     */
+&nbsp;    int getYears();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when a required work experience is successfully deleted.
+&nbsp;     * @param message The success message to be displayed.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job object.
+&nbsp;     */
+&nbsp;    void successfulDelete(String message, String userToken, Job job);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when a required work experience is successfully saved.
+&nbsp;     * @param message The success message to be displayed.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job object.
+&nbsp;     */
+&nbsp;    void successfulSave(String message, String userToken, Job job);
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

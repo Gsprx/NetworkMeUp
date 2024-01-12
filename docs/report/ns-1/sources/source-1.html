@@ -1,0 +1,262 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Initializer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: Initializer (com.example.networkmeup.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Initializer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (67/67)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.dao;
+&nbsp;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.*;
+&nbsp;
+&nbsp;
+&nbsp;/**
+&nbsp; * Initializer class serves as an abstract base class for initializing data
+&nbsp; * related to employees and employers.
+&nbsp; */
+<b class="fc">&nbsp;public abstract class Initializer {</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Abstract method to erase existing data from the data source.
+&nbsp;     */
+&nbsp;    protected abstract void eraseData();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to prepare initial employee and employer data by creating instances
+&nbsp;     * and storing them in the respective data access objects (DAOs).
+&nbsp;     */
+&nbsp;    public void prepareData(){
+&nbsp;        // Remove previous data
+<b class="fc">&nbsp;        eraseData();</b>
+&nbsp;
+&nbsp;        // Initialize initial employees and their related data
+<b class="fc">&nbsp;        EmployeeDAO employeeDAO = getEmployeeDAO();</b>
+&nbsp;
+&nbsp;        // Employee 1
+<b class="fc">&nbsp;        Employee employee1 = new Employee(new Email(&quot;john.Brown12@gmail.com&quot;), new Phone(&quot;6977264561&quot;), new Password(&quot;JohnBrown!12&quot;));</b>
+<b class="fc">&nbsp;        employee1.setName(&quot;John Brown&quot;);</b>
+<b class="fc">&nbsp;        employee1.setAddress(&quot;2754 Washington Avenue,  Wiggins, Mississippi(MS), 39577&quot;);</b>
+&nbsp;
+&nbsp;        // Construct CV for employee 1
+<b class="fc">&nbsp;        CV cv1 = new CV();</b>
+&nbsp;
+&nbsp;        // Education details
+<b class="fc">&nbsp;        cv1.setEducation(new Education(&quot;Personal Studies&quot;, new ExpertiseArea(&quot;Finance&quot;), LevelOfStudies.Bachelor));</b>
+<b class="fc">&nbsp;        cv1.setEducation(new Education(&quot;My personal High School education&quot;, new ExpertiseArea(&quot;Other&quot;), LevelOfStudies.High_School));</b>
+&nbsp;
+&nbsp;        // Language knowledge
+<b class="fc">&nbsp;        cv1.setLanguageKnowledge(new LanguageKnowledge(&quot;Naitive language, was born in America&quot;, new Language(&quot;English&quot;), LevelOfKnowledge.Native));</b>
+&nbsp;
+&nbsp;        // Work experience
+<b class="fc">&nbsp;        cv1.setWorkExperience(new WorkExperience(2,&quot;Worked during my high school studies&quot;, new ExpertiseArea(&quot;Tourism&quot;)));</b>
+<b class="fc">&nbsp;        cv1.setWorkExperience(new WorkExperience(4,&quot;Previous full time career work&quot;, new ExpertiseArea(&quot;Finance&quot;)));</b>
+<b class="fc">&nbsp;        cv1.setAdditionalSkillset(&quot;Have obtained teamwork experience from 4 years of professional sports&quot;);</b>
+<b class="fc">&nbsp;        employee1.setCV(cv1);</b>
+&nbsp;
+&nbsp;        // Employee 2
+<b class="fc">&nbsp;        Employee employee2 = new Employee(new Email(&quot;marygreen.188@gmail.com&quot;), new Phone(&quot;6953619405&quot;), new Password(&quot;Mary878Green*&quot;));</b>
+<b class="fc">&nbsp;        employee2.setName(&quot;Mary Green&quot;);</b>
+<b class="fc">&nbsp;        employee2.setAddress(&quot;4, avenue René Carre, 37 898 Salmon-sur-Voisin&quot;);</b>
+&nbsp;
+&nbsp;        // Construct CV for employee 2
+<b class="fc">&nbsp;        CV cv2 = new CV();</b>
+&nbsp;
+&nbsp;        // Education details
+<b class="fc">&nbsp;        cv2.setEducation(new Education(&quot;Bachelor&#39;s Degree&quot;, new ExpertiseArea(&quot;Psychology&quot;), LevelOfStudies.Bachelor));</b>
+<b class="fc">&nbsp;        cv2.setEducation(new Education(&quot;High School expertise degree&quot;, new ExpertiseArea(&quot;Human Studies&quot;), LevelOfStudies.High_School));</b>
+&nbsp;
+&nbsp;        // Language knowledge
+<b class="fc">&nbsp;        cv2.setLanguageKnowledge(new LanguageKnowledge(&quot;Born and raised in France&quot;, new Language(&quot;French&quot;), LevelOfKnowledge.Native));</b>
+<b class="fc">&nbsp;        cv2.setLanguageKnowledge(new LanguageKnowledge(&quot;Learned english during my bachelor&#39;s studies&quot;, new Language(&quot;English&quot;), LevelOfKnowledge.Advanced));</b>
+<b class="fc">&nbsp;        employee2.setCV(cv2);</b>
+&nbsp;
+&nbsp;        // Add employees to EmployeeDAO
+<b class="fc">&nbsp;        employeeDAO.save(employee1);</b>
+<b class="fc">&nbsp;        employeeDAO.save(employee2);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;        // Initialize initial employers and their related data
+<b class="fc">&nbsp;        EmployerDAO employerDAO = getEmployerDAO();</b>
+&nbsp;
+&nbsp;        // Employer 1
+<b class="fc">&nbsp;        Employer employer1 = new Employer(new Email(&quot;b.be@northfreedom.com&quot;), new Phone(&quot;5693311692&quot;), new Password(&quot;UwL[;3{[fQP:&quot;), new TIN(&quot;000001010&quot;));</b>
+<b class="fc">&nbsp;        employer1.setCompanyName(&quot;Philips Co.&quot;);</b>
+<b class="fc">&nbsp;        employer1.setSector(&quot;Technology &amp; Electronics&quot;);</b>
+&nbsp;
+&nbsp;        // Create a job posting for Employer 1
+<b class="fc">&nbsp;        Job job1 = new Job(&quot;Finance Office - Part Time&quot;, &quot;We are hiring for our new Finance Office position at Philips. This job is part time employment, Mon-Fri 16.00-20.00&quot;);</b>
+<b class="fc">&nbsp;        job1.addReqEducation(new Education(&quot;Minimum Finance education&quot;, new ExpertiseArea(&quot;Finance&quot;), LevelOfStudies.High_School));</b>
+<b class="fc">&nbsp;        job1.addReqLanguageKnowledge(new LanguageKnowledge(&quot;Minimum knowledge to work and cooperate properly&quot;, new Language(&quot;English&quot;), LevelOfKnowledge.Advanced));</b>
+<b class="fc">&nbsp;        job1.addReqWorkExperience(new WorkExperience(1,&quot;Required work experience for this sector to achieve a harmonic implementation in our systems&quot;, new ExpertiseArea(&quot;Finance&quot;)));</b>
+<b class="fc">&nbsp;        employer1.addJob(job1);</b>
+&nbsp;
+&nbsp;        // Add employers to EmployerDAO
+<b class="fc">&nbsp;        employerDAO.save(employer1);</b>
+&nbsp;
+&nbsp;        //Initialize Expertise Area Data to be used in the app.
+<b class="fc">&nbsp;        ExpertiseArea expAr1 = new ExpertiseArea(&quot;Finance&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr2 = new ExpertiseArea(&quot;Computer Science&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr3 = new ExpertiseArea(&quot;Other&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr4 = new ExpertiseArea(&quot;Psychology&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr5 = new ExpertiseArea(&quot;Tourism&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr6 = new ExpertiseArea(&quot;Human Studies&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr7 = new ExpertiseArea(&quot;Business Management&quot;);</b>
+<b class="fc">&nbsp;        ExpertiseArea expAr8 = new ExpertiseArea(&quot;Agriculture&quot;);</b>
+&nbsp;
+&nbsp;        //add exp area data to our database
+<b class="fc">&nbsp;        ExpertiseAreaDAO expertiseAreaDAO = getExpertiseAreaDAO();</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr1);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr2);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr3);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr4);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr5);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr6);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr7);</b>
+<b class="fc">&nbsp;        expertiseAreaDAO.save(expAr8);</b>
+&nbsp;
+&nbsp;        //Initialize Languages to be used in the app.
+<b class="fc">&nbsp;        Language lang1 = new Language(&quot;English&quot;);</b>
+<b class="fc">&nbsp;        Language lang2 = new Language(&quot;French&quot;);</b>
+<b class="fc">&nbsp;        Language lang3 = new Language(&quot;Spanish&quot;);</b>
+<b class="fc">&nbsp;        Language lang4 = new Language(&quot;Greek&quot;);</b>
+<b class="fc">&nbsp;        Language lang5 = new Language(&quot;Chinese&quot;);</b>
+<b class="fc">&nbsp;        Language lang6 = new Language(&quot;Japanese&quot;);</b>
+<b class="fc">&nbsp;        Language lang7 = new Language(&quot;German&quot;);</b>
+&nbsp;
+&nbsp;        //add languages to our database
+<b class="fc">&nbsp;        LanguageDAO languageDAO = getLanguageDAO();</b>
+<b class="fc">&nbsp;        languageDAO.save(lang1);</b>
+<b class="fc">&nbsp;        languageDAO.save(lang2);</b>
+<b class="fc">&nbsp;        languageDAO.save(lang3);</b>
+<b class="fc">&nbsp;        languageDAO.save(lang4);</b>
+<b class="fc">&nbsp;        languageDAO.save(lang5);</b>
+<b class="fc">&nbsp;        languageDAO.save(lang6);</b>
+<b class="fc">&nbsp;        languageDAO.save(lang7);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Abstract method to get the EmployeeDAO instance.
+&nbsp;     *
+&nbsp;     * @return EmployeeDAO instance
+&nbsp;     */
+&nbsp;    public abstract EmployeeDAO getEmployeeDAO();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Abstract method to get the EmployerDAO instance.
+&nbsp;     *
+&nbsp;     * @return EmployerDAO instance
+&nbsp;     */
+&nbsp;    public abstract EmployerDAO getEmployerDAO();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Abstract method to get the ExpertiseAreaDAO instance.
+&nbsp;     * @return  ExpertiseAreaDAO instance
+&nbsp;     */
+&nbsp;    public abstract ExpertiseAreaDAO getExpertiseAreaDAO();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Abstract method to get the LanguageDAO instance.
+&nbsp;     * @return LanguageDAO instance
+&nbsp;     */
+&nbsp;    public abstract LanguageDAO getLanguageDAO();
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

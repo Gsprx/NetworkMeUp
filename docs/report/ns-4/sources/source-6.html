@@ -1,0 +1,223 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SelectJobsRecyclerViewAdapter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.utils.RecyclerViewAdapters</a>
+</div>
+
+<h1>Coverage Summary for Class: SelectJobsRecyclerViewAdapter (com.example.networkmeup.utils.RecyclerViewAdapters)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SelectJobsRecyclerViewAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SelectJobsRecyclerViewAdapter$ItemClickListener</td>
+  </tr>
+  <tr>
+    <td class="name">SelectJobsRecyclerViewAdapter$SelectJobsViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/22)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.utils.RecyclerViewAdapters;
+&nbsp;
+&nbsp;import android.content.Context;
+&nbsp;import android.view.LayoutInflater;
+&nbsp;import android.view.View;
+&nbsp;import android.view.ViewGroup;
+&nbsp;import android.widget.TextView;
+&nbsp;
+&nbsp;import androidx.annotation.NonNull;
+&nbsp;import androidx.recyclerview.widget.RecyclerView;
+&nbsp;
+&nbsp;import com.example.networkmeup.R;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+<b class="nc">&nbsp;public class SelectJobsRecyclerViewAdapter extends RecyclerView.Adapter&lt;SelectJobsRecyclerViewAdapter.SelectJobsViewHolder&gt; {</b>
+&nbsp;    private ArrayList&lt;Job&gt; jobs;
+&nbsp;    private Context context;
+&nbsp;    private SelectJobsRecyclerViewAdapter.ItemClickListener clickListener;
+&nbsp;
+<b class="nc">&nbsp;    public SelectJobsRecyclerViewAdapter(Context context, ArrayList&lt;Job&gt; jobs){</b>
+<b class="nc">&nbsp;        this.context = context;</b>
+<b class="nc">&nbsp;        this.jobs = jobs;</b>
+&nbsp;    }
+&nbsp;    @NonNull
+&nbsp;    @Override
+&nbsp;    //Creates the look for the rows in the UI recycler view
+&nbsp;    public SelectJobsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+&nbsp;        //this method creates the look for the rows that we specified
+<b class="nc">&nbsp;        LayoutInflater inflater = LayoutInflater.from(context);</b>
+<b class="nc">&nbsp;        View view = inflater.inflate(R.layout.recycler_view_jobs_row, parent, false);</b>
+<b class="nc">&nbsp;        return new SelectJobsViewHolder(view);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;
+&nbsp;    //Assign(bind) the data to use for each row
+&nbsp;    //changes the data on the recycler view based on the position of the recycler
+&nbsp;    public void onBindViewHolder(@NonNull SelectJobsViewHolder holder, int position) {
+&nbsp;        //set each holder&#39;s members to match the data on the job data found on the position (of the position int passed in the method)
+<b class="nc">&nbsp;        holder.jobTitle.setText(jobs.get(position).getTitle());</b>
+<b class="nc">&nbsp;        holder.jobAvailability.setText(jobs.get(position).getAvailability().toString());</b>
+<b class="nc">&nbsp;        holder.jobDescription.setText(jobs.get(position).getDescription());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int getItemCount() {
+<b class="nc">&nbsp;        return jobs.size();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //catch click events with a click listener that we set
+&nbsp;    public void setClickListener(SelectJobsRecyclerViewAdapter.ItemClickListener itemClickListener) {
+<b class="nc">&nbsp;        this.clickListener = itemClickListener;</b>
+&nbsp;    }
+&nbsp;    //updated list notification to the adapter
+&nbsp;    public void updateList(ArrayList&lt;Job&gt; newList) {
+<b class="nc">&nbsp;        this.jobs = newList;</b>
+<b class="nc">&nbsp;        notifyDataSetChanged();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //method of this interface must be implemented by parent activity
+&nbsp;    public interface ItemClickListener {
+&nbsp;        void onItemClick(View view, int position);
+&nbsp;    }
+&nbsp;
+&nbsp;    public class SelectJobsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+&nbsp;        //this class holds the TextView items in the search_jobs_recycler_view_row layout file
+&nbsp;
+&nbsp;        TextView jobTitle;
+&nbsp;        TextView jobAvailability;
+&nbsp;        TextView jobDescription;
+&nbsp;
+<b class="nc">&nbsp;        public SelectJobsViewHolder(@NonNull View itemView) {</b>
+<b class="nc">&nbsp;            super(itemView);</b>
+&nbsp;
+<b class="nc">&nbsp;            itemView.setOnClickListener(this);</b>
+&nbsp;
+<b class="nc">&nbsp;            this.jobTitle = itemView.findViewById(R.id.textJobTitle);</b>
+<b class="nc">&nbsp;            this.jobAvailability = itemView.findViewById(R.id.textJobAvailability);</b>
+<b class="nc">&nbsp;            this.jobDescription = itemView.findViewById(R.id.textJobDescription);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public void onClick(View v) {
+<b class="nc">&nbsp;            if (clickListener != null) {</b>
+<b class="nc">&nbsp;                clickListener.onItemClick(v, getAdapterPosition());</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

@@ -62,4 +62,9 @@ public class ExpertiseAreaDAOMemory implements ExpertiseAreaDAO {
         }
         return false;
     }
+
+    @Override
+    public void delete(ExpertiseArea expertiseArea) {
+        expertiseAreas.remove(expertiseArea);
+    }
 }

@@ -1,0 +1,93 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SearchJobsView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.SearchJobs</a>
+</div>
+
+<h1>Coverage Summary for Class: SearchJobsView (com.example.networkmeup.view.SearchJobs)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">SearchJobsView</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.SearchJobs;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;/**
+&nbsp; * Interface representing the contract for the Search Jobs View in the application.
+&nbsp; * This interface defines methods for handling various outcomes related to job search functionality.
+&nbsp; */
+&nbsp;public interface SearchJobsView {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Callback method to handle the scenario when no jobs are found during a search.
+&nbsp;     *
+&nbsp;     * @param message   A descriptive message explaining the lack of job results.
+&nbsp;     * @param userToken The authentication token of the user performing the search.
+&nbsp;     */
+&nbsp;    public void noJobsFound(String message, String userToken);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Callback method to display the details of a specific job.
+&nbsp;     *
+&nbsp;     * @param userToken The authentication token of the user viewing the job details.
+&nbsp;     * @param job       The Job object containing details of the job to be displayed.
+&nbsp;     */
+&nbsp;    public void showJobDetails(String userToken, Job job);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

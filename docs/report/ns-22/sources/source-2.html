@@ -1,0 +1,193 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SearchJobsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.SearchJobs</a>
+</div>
+
+<h1>Coverage Summary for Class: SearchJobsPresenter (com.example.networkmeup.view.SearchJobs)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SearchJobsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (23/23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.SearchJobs;
+&nbsp;
+&nbsp;import com.example.networkmeup.dao.EmployeeDAO;
+&nbsp;import com.example.networkmeup.dao.EmployerDAO;
+&nbsp;import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
+&nbsp;import com.example.networkmeup.daoMemory.EmployerDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Application;
+&nbsp;import com.example.networkmeup.domain.Availability;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employee;
+&nbsp;import com.example.networkmeup.domain.Employer;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Iterator;
+&nbsp;
+&nbsp;/**
+&nbsp; * Presenter class for the Search Jobs functionality, responsible for handling the interaction
+&nbsp; * between the Search Jobs View and the data models.
+&nbsp; */
+&nbsp;public class SearchJobsPresenter {
+&nbsp;    private SearchJobsView view;
+&nbsp;    private String userToken;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for the SearchJobsPresenter class.
+&nbsp;     *
+&nbsp;     * @param view      The associated SearchJobsView interface implementation.
+&nbsp;     * @param userToken The authentication token of the user interacting with the search functionality.
+&nbsp;     */
+<b class="fc">&nbsp;    public SearchJobsPresenter(SearchJobsView view, String userToken) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method called when the Search Jobs screen is created, responsible for finding matching jobs
+&nbsp;     * based on the current employee&#39;s CV and job availability.
+&nbsp;     *
+&nbsp;     * @return An ArrayList of Job objects representing the matching jobs found.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Job&gt; onCreate(){
+&nbsp;        //create arraylist to return
+<b class="fc">&nbsp;        ArrayList&lt;Job&gt; matchingJobs = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;        //obtain current employee&#39;s data
+<b class="fc">&nbsp;        EmployeeDAO employeeDAO = new EmployeeDAOMemory();</b>
+<b class="fc">&nbsp;        Employee currEmployee = employeeDAO.getByEmail(new Email(userToken));</b>
+&nbsp;
+&nbsp;        //obtain all employers to access all available and temporarily not available jobs
+<b class="fc">&nbsp;        EmployerDAO employerDAO = new EmployerDAOMemory();</b>
+&nbsp;
+&nbsp;        //check through all available and temporarily unavailable jobs and find matches
+<b class="fc">&nbsp;        for(Employer employer : employerDAO.getAll()){</b>
+<b class="fc">&nbsp;            for(Job job : employer.getJobs()){</b>
+<b class="fc">&nbsp;                if(job.acceptCV(currEmployee.getCV()) &amp;&amp; (job.getAvailability().equals(Availability.Available) || job.getAvailability().equals(Availability.Temporarily_Unavailable))){</b>
+&nbsp;                    //ignore jobs that the user has already applied to
+<b class="fc">&nbsp;                    boolean applied = false;</b>
+<b class="fc">&nbsp;                    for (Application application : job.getApplications()) {</b>
+<b class="fc">&nbsp;                        if (application.getEmployee().equals(currEmployee) == true){</b>
+<b class="fc">&nbsp;                            applied = true;</b>
+&nbsp;                        }
+<b class="fc">&nbsp;                    }</b>
+&nbsp;                    //if we found an application with the employee in it, we ignore the job, else add it
+<b class="fc">&nbsp;                    if(applied == false){</b>
+<b class="fc">&nbsp;                        matchingJobs.add(job);</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;
+&nbsp;        //no matching jobs found, send message to view
+<b class="fc">&nbsp;        if(matchingJobs.size() == 0){</b>
+<b class="fc">&nbsp;            view.noJobsFound(&quot;Unfortunately there are no jobs that match with your CV. Please try again later.&quot;, userToken);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return matchingJobs;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method called when a specific job is selected, responsible for notifying the view to display
+&nbsp;     * the details of the selected job.
+&nbsp;     *
+&nbsp;     * @param selectedJob The Job object representing the selected job.
+&nbsp;     */
+&nbsp;    public void onItemClick(Job selectedJob) {
+<b class="fc">&nbsp;        view.showJobDetails(userToken, selectedJob);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

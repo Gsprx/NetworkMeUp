@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChangeReqWorkExpDetailsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails</a>
+</div>
+
+<h1>Coverage Summary for Class: ChangeReqWorkExpDetailsPresenter (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChangeReqWorkExpDetailsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.ChangeReqWorkExpDetails;
+&nbsp;
+&nbsp;import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;import com.example.networkmeup.domain.WorkExperience;
+&nbsp;
+&nbsp;/**
+&nbsp; * This class represents a presenter for changing the details of a required work experience.
+&nbsp; * It contains methods to handle the saving and deletion of a required work experience.
+&nbsp; */
+&nbsp;public class ChangeReqWorkExpDetailsPresenter {
+&nbsp;    private ChangeReqWorkExpDetailsView view;
+&nbsp;    private String userToken;
+&nbsp;    private Job job;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for the ChangeReqWorkExpDetailsPresenter class.
+&nbsp;     * @param view The view associated with this presenter.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job object.
+&nbsp;     */
+<b class="fc">&nbsp;    public ChangeReqWorkExpDetailsPresenter(ChangeReqWorkExpDetailsView view, String userToken, Job job) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+<b class="fc">&nbsp;        this.job = job;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the save button is pressed.
+&nbsp;     * It updates the work experience at the given position and calls the successfulSave method of the view.
+&nbsp;     * @param position The position of the work experience in the list.
+&nbsp;     */
+&nbsp;    public void onSave(int position){
+<b class="fc">&nbsp;        WorkExperience updatedWorkExp = job.getReqWorkExperience().get(position);</b>
+&nbsp;
+<b class="fc">&nbsp;        updatedWorkExp.setYears(view.getYears()+1);</b>
+<b class="fc">&nbsp;        updatedWorkExp.setDescription(view.getDescription());</b>
+<b class="fc">&nbsp;        updatedWorkExp.setExpArea(new ExpertiseAreaDAOMemory().getAll().get(view.getExpertiseArea()));</b>
+&nbsp;
+<b class="fc">&nbsp;        view.successfulSave(&quot;Work Experience was successfully updated!&quot;, userToken, job);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the delete button is pressed.
+&nbsp;     * It removes the work experience at the given position and calls the successfulDelete method of the view.
+&nbsp;     * @param position The position of the work experience in the list.
+&nbsp;     */
+&nbsp;    public void onDelete(int position){
+<b class="fc">&nbsp;        job.getReqWorkExperience().remove(position);</b>
+&nbsp;
+<b class="fc">&nbsp;        view.successfulDelete(&quot;Work Experience was successfully deleted!&quot;, userToken, job);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

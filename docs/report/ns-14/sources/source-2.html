@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChangeReqLangKnowledgeDetailsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails</a>
+</div>
+
+<h1>Coverage Summary for Class: ChangeReqLangKnowledgeDetailsPresenter (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChangeReqLangKnowledgeDetailsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.ChangeReqLangKnowledgeDetails;
+&nbsp;
+&nbsp;import com.example.networkmeup.daoMemory.LanguageDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;import com.example.networkmeup.domain.LanguageKnowledge;
+&nbsp;import com.example.networkmeup.domain.LevelOfKnowledge;
+&nbsp;
+&nbsp;/**
+&nbsp; * The ChangeReqLangKnowledgeDetailsPresenter class is responsible for handling actions from the ChangeReqLangKnowledgeDetailsActivity view.
+&nbsp; */
+&nbsp;public class ChangeReqLangKnowledgeDetailsPresenter {
+&nbsp;    private ChangeReqLangKnowledgeDetailsView view;
+&nbsp;    private String userToken;
+&nbsp;    private Job job;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for the ChangeReqLangKnowledgeDetailsPresenter class.
+&nbsp;     * @param view The view that this presenter is attached to.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job that is being updated.
+&nbsp;     */
+<b class="fc">&nbsp;    public ChangeReqLangKnowledgeDetailsPresenter(ChangeReqLangKnowledgeDetailsView view, String userToken, Job job) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+<b class="fc">&nbsp;        this.job = job;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the save button is pressed.
+&nbsp;     * It updates the language knowledge at the given position and notifies the view of a successful save.
+&nbsp;     * @param position The position of the language knowledge in the list.
+&nbsp;     */
+&nbsp;    public void onSave(int position){
+<b class="fc">&nbsp;        LanguageKnowledge updatedLanguageKnowledge = job.getReqLanguageKnowledge().get(position);</b>
+&nbsp;
+<b class="fc">&nbsp;        updatedLanguageKnowledge.setLvlOfKnowledge(LevelOfKnowledge.values()[view.getLevelOfKnowledge().ordinal()]);</b>
+<b class="fc">&nbsp;        updatedLanguageKnowledge.setDescription(view.getDescription());</b>
+<b class="fc">&nbsp;        updatedLanguageKnowledge.setLanguage(new LanguageDAOMemory().getAll().get(view.getLanguage()));</b>
+&nbsp;
+<b class="fc">&nbsp;        view.successfulSave(&quot;Language Knowledge was successfully updated!&quot;, userToken, job);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the delete button is pressed.
+&nbsp;     * It removes the language knowledge at the given position and notifies the view of a successful delete.
+&nbsp;     * @param position The position of the language knowledge in the list.
+&nbsp;     */
+&nbsp;    public void onDelete(int position){
+<b class="fc">&nbsp;        job.getReqLanguageKnowledge().remove(position);</b>
+&nbsp;
+<b class="fc">&nbsp;        view.successfulDelete(&quot;Language Knowledge was successfully deleted!&quot;, userToken, job);</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

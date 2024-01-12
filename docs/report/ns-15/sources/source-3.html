@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EditReqWorkExperienceView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience</a>
+</div>
+
+<h1>Coverage Summary for Class: EditReqWorkExperienceView (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">EditReqWorkExperienceView</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;/**
+&nbsp; * This interface represents the view for editing the required work experiences.
+&nbsp; * It contains methods that need to be implemented by any class that serves as a view for editing the required work experiences.
+&nbsp; */
+&nbsp;public interface EditReqWorkExperienceView {
+&nbsp;    /**
+&nbsp;     * This method is called to change the details of a work experience.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param position The position of the work experience in the list.
+&nbsp;     * @param job The job object.
+&nbsp;     */
+&nbsp;    void changeWorkExperienceDetails(String userToken, int position, Job job);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called to add a new work experience.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job object.
+&nbsp;     */
+&nbsp;    void addNewWorkExperience(String userToken, Job job);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

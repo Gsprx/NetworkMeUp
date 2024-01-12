@@ -1,0 +1,361 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Job</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Job (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Job</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (70/70)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;
+&nbsp;
+&nbsp;import java.io.Serializable;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Objects;
+&nbsp;
+&nbsp;/**
+&nbsp; * The Job class represents a job listing, containing details and requirements for a job position.
+&nbsp; */
+&nbsp;
+&nbsp;// class Job implements Serializable for the ability to be passed through activities using Intent.putExtra method.
+&nbsp;public class Job implements Serializable {
+&nbsp;    private String title; // Title of the job
+&nbsp;    private String description; // Description of the job
+<b class="fc">&nbsp;    private Availability availability = Availability.Available; // Availability status of the job</b>
+&nbsp;    private ArrayList&lt;Application&gt; applications; // List of applications for this job
+&nbsp;    private ArrayList&lt;Education&gt; reqEducation; // List of required education for the job
+&nbsp;    private ArrayList&lt;WorkExperience&gt; reqWorkExperience; // List of required work experience for the job
+&nbsp;    private ArrayList&lt;LanguageKnowledge&gt; reqLanguageKnowledge; // List of required language knowledge for the job
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor to create a Job object with a specified title and description.
+&nbsp;     * Initializes lists for applications, required education, work experience, and language knowledge.
+&nbsp;     * @param title The title of the job.
+&nbsp;     * @param description The description of the job.
+&nbsp;     * @throws NullPointerException if the title or description is null.
+&nbsp;     */
+<b class="fc">&nbsp;    public Job(String title, String description){</b>
+<b class="fc">&nbsp;        validateData(title,description);</b>
+<b class="fc">&nbsp;        applications = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        reqEducation = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        reqWorkExperience = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        reqLanguageKnowledge = new ArrayList&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates and sets the title and description for the job.
+&nbsp;     * @param title The title of the job to validate and set.
+&nbsp;     * @param description The description of the job to validate and set.
+&nbsp;     * @throws NullPointerException if the title or description is null.
+&nbsp;     */
+&nbsp;    private void validateData(String title, String description){
+<b class="fc">&nbsp;        if(title == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Job title cannot be null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(description == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Job description cannot be null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.title = title;</b>
+<b class="fc">&nbsp;        this.description = description;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Determines if a CV meets the requirements of this job.
+&nbsp;     * @param cv The CV to be evaluated against the job requirements.
+&nbsp;     * @return true if the CV meets all the job requirements, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean acceptCV(CV cv){
+&nbsp;
+&nbsp;        // Iterates through each required education for the job
+<b class="fc">&nbsp;        for(Education reqEducation : reqEducation){</b>
+&nbsp;
+<b class="fc">&nbsp;            boolean found = false; // Initializes a flag to track if a matching or greater education is found</b>
+&nbsp;
+&nbsp;            // Iterates through each education in the applicant&#39;s CV
+<b class="fc">&nbsp;            for(Education applicantEducation : cv.getEducation()){</b>
+&nbsp;                // Compares the applicant&#39;s education against the required education
+<b class="fc">&nbsp;                if (applicantEducation.compare(reqEducation) &gt;= 0){</b>
+<b class="fc">&nbsp;                    found = true; // Sets the flag to true if a matching or greater education is found</b>
+<b class="fc">&nbsp;                    break; // Breaks the loop as the requirement is met</b>
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
+&nbsp;            // If no matching or greater education is found, the CV is insufficient for this job requirement
+<b class="fc">&nbsp;            if (found == false){</b>
+<b class="fc">&nbsp;                return false; // Returns false indicating insufficient education for this job requirement</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        // Similar logic for checking required work experience and language knowledge
+&nbsp;
+&nbsp;        // Iterates through each required work experience for the job
+<b class="fc">&nbsp;        for(WorkExperience reqWorkExperience : reqWorkExperience){</b>
+&nbsp;
+<b class="fc">&nbsp;            boolean found = false; // Initializes a flag to track if a matching or greater work experience is found</b>
+&nbsp;
+&nbsp;            // Iterates through each work experience in the applicant&#39;s CV
+<b class="fc">&nbsp;            for(WorkExperience applicantWorkExperience : cv.getWorkExperiences()){</b>
+&nbsp;                // Compares the applicant&#39;s work experience against the required work experience
+<b class="fc">&nbsp;                if (applicantWorkExperience.compare(reqWorkExperience) &gt;= 0){</b>
+<b class="fc">&nbsp;                    found = true; // Sets the flag to true if a matching or greater work experience is found</b>
+<b class="fc">&nbsp;                    break; // Breaks the loop as the requirement is met</b>
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
+&nbsp;            // If no matching or greater work experience is found, the CV is insufficient for this job requirement
+<b class="fc">&nbsp;            if (found == false){</b>
+<b class="fc">&nbsp;                return false; // Returns false indicating insufficient work experience for this job requirement</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        // Iterates through each required language knowledge for the job
+<b class="fc">&nbsp;        for(LanguageKnowledge reqLanguageKnowledge : reqLanguageKnowledge){</b>
+&nbsp;
+<b class="fc">&nbsp;            boolean found = false; // Initializes a flag to track if a matching or greater language knowledge is found</b>
+&nbsp;
+&nbsp;            // Iterates through each language knowledge in the applicant&#39;s CV
+<b class="fc">&nbsp;            for(LanguageKnowledge applicantLanguageKnowledge : cv.getLanguageKnowledge()){</b>
+&nbsp;                // Compares the applicant&#39;s language knowledge against the required language knowledge
+<b class="fc">&nbsp;                if (applicantLanguageKnowledge.compare(reqLanguageKnowledge) &gt;= 0){</b>
+<b class="fc">&nbsp;                    found = true; // Sets the flag to true if a matching or greater language knowledge is found</b>
+<b class="fc">&nbsp;                    break; // Breaks the loop as the requirement is met</b>
+&nbsp;                }
+<b class="fc">&nbsp;            }</b>
+&nbsp;            // If no matching or greater language knowledge is found, the CV is insufficient for this job requirement
+<b class="fc">&nbsp;            if (found == false){</b>
+<b class="fc">&nbsp;                return false; // Returns false indicating insufficient language knowledge for this job requirement</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;        // Returns true if the CV satisfies all job requirements for education, work experience, and language knowledge
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates if an object is null.
+&nbsp;     * @param obj The object to be validated.
+&nbsp;     * @throws NullPointerException if the object is null.
+&nbsp;     */
+&nbsp;    private void validateObject(Object obj){
+<b class="fc">&nbsp;        if (obj == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Object cannot be null&quot;);</b>
+&nbsp;        }
+&nbsp;        return;
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds required education for the job.
+&nbsp;     * @param edu The required education to add.
+&nbsp;     * @throws NullPointerException if the education is null.
+&nbsp;     */
+&nbsp;    public void addReqEducation (Education edu){
+<b class="fc">&nbsp;        validateObject(edu);</b>
+<b class="fc">&nbsp;        this.reqEducation.add(edu);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds required language knowledge to the job.
+&nbsp;     * @param languageKnowledge The language knowledge required to be added.
+&nbsp;     * @throws NullPointerException if the language knowledge is null.
+&nbsp;     */
+&nbsp;    public void addReqLanguageKnowledge(LanguageKnowledge languageKnowledge){
+<b class="fc">&nbsp;        validateObject(languageKnowledge);</b>
+<b class="fc">&nbsp;        this.reqLanguageKnowledge.add(languageKnowledge);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds required work experience to the job.
+&nbsp;     * @param workExperience The work experience required to be added.
+&nbsp;     * @throws NullPointerException if the work experience is null.
+&nbsp;     */
+&nbsp;    public void addReqWorkExperience(WorkExperience workExperience){
+<b class="fc">&nbsp;        validateObject(workExperience);</b>
+<b class="fc">&nbsp;        this.reqWorkExperience.add(workExperience);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the title of the job.
+&nbsp;     * @return The title of the job.
+&nbsp;     */
+&nbsp;    public String getTitle() {
+<b class="fc">&nbsp;        return title;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the description of the job.
+&nbsp;     * @return The description of the job.
+&nbsp;     */
+&nbsp;    public String getDescription() {
+<b class="fc">&nbsp;        return description;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the availability status of the job.
+&nbsp;     * @param availability The availability status to be set for the job.
+&nbsp;     * @throws NullPointerException if the availability status is null.
+&nbsp;     */
+&nbsp;    public void setAvailability(Availability availability){
+<b class="fc">&nbsp;        validateObject(availability);</b>
+<b class="fc">&nbsp;        this.availability = availability;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the availability status of the job.
+&nbsp;     * @return The availability status of the job.
+&nbsp;     */
+&nbsp;    public Availability getAvailability() {
+<b class="fc">&nbsp;        return availability;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of applications for the job.
+&nbsp;     * @return The list of applications for the job.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Application&gt; getApplications() {
+<b class="fc">&nbsp;        return applications;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds an application to the list for this job.
+&nbsp;     * @param application The application to be added for this job.
+&nbsp;     * @throws NullPointerException if the application is null.
+&nbsp;     */
+&nbsp;    public void addApplication(Application application){
+<b class="fc">&nbsp;        validateObject(application);</b>
+&nbsp;        //replace an existing old application with a newer one if two applications have the same id
+<b class="fc">&nbsp;        applications.removeIf(appl -&gt; Objects.equals(appl.getID(), application.getID()));</b>
+<b class="fc">&nbsp;        this.applications.add(application);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of required education for the job.
+&nbsp;     * @return The list of required education for the job.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Education&gt; getReqEducation() {
+<b class="fc">&nbsp;        return reqEducation;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of required work experiences for the job.
+&nbsp;     * @return The list of required work experiences for the job.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;WorkExperience&gt; getReqWorkExperience() {
+<b class="fc">&nbsp;        return reqWorkExperience;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of required language knowledge for the job.
+&nbsp;     * @return The list of required language knowledge for the job.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;LanguageKnowledge&gt; getReqLanguageKnowledge() {
+<b class="fc">&nbsp;        return reqLanguageKnowledge;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setTitle(String title) {
+<b class="fc">&nbsp;        validateObject(title);</b>
+<b class="fc">&nbsp;        this.title = title;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDescription(String description) {
+<b class="fc">&nbsp;        validateObject(description);</b>
+<b class="fc">&nbsp;        this.description = description;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean equals(Object obj){
+<b class="fc">&nbsp;        Job job = (Job) obj;</b>
+<b class="fc">&nbsp;        return job.getTitle().equals(this.getTitle()) &amp;&amp; job.getDescription().equals(this.getDescription());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

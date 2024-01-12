@@ -1,0 +1,223 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > WorkExperience</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: WorkExperience (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WorkExperience</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (21/21)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;
+&nbsp;import java.io.Serializable;
+&nbsp;
+&nbsp;/**
+&nbsp; * The WorkExperience class represents an individual&#39;s work experience.
+&nbsp; * It includes details such as the number of years, description, and expertise area.
+&nbsp; */
+&nbsp;public class WorkExperience implements Serializable {
+&nbsp;    private int years;
+&nbsp;    private String description;
+&nbsp;    private ExpertiseArea expArea;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructs a WorkExperience object with the provided details and validates them.
+&nbsp;     * @param years The number of years of work experience.
+&nbsp;     * @param desc The description of the work experience.
+&nbsp;     * @param expArea The expertise area associated with the work experience.
+&nbsp;     * @throws IllegalArgumentException If the number of years is negative.
+&nbsp;     * @throws NullPointerException If the description or expertise area is null.
+&nbsp;     */
+<b class="fc">&nbsp;    public WorkExperience(int years, String desc, ExpertiseArea expArea){</b>
+<b class="fc">&nbsp;        validateData(years, desc, expArea);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates the provided data for work experience: years, description, and expertise area.
+&nbsp;     * @param years The number of years of work experience.
+&nbsp;     * @param desc The description of the work experience.
+&nbsp;     * @param expArea The expertise area associated with the work experience.
+&nbsp;     * @throws IllegalArgumentException If the number of years is negative.
+&nbsp;     * @throws NullPointerException If the description or expertise area is null.
+&nbsp;     */
+&nbsp;    private void validateData(int years, String desc, ExpertiseArea expArea){
+<b class="fc">&nbsp;        if (years &lt; 0){</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid number of years.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (desc == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Description cannot be empty&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(expArea == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Expertise area cannot be empty&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.years = years;</b>
+<b class="fc">&nbsp;        this.description = desc;</b>
+<b class="fc">&nbsp;        this.expArea = expArea;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates and sets the number of years of work experience.
+&nbsp;     * @param years The number of years to be set and validated.
+&nbsp;     * @throws IllegalArgumentException If the number of years is negative.
+&nbsp;     */
+&nbsp;    public void setYears(int years) {
+<b class="fc">&nbsp;        validateData(years, this.description, this.expArea);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates and sets the description of the work experience.
+&nbsp;     * @param description The description to be set and validated.
+&nbsp;     * @throws NullPointerException If the description is null.
+&nbsp;     */
+&nbsp;    public void setDescription(String description) {
+<b class="fc">&nbsp;        validateData(this.years, description, this.expArea);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates and sets the expertise area associated with the work experience.
+&nbsp;     * @param expArea The expertise area to be set and validated.
+&nbsp;     * @throws NullPointerException If the expertise area is null.
+&nbsp;     */
+&nbsp;    public void setExpArea(ExpertiseArea expArea) {
+<b class="fc">&nbsp;        validateData(this.years, this.description, expArea);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the number of years of work experience.
+&nbsp;     * @return The number of years.
+&nbsp;     */
+&nbsp;    public int getYears() {
+<b class="fc">&nbsp;        return years;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the description of the work experience.
+&nbsp;     * @return The description.
+&nbsp;     */
+&nbsp;    public String getDescription() {
+<b class="fc">&nbsp;        return description;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the expertise area associated with the work experience.
+&nbsp;     * @return The expertise area.
+&nbsp;     */
+&nbsp;    public ExpertiseArea getExpArea (){
+<b class="fc">&nbsp;        return expArea;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Compares this work experience with another based on the expertise area and years of experience.
+&nbsp;     * @param workExperience The WorkExperience object to be compared.
+&nbsp;     * @return 0 if both have the same expertise area and years, -1 if this object has less experience, 1 if more, -2 if expertise areas are incomparable.
+&nbsp;     */
+&nbsp;    public int compare(WorkExperience workExperience){
+<b class="fc">&nbsp;        if(this.expArea.equals(workExperience.expArea)){</b>
+<b class="fc">&nbsp;            return Integer.compare(this.years, workExperience.years);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return -2; // -2 for incomparable expertise areas</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if this work experience is equal to another based on the expertise area and years of experience.
+&nbsp;     * @param workExperience The WorkExperience object to be compared.
+&nbsp;     * @return true if both have the same expertise area and years, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean equals(WorkExperience workExperience){
+<b class="fc">&nbsp;        return (this.compare(workExperience) == 0);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

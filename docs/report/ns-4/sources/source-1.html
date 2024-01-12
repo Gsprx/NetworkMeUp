@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EducationRecyclerViewAdapter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.utils.RecyclerViewAdapters</a>
+</div>
+
+<h1>Coverage Summary for Class: EducationRecyclerViewAdapter (com.example.networkmeup.utils.RecyclerViewAdapters)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EducationRecyclerViewAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">EducationRecyclerViewAdapter$EducationViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.utils.RecyclerViewAdapters;
+&nbsp;
+&nbsp;import android.content.Context;
+&nbsp;import android.view.LayoutInflater;
+&nbsp;import android.view.View;
+&nbsp;import android.view.ViewGroup;
+&nbsp;import android.widget.TextView;
+&nbsp;
+&nbsp;import androidx.annotation.NonNull;
+&nbsp;import androidx.recyclerview.widget.RecyclerView;
+&nbsp;
+&nbsp;import com.example.networkmeup.R;
+&nbsp;import com.example.networkmeup.domain.Education;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;public class EducationRecyclerViewAdapter extends RecyclerView.Adapter&lt;EducationRecyclerViewAdapter.EducationViewHolder&gt; {
+&nbsp;    ArrayList&lt;Education&gt; educations;
+&nbsp;    Context context;
+&nbsp;
+<b class="nc">&nbsp;    public EducationRecyclerViewAdapter(Context context, ArrayList&lt;Education&gt; educations){</b>
+<b class="nc">&nbsp;        this.context = context;</b>
+<b class="nc">&nbsp;        this.educations = educations;</b>
+&nbsp;    }
+&nbsp;    @NonNull
+&nbsp;    @Override
+&nbsp;    //Creates the look for the rows in the UI recycler view
+&nbsp;    public EducationRecyclerViewAdapter.EducationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+&nbsp;        //this method creates the look for the rows that we specified
+<b class="nc">&nbsp;        LayoutInflater inflater = LayoutInflater.from(context);</b>
+<b class="nc">&nbsp;        View view = inflater.inflate(R.layout.recycler_view_education_row, parent, false);</b>
+<b class="nc">&nbsp;        return new EducationRecyclerViewAdapter.EducationViewHolder(view);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;
+&nbsp;    //Assign(bind) the data to use for each row
+&nbsp;    //changes the data on the recycler view based on the position of the recycler
+&nbsp;    public void onBindViewHolder(@NonNull EducationRecyclerViewAdapter.EducationViewHolder holder, int position) {
+&nbsp;        //set each holder&#39;s members to match the data on the Education data found on the position (of the position int passed in the method)
+&nbsp;
+&nbsp;        //for example set the eduDescription field of the holder to the one matching the Education instance in the list[position]
+<b class="nc">&nbsp;        holder.educationDescription.setText(educations.get(position).getDescription());</b>
+&nbsp;
+<b class="nc">&nbsp;        holder.educationLvlOfStudies.setText(educations.get(position).getLvlOfStudies().toString());</b>
+<b class="nc">&nbsp;        holder.educationExpField.setText(educations.get(position).getExpArea().getArea());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int getItemCount() {
+<b class="nc">&nbsp;        return educations.size();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static class EducationViewHolder extends RecyclerView.ViewHolder{
+&nbsp;        //this class holds the TextView items in the education_recycler_view_row layout file
+&nbsp;
+&nbsp;        TextView educationExpField;
+&nbsp;        TextView educationLvlOfStudies;
+&nbsp;        TextView educationDescription;
+&nbsp;
+&nbsp;        public EducationViewHolder(@NonNull View itemView) {
+<b class="nc">&nbsp;            super(itemView);</b>
+&nbsp;
+<b class="nc">&nbsp;            this.educationExpField = itemView.findViewById(R.id.textEducationExpField);</b>
+<b class="nc">&nbsp;            this.educationDescription = itemView.findViewById(R.id.textEducationDescription);</b>
+<b class="nc">&nbsp;            this.educationLvlOfStudies = itemView.findViewById(R.id.textEducationLevelOfStudies);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

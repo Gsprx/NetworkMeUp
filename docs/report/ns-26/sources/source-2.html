@@ -1,0 +1,204 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SignUpEmployerPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.SignUp.SignUpEmployer</a>
+</div>
+
+<h1>Coverage Summary for Class: SignUpEmployerPresenter (com.example.networkmeup.view.SignUp.SignUpEmployer)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SignUpEmployerPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (37/37)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.SignUp.SignUpEmployer;
+&nbsp;
+&nbsp;import com.example.networkmeup.dao.EmployerDAO;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employer;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;import com.example.networkmeup.domain.Phone;
+&nbsp;import com.example.networkmeup.domain.TIN;
+&nbsp;/**
+&nbsp; * Presenter for handling the sign-up logic for employers in the NetworkMeUp application.
+&nbsp; * &lt;p&gt;
+&nbsp; * This class serves as the middleman between the SignUpEmployerView (the UI) and the data layer (EmployerDAO),
+&nbsp; * handling all business logic for employer sign-up.
+&nbsp; * &lt;/p&gt;
+&nbsp; */
+&nbsp;public class SignUpEmployerPresenter {
+&nbsp;
+&nbsp;    private SignUpEmployerView view;
+&nbsp;    private EmployerDAO employerDAO;
+&nbsp;    /**
+&nbsp;     * Constructor for
+&nbsp;     SignUpEmployerPresenter.
+&nbsp;
+&nbsp;     * @param view The view interface that this presenter will interact with.
+&nbsp;     * @param employerDAO The data access object for managing employer entities.
+&nbsp;     */
+<b class="fc">&nbsp;    public SignUpEmployerPresenter(SignUpEmployerView view, EmployerDAO employerDAO){</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.employerDAO= employerDAO;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Handles the creation of a new employer account.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * This method is called when the &#39;Create Account&#39; button is pressed. It retrieves user inputs
+&nbsp;     * (email, phone, password, TIN) from the view, validates them, and either shows an error message or
+&nbsp;     * creates a new employer account if all validations pass.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void onCreate(){
+<b class="fc">&nbsp;        boolean email_ok = true;</b>
+<b class="fc">&nbsp;        boolean phone_ok = true;</b>
+<b class="fc">&nbsp;        boolean pwd_ok = true;</b>
+<b class="fc">&nbsp;        boolean tin_ok = true;</b>
+&nbsp;
+<b class="fc">&nbsp;        Email email = null;</b>
+<b class="fc">&nbsp;        Phone phone = null;</b>
+<b class="fc">&nbsp;        Password password = null;</b>
+<b class="fc">&nbsp;        TIN tin =null;</b>
+&nbsp;
+&nbsp;        //check email field
+&nbsp;        try{
+<b class="fc">&nbsp;            email = view.getEmail();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        catch(RuntimeException e){</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            email_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //check phone field
+&nbsp;        try{
+<b class="fc">&nbsp;            phone = view.getPhone();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        catch(RuntimeException e){</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            phone_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //check password field
+&nbsp;        try{
+<b class="fc">&nbsp;            password = view.getPassword();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        catch(RuntimeException e){</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            pwd_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //check TIN field
+&nbsp;        try{
+<b class="fc">&nbsp;            tin = view.getTIN();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        catch(RuntimeException e){</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            tin_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //only create employer if all fields are valid
+<b class="fc">&nbsp;        if(email_ok &amp;&amp; phone_ok &amp;&amp; pwd_ok &amp;&amp; tin_ok) {</b>
+&nbsp;            //create employer object and check if it exists
+<b class="fc">&nbsp;            Employer employer = new Employer(email, phone, password,tin);</b>
+&nbsp;
+<b class="fc">&nbsp;            if (employerDAO.find(employer)) {</b>
+<b class="fc">&nbsp;                view.showErrorMessage(&quot;Account Creation Error&quot;, &quot;An employer account already exists with the same email or phone number or TIN!&quot;);</b>
+&nbsp;            }
+&nbsp;            else {
+<b class="fc">&nbsp;                employerDAO.save(employer);</b>
+<b class="fc">&nbsp;                view.successfullyFinishActivity(&quot;Your NetworkMeUp Employer account was created!&quot;);</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

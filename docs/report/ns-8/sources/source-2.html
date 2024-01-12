@@ -1,0 +1,180 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > HomeEmployeePresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.HomeEmployee</a>
+</div>
+
+<h1>Coverage Summary for Class: HomeEmployeePresenter (com.example.networkmeup.view.HomeEmployee)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HomeEmployeePresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.HomeEmployee;
+&nbsp;/**
+&nbsp; * Presenter for the HomeEmployeeActivity.
+&nbsp; * &lt;p&gt;
+&nbsp; * This class handles the business logic for the HomeEmployeeActivity.
+&nbsp; * It interacts with the view to manage actions like modifying CV, searching jobs,
+&nbsp; * editing account details, and validating the user token.
+&nbsp; * &lt;/p&gt;
+&nbsp; */
+&nbsp;public class HomeEmployeePresenter {
+&nbsp;    private HomeEmployeeView view;
+&nbsp;    //user token is the email of the employee
+&nbsp;    private String userToken;
+&nbsp;    /**
+&nbsp;     * Constructor for HomeEmployeePresenter.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Initializes the presenter with the given view and user token. It also validates
+&nbsp;     * the user token upon instantiation.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     *
+&nbsp;     * @param view      The view associated with this presenter.
+&nbsp;     * @param userToken The user token (email) of the employee.
+&nbsp;     */
+<b class="fc">&nbsp;    public HomeEmployeePresenter(HomeEmployeeView view, String userToken){</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        validateToken(userToken);</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Validates the user token.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * This method checks if the provided token is null and displays an error message
+&nbsp;     * through the view if it is. It is intended to ensure that the user session is valid.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     *
+&nbsp;     * @param obj The object to be validated, expected to be the user token.
+&nbsp;     * @throws NullPointerException if the provided token is null.
+&nbsp;     */
+&nbsp;    private void validateToken(Object obj){
+<b class="fc">&nbsp;        if (obj == null){</b>
+<b class="fc">&nbsp;            view.showTokenErrorMessage(&quot;An error has occurred during login, please try again.&quot;);</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Error! Null token.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Handles the action to modify the CV.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Instructs the view to navigate to the activity for modifying the CV,
+&nbsp;     * passing along the user token.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void onModifyCV(){
+<b class="fc">&nbsp;        view.modifyCV(userToken);</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Handles the action to search for jobs.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Instructs the view to navigate
+&nbsp;     to the activity for searching jobs,
+&nbsp;     * passing along the user token.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void onSearchJobs(){
+<b class="fc">&nbsp;        view.searchJobs(userToken);</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Handles the action to edit the employee&#39;s account.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Instructs the view to navigate to the activity for editing the employee&#39;s account,
+&nbsp;     * passing along the user token.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void onEditAccount(){
+<b class="fc">&nbsp;        view.editAccount(userToken);</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

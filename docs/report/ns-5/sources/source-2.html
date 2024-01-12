@@ -1,0 +1,209 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EditAccountEmployeePresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.EditAccountEmployee</a>
+</div>
+
+<h1>Coverage Summary for Class: EditAccountEmployeePresenter (com.example.networkmeup.view.EditAccountEmployee)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EditAccountEmployeePresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (37/37)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.EditAccountEmployee;
+&nbsp;
+&nbsp;import com.example.networkmeup.dao.EmployeeDAO;
+&nbsp;import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employee;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;import com.example.networkmeup.domain.Phone;
+&nbsp;/**
+&nbsp; * Presenter for the Edit Account Employee View.
+&nbsp; * &lt;p&gt;
+&nbsp; * This class handles the business logic for editing an employee&#39;s account details.
+&nbsp; * It interacts with the DAO layer to fetch and update employee data.
+&nbsp; * &lt;/p&gt;
+&nbsp; */
+&nbsp;public class EditAccountEmployeePresenter {
+&nbsp;
+&nbsp;    private EditAccountEmployeeView view;
+&nbsp;    private String userEmail;
+&nbsp;    /**
+&nbsp;     * Constructor for EditAccountEmployeePresenter.
+&nbsp;     *
+&nbsp;     * @param editAccountEmployeeActivity The view associated with this presenter.
+&nbsp;     * @param userEmail                   The email of the user whose account is being edited.
+&nbsp;     */
+<b class="fc">&nbsp;    public EditAccountEmployeePresenter(EditAccountEmployeeView editAccountEmployeeActivity,String userEmail) {</b>
+<b class="fc">&nbsp;        this.view = editAccountEmployeeActivity;</b>
+<b class="fc">&nbsp;        EmployeeDAO employeeDAO = new EmployeeDAOMemory();</b>
+<b class="fc">&nbsp;        this.userEmail = userEmail;</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Saves changes to the employee&#39;s account.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Validates and updates the employee&#39;s details including email, phone, and password.
+&nbsp;     * Shows error messages if validation fails and updates the account if validation is successful.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void Save() {
+&nbsp;
+<b class="fc">&nbsp;        boolean email_ok = true;</b>
+<b class="fc">&nbsp;        boolean phone_ok = true;</b>
+<b class="fc">&nbsp;        boolean pwd_ok = true;</b>
+&nbsp;
+<b class="fc">&nbsp;        Email email = null;</b>
+<b class="fc">&nbsp;        Phone phone = null;</b>
+<b class="fc">&nbsp;        Password password = null;</b>
+&nbsp;
+&nbsp;
+&nbsp;        //check email field
+&nbsp;        try {
+<b class="fc">&nbsp;            email = view.getEmail();</b>
+<b class="fc">&nbsp;        } catch (RuntimeException e) {</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            email_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //check phone field
+&nbsp;        try {
+<b class="fc">&nbsp;            phone = view.getPhoneNumber();</b>
+<b class="fc">&nbsp;        } catch (RuntimeException e) {</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            phone_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //check password field
+&nbsp;        try {
+<b class="fc">&nbsp;            password = view.getPassword();</b>
+<b class="fc">&nbsp;        } catch (RuntimeException e) {</b>
+<b class="fc">&nbsp;            view.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            pwd_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //only update employee if all fields are valid
+<b class="fc">&nbsp;        if (email_ok &amp;&amp; phone_ok &amp;&amp; pwd_ok) {</b>
+&nbsp;
+<b class="fc">&nbsp;            Employee currEmployee = new EmployeeDAOMemory().getByEmail(new Email(userEmail));</b>
+<b class="fc">&nbsp;            currEmployee.setEmail(email);</b>
+<b class="fc">&nbsp;            currEmployee.setPassword(password);</b>
+<b class="fc">&nbsp;            currEmployee.setPhone(phone);</b>
+<b class="fc">&nbsp;            currEmployee.setName(view.getName());</b>
+<b class="fc">&nbsp;            currEmployee.setAddress(view.getAddress());</b>
+<b class="fc">&nbsp;            view.successfullySaved(&quot;Account changes were successfully saved!&quot;);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Deletes the employee&#39;s account.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Removes the employee&#39;s account from the system.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void Delete(){
+<b class="fc">&nbsp;        EmployeeDAO employeeDAO = new EmployeeDAOMemory();</b>
+<b class="fc">&nbsp;        Employee currEmployee = new EmployeeDAOMemory().getByEmail(new Email(userEmail));</b>
+<b class="fc">&nbsp;        employeeDAO.delete(currEmployee);</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Directs to the application archive view.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * Triggers the process to view the archived applications for the employee.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    public void ApplicationArchive() {
+<b class="fc">&nbsp;        view.ApplicationArchive(userEmail);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

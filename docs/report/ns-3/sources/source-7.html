@@ -1,0 +1,314 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Employer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Employer (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Employer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (38/38)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;/**
+&nbsp; * The Employer class represents an entity or company seeking employees for jobs, containing company details and job listings.
+&nbsp; */
+&nbsp;public class Employer {
+&nbsp;    private String companyName; // Name of the company
+&nbsp;    private String sector; // Industry sector of the company
+&nbsp;    private Email email; // Email address of the employer
+&nbsp;    private Phone phone; // Phone number of the employer
+&nbsp;    private Password password; // Password for employer authentication
+&nbsp;    private TIN tin; // Tax Identification Number for the company
+&nbsp;    private ArrayList&lt;Job&gt; jobs; // List of job listings by the employer
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor to create an Employer object with email, phone, password, and TIN.
+&nbsp;     * Initializes the jobs list for the employer.
+&nbsp;     * @param email The employer&#39;s email.
+&nbsp;     * @param phone The employer&#39;s phone number.
+&nbsp;     * @param password The employer&#39;s password.
+&nbsp;     * @param tin The Tax Identification Number (TIN) for the company.
+&nbsp;     * @throws NullPointerException if any of the parameters is null.
+&nbsp;     */
+<b class="fc">&nbsp;    public Employer(Email email, Phone phone, Password password, TIN tin){</b>
+<b class="fc">&nbsp;        validateData(email,phone,password,tin);</b>
+<b class="fc">&nbsp;        jobs = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        companyName = &quot;&quot;;</b>
+<b class="fc">&nbsp;        sector = &quot;&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates the email, phone, password, and TIN parameters.
+&nbsp;     * @param email The employer&#39;s email.
+&nbsp;     * @param phone The employer&#39;s phone number.
+&nbsp;     * @param password The employer&#39;s password.
+&nbsp;     * @param tin The Tax Identification Number (TIN) for the company.
+&nbsp;     * @throws NullPointerException if any of the parameters is null.
+&nbsp;     */
+&nbsp;    private void validateData(Email email, Phone phone, Password password, TIN tin){
+<b class="fc">&nbsp;        if(email == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Email cannot be null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(phone == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Phone cannot be null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(password == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Password cannot be null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(tin == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;TIN cannot be null&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.email = email;</b>
+<b class="fc">&nbsp;        this.phone = phone;</b>
+<b class="fc">&nbsp;        this.password = password;</b>
+<b class="fc">&nbsp;        this.tin = tin;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates if the object is null.
+&nbsp;     * @param obj The object to be validated.
+&nbsp;     * @throws NullPointerException if the object is null.
+&nbsp;     */
+&nbsp;    private void validateObject(Object obj){
+<b class="fc">&nbsp;        if(obj == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Object cannot be null&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the email for the employer.
+&nbsp;     * @param email The email to set for the employer.
+&nbsp;     * @throws NullPointerException if the email is null.
+&nbsp;     */
+&nbsp;    public void setEmail(Email email){
+<b class="fc">&nbsp;        validateData(email,this.phone, this.password, this.tin);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the phone number for the employer.
+&nbsp;     * @param phone The phone number to set for the employer.
+&nbsp;     * @throws NullPointerException if the phone number is null.
+&nbsp;     */
+&nbsp;    public void setPhone(Phone phone){
+<b class="fc">&nbsp;        validateData(this.email,phone, this.password, this.tin);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the password for the employer.
+&nbsp;     * @param password The password to set for the employer.
+&nbsp;     * @throws NullPointerException if the password is null.
+&nbsp;     */
+&nbsp;    public void setPassword(Password password){
+<b class="fc">&nbsp;        validateData(this.email,this.phone, password, this.tin);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the Tax Identification Number (TIN) for the employer&#39;s company.
+&nbsp;     * @param tin The Tax Identification Number (TIN) to set for the employer.
+&nbsp;     * @throws NullPointerException if the TIN is null.
+&nbsp;     */
+&nbsp;    public void setTin(TIN tin){
+<b class="fc">&nbsp;        validateData(this.email,this.phone, this.password, tin);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the email of the employer.
+&nbsp;     * @return The email of the employer.
+&nbsp;     */
+&nbsp;    public Email getEmail() {
+<b class="fc">&nbsp;        return email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the phone number of the employer.
+&nbsp;     * @return The phone number of the employer.
+&nbsp;     */
+&nbsp;    public Phone getPhone() {
+<b class="fc">&nbsp;        return phone;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the password of the employer.
+&nbsp;     * @return The password of the employer.
+&nbsp;     */
+&nbsp;    public Password getPassword() {
+<b class="fc">&nbsp;        return password;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the Tax Identification Number (TIN) of the employer&#39;s company.
+&nbsp;     * @return The Tax Identification Number (TIN) of the employer.
+&nbsp;     */
+&nbsp;    public TIN getTin() {
+<b class="fc">&nbsp;        return tin;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the company name of the employer.
+&nbsp;     * @return The company name of the employer.
+&nbsp;     */
+&nbsp;
+&nbsp;    public String getCompanyName() {
+<b class="fc">&nbsp;        return companyName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the company name for the employer.
+&nbsp;     * @param companyName The company name to set for the employer.
+&nbsp;     * @throws NullPointerException if the company name is null.
+&nbsp;     */
+&nbsp;    public void setCompanyName(String companyName) {
+<b class="fc">&nbsp;        validateObject(companyName);</b>
+<b class="fc">&nbsp;        this.companyName = companyName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the industry sector of the employer&#39;s company.
+&nbsp;     * @return The industry sector of the employer.
+&nbsp;     */
+&nbsp;    public String getSector() {
+<b class="fc">&nbsp;        return sector;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the industry sector for the employer&#39;s company.
+&nbsp;     * @param sector The industry sector to set for the employer.
+&nbsp;     * @throws NullPointerException if the industry sector is null.
+&nbsp;     */
+&nbsp;    public void setSector(String sector) {
+<b class="fc">&nbsp;        validateObject(sector);</b>
+<b class="fc">&nbsp;        this.sector = sector;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds a job listing to the employer&#39;s list of jobs.
+&nbsp;     * @param job The job listing to add.
+&nbsp;     * @throws NullPointerException if the job is null.
+&nbsp;     */
+&nbsp;    public void addJob (Job job){
+<b class="fc">&nbsp;        validateObject(job);</b>
+<b class="fc">&nbsp;        this.jobs.add(job);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of job listings made by the employer.
+&nbsp;     * @return ArrayList containing job listings.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Job&gt; getJobs(){
+<b class="fc">&nbsp;        return jobs;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks equality between two Employer objects based on email, phone, or TIN.
+&nbsp;     * @param e Another Employer object to compare.
+&nbsp;     * @return true if the emails, phones, or TINs are equal, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean equals(Employer e){
+<b class="fc">&nbsp;        return this.email.equals(e.getEmail()) || this.phone.equals(e.getPhone()) || this.tin.equals(e.getTin());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the employer has a specific email.
+&nbsp;     * @param email The email to check.
+&nbsp;     * @return true if the employer&#39;s email matches the provided email, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean hasEmail(Email email){
+<b class="fc">&nbsp;        return this.email.equals(email);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

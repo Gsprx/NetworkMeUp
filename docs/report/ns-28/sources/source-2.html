@@ -1,0 +1,137 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > UpdateJobApplicationsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.UpdateJobApplications</a>
+</div>
+
+<h1>Coverage Summary for Class: UpdateJobApplicationsPresenter (com.example.networkmeup.view.UpdateJobApplications)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UpdateJobApplicationsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.UpdateJobApplications;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;/**
+&nbsp; * Presenter class for handling interactions between the Update Job Applications View and the data models.
+&nbsp; * This class manages the actions related to updating and displaying job applications.
+&nbsp; */
+&nbsp;public class UpdateJobApplicationsPresenter {
+&nbsp;    private UpdateJobApplicationsView view;
+&nbsp;    private String userToken;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for the UpdateJobApplicationsPresenter class.
+&nbsp;     *
+&nbsp;     * @param view      The associated UpdateJobApplicationsView interface implementation.
+&nbsp;     * @param userToken The authentication token of the user updating job applications.
+&nbsp;     */
+<b class="fc">&nbsp;    public UpdateJobApplicationsPresenter(UpdateJobApplicationsView view, String userToken) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method called when an individual job is clicked.
+&nbsp;     * Opens the job applications associated with the selected job.
+&nbsp;     *
+&nbsp;     * @param job The Job object representing the details of the selected job.
+&nbsp;     * @return void
+&nbsp;     */
+&nbsp;    public void onItemClick(Job job){
+<b class="fc">&nbsp;        view.showJobApplications(userToken, job);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

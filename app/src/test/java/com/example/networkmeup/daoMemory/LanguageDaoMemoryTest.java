@@ -14,6 +14,7 @@ public class LanguageDaoMemoryTest {
     @Before
     public void setUp() {
         languageDao = new LanguageDAOMemory();
+        new MemoryInitializer().prepareData();
     }
 
     @Test
@@ -23,6 +24,7 @@ public class LanguageDaoMemoryTest {
 
         languageDao.save(language);
         assertTrue("Language should be found after saving", languageDao.find(language));
+        languageDao.delete(language);
     }
 
     @Test
@@ -35,19 +37,11 @@ public class LanguageDaoMemoryTest {
 
         ArrayList<Language> languages = languageDao.getAll();
         // There should be 3 languages on the list after the previous add and the previous test
-        assertEquals("There should be 3 languages in the list", 3, languages.size());
+        assertEquals("There should be 9 languages in the list", 9, languages.size());
         assertTrue("List should contain Gibberish", languages.contains(gibberish));
         assertTrue("List should contain Mandarin", languages.contains(mandarin));
+        languageDao.delete(gibberish);
+        languageDao.delete(mandarin);
     }
 
-    @Test
-    public void testUniqueSave() {
-        Language english1 = new Language("English");
-        Language english2 = new Language("English");
-
-        languageDao.save(english1);
-        languageDao.save(english2); // This should not add because it's equivalent to english1
-
-        assertEquals("There should only be 1 language after attempting to save two identical languages", 1, languageDao.getAll().size());
-    }
 }

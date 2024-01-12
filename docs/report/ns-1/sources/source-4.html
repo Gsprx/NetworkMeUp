@@ -1,0 +1,139 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EmployerDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: EmployerDAO (com.example.networkmeup.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">EmployerDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.dao;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employee;
+&nbsp;import com.example.networkmeup.domain.Employer;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;import com.example.networkmeup.domain.Phone;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;/**
+&nbsp; * EmployerDAO interface outlines the methods that should be implemented by classes
+&nbsp; * responsible for handling Employer data access operations.
+&nbsp; */
+&nbsp;public interface EmployerDAO {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Deletes the specified employer from the data source.
+&nbsp;     *
+&nbsp;     * @param employer The Employer object to be deleted.
+&nbsp;     */
+&nbsp;    public void delete(Employer employer);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves a list of all employers from the data source.
+&nbsp;     *
+&nbsp;     * @return An ArrayList containing all the Employer objects.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Employer&gt; getAll();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Saves or updates the information of an employer in the data source.
+&nbsp;     *
+&nbsp;     * @param employer The Employer object to be saved or updated.
+&nbsp;     */
+&nbsp;    public void save(Employer employer);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the specified employer exists in the data source.
+&nbsp;     *
+&nbsp;     * @param employer The Employer object to check for existence.
+&nbsp;     * @return True if the Employer exists, otherwise False.
+&nbsp;     */
+&nbsp;    public boolean find(Employer employer);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves an Employer object based on the provided email address.
+&nbsp;     *
+&nbsp;     * @param email The Email object representing the email address of the employer.
+&nbsp;     * @return The Employer object associated with the provided email, if found; otherwise null.
+&nbsp;     */
+&nbsp;    public Employer getByEmail(Email email);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to authenticate an employer based on provided email and password.
+&nbsp;     *
+&nbsp;     * @param email    The email of the employer for authentication.
+&nbsp;     * @param password The password of the employer for authentication.
+&nbsp;     * @return True if the provided email and password match any stored employer&#39;s credentials, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean authenticate(Email email, Password password);
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves an Employer object based on the provided job.
+&nbsp;     * @param job The job of an employer.
+&nbsp;     *
+&nbsp;     * @return Employer object that has the specific job.
+&nbsp;     */
+&nbsp;    public Employer getByJob(Job job);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

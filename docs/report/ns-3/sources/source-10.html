@@ -1,0 +1,175 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Phone</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Phone (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Phone</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;import java.io.Serializable;
+&nbsp;import java.util.regex.Pattern;
+&nbsp;import java.util.regex.Matcher;
+&nbsp;
+&nbsp;/**
+&nbsp; * The Phone class represents a phone number and ensures its validity based on defined criteria.
+&nbsp; * It validates phone numbers to meet specific formatting requirements.
+&nbsp; */
+&nbsp;public class Phone implements Serializable {
+&nbsp;    private String number;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructs a Phone object with the provided phone number string and validates it.
+&nbsp;     * @param number The phone number string to be set and validated.
+&nbsp;     * @throws NullPointerException If the provided phone number is null.
+&nbsp;     * @throws IllegalArgumentException If the phone number does not meet the required format.
+&nbsp;     */
+<b class="fc">&nbsp;    public Phone(String number){</b>
+<b class="fc">&nbsp;        validatePhone(number);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets a new phone number and validates it.
+&nbsp;     * @param number The new phone number to be set and validated.
+&nbsp;     * @throws NullPointerException If the provided phone number is null.
+&nbsp;     * @throws IllegalArgumentException If the phone number does not meet the required format.
+&nbsp;     */
+&nbsp;    public void setNumber(String number) {
+<b class="fc">&nbsp;        validatePhone(number);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates the provided phone number based on defined criteria.
+&nbsp;     * @param number The phone number string to be validated.
+&nbsp;     * @throws NullPointerException If the provided phone number is null.
+&nbsp;     * @throws IllegalArgumentException If the phone number does not meet the required format.
+&nbsp;     */
+&nbsp;    private void validatePhone(String number){
+<b class="fc">&nbsp;        if(number == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Phone number cannot be empty.&quot;);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Phone number criteria: Exactly 10 digits, cannot start with 1 or 0
+<b class="fc">&nbsp;        String regex = &quot;^[2-9]\\d{9}$&quot;;</b>
+<b class="fc">&nbsp;        Pattern pattern = Pattern.compile(regex);</b>
+<b class="fc">&nbsp;        Matcher matcher = pattern.matcher(number);</b>
+<b class="fc">&nbsp;        if (matcher.matches()){</b>
+<b class="fc">&nbsp;            this.number = number;</b>
+&nbsp;        }
+&nbsp;        else{
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Invalid phone number.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the phone number.
+&nbsp;     * @return The stored phone number string.
+&nbsp;     */
+&nbsp;    public String getNumber() {
+<b class="fc">&nbsp;        return number;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Compares this Phone object with another Phone object based on their phone numbers.
+&nbsp;     * @param phone The Phone object to be compared.
+&nbsp;     * @return true if both Phone objects have the same phone number, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean equals(Phone phone){
+<b class="fc">&nbsp;        return this.number.equals(phone.getNumber());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

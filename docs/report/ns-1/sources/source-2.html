@@ -1,0 +1,132 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EmployeeDAO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: EmployeeDAO (com.example.networkmeup.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">EmployeeDAO</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.dao;
+&nbsp;
+&nbsp;import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employee;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;/**
+&nbsp; * EmployeeDAO interface outlines the methods that should be implemented by classes
+&nbsp; * responsible for handling Employee data access operations.
+&nbsp; */
+&nbsp;public interface EmployeeDAO {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Deletes the specified employee from the data source.
+&nbsp;     *
+&nbsp;     * @param employee The Employee object to be deleted.
+&nbsp;     */
+&nbsp;    public void delete(Employee employee);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves a list of all employees from the data source.
+&nbsp;     *
+&nbsp;     * @return An ArrayList containing all the Employee objects.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Employee&gt; getAll();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Saves or updates the information of an employee in the data source.
+&nbsp;     *
+&nbsp;     * @param employee The Employee object to be saved or updated.
+&nbsp;     */
+&nbsp;    public void save(Employee employee);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the specified employee exists in the data source.
+&nbsp;     *
+&nbsp;     * @param employee The Employee object to check for existence.
+&nbsp;     * @return True if the Employee exists, otherwise False.
+&nbsp;     */
+&nbsp;    public boolean find(Employee employee);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves an Employee object based on the provided email address.
+&nbsp;     *
+&nbsp;     * @param email The Email object representing the email address of the employee.
+&nbsp;     * @return The Employee object associated with the provided email, if found; otherwise null.
+&nbsp;     */
+&nbsp;    public Employee getByEmail(Email email);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Authenticates an employee based on provided email and password.
+&nbsp;     *
+&nbsp;     * @param email    The email input for authentication.
+&nbsp;     *                 It represents the email of the employee attempting to log in.
+&nbsp;     * @param password The password input for authentication.
+&nbsp;     *                 It represents the password of the employee attempting to log in.
+&nbsp;     * @return {@code true} if the provided email and password match an employee&#39;s credentials,
+&nbsp;     *         indicating successful authentication. Otherwise, returns {@code false}
+&nbsp;     *         if no match is found, signifying failed authentication.
+&nbsp;     */
+&nbsp;    public boolean authenticate(Email email, Password password);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

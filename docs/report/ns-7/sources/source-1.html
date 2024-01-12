@@ -1,0 +1,450 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > EditAccountEmployerActivity</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.EditAccountEmployer</a>
+</div>
+
+<h1>Coverage Summary for Class: EditAccountEmployerActivity (com.example.networkmeup.view.EditAccountEmployer)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EditAccountEmployerActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/43)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$2$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$2$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$3$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">EditAccountEmployerActivity$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/75)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.EditAccountEmployer;
+&nbsp;
+&nbsp;import androidx.appcompat.app.AlertDialog;
+&nbsp;import androidx.appcompat.app.AppCompatActivity;
+&nbsp;
+&nbsp;import android.content.DialogInterface;
+&nbsp;import android.content.Intent;
+&nbsp;import android.os.Bundle;
+&nbsp;import android.view.View;
+&nbsp;import android.widget.EditText;
+&nbsp;
+&nbsp;import com.example.networkmeup.R;
+&nbsp;import com.example.networkmeup.dao.EmployerDAO;
+&nbsp;import com.example.networkmeup.daoMemory.EmployerDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employer;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;import com.example.networkmeup.domain.Phone;
+&nbsp;import com.example.networkmeup.domain.TIN;
+&nbsp;import com.example.networkmeup.view.HomeEmployer.HomeEmployerActivity;
+&nbsp;import com.example.networkmeup.view.StartPage.StartPageActivity;
+&nbsp;
+&nbsp;/**
+&nbsp; * Activity for editing an employer&#39;s account details.
+&nbsp; * &lt;p&gt;
+&nbsp; * This class extends AppCompatActivity and implements the EditAccountEmployerView interface.
+&nbsp; * It handles user interactions for editing and deleting an employer&#39;s account details.
+&nbsp; * &lt;/p&gt;
+&nbsp; */
+<b class="nc">&nbsp;public class EditAccountEmployerActivity extends AppCompatActivity implements EditAccountEmployerView {</b>
+&nbsp;
+&nbsp;    private Employer currEmployer;
+&nbsp;    /**
+&nbsp;     * Initializes the activity.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * This method is called when the activity is starting. It sets the content view
+&nbsp;     * and initializes UI components and event listeners for the edit and delete actions.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     * @param savedInstanceState If the activity is being re-initialized after previously being
+&nbsp;     *                           shut down, this Bundle contains the data it most recently supplied.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc">&nbsp;        setContentView(R.layout.activity_edit_account_employer);</b>
+&nbsp;
+&nbsp;        // Retrieving user token from Intent extras
+<b class="nc">&nbsp;        Bundle extras = getIntent().getExtras();</b>
+&nbsp;        final String userEmail;
+<b class="nc">&nbsp;        if (extras != null) {</b>
+<b class="nc">&nbsp;            userEmail = extras.getString(&quot;token&quot;);</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;            userEmail = null;</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Fetching employer data from DAO based on the received email
+<b class="nc">&nbsp;        EmployerDAO employerDAO = new EmployerDAOMemory();</b>
+<b class="nc">&nbsp;        currEmployer = employerDAO.getByEmail(new Email(userEmail));</b>
+&nbsp;
+&nbsp;        // Pre-setting data into EditText fields from the current employer details
+<b class="nc">&nbsp;        EditText cmpname = findViewById(R.id.editTextEditAccountEmployerCompanyName);</b>
+<b class="nc">&nbsp;        cmpname.setText(currEmployer.getCompanyName());</b>
+&nbsp;
+<b class="nc">&nbsp;        EditText sct = findViewById(R.id.editTextEditAccountEmployerSector);</b>
+<b class="nc">&nbsp;        sct.setText(currEmployer.getSector());</b>
+&nbsp;
+<b class="nc">&nbsp;        EditText passwd = findViewById(R.id.editTextEditAccountEmployerPassword);</b>
+<b class="nc">&nbsp;        passwd.setText(currEmployer.getPassword().getPassword());</b>
+&nbsp;
+<b class="nc">&nbsp;        EditText phone = findViewById(R.id.editTextEditAccountEmployerPhone);</b>
+<b class="nc">&nbsp;        phone.setText(currEmployer.getPhone().getNumber());</b>
+&nbsp;
+<b class="nc">&nbsp;        EditText email = findViewById(R.id.editTextEditAccountEmployerEmail);</b>
+<b class="nc">&nbsp;        email.setText(currEmployer.getEmail().getAddress());</b>
+&nbsp;
+<b class="nc">&nbsp;        EditText tin = findViewById(R.id.editTextEditAccountEmployerTIN);</b>
+<b class="nc">&nbsp;        tin.setText(currEmployer.getTin().getTin());</b>
+&nbsp;
+<b class="nc">&nbsp;        final EditAccountEmployerPresenter presenter = new EditAccountEmployerPresenter(userEmail, this);</b>
+&nbsp;    // when back button is pressed
+<b class="nc">&nbsp;            findViewById(R.id.backbuttonEditAccountEmployer).setOnClickListener(</b>
+<b class="nc">&nbsp;                    new View.OnClickListener(){</b>
+&nbsp;                        public void onClick(View v){
+<b class="nc">&nbsp;                            Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);</b>
+<b class="nc">&nbsp;                            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);</b>
+<b class="nc">&nbsp;                            startActivity(intent);</b>
+&nbsp;                        }
+&nbsp;                    }
+&nbsp;            );
+&nbsp;        // Save button onClick listener
+<b class="nc">&nbsp;        findViewById(R.id.btnEditEmployerAccountSave).setOnClickListener(new View.OnClickListener() {</b>
+&nbsp;            @Override
+&nbsp;            public void onClick(View v) {
+<b class="nc">&nbsp;                new AlertDialog.Builder(EditAccountEmployerActivity.this)</b>
+<b class="nc">&nbsp;                        .setCancelable(false)</b>
+<b class="nc">&nbsp;                        .setTitle(&quot;Save Account Details Confirmation&quot;)</b>
+<b class="nc">&nbsp;                        .setMessage(&quot;Are you sure you want to change your account details?&quot;)</b>
+<b class="nc">&nbsp;                        .setPositiveButton(&quot;Yes&quot;,</b>
+<b class="nc">&nbsp;                                new DialogInterface.OnClickListener(){</b>
+&nbsp;                                    public void onClick (DialogInterface dialog,int id) {
+&nbsp;                                        //pass the work to the presenter
+<b class="nc">&nbsp;                                        presenter.Save();</b>
+&nbsp;                                    }})
+<b class="nc">&nbsp;                        .setNegativeButton(&quot;Cancel&quot;,</b>
+<b class="nc">&nbsp;                                new DialogInterface.OnClickListener(){</b>
+&nbsp;                                    public void onClick (DialogInterface dialog,int id) {
+&nbsp;                                        //do nothing
+<b class="nc">&nbsp;                                    }}).create().show();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;
+&nbsp;        // Delete button onClick listener
+<b class="nc">&nbsp;        findViewById(R.id.btnEditEmployerAccountDelete).setOnClickListener(new View.OnClickListener() {</b>
+&nbsp;            @Override
+&nbsp;            public void onClick(View v) {
+&nbsp;                // Add your logic here for handling deletion
+&nbsp;                // For instance, you can prompt a confirmation dialog before deleting the account
+&nbsp;
+<b class="nc">&nbsp;                new AlertDialog.Builder(EditAccountEmployerActivity.this)</b>
+<b class="nc">&nbsp;                        .setTitle(&quot;Confirm Deletion&quot;)</b>
+<b class="nc">&nbsp;                        .setMessage(&quot;Are you sure you want to delete your account?&quot;)</b>
+<b class="nc">&nbsp;                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {</b>
+&nbsp;                            public void onClick(DialogInterface dialog, int which) {
+&nbsp;                                // Perform the deletion process here
+<b class="nc">&nbsp;                                presenter.Delete();</b>
+<b class="nc">&nbsp;                                Intent intentDelete = new Intent(EditAccountEmployerActivity.this, StartPageActivity.class);</b>
+<b class="nc">&nbsp;                                intentDelete.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);</b>
+<b class="nc">&nbsp;                                startActivity(intentDelete);</b>
+&nbsp;                            }
+&nbsp;                        })
+<b class="nc">&nbsp;                        .setNegativeButton(android.R.string.no, null)</b>
+<b class="nc">&nbsp;                        .show();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;    }
+&nbsp;
+&nbsp;    // Method to show error message in an AlertDialog
+&nbsp;    /**
+&nbsp;     * Shows an error message in a dialog.
+&nbsp;     * @param title   Title of the error message.
+&nbsp;     * @param message Content of the error message.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public void showErrorMessage(String title, String message) {
+<b class="nc">&nbsp;        new AlertDialog.Builder(EditAccountEmployerActivity.this)</b>
+<b class="nc">&nbsp;                .setCancelable(false)</b>
+<b class="nc">&nbsp;                .setTitle(title)</b>
+<b class="nc">&nbsp;                .setMessage(message)</b>
+<b class="nc">&nbsp;                .setPositiveButton(R.string.ok, null).create().show();</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Handles the successful completion of account changes.
+&nbsp;     * @param message   The success message to be shown to the user.
+&nbsp;     * @param userToken The user token that identifies the employer.
+&nbsp;     */
+&nbsp;    // Method to handle successful account change
+&nbsp;    @Override
+&nbsp;    public void successfullyFinishActivity(String message, String userToken) {
+<b class="nc">&nbsp;        new AlertDialog.Builder(EditAccountEmployerActivity.this)</b>
+<b class="nc">&nbsp;                .setCancelable(false)</b>
+<b class="nc">&nbsp;                .setTitle(&quot;Account Successfully Changed!&quot;)</b>
+<b class="nc">&nbsp;                .setMessage(message)</b>
+<b class="nc">&nbsp;                .setPositiveButton(&quot;Back to home page&quot;, new DialogInterface.OnClickListener() {</b>
+&nbsp;                    public void onClick(DialogInterface dialog, int id) {
+<b class="nc">&nbsp;                        Intent intent = new Intent(EditAccountEmployerActivity.this, HomeEmployerActivity.class);</b>
+<b class="nc">&nbsp;                        intent.putExtra(&quot;token&quot;, userToken);</b>
+<b class="nc">&nbsp;                        startActivity(intent);</b>
+&nbsp;                    }
+<b class="nc">&nbsp;                }).create().show();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter methods to obtain updated user information
+&nbsp;    @Override
+&nbsp;    public Employer getCurrEmployer() {
+<b class="nc">&nbsp;        return this.currEmployer;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String getCompanyName() throws RuntimeException {
+<b class="nc">&nbsp;        return new String(((EditText) findViewById(R.id.editTextEditAccountEmployerCompanyName)).getText().toString().trim());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String getSector() throws RuntimeException {
+<b class="nc">&nbsp;        return new String(((EditText) findViewById(R.id.editTextEditAccountEmployerSector)).getText().toString().trim());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Email getEmail() throws RuntimeException {
+<b class="nc">&nbsp;        return new Email(((EditText) findViewById(R.id.editTextEditAccountEmployerEmail)).getText().toString().trim());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Password getPassword() throws RuntimeException {
+<b class="nc">&nbsp;        return new Password(((EditText) findViewById(R.id.editTextEditAccountEmployerPassword)).getText().toString().trim());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Phone getPhoneNumber() throws RuntimeException {
+<b class="nc">&nbsp;        return new Phone(((EditText) findViewById(R.id.editTextEditAccountEmployerPhone)).getText().toString().trim());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public TIN getTIN() throws RuntimeException {
+<b class="nc">&nbsp;        return new TIN(((EditText) findViewById(R.id.editTextEditAccountEmployerTIN)).getText().toString().trim());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

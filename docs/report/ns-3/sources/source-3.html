@@ -1,0 +1,212 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CV</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: CV (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CV</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;
+&nbsp;import java.io.Serializable;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;/**
+&nbsp; * Represents a Curriculum Vitae (CV) containing information about education, work experiences, skills, and language knowledge.
+&nbsp; */
+&nbsp;public class CV implements Serializable {
+&nbsp;    private String additionalSkillset; // Additional skillset information
+&nbsp;    private ArrayList&lt;Education&gt; education; // List of educational experiences
+&nbsp;    private ArrayList&lt;WorkExperience&gt; workExperiences; // List of work experiences
+&nbsp;    private ArrayList&lt;LanguageKnowledge&gt; languageKnowledge; // List of language knowledge
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor to initialize CV with empty lists for education, work experiences, and language knowledge.
+&nbsp;     */
+<b class="fc">&nbsp;    public CV(){</b>
+<b class="fc">&nbsp;        education = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        workExperiences = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        languageKnowledge = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        additionalSkillset = &quot;&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates the input parameter to ensure it is not null.
+&nbsp;     * @param obj The object to be validated.
+&nbsp;     * @throws NullPointerException if the input object is null.
+&nbsp;     */
+&nbsp;    private void validateInput(Object obj){
+<b class="fc">&nbsp;        if (obj == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Field cannot be null.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the additional skillset information from the CV.
+&nbsp;     * @return The additional skillset information.
+&nbsp;     */
+&nbsp;    public String getAdditionalSkillset() {
+<b class="fc">&nbsp;        return additionalSkillset;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the additional skillset information in the CV.
+&nbsp;     * @param additionalSkillset The additional skillset to be set.
+&nbsp;     * @throws NullPointerException if the input additionalSkillset is null.
+&nbsp;     */
+&nbsp;    public void setAdditionalSkillset(String additionalSkillset) {
+<b class="fc">&nbsp;        validateInput(additionalSkillset);</b>
+<b class="fc">&nbsp;        this.additionalSkillset = additionalSkillset;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of educational experiences from the CV.
+&nbsp;     * @return The list of educational experiences.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;Education&gt; getEducation() {
+<b class="fc">&nbsp;        return education;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds an educational experience to the CV.
+&nbsp;     * @param education The educational experience to be added.
+&nbsp;     * @throws NullPointerException if the input education is null.
+&nbsp;     */
+&nbsp;    public void setEducation(Education education){
+<b class="fc">&nbsp;        validateInput(education);</b>
+<b class="fc">&nbsp;        this.education.add(education);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of work experiences from the CV.
+&nbsp;     * @return The list of work experiences.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;WorkExperience&gt; getWorkExperiences() {
+<b class="fc">&nbsp;        return workExperiences;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds a work experience to the CV.
+&nbsp;     * @param workExperience The work experience to be added.
+&nbsp;     * @throws NullPointerException if the input workExperience is null.
+&nbsp;     */
+&nbsp;    public void setWorkExperience(WorkExperience workExperience){
+<b class="fc">&nbsp;        validateInput(workExperience);</b>
+<b class="fc">&nbsp;        this.workExperiences.add(workExperience);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the list of language knowledge from the CV.
+&nbsp;     * @return The list of language knowledge.
+&nbsp;     */
+&nbsp;    public ArrayList&lt;LanguageKnowledge&gt; getLanguageKnowledge() {
+<b class="fc">&nbsp;        return languageKnowledge;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Adds language knowledge to the CV.
+&nbsp;     * @param languageKnowledge The language knowledge to be added.
+&nbsp;     * @throws NullPointerException if the input languageKnowledge is null.
+&nbsp;     */
+&nbsp;    public void setLanguageKnowledge(LanguageKnowledge languageKnowledge){
+<b class="fc">&nbsp;        validateInput(languageKnowledge);</b>
+<b class="fc">&nbsp;        this.languageKnowledge.add(languageKnowledge);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

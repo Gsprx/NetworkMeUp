@@ -1,0 +1,96 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ShowJobsDetailsView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.SearchJobs.ShowJobDetails</a>
+</div>
+
+<h1>Coverage Summary for Class: ShowJobsDetailsView (com.example.networkmeup.view.SearchJobs.ShowJobDetails)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ShowJobsDetailsView</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.SearchJobs.ShowJobDetails;
+&nbsp;
+&nbsp;/**
+&nbsp; * Interface representing the contract for the Show Job Details View in the application.
+&nbsp; * This interface defines methods for handling various outcomes related to job details and application submission.
+&nbsp; */
+&nbsp;public interface ShowJobsDetailsView {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Callback method to handle the scenario when a job application is successfully submitted.
+&nbsp;     *
+&nbsp;     * @param userToken The authentication token of the user who submitted the application.
+&nbsp;     */
+&nbsp;    public void sendApplicationSuccess(String userToken);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to retrieve the cover letter entered by the user for job application.
+&nbsp;     *
+&nbsp;     * @return A string representing the cover letter entered by the user.
+&nbsp;     */
+&nbsp;    public String getCoverLetter();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Callback method to handle the scenario when the user attempts to submit an empty cover letter.
+&nbsp;     *
+&nbsp;     * @param message A descriptive message explaining the issue with the empty cover letter.
+&nbsp;     */
+&nbsp;    public void emptyCoverLetter(String message);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

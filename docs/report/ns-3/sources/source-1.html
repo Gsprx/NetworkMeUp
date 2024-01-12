@@ -1,0 +1,203 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Application</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Application (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Application</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (20/20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;
+&nbsp;import java.io.Serializable;
+&nbsp;
+&nbsp;/**
+&nbsp; * The Application class represents a job application submitted by an Employee.
+&nbsp; */
+&nbsp;public class Application implements Serializable {
+&nbsp;    private Employee applicant; // Represents the applicant who submitted the application
+<b class="fc">&nbsp;    private static Integer classCount = 0; // Keeps track of the number of Application instances</b>
+&nbsp;    private Integer ID; // Unique identifier for each application
+&nbsp;    private boolean status; // Indicates the status of the application (accepted/rejected)
+&nbsp;    private boolean answered; //Indicates if the application has been answered by the employer
+&nbsp;    private String coverLetter; // The cover letter submitted with the application
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor to create an Application object with an applicant and a cover letter.
+&nbsp;     * @param applicant The employee who is the applicant.
+&nbsp;     * @param coverLetter The cover letter submitted with the application.
+&nbsp;     */
+<b class="fc">&nbsp;    public Application(Employee applicant, String coverLetter){</b>
+<b class="fc">&nbsp;        validateData(applicant, coverLetter); // Validate the input data</b>
+<b class="fc">&nbsp;        this.applicant = applicant;</b>
+<b class="fc">&nbsp;        this.coverLetter = coverLetter;</b>
+<b class="fc">&nbsp;        classCount++; // Increment the count of Application instances</b>
+<b class="fc">&nbsp;        this.ID = classCount; // Assign a unique ID to the application</b>
+<b class="fc">&nbsp;        this.answered = false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates the input data for the application.
+&nbsp;     * @param employee The applicant employee.
+&nbsp;     * @param coverLetter The cover letter submitted with the application.
+&nbsp;     */
+&nbsp;    private void validateData(Employee employee, String coverLetter){
+&nbsp;        // Check if the employee or cover letter is null and throw exceptions if so
+<b class="fc">&nbsp;        if(employee == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Employee field cannot be null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(coverLetter == null){</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Cover letter field cannot be null.&quot;);</b>
+&nbsp;        }
+&nbsp;        return;
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Gets the status of the application.
+&nbsp;     * @return The status of the application (true if accepted, false if rejected).
+&nbsp;     */
+&nbsp;    public boolean getStatus() {
+<b class="fc">&nbsp;        return status;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the status of the application.
+&nbsp;     * @param status The status to be set (true for accepted, false for rejected).
+&nbsp;     */
+&nbsp;    public void setStatus(boolean status) {
+<b class="fc">&nbsp;        this.status = status;</b>
+<b class="fc">&nbsp;        this.answered = true;</b>
+&nbsp;    }
+&nbsp;    public boolean getAnswered(){
+<b class="fc">&nbsp;        return this.answered;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Gets the applicant employee.
+&nbsp;     * @return The employee who submitted the application.
+&nbsp;     */
+&nbsp;    public Employee getEmployee() {
+<b class="fc">&nbsp;        return applicant;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Gets the unique ID of the application.
+&nbsp;     * @return The ID of the application.
+&nbsp;     */
+&nbsp;    public Integer getID() {
+<b class="fc">&nbsp;        return ID;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    //ONLY FOR TESTING PURPOSES!!!
+&nbsp;    /**
+&nbsp;     * Sets the ID of the application (only for testing purposes).
+&nbsp;     * @param id The ID to be set.
+&nbsp;     */
+&nbsp;    public void setID(Integer id){
+<b class="fc">&nbsp;        this.ID = id;</b>
+&nbsp;    }
+&nbsp;    //ONLY FOR TESTING PURPOSES!!!
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Gets the cover letter submitted with the application.
+&nbsp;     * @return The cover letter of the application.
+&nbsp;     */
+&nbsp;    public String getCoverLetter() {
+<b class="fc">&nbsp;        return coverLetter;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

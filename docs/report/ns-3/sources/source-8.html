@@ -1,0 +1,167 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ExpertiseArea</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: ExpertiseArea (com.example.networkmeup.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ExpertiseArea</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.domain;
+&nbsp;
+&nbsp;import java.io.Serializable;
+&nbsp;
+&nbsp;/**
+&nbsp; * The ExpertiseArea class represents an area of expertise.
+&nbsp; */
+&nbsp;public class ExpertiseArea implements Comparable&lt;ExpertiseArea&gt;, Serializable {
+&nbsp;    private String area; // String representing the expertise area
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor to create an ExpertiseArea object with a specified area.
+&nbsp;     * @param area The area of expertise.
+&nbsp;     * @throws NullPointerException if the area is null.
+&nbsp;     */
+<b class="fc">&nbsp;    public ExpertiseArea(String area){</b>
+<b class="fc">&nbsp;        validateArea(area);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the area of expertise.
+&nbsp;     * @return The area of expertise.
+&nbsp;     */
+&nbsp;    public String getArea(){
+<b class="fc">&nbsp;        return this.area;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Sets the area of expertise.
+&nbsp;     * @param area The area of expertise to set.
+&nbsp;     * @throws NullPointerException if the area is null.
+&nbsp;     */
+&nbsp;    public void setArea(String area){
+<b class="fc">&nbsp;        validateArea(area);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates and sets the area of expertise.
+&nbsp;     * @param area The area of expertise to validate and set.
+&nbsp;     * @throws NullPointerException if the area is null.
+&nbsp;     */
+&nbsp;    private void validateArea(String area){
+<b class="fc">&nbsp;        if (area != null){</b>
+<b class="fc">&nbsp;            this.area = area;</b>
+&nbsp;        }
+&nbsp;        else{
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Area cannot be empty.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Checks equality between two ExpertiseArea objects based on their area of expertise.
+&nbsp;     * @param expertiseArea Another ExpertiseArea object to compare.
+&nbsp;     * @return true if the areas of expertise are equal, false otherwise.
+&nbsp;     */
+&nbsp;    public boolean equals (ExpertiseArea expertiseArea){
+<b class="fc">&nbsp;        return (this.area.equals(expertiseArea.area));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int compareTo(ExpertiseArea o) {
+<b class="fc">&nbsp;        return this.area.compareTo(o.getArea());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

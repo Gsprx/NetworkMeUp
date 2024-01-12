@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChangeEducationDetailsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails</a>
+</div>
+
+<h1>Coverage Summary for Class: ChangeEducationDetailsPresenter (com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChangeEducationDetailsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/17)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ModifyCV.ModifyCVEditEducation.ChangeEducationDetails;
+&nbsp;
+&nbsp;import com.example.networkmeup.dao.EmployeeDAO;
+&nbsp;import com.example.networkmeup.dao.ExpertiseAreaDAO;
+&nbsp;import com.example.networkmeup.daoMemory.EmployeeDAOMemory;
+&nbsp;import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Education;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employee;
+&nbsp;import com.example.networkmeup.domain.ExpertiseArea;
+&nbsp;import com.example.networkmeup.domain.LevelOfStudies;
+&nbsp;
+&nbsp;public class ChangeEducationDetailsPresenter {
+&nbsp;    private ChangeEducationDetailsView view;
+&nbsp;    private String userToken;
+&nbsp;
+<b class="fc">&nbsp;    public ChangeEducationDetailsPresenter(ChangeEducationDetailsView view, String userToken) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void onSave(int position) {
+&nbsp;        //get current employees data
+<b class="fc">&nbsp;        EmployeeDAO employeeDAO = new EmployeeDAOMemory();</b>
+<b class="fc">&nbsp;        Employee currEmployee = employeeDAO.getByEmail(new Email(userToken));</b>
+&nbsp;        //keep education that we want to update
+<b class="fc">&nbsp;        Education updatedEducation = currEmployee.getCV().getEducation().get(position);</b>
+&nbsp;        //use education class setters to modify and update the fields
+<b class="fc">&nbsp;        updatedEducation.setDescription(view.getDescription());</b>
+&nbsp;            //get exp area value using the dao alongside the position given by the spinner item selection
+<b class="fc">&nbsp;            ExpertiseAreaDAO expertiseAreaDAO = new ExpertiseAreaDAOMemory();</b>
+<b class="fc">&nbsp;            ExpertiseArea newExpertiseArea = expertiseAreaDAO.getAll().get(view.getExpertiseArea());</b>
+<b class="fc">&nbsp;        updatedEducation.setExpArea(newExpertiseArea);</b>
+&nbsp;
+&nbsp;            //get level of studies using the enum&#39;s ordinal alongside the position given by the spinner item selection
+<b class="fc">&nbsp;            LevelOfStudies newLevelOfStudies = LevelOfStudies.values()[view.getLevelOfStudies()];</b>
+<b class="fc">&nbsp;        updatedEducation.setLvlOfStudies(newLevelOfStudies);</b>
+&nbsp;        //update has been completed at this point, create success dialog
+<b class="fc">&nbsp;        view.successfulSave(&quot;This education has been updated successfully!&quot;, userToken);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public void onDelete(int position) {
+<b class="fc">&nbsp;        EmployeeDAO employeeDAO = new EmployeeDAOMemory();</b>
+<b class="fc">&nbsp;        Employee currEmployee = employeeDAO.getByEmail(new Email(userToken));</b>
+<b class="fc">&nbsp;        currEmployee.getCV().getEducation().remove(position);</b>
+<b class="fc">&nbsp;        view.successfulDelete(&quot;This education has been deleted successfully!&quot;, userToken);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

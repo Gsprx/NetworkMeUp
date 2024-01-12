@@ -1,0 +1,153 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > HomeEmployerPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.HomeEmployer</a>
+</div>
+
+<h1>Coverage Summary for Class: HomeEmployerPresenter (com.example.networkmeup.view.HomeEmployer)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HomeEmployerPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.HomeEmployer;
+&nbsp;
+&nbsp;public class HomeEmployerPresenter {
+&nbsp;    private HomeEmployerView view;
+&nbsp;    // user token is the email of the employer
+&nbsp;    private String userToken;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for HomeEmployerPresenter.
+&nbsp;     * @param view The view associated with the presenter.
+&nbsp;     * @param userToken The token (email) of the employer.
+&nbsp;     */
+<b class="fc">&nbsp;    public HomeEmployerPresenter(HomeEmployerView view, String userToken) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        validateToken(userToken);</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to validate the user token.
+&nbsp;     * @param obj The token to be validated.
+&nbsp;     */
+&nbsp;    private void validateToken(Object obj) {
+<b class="fc">&nbsp;        if (obj == null) {</b>
+<b class="fc">&nbsp;            view.showTokenErrorMessage(&quot;An error has occurred during login, please try again.&quot;);</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Error! Null token.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to handle action for managing job positions.
+&nbsp;     */
+&nbsp;    public void onManageJobPositions() {
+<b class="fc">&nbsp;        view.manageJobPositions(userToken);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to handle action for updating job applications.
+&nbsp;     */
+&nbsp;    public void onUpdateJobApplications() {
+<b class="fc">&nbsp;        view.updateJobApplications(userToken);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Method to handle action for editing the employer&#39;s account.
+&nbsp;     */
+&nbsp;    public void onEditAccount() {
+<b class="fc">&nbsp;        view.editAccount(userToken);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

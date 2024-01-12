@@ -80,11 +80,10 @@ public class EmployerDAOMemory implements EmployerDAO{
      */
     @Override
     public Employer getByEmail(Email email) {
-        for(Employer e : employers){
+        for(Employer e : employers)
             if(e.hasEmail(email)){
                 return e;
             }
-        }
         return null;
     }
 

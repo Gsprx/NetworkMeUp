@@ -1,0 +1,423 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AddNewReqWorkExperienceActivity</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience</a>
+</div>
+
+<h1>Coverage Summary for Class: AddNewReqWorkExperienceActivity (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddNewReqWorkExperienceActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/38)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">AddNewReqWorkExperienceActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AddNewReqWorkExperienceActivity$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AddNewReqWorkExperienceActivity$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AddNewReqWorkExperienceActivity$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AddNewReqWorkExperienceActivity$5</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/55)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.AddNewReqWorkExperience;
+&nbsp;
+&nbsp;import androidx.appcompat.app.AlertDialog;
+&nbsp;import androidx.appcompat.app.AppCompatActivity;
+&nbsp;
+&nbsp;import android.annotation.SuppressLint;
+&nbsp;import android.content.DialogInterface;
+&nbsp;import android.content.Intent;
+&nbsp;import android.os.Bundle;
+&nbsp;import android.view.View;
+&nbsp;import android.widget.AdapterView;
+&nbsp;import android.widget.ArrayAdapter;
+&nbsp;import android.widget.EditText;
+&nbsp;import android.widget.Spinner;
+&nbsp;
+&nbsp;import com.example.networkmeup.R;
+&nbsp;import com.example.networkmeup.dao.ExpertiseAreaDAO;
+&nbsp;import com.example.networkmeup.daoMemory.ExpertiseAreaDAOMemory;
+&nbsp;import com.example.networkmeup.domain.ExpertiseArea;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;import com.example.networkmeup.domain.LevelOfStudies;
+&nbsp;import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJobDetailsActivity;
+&nbsp;import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationActivity;
+&nbsp;import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.AddNewReqEducation.AddNewReqEducationPresenter;
+&nbsp;import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqEducation.EditReqEducationActivity;
+&nbsp;import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqWorkExperience.EditReqWorkExperienceActivity;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;/**
+&nbsp; * This class represents an activity where a new required work experience can be added.
+&nbsp; * It extends AppCompatActivity and implements AddNewReqWorkExperienceView.
+&nbsp; */
+<b class="nc">&nbsp;public class AddNewReqWorkExperienceActivity extends AppCompatActivity implements AddNewReqWorkExperienceView {</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Called when the activity is starting.
+&nbsp;     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc">&nbsp;        setContentView(R.layout.activity_add_new_req_work_experience);</b>
+&nbsp;
+<b class="nc">&nbsp;        Bundle extras = getIntent().getExtras();</b>
+&nbsp;
+&nbsp;        final String userEmail;
+&nbsp;        final Job currJob;
+<b class="nc">&nbsp;        if(extras!=null){</b>
+&nbsp;            //obtain user token
+<b class="nc">&nbsp;            userEmail = extras.getString(&quot;token&quot;);</b>
+<b class="nc">&nbsp;            currJob = (Job)extras.getSerializable(&quot;job&quot;);</b>
+&nbsp;        }
+&nbsp;        else{
+<b class="nc">&nbsp;            userEmail = null;</b>
+<b class="nc">&nbsp;            currJob = null;</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Initialize presenter
+<b class="nc">&nbsp;        final AddNewReqWorkExperiencePresenter presenter = new AddNewReqWorkExperiencePresenter(this, userEmail, currJob);</b>
+&nbsp;
+&nbsp;        //create spinner declarations
+<b class="nc">&nbsp;        Spinner expFieldSpinner = findViewById(R.id.spinnerAddNewReqWorkExperienceExpertiseField);</b>
+<b class="nc">&nbsp;        Spinner YearsATWork = findViewById(R.id.spinnerAddNewReqWorkExperienceYears);</b>
+&nbsp;
+<b class="nc">&nbsp;        ArrayList&lt;Integer&gt; YearsFields = new ArrayList&lt;Integer&gt;();</b>
+<b class="nc">&nbsp;        ArrayList&lt;String&gt; expFields = new ArrayList&lt;String&gt;();</b>
+&nbsp;
+&nbsp;        //create spinner list for years at work
+<b class="nc">&nbsp;        for(int i = 1; i&lt;= 15 ; i++){</b>
+<b class="nc">&nbsp;            YearsFields.add(i);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        //create spinner list for exp fields
+<b class="nc">&nbsp;        ExpertiseAreaDAO expAreaDAO = new ExpertiseAreaDAOMemory();</b>
+<b class="nc">&nbsp;        ArrayList&lt;ExpertiseArea&gt; expertiseAreas = expAreaDAO.getAll();</b>
+<b class="nc">&nbsp;        for(ExpertiseArea expertiseArea : expertiseAreas){</b>
+<b class="nc">&nbsp;            expFields.add(expertiseArea.getArea());</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        //pass adapter to spinners and define behavior
+<b class="nc">&nbsp;        ArrayAdapter&lt;Integer&gt; YearsAdapter = new ArrayAdapter&lt;Integer&gt;(this, android.R.layout.simple_spinner_dropdown_item, YearsFields);</b>
+<b class="nc">&nbsp;        YearsATWork.setAdapter(YearsAdapter);</b>
+<b class="nc">&nbsp;        YearsATWork.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {</b>
+&nbsp;            /**
+&nbsp;             * Callback method to be invoked when an item in this view has been selected.
+&nbsp;             * @param parent The AdapterView where the selection happened
+&nbsp;             * @param view The view within the AdapterView that was clicked
+&nbsp;             * @param position The position of the view in the adapter
+&nbsp;             * @param id The row id of the item that is selected
+&nbsp;             */
+&nbsp;            @Override
+&nbsp;            public void onItemSelected(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+<b class="nc">&nbsp;                Integer selectedYears = YearsFields.get(position);</b>
+&nbsp;            }
+&nbsp;
+&nbsp;            /**
+&nbsp;             * Callback method to be invoked when the selection disappears from this view.
+&nbsp;             * @param parent The AdapterView that now contains no selected item.
+&nbsp;             */
+&nbsp;            @Override
+&nbsp;            public void onNothingSelected(AdapterView&lt;?&gt; parent) {
+&nbsp;                //do nothing
+<b class="nc">&nbsp;            }</b>
+&nbsp;        });
+&nbsp;
+<b class="nc">&nbsp;        ArrayAdapter&lt;String&gt; expFieldsAdapter = new ArrayAdapter&lt;&gt;(this, android.R.layout.simple_spinner_dropdown_item, expFields);</b>
+<b class="nc">&nbsp;        expFieldSpinner.setAdapter(expFieldsAdapter);</b>
+<b class="nc">&nbsp;        expFieldSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {</b>
+&nbsp;            /**
+&nbsp;             * Callback method to be invoked when an item in this view has been selected.
+&nbsp;             * @param parent The AdapterView where the selection happened
+&nbsp;             * @param view The view within the AdapterView that was clicked
+&nbsp;             * @param position The position of the view in the adapter
+&nbsp;             * @param id The row id of the item that is selected
+&nbsp;             */
+&nbsp;            @Override
+&nbsp;            public void onItemSelected(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+<b class="nc">&nbsp;                String selectedExpField = expFields.get(position);</b>
+&nbsp;            }
+&nbsp;
+&nbsp;            /**
+&nbsp;             * Callback method to be invoked when the selection disappears from this view.
+&nbsp;             * @param parent The AdapterView that now contains no selected item.
+&nbsp;             */
+&nbsp;            @Override
+&nbsp;            public void onNothingSelected(AdapterView&lt;?&gt; parent) {
+&nbsp;                //do nothing
+<b class="nc">&nbsp;            }</b>
+&nbsp;        });
+&nbsp;
+&nbsp;        //when add button is pressed
+<b class="nc">&nbsp;        findViewById(R.id.buttonAddNewReqWorkExp).setOnClickListener(</b>
+<b class="nc">&nbsp;                new View.OnClickListener() {</b>
+&nbsp;                    /**
+&nbsp;                     * Called when a view has been clicked.
+&nbsp;                     * @param v The view that was clicked.
+&nbsp;                     */
+&nbsp;                    @Override
+&nbsp;                    public void onClick(View v) {
+<b class="nc">&nbsp;                        presenter.onAdd();</b>
+&nbsp;                    }
+&nbsp;                }
+&nbsp;        );
+&nbsp;        // when back button is pressed
+<b class="nc">&nbsp;        findViewById(R.id.backbuttonAddNewReqWorkExp).setOnClickListener(</b>
+<b class="nc">&nbsp;                new View.OnClickListener(){</b>
+&nbsp;                    /**
+&nbsp;                     * Called when a view has been clicked.
+&nbsp;                     * @param v The view that was clicked.
+&nbsp;                     */
+&nbsp;                    public void onClick(View v){
+<b class="nc">&nbsp;                        Intent intent = new Intent(AddNewReqWorkExperienceActivity.this, EditReqWorkExperienceActivity.class);</b>
+<b class="nc">&nbsp;                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);</b>
+<b class="nc">&nbsp;                        startActivity(intent);</b>
+&nbsp;                    }
+&nbsp;                }
+&nbsp;        );
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when a new required work experience is successfully added.
+&nbsp;     * It shows an alert dialog with a success message and an option to return to the Change Job Details activity.
+&nbsp;     * @param message The success message to be displayed.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job object.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public void successfulAdd(String message, String userToken, Job job){
+<b class="nc">&nbsp;        new AlertDialog.Builder(AddNewReqWorkExperienceActivity.this)</b>
+<b class="nc">&nbsp;                .setCancelable(false)</b>
+<b class="nc">&nbsp;                .setTitle(&quot;Creation Completed!&quot;)</b>
+<b class="nc">&nbsp;                .setMessage(message)</b>
+&nbsp;
+&nbsp;                //return back to modify cv view when pressed
+<b class="nc">&nbsp;                .setPositiveButton(&quot;Return to Change Job Details&quot;,</b>
+<b class="nc">&nbsp;                        new DialogInterface.OnClickListener(){</b>
+&nbsp;
+&nbsp;                            public void onClick (DialogInterface dialog,int id) {
+&nbsp;
+<b class="nc">&nbsp;                                Intent intent = new Intent(AddNewReqWorkExperienceActivity.this, ChangeJobDetailsActivity.class);</b>
+<b class="nc">&nbsp;                                intent.putExtra(&quot;token&quot;, userToken);</b>
+<b class="nc">&nbsp;                                intent.putExtra(&quot;job&quot;, job);</b>
+<b class="nc">&nbsp;                                startActivity(intent);</b>
+<b class="nc">&nbsp;                            }}).create().show();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method gets the description entered by the user in the EditText field.
+&nbsp;     * @return The description entered by the user.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public String getDescription() {
+<b class="nc">&nbsp;        return ((EditText)findViewById(R.id.editTextAddNewReqWorkExpDescription)).getText().toString().trim();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method gets the selected expertise area from the spinner.
+&nbsp;     * @return The position of the selected expertise area in the spinner.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public int getExpertiseArea() {
+&nbsp;        //get position in respective list
+<b class="nc">&nbsp;        return ((Spinner)findViewById(R.id.spinnerAddNewReqWorkExperienceExpertiseField)).getSelectedItemPosition();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method gets the selected number of years from the spinner.
+&nbsp;     * @return The position of the selected number of years in the spinner.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public int getYears(){
+&nbsp;        //get position in respective enum ordinal
+<b class="nc">&nbsp;        return ((Spinner)findViewById(R.id.spinnerAddNewReqWorkExperienceYears)).getSelectedItemPosition();</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

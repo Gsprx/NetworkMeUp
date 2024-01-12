@@ -110,4 +110,11 @@ public class EditAccountEmployeePresenterTest {
         Assert.assertEquals(1, new EmployeeDAOMemory().getAll().size());
     }
 
+    @Test
+    public void checkApplicationArchiveMove(){
+        presenter.ApplicationArchive();
+
+        Assert.assertEquals("john.Brown12@gmail.com", viewStub.getLastTokenPassed());
+    }
+
 }

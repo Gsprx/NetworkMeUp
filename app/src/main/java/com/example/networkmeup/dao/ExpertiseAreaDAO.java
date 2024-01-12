@@ -20,4 +20,5 @@ public interface ExpertiseAreaDAO {
      */
     public void save(ExpertiseArea expertiseArea);
     public boolean find(ExpertiseArea expertiseArea);
+    public void delete(ExpertiseArea expertiseArea);
 }

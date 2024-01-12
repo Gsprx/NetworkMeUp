@@ -1,0 +1,221 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SelectWorkExperienceRecyclerViewAdapter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.utils.RecyclerViewAdapters</a>
+</div>
+
+<h1>Coverage Summary for Class: SelectWorkExperienceRecyclerViewAdapter (com.example.networkmeup.utils.RecyclerViewAdapters)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SelectWorkExperienceRecyclerViewAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SelectWorkExperienceRecyclerViewAdapter$ItemClickListener</td>
+  </tr>
+  <tr>
+    <td class="name">SelectWorkExperienceRecyclerViewAdapter$SelectWorkExperienceViewHolder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.utils.RecyclerViewAdapters;
+&nbsp;
+&nbsp;import android.content.Context;
+&nbsp;import android.view.LayoutInflater;
+&nbsp;import android.view.View;
+&nbsp;import android.view.ViewGroup;
+&nbsp;import android.widget.TextView;
+&nbsp;
+&nbsp;import androidx.annotation.NonNull;
+&nbsp;import androidx.recyclerview.widget.RecyclerView;
+&nbsp;
+&nbsp;import com.example.networkmeup.R;
+&nbsp;import com.example.networkmeup.domain.Education;
+&nbsp;import com.example.networkmeup.domain.WorkExperience;
+&nbsp;import com.example.networkmeup.domain.WorkExperience;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+<b class="nc">&nbsp;public class SelectWorkExperienceRecyclerViewAdapter extends RecyclerView.Adapter&lt;SelectWorkExperienceRecyclerViewAdapter.SelectWorkExperienceViewHolder&gt;{</b>
+&nbsp;    private ArrayList&lt;WorkExperience&gt; workExp;
+&nbsp;    private Context context;
+&nbsp;    private ItemClickListener clickListener;
+&nbsp;
+<b class="nc">&nbsp;    public SelectWorkExperienceRecyclerViewAdapter(Context context, ArrayList&lt;WorkExperience&gt; workExp){</b>
+<b class="nc">&nbsp;        this.context = context;</b>
+<b class="nc">&nbsp;        this.workExp = workExp;</b>
+&nbsp;    }
+&nbsp;    @NonNull
+&nbsp;    @Override
+&nbsp;    //Creates the look for the rows in the UI recycler view
+&nbsp;    public SelectWorkExperienceRecyclerViewAdapter.SelectWorkExperienceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+&nbsp;        //this method creates the look for the rows that we specified
+<b class="nc">&nbsp;        LayoutInflater inflater = LayoutInflater.from(context);</b>
+<b class="nc">&nbsp;        View view = inflater.inflate(R.layout.recycler_view_work_experience_row, parent, false);</b>
+<b class="nc">&nbsp;        return new SelectWorkExperienceRecyclerViewAdapter.SelectWorkExperienceViewHolder(view);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    //Assign(bind) the data to use for each row
+&nbsp;    //changes the data on the recycler view based on the position of the recycler
+&nbsp;    public void onBindViewHolder(@NonNull SelectWorkExperienceRecyclerViewAdapter.SelectWorkExperienceViewHolder holder, int position) {
+&nbsp;        //set each holder&#39;s members to match the data on the WorkExp data found on the position (of the position int passed in the method)
+&nbsp;
+&nbsp;        //for example set the workExpDescription field of the holder to the one matching the WorkExp instance in the list[position]
+<b class="nc">&nbsp;        holder.workExpDescription.setText(workExp.get(position).getDescription());</b>
+<b class="nc">&nbsp;        holder.workExpYears.setText(Integer.toString(workExp.get(position).getYears()));</b>
+<b class="nc">&nbsp;        holder.workExpExpField.setText(workExp.get(position).getExpArea().getArea());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int getItemCount() {
+<b class="nc">&nbsp;        return workExp.size();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //catch click events with a click listener that we set
+&nbsp;    public void setClickListener(SelectWorkExperienceRecyclerViewAdapter.ItemClickListener itemClickListener) {
+<b class="nc">&nbsp;        this.clickListener = itemClickListener;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //method of this interface must be implemented by parent activity
+&nbsp;    public interface ItemClickListener {
+&nbsp;        void onItemClick(View view, int position);
+&nbsp;    }
+&nbsp;
+&nbsp;    public class SelectWorkExperienceViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+&nbsp;        //this class holds the TextView items in the work_Experience_recycler_view_row layout file
+&nbsp;
+&nbsp;        TextView workExpExpField;
+&nbsp;        TextView workExpYears;
+&nbsp;        TextView workExpDescription;
+&nbsp;
+<b class="nc">&nbsp;        public SelectWorkExperienceViewHolder(@NonNull View itemView) {</b>
+<b class="nc">&nbsp;            super(itemView);</b>
+&nbsp;
+<b class="nc">&nbsp;            itemView.setOnClickListener(this);</b>
+&nbsp;
+<b class="nc">&nbsp;            this.workExpExpField = itemView.findViewById(R.id.textWorkExperienceExpArea);</b>
+<b class="nc">&nbsp;            this.workExpYears = itemView.findViewById(R.id.textWorkExperienceYears);</b>
+<b class="nc">&nbsp;            this.workExpDescription = itemView.findViewById(R.id.textWorkExperienceDescription);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public void onClick(View v) {
+<b class="nc">&nbsp;            if (clickListener != null) {</b>
+<b class="nc">&nbsp;                clickListener.onItemClick(v, getAdapterPosition());</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

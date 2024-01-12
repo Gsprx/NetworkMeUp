@@ -1,0 +1,184 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LoginEmployeePresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.Login.LoginEmployee</a>
+</div>
+
+<h1>Coverage Summary for Class: LoginEmployeePresenter (com.example.networkmeup.view.Login.LoginEmployee)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoginEmployeePresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.Login.LoginEmployee;
+&nbsp;
+&nbsp;import com.example.networkmeup.dao.EmployeeDAO;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;/**
+&nbsp; * Presenter for handling the login logic of an employee.
+&nbsp; * &lt;p&gt;
+&nbsp; * This class is responsible for processing the login logic for employees. It interacts with
+&nbsp; * the LoginEmployeeView for UI-related operations and EmployeeDAO for data access and authentication.
+&nbsp; * &lt;/p&gt;
+&nbsp; */
+&nbsp;public class LoginEmployeePresenter {
+&nbsp;    private final LoginEmployeeView loginEmployeeView;
+&nbsp;    private final EmployeeDAO employeeDAO;
+&nbsp;    /**
+&nbsp;     * Constructs a LoginEmployeePresenter with a specified view and data access object.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * This constructor initializes the presenter with a view for UI interactions and an
+&nbsp;     * EmployeeDAO for handling data operations related to employee authentication.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     *
+&nbsp;     * @param view The view associated with this presenter, typically an activity that implements LoginEmployeeView.
+&nbsp;     * @param employeeDAO The data access object for employee-related operations.
+&nbsp;     */
+&nbsp;    // Constructor initializing the presenter with a view and an EmployeeDAO instance
+<b class="fc">&nbsp;    public LoginEmployeePresenter(LoginEmployeeView view, EmployeeDAO employeeDAO) {</b>
+<b class="fc">&nbsp;        this.loginEmployeeView = view;</b>
+<b class="fc">&nbsp;        this.employeeDAO = employeeDAO;</b>
+&nbsp;    }
+&nbsp;    /**
+&nbsp;     * Handles the login process when the login button is clicked.
+&nbsp;     * &lt;p&gt;
+&nbsp;     * This method is invoked to process the employee login. It validates email and password inputs,
+&nbsp;     * communicates with the EmployeeDAO for authentication, and navigates the flow based on the
+&nbsp;     * authentication result.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     */
+&nbsp;    // Method triggered when the login button is clicked
+&nbsp;    public void onLogin() {
+<b class="fc">&nbsp;        boolean email_ok = true;</b>
+<b class="fc">&nbsp;        boolean pwd_ok = true;</b>
+&nbsp;
+<b class="fc">&nbsp;        Email email = null;</b>
+<b class="fc">&nbsp;        Password password = null;</b>
+&nbsp;
+&nbsp;        // Validate email field
+&nbsp;        try {
+<b class="fc">&nbsp;            email = loginEmployeeView.getEmail();</b>
+<b class="fc">&nbsp;        } catch (RuntimeException e) {</b>
+<b class="fc">&nbsp;            loginEmployeeView.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            email_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        // Validate password field
+&nbsp;        try {
+<b class="fc">&nbsp;            password = loginEmployeeView.getPassword();</b>
+<b class="fc">&nbsp;        } catch (RuntimeException e) {</b>
+<b class="fc">&nbsp;            loginEmployeeView.showErrorMessage(&quot;Error!&quot;, e.getMessage());</b>
+<b class="fc">&nbsp;            pwd_ok = false;</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        // Proceed with login only if both email and password are valid
+<b class="fc">&nbsp;        if (email_ok &amp;&amp; pwd_ok) {</b>
+&nbsp;            // Create an Employee object for authentication
+&nbsp;            // For login functionality, check if the employee exists in the database
+&nbsp;            // In a real application, there would likely be additional authentication logic
+&nbsp;            // But here, we are simply checking if the employee exists in the DAO
+<b class="fc">&nbsp;            boolean isAuthenticated = employeeDAO.authenticate(email, password);</b>
+&nbsp;
+<b class="fc">&nbsp;            if (isAuthenticated) {</b>
+&nbsp;                // If the employee exists, finish login successfully
+&nbsp;                // pass user email as login token
+<b class="fc">&nbsp;                loginEmployeeView.successfullyFinishLogin(email.getAddress());</b>
+&nbsp;            } else {
+&nbsp;                // If the employee doesn&#39;t exist, show an error message
+<b class="fc">&nbsp;                loginEmployeeView.showErrorMessage(&quot;Login Error&quot;, &quot;Invalid credentials!&quot;);</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

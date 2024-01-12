@@ -1,0 +1,109 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LoginEmployeeView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.Login.LoginEmployee</a>
+</div>
+
+<h1>Coverage Summary for Class: LoginEmployeeView (com.example.networkmeup.view.Login.LoginEmployee)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">LoginEmployeeView</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.Login.LoginEmployee;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Password;
+&nbsp;
+&nbsp;/**
+&nbsp; * This interface defines the contract for the view responsible for Employee Login functionality.
+&nbsp; * It provides methods to retrieve login credentials, display error messages, and indicate a successful login attempt.
+&nbsp; */
+&nbsp;public interface LoginEmployeeView {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the email input from the user for login.
+&nbsp;     *
+&nbsp;     * @return An Email object containing the entered email address.
+&nbsp;     * @throws RuntimeException if there&#39;s an issue acquiring the email.
+&nbsp;     */
+&nbsp;    Email getEmail() throws RuntimeException;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retrieves the password input from the user for login.
+&nbsp;     *
+&nbsp;     * @return A Password object containing the entered password.
+&nbsp;     * @throws RuntimeException if there&#39;s an issue acquiring the password.
+&nbsp;     */
+&nbsp;    Password getPassword() throws RuntimeException;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Displays an error message on the login screen.
+&nbsp;     *
+&nbsp;     * @param title   The title for the error message dialog.
+&nbsp;     * @param message The error message to be displayed.
+&nbsp;     */
+&nbsp;    void showErrorMessage(String title, String message);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Indicates a successful login attempt and triggers navigation to the next screen.
+&nbsp;     *
+&nbsp;     * @param userToken token passed for user indexing for later pages.
+&nbsp;     */
+&nbsp;    void successfullyFinishLogin(String userToken);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

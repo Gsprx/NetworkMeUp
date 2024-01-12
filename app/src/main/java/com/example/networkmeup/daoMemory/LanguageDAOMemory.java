@@ -28,6 +28,8 @@ public class LanguageDAOMemory implements LanguageDAO{
         }
     }
 
+
+
     @Override
     public boolean find(Language language) {
         for(Language lang : languages){
@@ -36,5 +38,10 @@ public class LanguageDAOMemory implements LanguageDAO{
             }
         }
         return false;
+    }
+
+    @Override
+    public void delete(Language language) {
+        languages.remove(language);
     }
 }

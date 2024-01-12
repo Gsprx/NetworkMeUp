@@ -1,0 +1,103 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AddNewReqLangKnowledgeView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge</a>
+</div>
+
+<h1>Coverage Summary for Class: AddNewReqLangKnowledgeView (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">AddNewReqLangKnowledgeView</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge;
+&nbsp;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;import com.example.networkmeup.domain.LevelOfKnowledge;
+&nbsp;
+&nbsp;/**
+&nbsp; * The AddNewReqLangKnowledgeView interface provides methods for managing the addition of new required language knowledge.
+&nbsp; */
+&nbsp;public interface AddNewReqLangKnowledgeView {
+&nbsp;        /**
+&nbsp;         * Method for activity continuity after a successful add.
+&nbsp;         * @param message Message sent by the presenter.
+&nbsp;         * @param userToken User token to be passed to next activity.
+&nbsp;         * @param job Job object to be passed after being updated.
+&nbsp;         */
+&nbsp;        void successfulAdd(String message, String userToken, Job job);
+&nbsp;
+&nbsp;        /**
+&nbsp;         * Method to obtain description from a text field.
+&nbsp;         * @return String value of the description typed by the user.
+&nbsp;         */
+&nbsp;        String getDescription();
+&nbsp;
+&nbsp;        /**
+&nbsp;         * Method to obtain language from a spinner.
+&nbsp;         * @return Integer value of the selected language.
+&nbsp;         */
+&nbsp;        int getLanguage();
+&nbsp;
+&nbsp;        /**
+&nbsp;         * Method to obtain level of knowledge from a spinner.
+&nbsp;         * @return LevelOfKnowledge value of the selected level of knowledge.
+&nbsp;         */
+&nbsp;        LevelOfKnowledge getLevelOfKnowledge();
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

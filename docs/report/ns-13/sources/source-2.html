@@ -1,0 +1,145 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AddNewReqLangKnowledgePresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge</a>
+</div>
+
+<h1>Coverage Summary for Class: AddNewReqLangKnowledgePresenter (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddNewReqLangKnowledgePresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqLangKnowledge.AddNewReqLangKnowledge;
+&nbsp;
+&nbsp;import com.example.networkmeup.daoMemory.LanguageDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;import com.example.networkmeup.domain.Language;
+&nbsp;import com.example.networkmeup.domain.LanguageKnowledge;
+&nbsp;import com.example.networkmeup.domain.LevelOfKnowledge;
+&nbsp;
+&nbsp;
+&nbsp;/**
+&nbsp; * The AddNewReqLangKnowledgePresenter class is responsible for handling actions from the AddNewReqLangKnowledgeActivity view.
+&nbsp; */
+&nbsp;public class AddNewReqLangKnowledgePresenter {
+&nbsp;    private AddNewReqLangKnowledgeView view;
+&nbsp;    private String userToken;
+&nbsp;    private Job job;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for the AddNewReqLangKnowledgePresenter class.
+&nbsp;     * @param view The view that this presenter is attached to.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param job The job that is being updated.
+&nbsp;     */
+<b class="fc">&nbsp;    public AddNewReqLangKnowledgePresenter(AddNewReqLangKnowledgeView view, String userToken, Job job) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+<b class="fc">&nbsp;        this.job = job;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the Add button is pressed.
+&nbsp;     * It adds a new language knowledge to the job and notifies the view of a successful add.
+&nbsp;     */
+&nbsp;    public void onAdd() {
+<b class="fc">&nbsp;        Language newLanguage = new LanguageDAOMemory().getAll().get(view.getLanguage());</b>
+<b class="fc">&nbsp;        LevelOfKnowledge newLevelOfKnowledge = LevelOfKnowledge.values()[view.getLevelOfKnowledge().ordinal()];</b>
+<b class="fc">&nbsp;        job.addReqLanguageKnowledge(new LanguageKnowledge(view.getDescription(), newLanguage, newLevelOfKnowledge));</b>
+&nbsp;
+<b class="fc">&nbsp;        view.successfulAdd(&quot;Required Language Knowledge was successfully created!&quot;, userToken, job);</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

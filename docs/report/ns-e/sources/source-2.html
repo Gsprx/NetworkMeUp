@@ -1,0 +1,194 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChangeJobDetailsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails</a>
+</div>
+
+<h1>Coverage Summary for Class: ChangeJobDetailsPresenter (com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChangeJobDetailsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails;
+&nbsp;
+&nbsp;import com.example.networkmeup.dao.EmployerDAO;
+&nbsp;import com.example.networkmeup.daoMemory.EmployerDAOMemory;
+&nbsp;import com.example.networkmeup.domain.Availability;
+&nbsp;import com.example.networkmeup.domain.Email;
+&nbsp;import com.example.networkmeup.domain.Employer;
+&nbsp;import com.example.networkmeup.domain.Job;
+&nbsp;
+&nbsp;/**
+&nbsp; * The ChangeJobDetailsPresenter class is responsible for handling actions from the ChangeJobDetailsActivity view.
+&nbsp; */
+&nbsp;public class ChangeJobDetailsPresenter {
+&nbsp;    private ChangeJobDetailsView view;
+&nbsp;    private String userToken;
+&nbsp;    private Job currJob;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructor for the ChangeJobDetailsPresenter class.
+&nbsp;     * @param view The view that this presenter is attached to.
+&nbsp;     * @param userToken The token of the user.
+&nbsp;     * @param currJob The job that is being updated.
+&nbsp;     */
+<b class="fc">&nbsp;    public ChangeJobDetailsPresenter(ChangeJobDetailsView view, String userToken, Job currJob) {</b>
+<b class="fc">&nbsp;        this.view = view;</b>
+<b class="fc">&nbsp;        this.userToken = userToken;</b>
+<b class="fc">&nbsp;        this.currJob = currJob;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the Edit button in the education section is pressed.
+&nbsp;     * It saves the changes and edits the education details.
+&nbsp;     */
+&nbsp;    public void onEditEducation() {
+<b class="fc">&nbsp;        saveChanges();</b>
+<b class="fc">&nbsp;        view.editEducation(currJob,userToken);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the Edit button in the work experience section is pressed.
+&nbsp;     * It saves the changes and edits the work experience details.
+&nbsp;     */
+&nbsp;    public void onEditWorkExperience() {
+<b class="fc">&nbsp;        saveChanges();</b>
+<b class="fc">&nbsp;        view.editWorkExperience(currJob, userToken);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the Edit button in the language knowledge section is pressed.
+&nbsp;     * It saves the changes and edits the language knowledge details.
+&nbsp;     */
+&nbsp;    public void onEditLanguageKnowledge() {
+<b class="fc">&nbsp;        saveChanges();</b>
+<b class="fc">&nbsp;        view.editLangKnowledge(currJob, userToken);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is used to keep the changes in the text fields made by the user
+&nbsp;     * after pressing an edit list button or the save button.
+&nbsp;     */
+&nbsp;    private void saveChanges(){
+<b class="fc">&nbsp;        Employer currEmployer = new EmployerDAOMemory().getByEmail(new Email(userToken));</b>
+<b class="fc">&nbsp;        currEmployer.getJobs().remove(currJob);</b>
+&nbsp;
+<b class="fc">&nbsp;        currJob.setDescription(view.getJobDescription());</b>
+<b class="fc">&nbsp;        currJob.setTitle(view.getJobTitle());</b>
+<b class="fc">&nbsp;        currJob.setAvailability(Availability.values()[view.getAvailability()]);</b>
+&nbsp;
+<b class="fc">&nbsp;        currEmployer.addJob(currJob);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the Save button is pressed.
+&nbsp;     * It saves the changes and notifies the view of a successful save.
+&nbsp;     */
+&nbsp;    public void onSave() {
+<b class="fc">&nbsp;        saveChanges();</b>
+<b class="fc">&nbsp;        view.successfulSave(userToken);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * This method is called when the Delete button is pressed.
+&nbsp;     * It deletes the job and notifies the view of a successful delete.
+&nbsp;     */
+&nbsp;    public void onDelete() {
+<b class="fc">&nbsp;        EmployerDAO employerDAO = new EmployerDAOMemory();</b>
+<b class="fc">&nbsp;        Employer employer = employerDAO.getByEmail(new Email(userToken));</b>
+<b class="fc">&nbsp;        employer.getJobs().remove(currJob);</b>
+<b class="fc">&nbsp;        view.successfulDelete(userToken);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-12 16:21</div>
+</div>
+</body>
+</html>

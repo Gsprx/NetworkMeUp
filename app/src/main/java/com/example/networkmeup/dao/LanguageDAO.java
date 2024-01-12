@@ -13,4 +13,5 @@ public interface LanguageDAO {
     public ArrayList<Language> getAll();
     public void save(Language language);
     public boolean find(Language language);
+    public void delete(Language language);
 }
