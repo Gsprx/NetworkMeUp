@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * The Employee class represents an individual working within a network and holds various personal and professional details.
@@ -202,12 +203,13 @@ public class Employee implements Serializable {
 
     /**
      * Adds a job application to the list of applications made by the employee.
-     * @param appl The application to add.
+     * @param application The application to add.
      * @throws NullPointerException if the application is null.
      */
-    public void addApplication(Application appl){
-        validateObject(appl); // Validates if the application is not null
-        applications.add(appl);
+    public void addApplication(Application application){
+        validateObject(application); // Validates if the application is not null
+        applications.removeIf(application2 -> Objects.equals(application.getID(), application2.getID()));
+        applications.add(application);
     }
 
     /**

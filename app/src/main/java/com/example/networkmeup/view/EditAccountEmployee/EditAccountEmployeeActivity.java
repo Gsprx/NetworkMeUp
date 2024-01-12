@@ -72,7 +72,7 @@ public class EditAccountEmployeeActivity extends AppCompatActivity implements Ed
         name.setText(currEmployee.getName());
 
         EditText address = findViewById(R.id.EditAccountEmployeeAddress);
-        name.setText(currEmployee.getAddress());
+        address.setText(currEmployee.getAddress());
 
 
         final EditAccountEmployeePresenter presenter = new EditAccountEmployeePresenter(this, userEmail);

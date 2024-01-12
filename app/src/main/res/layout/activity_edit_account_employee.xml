@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-51dp">
+        tools:layout_editor_absoluteY="73dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -129,7 +129,7 @@
                 app:icon="@android:drawable/ic_menu_revert"
                 app:layout_constraintBottom_toTopOf="@+id/textView33"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.051"
+                app:layout_constraintHorizontal_bias="0.013"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
@@ -188,8 +188,8 @@
                 android:layout_height="59dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Address"
                 android:inputType="text"
-                android:text="Address"
                 app:layout_constraintEnd_toEndOf="@+id/EditAccountEmployeeName"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView74"
