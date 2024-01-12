@@ -10,12 +10,24 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
 import com.example.networkmeup.view.UpdateJobApplications.ShowJobApplications.ShowJobApplicationsView;
 
+/**
+ * Presenter class for handling interactions between the Show Application Details View and the data models.
+ * This class manages the actions related to accepting or rejecting job applications.
+ */
 public class ShowApplicationDetailsPresenter {
     private ShowApplicationDetailsView view;
     private String userToken;
     private Job job;
     private Application application;
 
+    /**
+     * Constructor for the ShowApplicationDetailsPresenter class.
+     *
+     * @param view        The associated ShowApplicationDetailsView interface implementation.
+     * @param userToken   The authentication token of the user viewing the application details.
+     * @param job         The Job object representing the details of the job associated with the application.
+     * @param application The Application object representing the details of the job application.
+     */
     public ShowApplicationDetailsPresenter(ShowApplicationDetailsView view, String userToken, Job job, Application application) {
         this.view = view;
         this.userToken = userToken;
@@ -23,6 +35,11 @@ public class ShowApplicationDetailsPresenter {
         this.application = application;
     }
 
+    /**
+     * Private method to update the employer's job list after accepting or rejecting an application.
+     *
+     * @return void
+     */
     private void updateEmployer(){
         //update employers static list's original reference
         Employer currEmployer = new EmployerDAOMemory().getByEmail(new Email(userToken));
@@ -30,6 +47,13 @@ public class ShowApplicationDetailsPresenter {
         currEmployer.getJobs().remove(job);
         currEmployer.addJob(job);
     }
+
+    /**
+     * Method called when the user accepts a job application.
+     * Updates the application status and employer's job list.
+     *
+     * @return void
+     */
     public void onAccept() {
         //change the application status
         application.setStatus(true);
@@ -39,6 +63,12 @@ public class ShowApplicationDetailsPresenter {
         view.acceptedApplicant(userToken,job);
     }
 
+    /**
+     * Method called when the user rejects a job application.
+     * Updates the application status and employer's job list.
+     *
+     * @return void
+     */
     public void onReject() {
         //change the application status
         application.setStatus(false);
