@@ -14,15 +14,31 @@ import com.example.networkmeup.domain.Job;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Presenter class for the Search Jobs functionality, responsible for handling the interaction
+ * between the Search Jobs View and the data models.
+ */
 public class SearchJobsPresenter {
     private SearchJobsView view;
     private String userToken;
 
+    /**
+     * Constructor for the SearchJobsPresenter class.
+     *
+     * @param view      The associated SearchJobsView interface implementation.
+     * @param userToken The authentication token of the user interacting with the search functionality.
+     */
     public SearchJobsPresenter(SearchJobsView view, String userToken) {
         this.view = view;
         this.userToken = userToken;
     }
 
+    /**
+     * Method called when the Search Jobs screen is created, responsible for finding matching jobs
+     * based on the current employee's CV and job availability.
+     *
+     * @return An ArrayList of Job objects representing the matching jobs found.
+     */
     public ArrayList<Job> onCreate(){
         //create arraylist to return
         ArrayList<Job> matchingJobs = new ArrayList<>();
@@ -62,6 +78,12 @@ public class SearchJobsPresenter {
         return matchingJobs;
     }
 
+    /**
+     * Method called when a specific job is selected, responsible for notifying the view to display
+     * the details of the selected job.
+     *
+     * @param selectedJob The Job object representing the selected job.
+     */
     public void onItemClick(Job selectedJob) {
         view.showJobDetails(userToken, selectedJob);
     }

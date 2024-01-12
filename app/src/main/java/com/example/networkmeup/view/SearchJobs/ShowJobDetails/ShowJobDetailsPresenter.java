@@ -9,17 +9,32 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Job;
 
+/**
+ * Presenter class for the Show Job Details functionality, responsible for handling interactions
+ * between the Show Job Details View and the data models, especially related to job applications.
+ */
 public class ShowJobDetailsPresenter {
     private ShowJobsDetailsView view;
     private String userToken;
     private Job job;
 
+    /**
+     * Constructor for the ShowJobDetailsPresenter class.
+     *
+     * @param view      The associated ShowJobsDetailsView interface implementation.
+     * @param userToken The authentication token of the user viewing the job details.
+     * @param job       The Job object representing the details of the job being viewed.
+     */
     public ShowJobDetailsPresenter(ShowJobsDetailsView view, String userToken, Job job) {
         this.view = view;
         this.userToken = userToken;
         this.job =  job;
     }
 
+    /**
+     * Method called when the user attempts to send a job application.
+     * Handles the application submission process, including cover letter validation and updates to data models.
+     */
     public void onSendApplication() {
         String coverLetter = view.getCoverLetter();
         //reject empty cover letters
