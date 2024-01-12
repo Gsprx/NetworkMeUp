@@ -22,7 +22,15 @@ import com.example.networkmeup.view.StartPage.StartPageActivity;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents an activity where job positions can be managed.
+ * It extends AppCompatActivity and implements ManageJobPositionsView.
+ */
 public class ManageJobPositionsActivity extends AppCompatActivity implements  ManageJobPositionsView{
+    /**
+     * Called when the activity is starting.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +44,7 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
             userEmail = extras.getString("token");
         }
 
+        // Initialize presenter
         final ManageJobPositionsPresenter presenter = new ManageJobPositionsPresenter(this, userEmail);
 
         //get view references
@@ -58,8 +67,13 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
         jobRecyclerView.setAdapter(jobsAdapter);
         jobRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //when add new button is pressed
         findViewById(R.id.btnManageJobPositionsAddJob).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the add new button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
                         presenter.onAddNew();
@@ -69,6 +83,10 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
         // when back button is pressed
         findViewById(R.id.backbuttonMangeJobPositions).setOnClickListener(
                 new View.OnClickListener(){
+                    /**
+                     * Called when the back button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     public void onClick(View v){
                         Intent intent = new Intent(ManageJobPositionsActivity.this, HomeEmployerActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -79,7 +97,11 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
 
     }
 
-    //start change job details activity with a new job obj
+    /**
+     * This method is called to add a new job position.
+     * It starts a new ChangeJobDetailsActivity with a new job object.
+     * @param userToken The token of the user.
+     */
     @Override
     public void addNewJobPosition(String userToken) {
         Intent intent = new Intent(ManageJobPositionsActivity.this, ChangeJobDetailsActivity.class);
@@ -88,7 +110,12 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
         startActivity(intent);
     }
 
-    //start change job details activity with an existing job obj
+    /**
+     * This method is called to change the details of a job.
+     * It starts a new ChangeJobDetailsActivity with an existing job object.
+     * @param userToken The token of the user.
+     * @param job The job object.
+     */
     @Override
     public void changeJobDetails(String userToken, Job job) {
         Intent intent = new Intent(ManageJobPositionsActivity.this, ChangeJobDetailsActivity.class);
@@ -97,3 +124,4 @@ public class ManageJobPositionsActivity extends AppCompatActivity implements  Ma
         startActivity(intent);
     }
 }
+

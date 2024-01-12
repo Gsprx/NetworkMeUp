@@ -23,12 +23,21 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.ChangeJo
 
 import java.util.ArrayList;
 
+/**
+ * The ChangeReqLangKnowledgeDetailsActivity class extends AppCompatActivity and implements the ChangeReqLangKnowledgeDetailsView interface.
+ * This class is responsible for managing the change of required language knowledge details.
+ */
 public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity implements ChangeReqLangKnowledgeDetailsView {
+    /**
+     * This method is called when the activity is starting. It is where most initialization happens.
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_req_lang_knowledge_details);
-
 
         Bundle extras = getIntent().getExtras();
 
@@ -48,8 +57,10 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
             currJob = null;
         }
 
+        /**
+         * Create a new instance of ChangeReqLangKnowledgeDetailsPresenter with the current activity, user email, current job.
+         */
         final ChangeReqLangKnowledgeDetailsPresenter presenter = new ChangeReqLangKnowledgeDetailsPresenter(this, userEmail, currJob);
-
 
         //create spinner declarations
         Spinner languageSpinner = findViewById(R.id.spinnerChangeReqLangKnowledgeDetailsSelectLanguage);
@@ -74,23 +85,37 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
         ArrayAdapter<String> levelsOfKnowledgeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, levelsOfKnowledge);
         lvlOfKnowledgeSpinner.setAdapter(levelsOfKnowledgeAdapter);
         lvlOfKnowledgeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Callback method to be invoked when an item in this view has been selected.
+             * @param parent The AdapterView where the selection happened.
+             * @param view The view within the AdapterView that was clicked.
+             * @param position The position of the view in the adapter.
+             * @param id The row id of the item that is selected.
+             */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLvlOfKnowledge = levelsOfKnowledge.get(position);
             }
 
+            /**
+             * Callback method to be invoked when the selection disappears from this view.
+             * @param parent The AdapterView that now contains no selected item.
+             */
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 //do nothing
             }
         });
-
         ArrayAdapter<String> languagesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, languagesList);
         languageSpinner.setAdapter(languagesAdapter);
 
         //when delete button is pressed
         findViewById(R.id.btnChangeReqLangKnowledgeDetailsDelete).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the Delete button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
                         //use dialog builder to create a final warning message to the user
@@ -100,11 +125,21 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
                                 .setMessage("Are you sure you want to delete this education?")
                                 .setPositiveButton("Yes",
                                         new DialogInterface.OnClickListener(){
+                                            /**
+                                             * This method will be invoked when the positive button in the dialog is clicked.
+                                             * @param dialog The dialog that received the click.
+                                             * @param id The button that was clicked.
+                                             */
                                             public void onClick (DialogInterface dialog,int id) {
                                                 presenter.onDelete(langPosition);
                                             }})
                                 .setNegativeButton("No",
                                         new DialogInterface.OnClickListener(){
+                                            /**
+                                             * This method will be invoked when the negative button in the dialog is clicked.
+                                             * @param dialog The dialog that received the click.
+                                             * @param id The button that was clicked.
+                                             */
                                             public void onClick (DialogInterface dialog,int id) {
                                                 // do nothing
                                             }}).create().show();
@@ -115,6 +150,10 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
         //when save button is pressed
         findViewById(R.id.btnChangeReqLangKnowledgeDetailsSave).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the Save button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
                         presenter.onSave(langPosition);
@@ -133,17 +172,29 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
 
     }
 
+    /**
+     * Method to obtain description from a text field.
+     * @return String value of the description typed by the user.
+     */
     @Override
     public String getDescription() {
         return ((EditText)findViewById(R.id.editTextChangeReqLangKnowledgeDetailsDescription)).getText().toString().trim();
     }
 
+    /**
+     * Method to obtain language from a spinner.
+     * @return Integer value of the selected language.
+     */
     @Override
     public int getLanguage() {
         //get position in respective list
         return ((Spinner)findViewById(R.id.spinnerChangeReqLangKnowledgeDetailsSelectLanguage)).getSelectedItemPosition();
     }
 
+    /**
+     * Method to obtain level of knowledge from a spinner.
+     * @return LevelOfKnowledge value of the selected level of knowledge.
+     */
     @Override
     public LevelOfKnowledge getLevelOfKnowledge() {
         Spinner spinner = ((Spinner)findViewById(R.id.spinnerChangeReqLangKnowledgeDetailsSelectLevelOfKnowledge));
@@ -168,6 +219,12 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
         }
     }
 
+    /**
+     * Method for activity continuity after a successful delete.
+     * @param message Message sent by the presenter.
+     * @param userToken User token to be passed to next activity.
+     * @param job Job object to be passed after being updated.
+     */
     @Override
     public void successfulDelete(String message, String userToken, Job job) {
         new AlertDialog.Builder(ChangeReqLangKnowledgeDetailsActivity.this)
@@ -175,9 +232,15 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
                 .setTitle("Deletion Completed!")
                 .setMessage(message)
 
+                //return back to modify job view when pressed
                 .setPositiveButton("Return to Change Job Details",
                         new DialogInterface.OnClickListener(){
 
+                            /**
+                             * This method will be invoked when the positive button in the dialog is clicked.
+                             * @param dialog The dialog that received the click.
+                             * @param id The button that was clicked.
+                             */
                             public void onClick (DialogInterface dialog,int id) {
 
                                 Intent intent = new Intent(ChangeReqLangKnowledgeDetailsActivity.this, ChangeJobDetailsActivity.class);
@@ -187,6 +250,12 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
                             }}).create().show();
     }
 
+    /**
+     * Method for activity continuity after a successful save.
+     * @param message Message sent by the presenter.
+     * @param userToken User token to be passed to next activity.
+     * @param job Job object to be passed after being updated.
+     */
     @Override
     public void successfulSave(String message, String userToken, Job job) {
         new AlertDialog.Builder(ChangeReqLangKnowledgeDetailsActivity.this)
@@ -194,9 +263,15 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
                 .setTitle("Save Completed!")
                 .setMessage(message)
 
+                //return back to modify job view when pressed
                 .setPositiveButton("Return to Change Job Details",
                         new DialogInterface.OnClickListener(){
 
+                            /**
+                             * This method will be invoked when the positive button in the dialog is clicked.
+                             * @param dialog The dialog that received the click.
+                             * @param id The button that was clicked.
+                             */
                             public void onClick (DialogInterface dialog,int id) {
 
                                 Intent intent = new Intent(ChangeReqLangKnowledgeDetailsActivity.this, ChangeJobDetailsActivity.class);
@@ -206,3 +281,4 @@ public class ChangeReqLangKnowledgeDetailsActivity extends AppCompatActivity imp
                             }}).create().show();
     }
 }
+

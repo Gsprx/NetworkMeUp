@@ -19,8 +19,16 @@ import com.example.networkmeup.view.ManageJobPositions.ChangeJobDetails.EditReqW
 
 import java.util.ArrayList;
 
+/**
+ * This class represents an activity where the required work experiences can be edited.
+ * It extends AppCompatActivity and implements EditReqWorkExperienceView.
+ */
 public class EditReqWorkExperienceActivity extends AppCompatActivity implements EditReqWorkExperienceView{
 
+    /**
+     * Called when the activity is starting.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +47,7 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
             currJob = null;
         }
 
+        // Initialize presenter
         final EditReqWorkExperiencePresenter presenter = new EditReqWorkExperiencePresenter(this, userEmail,currJob);
 
         //get job data to pass to recycler view
@@ -61,6 +70,10 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
         //when add new button is pressed
         findViewById(R.id.EditReqWorkExpAddNewButton).setOnClickListener(
                 new View.OnClickListener() {
+                    /**
+                     * Called when the add new button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     @Override
                     public void onClick(View v) {
                         //When Login button is pressed
@@ -71,6 +84,10 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
         // when back button is pressed
         findViewById(R.id.backbuttonEditReqWorkExp).setOnClickListener(
                 new View.OnClickListener(){
+                    /**
+                     * Called when the back button has been clicked.
+                     * @param v The view that was clicked.
+                     */
                     public void onClick(View v){
                         Intent intent = new Intent(EditReqWorkExperienceActivity.this, ChangeJobDetailsActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -80,6 +97,13 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
         );
     }
 
+    /**
+     * This method is called to change the details of a work experience.
+     * It starts a new ChangeReqWorkExpDetailsActivity.
+     * @param userToken The token of the user.
+     * @param position The position of the work experience in the list.
+     * @param job The job object.
+     */
     @Override
     public void changeWorkExperienceDetails(String userToken, int position, Job job){
         Intent intent = new Intent(EditReqWorkExperienceActivity.this, ChangeReqWorkExpDetailsActivity.class);
@@ -89,6 +113,12 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
         startActivity(intent);
     }
 
+    /**
+     * This method is called to add a new work experience.
+     * It starts a new AddNewReqWorkExperienceActivity.
+     * @param userToken The token of the user.
+     * @param job The job object.
+     */
     @Override
     public void addNewWorkExperience(String userToken, Job job) {
         Intent intent = new Intent(EditReqWorkExperienceActivity.this, AddNewReqWorkExperienceActivity.class);
@@ -97,4 +127,5 @@ public class EditReqWorkExperienceActivity extends AppCompatActivity implements 
         startActivity(intent);
     }
 }
+
 

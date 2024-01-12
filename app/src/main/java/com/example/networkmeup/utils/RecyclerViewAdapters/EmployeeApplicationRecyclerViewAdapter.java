@@ -47,7 +47,7 @@ public class EmployeeApplicationRecyclerViewAdapter extends RecyclerView.Adapter
         //for example set the Description field of the holder to the one matching the Application instance in the list[position]
 
         //if the application is not answered, write N/A (Not available)
-        holder.status.setText(application.getAnswered()==true ? String.valueOf(application.getStatus()) : "N/A");
+        holder.status.setText(application.getAnswered()==true ? (application.getStatus() == true ? "Accepted" : "Rejected" ) : "N/A");
         holder.coverLetter.setText(application.getCoverLetter());
         holder.appID.setText(String.valueOf(application.getID()));
         for (Employer emp : new EmployerDAOMemory().getAll()){

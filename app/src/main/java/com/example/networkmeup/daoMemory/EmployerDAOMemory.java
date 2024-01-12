@@ -105,6 +105,11 @@ public class EmployerDAOMemory implements EmployerDAO{
         return false; // No match found, authentication failed
     }
 
+    /**
+     * Retrieves an Employer object based on the provided job.
+     * @param job The job of an employer.
+     * @return The Employer object associated with the provided job, if found; otherwise null
+     */
     @Override
     public Employer getByJob(Job job) {
         for(Employer employer : employers){

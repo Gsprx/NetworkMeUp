@@ -145,6 +145,15 @@ public abstract class Initializer {
      */
     public abstract EmployerDAO getEmployerDAO();
 
+    /**
+     * Abstract method to get the ExpertiseAreaDAO instance.
+     * @return  ExpertiseAreaDAO instance
+     */
     public abstract ExpertiseAreaDAO getExpertiseAreaDAO();
+
+    /**
+     * Abstract method to get the LanguageDAO instance.
+     * @return LanguageDAO instance
+     */
     public abstract LanguageDAO getLanguageDAO();
 }

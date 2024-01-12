@@ -61,5 +61,12 @@ public interface EmployerDAO {
      */
     public boolean authenticate(Email email, Password password);
 
+
+    /**
+     * Retrieves an Employer object based on the provided job.
+     * @param job The job of an employer.
+     *
+     * @return Employer object that has the specific job.
+     */
     public Employer getByJob(Job job);
 }
