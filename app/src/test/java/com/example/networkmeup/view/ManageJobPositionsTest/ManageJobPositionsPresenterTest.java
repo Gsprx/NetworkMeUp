@@ -8,16 +8,25 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the ManageJobPositionsPresenter class.
+ */
 public class ManageJobPositionsPresenterTest {
     private ManageJobPositionsPresenter presenter;
     private ManageJobPositionsViewStub stub;
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         stub = new ManageJobPositionsViewStub();
         presenter = new ManageJobPositionsPresenter(stub,"Token");
     }
 
+    /**
+     * Checks if the addNewJobPosition method is called 7 times.
+     */
     @Test
     public void check7AddNew(){
         for(int i=0; i<7;i++){
@@ -28,6 +37,9 @@ public class ManageJobPositionsPresenterTest {
         Assert.assertEquals(null, stub.getLastJobPassed());
     }
 
+    /**
+     * Checks if the changeJobDetails method is called 3 times.
+     */
     @Test
     public void check3ChangeDetails(){
         for(int i=0; i<3; i++){
@@ -39,3 +51,4 @@ public class ManageJobPositionsPresenterTest {
         Assert.assertEquals("Description", stub.getLastJobPassed().getDescription());
     }
 }
+

@@ -7,16 +7,32 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the EditReqEducationPresenter class.
+ */
 public class EditReqEducationPresenterTest {
+    /**
+     * The stub of the view to be used in testing.
+     */
     private EditReqEducationViewStub stub;
+
+    /**
+     * The presenter to be tested.
+     */
     private EditReqEducationPresenter presenter;
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         stub = new EditReqEducationViewStub();
         presenter = new EditReqEducationPresenter(stub, "testToken@email.com", new Job("Title", "Description"));
     }
 
+    /**
+     * Tests the response of the presenter to multiple change education clicks.
+     */
     @Test
     public void check10ChangeEduClicks(){
         for(int i = 0; i<10; i++){
@@ -29,6 +45,9 @@ public class EditReqEducationPresenterTest {
         Assert.assertEquals("Description", stub.getLastJobPassed().getDescription());
     }
 
+    /**
+     * Tests the response of the presenter to multiple add new education clicks.
+     */
     @Test
     public void check7AddNewEduClicks(){
         for(int i = 0; i<7; i++){
@@ -40,3 +59,4 @@ public class EditReqEducationPresenterTest {
         Assert.assertEquals("Description", stub.getLastJobPassed().getDescription());
     }
 }
+

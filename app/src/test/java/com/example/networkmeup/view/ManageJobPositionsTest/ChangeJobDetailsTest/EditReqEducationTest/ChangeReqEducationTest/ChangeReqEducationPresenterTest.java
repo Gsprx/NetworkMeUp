@@ -12,20 +12,40 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the ChangeReqEducationPresenter class.
+ */
 public class ChangeReqEducationPresenterTest {
+    /**
+     * The presenter to be tested.
+     */
     private ChangeReqEducationPresenter presenter;
+
+    /**
+     * The stub of the view to be used in testing.
+     */
     private ChangeReqEducationViewStub stub;
+
+    /**
+     * The initializer for the test data.
+     */
     private Initializer initializer;
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
         initializer.prepareData();
         stub = new ChangeReqEducationViewStub();
         presenter = new ChangeReqEducationPresenter(stub, "b.be@northfreedom.com",
-                    new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
+                new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
+    /**
+     * Tests the update of an education requirement.
+     */
     @Test
     public void checkReqEducationUpdate(){
         //attributes set to simulated activity widgets
@@ -49,6 +69,9 @@ public class ChangeReqEducationPresenterTest {
         Assert.assertEquals("Junior_High_School", curEmployer.getJobs().get(0).getReqEducation().get(0).getLvlOfStudies().toString());
     }
 
+    /**
+     * Tests the deletion of an education requirement.
+     */
     @Test
     public void checkReqEducationDelete(){
         presenter.onDelete(0); //first education to be deleted
@@ -66,3 +89,4 @@ public class ChangeReqEducationPresenterTest {
         Assert.assertEquals(0, curEmployer.getJobs().get(0).getReqEducation().size());
     }
 }
+

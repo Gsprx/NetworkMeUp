@@ -12,10 +12,28 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the AddNewReqLangKnowledgePresenter class.
+ */
 public class AddNewReqLangKnowPresenterTest {
+    /**
+     * The presenter to be tested.
+     */
     private AddNewReqLangKnowledgePresenter presenter;
+
+    /**
+     * The stub of the view to be used in testing.
+     */
     private AddNewReqLangKnowViewStub stub;
+
+    /**
+     * The initializer for the test data.
+     */
     private Initializer initializer;
+
+    /**
+     * Sets up the test environment before each test.
+     */
     @Before
     public void setup(){
         initializer = new MemoryInitializer();
@@ -24,6 +42,9 @@ public class AddNewReqLangKnowPresenterTest {
         presenter = new AddNewReqLangKnowledgePresenter(stub, "b.be@northfreedom.com", new EmployerDAOMemory().getByEmail(new Email("b.be@northfreedom.com")).getJobs().get(0));
     }
 
+    /**
+     * Tests the addition of a new language knowledge requirement.
+     */
     @Test
     public void checkAddLanguageKnowledge(){
         //attributes set to simulated activity widgets
@@ -49,6 +70,5 @@ public class AddNewReqLangKnowPresenterTest {
         Assert.assertEquals("Description Test", currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getDescription());
         Assert.assertEquals("Chinese", currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getLanguage().getLanguage());
         Assert.assertEquals(LevelOfKnowledge.Amateur, currEmployer.getJobs().get(0).getReqLanguageKnowledge().get(1).getLvlOfKnowledge());
-
     }
 }
