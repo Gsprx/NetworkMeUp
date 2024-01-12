@@ -33,7 +33,7 @@ public class ShowJobApplicationsPresenter {
      * Opens the details of the selected job application.
      *
      * @param application The Application object representing the details of the selected job application.
-     * @return void
+     *
      */
     public void onItemClick(Application application){
         view.showApplicationDetails(userToken,job,application);

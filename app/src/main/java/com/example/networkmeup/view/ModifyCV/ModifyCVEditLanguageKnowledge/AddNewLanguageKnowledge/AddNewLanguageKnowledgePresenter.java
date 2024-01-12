@@ -35,7 +35,7 @@ public class AddNewLanguageKnowledgePresenter {
      * Retrieves the necessary data, creates a new LanguageKnowledge object,
      * and adds it to the current employee's CV.
      *
-     * @return void
+     *
      */
     public void onAdd() {
         //get current employees data

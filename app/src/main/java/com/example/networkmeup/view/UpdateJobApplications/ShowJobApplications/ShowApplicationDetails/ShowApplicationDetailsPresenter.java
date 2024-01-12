@@ -52,7 +52,7 @@ public class ShowApplicationDetailsPresenter {
      * Method called when the user accepts a job application.
      * Updates the application status and employer's job list.
      *
-     * @return void
+     * 
      */
     public void onAccept() {
         //change the application status
@@ -67,7 +67,7 @@ public class ShowApplicationDetailsPresenter {
      * Method called when the user rejects a job application.
      * Updates the application status and employer's job list.
      *
-     * @return void
+     *
      */
     public void onReject() {
         //change the application status
