@@ -6,17 +6,37 @@ import com.example.networkmeup.domain.Employer;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 import com.example.networkmeup.domain.TIN;
-
+/**
+ * Presenter for handling the sign-up logic for employers in the NetworkMeUp application.
+ * <p>
+ * This class serves as the middleman between the SignUpEmployerView (the UI) and the data layer (EmployerDAO),
+ * handling all business logic for employer sign-up.
+ * </p>
+ */
 public class SignUpEmployerPresenter {
 
     private SignUpEmployerView view;
     private EmployerDAO employerDAO;
+    /**
+     * Constructor for
+     SignUpEmployerPresenter.
+
+     * @param view The view interface that this presenter will interact with.
+     * @param employerDAO The data access object for managing employer entities.
+     */
     public SignUpEmployerPresenter(SignUpEmployerView view, EmployerDAO employerDAO){
         this.view = view;
         this.employerDAO= employerDAO;
     }
 
-
+    /**
+     * Handles the creation of a new employer account.
+     * <p>
+     * This method is called when the 'Create Account' button is pressed. It retrieves user inputs
+     * (email, phone, password, TIN) from the view, validates them, and either shows an error message or
+     * creates a new employer account if all validations pass.
+     * </p>
+     */
     public void onCreate(){
         boolean email_ok = true;
         boolean phone_ok = true;
