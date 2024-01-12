@@ -21,9 +21,17 @@ import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.AddNewWo
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ChangeWorkExperienceDetails.ChangeWorkExperienceDetailsActivity;
 
 import java.util.ArrayList;
-
+/**
+ * Activity for editing work experience in a user's CV.
+ * This activity provides the interface for users to modify, add, or delete their work experiences.
+ */
 public class ModifyCVEditWorkExperienceActivity extends AppCompatActivity implements ModifyCVEditWorkExperienceView {
-
+    /**
+     * Called when the activity is starting. This is where most initialization should go.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     *                           this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle).
+     *                           Otherwise, it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +90,13 @@ public class ModifyCVEditWorkExperienceActivity extends AppCompatActivity implem
         );
     }
 
-
+    /**
+     * Handles the action to change the details of a work experience.
+     * This method is invoked when a work experience item is selected for editing.
+     * @param userToken The unique token identifying the user.
+     * @param position
+    The position of the work experience item in the list.
+     */
     @Override
     public void changeWorkExperienceDetails(String userToken, int position){
         Intent intent = new Intent(ModifyCVEditWorkExperienceActivity.this, ChangeWorkExperienceDetailsActivity.class);
@@ -90,7 +104,11 @@ public class ModifyCVEditWorkExperienceActivity extends AppCompatActivity implem
         intent.putExtra("position", position);
         startActivity(intent);
     }
-
+    /**
+     * Initiates the process to add a new work experience.
+     * This method is called when the user chooses to add a new work experience to their CV.
+     * @param userToken The unique token identifying the user.
+     */
     @Override
     public void addNewWorkExperience(String userToken) {
         Intent intent = new Intent(ModifyCVEditWorkExperienceActivity.this, AddNewWorkExperienceActivity.class);
