@@ -11,7 +11,13 @@ import com.example.networkmeup.view.Login.LoginEmployee.LoginEmployeeActivity;
 import com.example.networkmeup.view.Login.LoginEmployer.LoginEmployerActivity;
 import com.example.networkmeup.view.SignUp.SignUpActivity;
 import com.example.networkmeup.view.StartPage.StartPageActivity;
-
+/**
+ * LoginActivity handles the user interface for login selection in the NetworkMeUp application.
+ * <p>
+ * This activity provides options for users to navigate to either the employee or employer
+ * login screens or return to the start page.
+ * </p>
+ */
 public class LoginActivity extends AppCompatActivity implements LoginView{
 
     @Override
@@ -51,13 +57,23 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
 
-
+    /**
+     * Navigates to the Employee login activity.
+     * <p>
+     * This method is called when the user chooses to log in as an employee.
+     * </p>
+     */
     @Override
     public void EmployeeLogin() {
         Intent intent = new Intent(LoginActivity.this, LoginEmployeeActivity.class);
         startActivity(intent);
     }
-
+    /**
+     * Navigates to the Employer login activity.
+     * <p>
+     * This method is called when the user chooses to log in as an employer.
+     * </p>
+     */
     @Override
     public void EmployerLogin() {
         Intent intent = new Intent(LoginActivity.this, LoginEmployerActivity.class);
