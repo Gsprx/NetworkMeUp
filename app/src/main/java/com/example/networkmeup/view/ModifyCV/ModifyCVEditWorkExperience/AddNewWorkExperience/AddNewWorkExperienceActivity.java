@@ -23,9 +23,19 @@ import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ModifyCV
 
 
 import java.util.ArrayList;
-
+/**
+ * Activity for adding new work experience in the application.
+ * This class sets up the user interface for adding work experience, handles user input,
+ * and communicates with the presenter to add new work experience data to the employee's profile.
+ */
 public class AddNewWorkExperienceActivity extends AppCompatActivity implements AddNewWorkExperienceView {
-
+    /**
+     * Initializes the activity, setting up the user interface and handling user interactions.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after being shut down,
+     *                           this Bundle contains the data most recently supplied in onSaveInstanceState.
+     *                           Otherwise, it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +124,13 @@ public class AddNewWorkExperienceActivity extends AppCompatActivity implements A
                 }
         );
     }
-
+    /**
+     * Displays a success message in a dialog when a new work experience is successfully added.
+     * Also provides an option to return to the Modify CV view.
+     *
+     * @param message   The success message to be displayed.
+     * @param userToken The token identifying the current user.
+     */
     public void successfulAdd(String message, String userToken){
         new AlertDialog.Builder(AddNewWorkExperienceActivity.this)
                 .setCancelable(false)
@@ -132,17 +148,30 @@ public class AddNewWorkExperienceActivity extends AppCompatActivity implements A
                                 startActivity(intent);
                             }}).create().show();
     }
+    /**
+     * Gets the description of the new work experience from the EditText view.
+     *
+     * @return The description entered by the user.
+     */
     @Override
     public String getDescription() {
         return ((EditText)findViewById(R.id.editTextAddNewWorkExperienceDescription)).getText().toString().trim();
     }
-
+    /**
+     * Gets the selected position of the expertise area from the spinner.
+     *
+     * @return The position of the selected expertise area.
+     */
     @Override
     public int getExpertiseArea() {
         //get position in respective list
         return ((Spinner)findViewById(R.id.spinnerAddNewWorkExperienceSelectExpField)).getSelectedItemPosition();
     }
-
+    /**
+     * Gets the selected number of years at work from the spinner.
+     *
+     * @return The position representing the number of years at work.
+     */
     @Override
     public int getYearsAtWork() {
         //get position in respective enum ordinal

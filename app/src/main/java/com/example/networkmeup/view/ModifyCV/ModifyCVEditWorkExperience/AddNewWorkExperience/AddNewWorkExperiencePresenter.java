@@ -9,16 +9,29 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.ExpertiseArea;
 import com.example.networkmeup.domain.LevelOfStudies;
 import com.example.networkmeup.domain.WorkExperience;
-
+/**
+ * The presenter for the Add New Work Experience view in the application.
+ * This class handles the business logic for adding new work experiences to an employee's CV.
+ * It interacts with the model layer to retrieve and update data and updates the view accordingly.
+ */
 public class AddNewWorkExperiencePresenter {
     private AddNewWorkExperienceView view;
     private String userToken;
-
+    /**
+     * Constructor for AddNewWorkExperiencePresenter.
+     *
+     * @param view      The view interface associated with this presenter.
+     * @param userToken The token identifying the current user.
+     */
     public AddNewWorkExperiencePresenter(AddNewWorkExperienceView view, String userToken) {
         this.view = view;
         this.userToken = userToken;
     }
-
+    /**
+     * Handles the addition of a new work experience entry.
+     * Retrieves user input from the view, creates a new WorkExperience object, and adds it to the
+     * current employee's CV. Then, it informs the view to display a success message.
+     */
     public void onAdd(){
         //get current employees data
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();

@@ -56,6 +56,13 @@ public class ExpertiseArea implements Comparable<ExpertiseArea>, Serializable {
         return (this.area.equals(expertiseArea.area));
     }
 
+    /**
+     * Compares this expertise area to another expertise area based on their areas.
+     *
+     * @param o The expertise area to compare to.
+     * @return a negative integer, zero, or a positive integer as this expertise area is less than, equal to,
+     *         or greater than the specified expertise area.
+     */
     @Override
     public int compareTo(ExpertiseArea o) {
         return this.area.compareTo(o.getArea());

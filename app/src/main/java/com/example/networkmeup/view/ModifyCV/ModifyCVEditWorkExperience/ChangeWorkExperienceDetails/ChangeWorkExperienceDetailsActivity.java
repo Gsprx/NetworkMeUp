@@ -25,10 +25,21 @@ import com.example.networkmeup.view.ModifyCV.ModifyCVActivity;
 import com.example.networkmeup.view.ModifyCV.ModifyCVEditWorkExperience.ModifyCVEditWorkExperienceActivity;
 
 import java.util.ArrayList;
-
+/**
+ * This activity allows the user to change the details of their work experience in their CV.
+ * It provides functionality to edit, save, and delete specific work experience entries.
+ */
 
 public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity implements ChangeWorkExperienceDetailsView {
-
+    /**
+     * Called when the activity is starting. This is where most initialization should go:
+     * calling setContentView(int) to inflate the activity's UI, using findViewById(int)
+     * to programmatically interact with widgets in the UI, setting up listeners, etc.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously
+     *                           being shut down then this Bundle contains the data it most
+     *                           recently supplied in onSaveInstanceState(Bundle). Otherwise, it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,24 +153,44 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
         );
 
     }
-
+    /**
+     * Retrieves the description entered by the user in the EditText field.
+     *
+     * @return A String representing the description of the work experience.
+     */
     @Override
     public String getDescription() {
         return ((EditText)findViewById(R.id.editTextChangeWorkingExperienceDetailsDescription)).getText().toString().trim();
     }
-
+    /**
+     * Retrieves the selected position of the expertise area from the spinner.
+     *
+     * @return An int representing the position of the selected expertise area in the spinner.
+     */
     @Override
     public int getExpertiseArea() {
         //get position in respective list
         return ((Spinner)findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectExpField)).getSelectedItemPosition();
     }
-
+    /**
+     * Retrieves the selected number of years at work from the spinner.
+     *
+     * @return An int representing the position of the selected years at work in the spinner.
+     */
     @Override
     public int getYearsAtWork() {
         //get position in respective enum ordinal
         return ((Spinner)findViewById(R.id.spinnerChangeWorkExperienceDetailsSelectYearsAtWork)).getSelectedItemPosition();
     }
+    /**
+     * Displays a dialog indicating successful deletion of work experience and navigates
+     * the user back to the Modify CV screen.
+     *
+     * @param
 
+     * @param message   The message to be displayed in the dialog.
+     * @param userToken The user token used to identify the current user.
+     */
     @Override
     public void successfulDelete(String message, String userToken) {
         new AlertDialog.Builder(ChangeWorkExperienceDetailsActivity.this)
@@ -178,7 +209,13 @@ public class ChangeWorkExperienceDetailsActivity extends AppCompatActivity imple
                                 startActivity(intent);
                             }}).create().show();
     }
-
+    /**
+     * Displays a dialog indicating successful saving of work experience changes and
+     * navigates the user back to the Modify CV screen.
+     *
+     * @param message   The message to be displayed in the dialog.
+     * @param userToken The user token used to identify the current user.
+     */
     @Override
     public void successfulSave(String message, String userToken) {
         new AlertDialog.Builder(ChangeWorkExperienceDetailsActivity.this)
