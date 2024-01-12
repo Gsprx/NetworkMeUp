@@ -22,6 +22,11 @@ import com.example.networkmeup.view.ModifyCV.ModifyCVEditLanguageKnowledge.Modif
 
 import java.util.ArrayList;
 
+/**
+ * Activity class for adding new language knowledge to the user's CV.
+ * This class implements the AddNewLanguageKnowledgeView interface to handle UI interactions
+ * and communicates with the AddNewLanguageKnowledgePresenter for business logic.
+ */
 public class AddNewLanguageKnowledgeActivity extends AppCompatActivity implements AddNewLanguageKnowledgeView{
 
     @Override
@@ -93,6 +98,12 @@ public class AddNewLanguageKnowledgeActivity extends AppCompatActivity implement
         );
     }
 
+    /**
+     * Display a success dialog after language knowledge creation.
+     *
+     * @param message   The success message to display.
+     * @param userToken The user token for navigation.
+     */
     public void successfulAdd(String message, String userToken){
         new AlertDialog.Builder(AddNewLanguageKnowledgeActivity.this)
                 .setCancelable(false)
@@ -110,17 +121,33 @@ public class AddNewLanguageKnowledgeActivity extends AppCompatActivity implement
                                 startActivity(intent);
                             }}).create().show();
     }
+
+    /**
+     * Get the description of the new language knowledge from the UI.
+     *
+     * @return The description entered by the user.
+     */
     @Override
     public String getDescription() {
         return ((EditText)findViewById(R.id.editTextAddNewLanguageKnowledgeDescription)).getText().toString().trim();
     }
 
+    /**
+     * Get the selected language position from the spinner.
+     *
+     * @return The position of the selected language in the spinner.
+     */
     @Override
     public int getLanguage() {
         //get position in respective list
         return ((Spinner)findViewById(R.id.spinnerAddNewLanguageKnowledgeSelectLang)).getSelectedItemPosition();
     }
 
+    /**
+     * Get the selected level of knowledge from the spinner.
+     *
+     * @return The LevelOfKnowledge based on the user's selection.
+     */
     @Override
     public LevelOfKnowledge getLevelOfKnowledge() {
 

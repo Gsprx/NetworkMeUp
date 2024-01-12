@@ -10,16 +10,33 @@ import com.example.networkmeup.domain.Language;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 import com.example.networkmeup.domain.LanguageKnowledge;
 
+/**
+ * Presenter class for handling interactions between the Add New Language Knowledge View
+ * and the data models. This class manages the actions related to adding new language knowledge.
+ */
 public class AddNewLanguageKnowledgePresenter {
 
     private AddNewLanguageKnowledgeView view;
     private String userToken;
 
+    /**
+     * Constructor for the AddNewLanguageKnowledgePresenter class.
+     *
+     * @param view      The associated AddNewLanguageKnowledgeView interface implementation.
+     * @param userToken The authentication token of the user adding new language knowledge.
+     */
     public AddNewLanguageKnowledgePresenter(AddNewLanguageKnowledgeView view, String userToken) {
         this.view = view;
         this.userToken = userToken;
     }
 
+    /**
+     * Method called when the user attempts to add new language knowledge.
+     * Retrieves the necessary data, creates a new LanguageKnowledge object,
+     * and adds it to the current employee's CV.
+     *
+     * @return void
+     */
     public void onAdd() {
         //get current employees data
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();

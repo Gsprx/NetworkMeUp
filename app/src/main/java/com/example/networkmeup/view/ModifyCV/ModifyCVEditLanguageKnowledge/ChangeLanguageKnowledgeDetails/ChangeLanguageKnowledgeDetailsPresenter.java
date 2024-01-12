@@ -10,15 +10,31 @@ import com.example.networkmeup.domain.Language;
 import com.example.networkmeup.domain.LanguageKnowledge;
 import com.example.networkmeup.domain.LevelOfKnowledge;
 
+/**
+ * Presenter class for handling the modification of language knowledge details.
+ * It communicates with the associated view to retrieve updated information
+ * and notifies the view about the success of deletion or saving.
+ */
 public class ChangeLanguageKnowledgeDetailsPresenter {
     private ChangeLanguageKnowledgeDetailsView view;
     private String userToken;
 
+    /**
+     * Constructor for the presenter.
+     *
+     * @param view      The associated view for language knowledge details modification.
+     * @param userToken The user token for identification.
+     */
     public ChangeLanguageKnowledgeDetailsPresenter(ChangeLanguageKnowledgeDetailsView view, String userToken) {
         this.view = view;
         this.userToken = userToken;
     }
 
+    /**
+     * Handles the save action for modifying language knowledge details.
+     *
+     * @param position The position of the language knowledge item to be updated.
+     */
     public void onSave(int position) {
         //get current employees data
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
@@ -40,6 +56,11 @@ public class ChangeLanguageKnowledgeDetailsPresenter {
 
     }
 
+    /**
+     * Handles the delete action for removing a language knowledge item.
+     *
+     * @param position The position of the language knowledge item to be deleted.
+     */
     public void onDelete(int position) {
         EmployeeDAO employeeDAO = new EmployeeDAOMemory();
         Employee currEmployee = employeeDAO.getByEmail(new Email(userToken));
