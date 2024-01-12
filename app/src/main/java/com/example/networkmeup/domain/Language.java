@@ -56,6 +56,13 @@ public class Language implements Comparable<Language>, Serializable {
         return (this.language.equals(lang.language)); // Compares language names for equality
     }
 
+    /**
+     * Compares this language to another language for ordering based on their names.
+     *
+     * @param lang The language to compare to.
+     * @return a negative integer, zero, or a positive integer as this language is less than, equal to,
+     *         or greater than the specified language.
+     */
     @Override
     public int compareTo(Language lang) {
         return this.language.compareTo(lang.getLanguage());

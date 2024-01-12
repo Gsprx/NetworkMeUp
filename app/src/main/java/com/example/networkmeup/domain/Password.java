@@ -67,6 +67,12 @@ public class Password implements Serializable {
         }
     }
 
+    /**
+     * Compares this password with another password for equality based on their string representation.
+     *
+     * @param password The password to compare to.
+     * @return true if the passwords are equal, false otherwise.
+     */
     public boolean equals(Password password){
         return this.getPassword().equals(password.getPassword());
     }

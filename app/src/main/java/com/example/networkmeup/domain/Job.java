@@ -240,16 +240,34 @@ public class Job implements Serializable {
         return reqLanguageKnowledge;
     }
 
+    /**
+     * Sets the title of the job.
+     *
+     * @param title The new title for the job.
+     * @throws IllegalArgumentException if the title is null.
+     */
     public void setTitle(String title) {
         validateObject(title);
         this.title = title;
     }
 
+    /**
+     * Sets the description of the job.
+     *
+     * @param description The new description for the job.
+     * @throws IllegalArgumentException if the description is null.
+     */
     public void setDescription(String description) {
         validateObject(description);
         this.description = description;
     }
 
+    /**
+     * Compares this job to another object for equality based on their titles and descriptions.
+     *
+     * @param obj The object to compare to.
+     * @return true if the objects are equal, false otherwise.
+     */
     @Override
     public boolean equals(Object obj){
         Job job = (Job) obj;
