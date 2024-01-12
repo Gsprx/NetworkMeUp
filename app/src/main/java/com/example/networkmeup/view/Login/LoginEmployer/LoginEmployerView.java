@@ -36,7 +36,7 @@ public interface LoginEmployerView {
     /**
      * Indicates a successful login attempt to the activity.
      *
-     * @param
+     * @param userToken String of an email used as token of the user
      *
      */
     void successfullyFinishLogin(String userToken);
