@@ -6,14 +6,36 @@ import com.example.networkmeup.domain.Employee;
 import com.example.networkmeup.domain.Password;
 import com.example.networkmeup.domain.Phone;
 
+/**
+ * Presenter for the SignUpEmployee view.
+ * <p>
+ * This class handles the business logic associated with signing up a new employee.
+ * It communicates with the view for input and validation feedback and uses the EmployeeDAO for data persistence.
+ * </p>
+ */
 public class SignUpEmployeePresenter {
     private SignUpEmployeeView signUpEmployeeView;
     private EmployeeDAO employeeDAO;
 
+    /**
+     * Constructs a SignUpEmployeePresenter with the specified view and data access object.
+     *
+     * @param view        The SignUpEmployee view interface
+     * @param employeeDAO The data access object for Employee
+     */
     public SignUpEmployeePresenter(SignUpEmployeeView view, EmployeeDAO employeeDAO){
         this.signUpEmployeeView = view;
         this.employeeDAO = employeeDAO;
     }
+
+    /**
+     * Handles the creation of a new employee account.
+     * <p>
+     * This method validates the user input for email, phone, and password.
+     * If validation passes, it checks if an employee with the same email or phone already exists.
+     * If no such employee exists, it proceeds to create a new employee account.
+     * </p>
+     */
 
     public void onCreate(){
 
